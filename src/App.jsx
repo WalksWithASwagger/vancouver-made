@@ -230,10 +230,18 @@ function PitchLayout() {
 
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded focus:border focus:border-hazard focus:bg-ink focus:px-4 focus:py-2 focus:text-xs focus:uppercase focus:tracking-[0.2em] focus:text-hazard"
+      >
+        Skip to content
+      </a>
       <Nav />
-      <Suspense fallback={<RouteFallback />}>
-        <Outlet />
-      </Suspense>
+      <main id="main-content">
+        <Suspense fallback={<RouteFallback />}>
+          <Outlet />
+        </Suspense>
+      </main>
     </>
   )
 }
