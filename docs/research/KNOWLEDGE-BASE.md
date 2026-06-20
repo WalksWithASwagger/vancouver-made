@@ -10,14 +10,16 @@ build.
 
 | # | Source | File | Status | Analysis |
 |---|--------|------|--------|----------|
-| 01 | Master Concept & Precedent (origin TBD — appears Perplexity-cited) | `sources/01-master-concept-precedent.md` | ✅ Imported | `analysis/01-master-doc-analysis.md` |
-| 02 | Perplexity | `sources/02-perplexity.md` | ⏳ Awaiting | — |
-| 03 | Claude | `sources/03-claude.md` | ⏳ Awaiting | — |
-| 04 | ChatGPT | `sources/04-chatgpt.md` | ⏳ Awaiting | — |
+| 01 | **Perplexity** — "Master Concept & Precedent" | `sources/01-master-concept-precedent.md` | ✅ Imported | `analysis/01-master-doc-analysis.md` |
+| 02 | **ChatGPT / OpenAI** — "ALLEY LEAGUE" | `sources/02-chatgpt-alley-league.md` | ✅ Imported | `analysis/02-chatgpt-alley-league-analysis.md` |
+| 03 | **Claude** | `sources/03-claude.md` | ⏳ Awaiting | — |
 
-> Note: Doc 01 is heavily Perplexity-cited (its reference list contains
-> perplexity.ai search links). When the dedicated Perplexity doc (02) arrives,
-> check for overlap/dedup against 01.
+> Origins confirmed by the owner: Doc 01 is the Perplexity output (its reference
+> list carries perplexity.ai search links); Doc 02 is the ChatGPT/OpenAI output.
+> Doc 03 (Claude) still to come — synthesis is written once it lands.
+
+**Cross-source comparison (running):** `analysis/cross-source-comparison.md` —
+where the docs agree, diverge, and add new ammunition. Half-builds the synthesis.
 
 ## How this KB works
 
