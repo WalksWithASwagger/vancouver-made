@@ -24,6 +24,20 @@ Generated images feed the **Asset Tracker** at `/tracker` for rating + Notion sy
 
 ★ = flagship.
 
+## Companion clubs (ALLEY LEAGUE)
+
+Two deep-dive concepts that live alongside the 9 (data in `../../../src/data/clubs.js`,
+briefs in `../clubs/`). Full prompt sets, each with the home/away/third family.
+
+| Folder | Club | No. · Hero | The line |
+|--------|------|------------|----------|
+| `clubs/nardwuar-fc` | NARDWUAR FC | 97 · HOME | Research is the protest; the receipt is the weapon. |
+| `clubs/number-five-orange` | NUMBER FIVE ORANGE | 5 · AWAY | The whole city becomes a VIP room. |
+
+**Two hard constraints (from `clubs.js` ethics):** Nardwuar is an **homage, not a
+likeness** — no face/portrait in any prompt. No.5 must **punch up, never caricature the
+workers** — human figures stay abstract silhouettes.
+
 ## House-style recipe (replicate exactly)
 
 The method, on every prompt: **mimic the official polish · invert the payload · bake in the receipt.** Each kit should look like FIFA *almost* approved it. Then read as an indictment up close.

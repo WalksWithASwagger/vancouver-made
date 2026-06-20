@@ -390,7 +390,7 @@ export const entries = [
   {
     id: 'hof-cowichan-sweater',
     title: 'The Cowichan Sweater — Whose Culture',
-    category: 'olympics', year: '2010',
+    category: 'olympics', year: '2010', vancouver: true,
     src: `${IMG}/cowichan-sweater.jpg`, rights: 'CC BY-SA — Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Cowichan_knitting',
     why: 'An authentic Coast Salish Cowichan sweater. At Vancouver 2010 the Hudson’s Bay Company sold a mass-produced "Cowichan-style" knockoff — the exact fight over who owns the culture the kit dresses up.',
@@ -399,7 +399,7 @@ export const entries = [
   {
     id: 'hof-cowichan-knockoff',
     title: 'The Knockoff — "Cowichan-Style"',
-    category: 'olympics', year: '2010',
+    category: 'olympics', year: '2010', vancouver: true,
     src: `${IMG}/polo-cowichan-knockoff.jpg`, rights: 'CC BY-SA — Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Cowichan_knitting',
     why: 'The appropriated commercial version beside the real thing. Authentic vs. counterfeit, in one garment — the precise tension MADE ON inhabits.',
@@ -408,11 +408,20 @@ export const entries = [
   {
     id: 'hof-ilanaaq-2010',
     title: 'Ilanaaq 2010 — Inukshuk as Logo',
-    category: 'olympics', year: '2010',
+    category: 'olympics', year: '2010', vancouver: true,
     src: `${IMG}/ilanaaq-2010-logo.png`, rights: 'Logo © VANOC — shown for commentary',
     sourceUrl: 'https://en.wikipedia.org/wiki/Ilanaaq',
     why: 'A sacred Inuit wayfinding marker flattened into a friendly five-colour brand asset for the Vancouver Games. Cautionary tale and toolkit at once.',
     tags: ['inukshuk', 'branding', 'vancouver-2010'],
+  },
+  {
+    id: 'hof-anti-olympics-2010',
+    title: 'No Olympics on Stolen Native Land — 2010',
+    category: 'olympics', year: '2010', vancouver: true,
+    src: null, rights: 'Reference only — rights-restricted',
+    sourceUrl: 'https://en.wikipedia.org/wiki/2010_Winter_Olympics',
+    why: 'The Olympic Tent Village and the "No Olympics on Stolen Native Land" coalition put displacement and unceded territory at the centre of the Vancouver Games — the local protest the 2026 Cup is about to rhyme with.',
+    tags: ['vancouver-2010', 'anti-olympics', 'displacement', 'unceded'],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -551,7 +560,7 @@ export const entries = [
   {
     id: 'hof-adbusters',
     title: 'Adbusters — Culture Jamming (Vancouver)',
-    category: 'subvertising', year: '1989',
+    category: 'subvertising', year: '1989', vancouver: true,
     src: null, rights: 'Reference only — rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Adbusters',
     why: 'Détournement born in this city — the anti-ad magazine that taught a generation to read and rewrite commercial language. The local root of the whole method.',
