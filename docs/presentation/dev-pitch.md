@@ -11,9 +11,9 @@ human taste as the guardrail. Same fact, three voices, one pipeline.
 - **The Receipts Engine** at `/engine` (live demo). Pick a Vancouver World Cup receipt;
   watch it render at once as a kit hem citation, a protest poster, and a couture
   editorial caption. Each carries the same source.
-- **MADE ON** (this site) — the wearable receipt: the Pump & Dump FC kit + the 9-kit system.
-- **feefa.ai** — the civic receipt: host-city accountability as a protest site.
-- **world-cup-fashion-cake.vercel.app** — the editorial receipt: stadium infrastructure as couture.
+- **MADE ON** (this site), the wearable receipt: the Pump & Dump FC kit + the 9-kit system.
+- **feefa.ai**, the civic receipt: host-city accountability as a protest site.
+- **world-cup-fashion-cake.vercel.app**, the editorial receipt: stadium infrastructure as couture.
 
 ## The move (why it is novel)
 Take the World Cup's official spectacle, turn its own language back on it, and let AI do
