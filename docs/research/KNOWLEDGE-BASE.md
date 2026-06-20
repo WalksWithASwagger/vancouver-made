@@ -12,14 +12,16 @@ build.
 |---|--------|------|--------|----------|
 | 01 | **Perplexity** — "Master Concept & Precedent" | `sources/01-master-concept-precedent.md` | ✅ Imported | `analysis/01-master-doc-analysis.md` |
 | 02 | **ChatGPT / OpenAI** — "ALLEY LEAGUE" | `sources/02-chatgpt-alley-league.md` | ✅ Imported | `analysis/02-chatgpt-alley-league-analysis.md` |
-| 03 | **Claude** | `sources/03-claude.md` | ⏳ Awaiting | — |
+| 03 | **Claude** — "Subversive Soccer Kits (Visual Reference Library)" | `sources/03-claude-visual-reference-library.md` | ✅ Imported | `analysis/03-claude-visual-reference-library-analysis.md` |
 
-> Origins confirmed by the owner: Doc 01 is the Perplexity output (its reference
-> list carries perplexity.ai search links); Doc 02 is the ChatGPT/OpenAI output.
-> Doc 03 (Claude) still to come — synthesis is written once it lands.
+> **All three research docs are in.** Origins: 01 = Perplexity (concept + precedent
+> survey), 02 = ChatGPT (the league system + pipeline), 03 = Claude (24 cited
+> precedent works + techniques + rights). They interlock: WHY / HOW / EVIDENCE.
 
-**Cross-source comparison (running):** `analysis/cross-source-comparison.md` —
-where the docs agree, diverge, and add new ammunition. Half-builds the synthesis.
+### ⭐ Start here
+- **`analysis/SYNTHESIS.md`** — the single doc to design from (merged roster,
+  design system, pipeline, the risk dial, build order). Written now that all 3 land.
+- **`analysis/cross-source-comparison.md`** — the 3-way agree/diverge breakdown.
 
 ## How this KB works
 

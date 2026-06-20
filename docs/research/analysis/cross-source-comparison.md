@@ -3,8 +3,10 @@
 Comparing the research docs as they land. Updated when each new source arrives.
 This half-builds the final synthesis (written once Doc 03 / Claude is in).
 
-**In so far:** Doc 01 = Perplexity · Doc 02 = ChatGPT/OpenAI
-**Awaiting:** Doc 03 = Claude
+**All in:** Doc 01 = Perplexity · Doc 02 = ChatGPT · Doc 03 = Claude
+**→ Superseded for decisions by `SYNTHESIS.md`** (this file = the analytical 1:1
+comparison; the synthesis = what we build). Doc 03's role summarized in §"Doc 03"
+below; full parse in `03-claude-visual-reference-library-analysis.md`.
 
 ---
 
@@ -81,8 +83,19 @@ See `research/brief.md`. Highlights to verify: 7 matches; ~$320–338M + $67–7
 2,380+ testimonies; BCSC 2026 pump-and-dump finding; Hogan's Alley viaduct dates;
 China Creek 1979; Cowichan/VANOC 2010 deal.
 
-## Open questions for Doc 03 (Claude) to resolve or break the tie on
-- Naming/umbrella direction.
-- Risk-appetite fork: how far into MMIWG / overdose / sex-work to go.
-- Hero kit pick.
-- Whether to build the source-card/pipeline as a real web app feature.
+## Doc 03 (Claude) — how it broke the ties
+
+Doc 03 is the EVIDENCE layer (24 cited precedent works), not a third concept. How
+it resolved the open questions:
+- **Risk-appetite fork:** sided with discipline on Indigenous form specifically
+  (settler artist → cite, don't reproduce) — a craft argument, not a scold. Hard
+  line only at *reproducing protected Indigenous designs / copyrighted agency
+  photos in sellable merch*. Otherwise fully pro-aggressive brand hijack.
+- **Hero kit:** doesn't pick a club; instead supplies the *technique* ("perfect
+  mimicry, inverted payload") that makes any flagship sharper.
+- **Local legitimacy:** added two Vancouver anchors — **Cowichan sweater (2010)**
+  (closest precedent) and **Adbusters (Vancouver, 1989)** (homegrown lineage).
+- **Buildability:** rights metadata + the technique library both map straight into
+  ChatGPT's QR source-card system. The three docs interlock here.
+
+→ All resolved decisions now live in **`SYNTHESIS.md`**.
