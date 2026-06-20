@@ -1,6 +1,7 @@
 import Stage from './scene/Stage.jsx'
 import Clubs from './components/Clubs.jsx'
 import Collection from './components/Collection.jsx'
+import HeroKits from './components/HeroKits.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 
@@ -85,7 +86,10 @@ export default function App() {
       {/* THE COLLECTION — 9 kits, two racks + the receipts wall */}
       <Collection />
 
-      {/* DEEP DIVE — three kits, fully built */}
+      {/* HERO KITS — 01 / 03 / 09 built to spec, with code-drawn flats */}
+      <HeroKits />
+
+      {/* DEEP DIVE — the club-card method behind the kits */}
       <Clubs />
 
       <footer className="border-t border-bone/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-bone/40">
