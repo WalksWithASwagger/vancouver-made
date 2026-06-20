@@ -66,7 +66,7 @@ export const heroKits = [
     hemCitation: {
       text: 'SECURITY $242M · LINE-ITEM DETAIL WITHHELD · RECORDS SEVERED UNDER EXEMPTION',
       source: 'FIPPA / FOI · CBC, 2026',
-      confirm: true,
+      confirm: false,
     },
     whyItWins:
       'Matte-on-matte redaction is a real novelty-of-output move — the censorship is the craft. Reads as black-bloc protest from across the room; up close it\'s the city\'s own withheld paperwork.',
