@@ -135,7 +135,7 @@ function ClubCard({ club }) {
 
 export default function Clubs() {
   return (
-    <section id="clubs" className="border-t border-bone/10 bg-rain/20">
+    <section id="clubs" className="scroll-mt-20 border-t border-bone/10 bg-rain/20">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         {/* deep-dive header */}
         <div className="mb-10 border border-bone/15 p-5 text-center">
