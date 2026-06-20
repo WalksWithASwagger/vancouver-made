@@ -26,9 +26,9 @@ without a caption." Framed by the Four Questions ([`design/submission-brief.md`]
 | No real marks | Counterfeit-official system only (`clubs/README.md` rule) | ✅ |
 
 **Remaining**
-- **[you]** `deck.html` image slots are placeholders — drop in the final jersey/mood imagery
-  (or present off the live site instead of the HTML deck).
-- **[you]** _(de-scoped)_ Nike swoosh on the Canva hero renders — not blocking per your call.
+- **[me]** ✔ `deck.html` now carries the approved jersey / mood / crest imagery (slides 1/2/5)
+  plus the three-club montage. Present it (Cmd+P to PDF) or demo off the live site.
+- **[you]** _(de-scoped)_ Nike swoosh on the Canva hero renders. Not blocking per your call.
 - **[me]** ✔ Stale `20–30×` price-to-income corrected to `~12× (Demographia 2025)` across all
   presentation/design docs (matches the live data).
 
@@ -61,11 +61,43 @@ to its proof.
 
 ---
 
-## Cross-cutting (done this pass)
-- **[me]** Docs audit: HANDOFF/DEPLOY/README/DEVELOPMENT updated to the live, on-`main` reality;
+## Cross-cutting (done earlier)
+- **[me]** Docs audit (#24): HANDOFF/DEPLOY/README/DEVELOPMENT to the live, on-`main` reality;
   added this file + [`README.md`](README.md) docs index.
 - **[me]** Receipts verified; `[confirm]` flags cleared; the one credibility stat fixed.
 
-## The two open asks for you
-1. **Drop in the submission mechanics + deadline** at the top of this file.
-2. **Final deck imagery** (or decide to demo live instead of `deck.html`).
+## Closeout pass (this round)
+- **[me]** ✔ Deck imagery wired: `deck.html` carries the approved jersey / mood / crest art
+  (slides 1/2/5) + the three-club montage. Not placeholders anymore.
+- **[me]** ✔ Deleted superseded docs (`design/jersey-kit.md`, `presentation/deck-outline.md`);
+  added a brand-system palette note (site tokens vs. print palette; code is source of truth).
+- **[me]** ✔ Full feature docs: SITE-GUIDE, PROCESS, RECEIPTS-ENGINE, HALL-OF-FAME,
+  CURATION-WORKFLOW (linked from the docs index).
+- **[me]** ✔ QA: `npm run build` clean; live `/`, `/engine`, `/process` screenshot-checked
+  (render clean, no console errors, deploy public). `/hall-of-fame` assets verified; `/tracker`
+  is a local-only tool (needs the API). 5 routes, no broken links, no browser `process.env`.
+
+## Expansion assessment (PR #22) — recommendation: FREEZE MAIN
+PR #22 (Hogan's Alley MO-10 + Store + Highlight Reel + China Creek) is draft, CONFLICTING,
++2,799/−131 over 84 files, with a "park for review" commit. Per piece:
+- **Hogan's Alley MO-10: HOLD.** Open `[confirm]` flags on Black-displacement facts (Georgia
+  Viaduct dates, the City–HAS MOU). The whole ethic is "cite the receipt." Do not ship until a
+  primary source clears each flag. Non-negotiable.
+- **Store / Highlight Reel: defer.** Self-contained, lower-risk, but unfinished (Store footer
+  nav incomplete; reel audio file missing, degrades gracefully). Not needed to win.
+- **China Creek: nice-to-have.**
+Recommendation: ship `main` as the submission; treat PR #22 as post-deadline.
+
+## Polish backlog (not blocking the main submission)
+- **Em-dash sweep of page copy.** Swarm-written `src/data` copy (`hallOfFame.js` ~189,
+  `kitGallery.js` ~119, `clubs.js`, `heroKits.js`) carries em-dashes in visible text, against the
+  voice rule. Worth a dedicated contextual pass (like the docs voice pass) before any wide share.
+- Hogan's Alley `[confirm]` sources (gates MO-10).
+- Reel audio file; Store footer nav (only if those ship).
+- Canva hero renders still carry a Nike swoosh (de-scoped by you).
+
+## Open asks for you (to finish)
+1. **Submission mechanics + deadline** — fill the placeholder at the top of this file
+   (portal/form, video?, slide limit, formats, due time, per track).
+2. **Rehearse** the ~5-min deck (`presentation/deck.html`, Cmd+P → PDF) or the live-site demo.
+3. **Scope call** on the expansion (recommendation: freeze `main`).

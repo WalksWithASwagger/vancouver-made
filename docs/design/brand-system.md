@@ -33,6 +33,12 @@ Populo* (the city, for the people).
 Primary contrast pair: **hazard on ink** and **ink on bone**. Gold is an accent,
 used like fake luxury. Cyan belongs to the 3D portal / "future" surfaces.
 
+> Two palettes, two jobs. The table above is the **on-screen site palette**
+> (`src/brand/tokens.js`) the React site renders from. The **print / tech-pack palette** is
+> separate and canonical in `src/data/collection.js`: Ink `0E0E0E`, Bone `EDE6D8`, Stamp
+> red `C0392B`, Gold `B8924A`, Note green `1B4D3E`. When a doc and the code disagree, the
+> code wins.
+
 ## Type
 - **Display:** Archivo Black (Impact fallback): loud, stadium, tabloid.
 - **Body / mono:** Space Mono: receipts, transcripts, evidence, fine print.
@@ -62,4 +68,4 @@ Deadpan official-speak fractured by protest truth. Examples:
 - [ ] Sticker sheet
 - [ ] Riso poster series (3)
 - [ ] Social templates (square + story)
-- [ ] Kit mockups (see `jersey-kit.md`)
+- [ ] Kit mockups (see `clubs/` + `kits/`)
