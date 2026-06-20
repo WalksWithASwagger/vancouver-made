@@ -201,6 +201,7 @@ export const beats = [
     line: 'Everyone else made a souvenir.',
     eyebrow: 'KRIS KRÜG · SETTLER ARTIST',
     receipt: 'unceded xʷməθkʷəy̓əm · Sḵwx̱wú7mesh · səlilwətaɬ',
+    credit: '♫ "NO GAME WITHOUT THE GROUND" — original MADE ON anthem',
     palette: P.brand,
     motion: 'punch',
     ms: 5500,

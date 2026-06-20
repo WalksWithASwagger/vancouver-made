@@ -222,6 +222,11 @@ export default function HighlightReel() {
                   {beat.slogan}
                 </p>
               )}
+              {beat.credit && (
+                <p className="mt-8 text-[10px] uppercase tracking-[0.3em] text-bone/40">
+                  {beat.credit}
+                </p>
+              )}
             </div>
           )}
         </div>
