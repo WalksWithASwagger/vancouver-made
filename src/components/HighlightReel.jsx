@@ -90,6 +90,11 @@ export default function HighlightReel() {
     }
   }, [])
 
+  // Expose the current beat index for deterministic capture/export tooling.
+  useEffect(() => {
+    window.__REEL_INDEX__ = index
+  }, [index])
+
   // Idle-fade the control chrome.
   const wake = useCallback(() => {
     if (RECORD) return
