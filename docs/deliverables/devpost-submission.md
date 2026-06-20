@@ -1,93 +1,69 @@
-# Devpost Submission — MADE ON · The Receipts Engine
+# Devpost Submission — VANCOUVER MADE
 
 **Event:** Vancouver Made · Devin Open Hackathon (dev track)
 **Submitter:** Kris Krüg (WalksWithASwagger)
-**Live demo:** https://vancouver-made.vercel.app  ·  dev core: https://vancouver-made.vercel.app/engine
+**Live demo:** https://vancouver-made.vercel.app
 **Repo:** https://github.com/WalksWithASwagger/vancouver-made
 
-> Paste-ready. Copy each field straight into Devpost. Char counts checked against the form limits.
+> Frame (corrected): lead with the **protest-art lineage** — détournement, the uniform as a
+> protest surface, the specific Vancouver tradition — then the kits, then the method. The
+> collection is **VANCOUVER MADE** (umbrella) / **MADE ON**. The receipts engine is one
+> workbench in the method, not the headline. Source of truth: `docs/presentation/talk-flow.md`.
 
 ---
 
 ## 1. Project name  *(field limit 60)*
 
-`MADE ON · The Receipts Engine`  *(29 chars)*
+`VANCOUVER MADE`
 
-Alternates:
-- `MADE ON: The Receipts Engine`  *(28)*
-- `The Receipts Engine — one fact, three surfaces`  *(46)*
+Alternates: `MADE ON` · `VANCOUVER MADE: Whose Cup Is It Anyway?`
 
 ## 2. Elevator pitch  *(field limit 200)*
 
-> One Vancouver civic receipt goes in. Three counter-spectacle artifacts come out, each carrying the same citation. Not three projects. One AI pipeline pointed at three surfaces.
+> Someone always pays for the spectacle. A long line of people turned the jersey, the podium, and the sponsor board back on power. We joined that line, from Vancouver, for World Cup 2026.
 
-*(176 chars)*
-
-Alternate *(168):* One public-record Vancouver fact in. Three protest artifacts out: a jersey hem, a poster, an editorial, each with the same citation. Not three projects. One AI pipeline, three surfaces.
+*(185 chars)*
 
 ## 3. Project details
 
-**Everyone else made a souvenir. I made the receipt.**
+**The part that doesn't fit on a souvenir.**
 
-MADE ON is a FIFA World Cup 2026 protest kit collection. The Receipts Engine is the machine underneath it. Same move, three surfaces: a jersey, a civic counter-site, a fashion editorial. One Vancouver fact goes in. Three artifacts come out, each carrying the same citation. Built today at BCIT Tech Collider, AI-assisted, on real public-record data.
+VANCOUVER MADE is a World Cup 2026 protest kit collection. Not a sponsor. A festival is a spectacle, and someone always pays for it. There's a long line of people who turned the jersey, the podium, and the sponsor board into a place to tell the truth. We studied that wall, then added to it. Built at BCIT Tech Collider, AI-assisted, on real public-record data, on the unceded territories of the xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, and səlilwətaɬ peoples.
 
-**Inspiration**
+**The canon you join**
 
-Vancouver is hosting seven World Cup games. The bill to the public runs up to $729 million, $242 million of it security, up to $114 million net to BC taxpayers. California's host cities funded most of their budget privately. We went nearly 100% public.
+Smith and Carlos raised their fists on the Mexico City podium in 1968; Peter Norman wore the badge in solidarity. Hummel muted Denmark's Qatar 2022 kit to "the colour of mourning" and protested a World Cup through the kit itself. St. Pauli flies the skull and crossbones. And here at home: Kalle Lasn started Adbusters and culture-jamming in Vancouver in 1989; the Cowichan sweater got knocked off for the 2010 Olympics; the banners read "No Olympics on Stolen Native Land." The uniform has always been a protest surface. This collection is the next entry on that wall, and the argument could only come from here.
 
-The tournament asked every host city for "the Vancouver story." Most cities answer with a souvenir. I wanted to finish the sentence. Made on stolen ground. Made on Hogan's Alley, the Black neighbourhood paved for the viaduct the Cup now drives its fans across. Made on the 2010 Olympic playbook, when homelessness in Vancouver more than doubled before the Games (628 to 1,576) behind a "no displacement" pledge.
+**The work**
 
-This is not anti-football. It's anti-amnesia. Football isn't the enemy. The host-city extraction machine is.
+Lead with the hero. The flagship is **Pump & Dump FC**: a blackout "city pride" third kit that resolves into a prospectus the longer you look. From across the room it reads like the limited-edition drop every host city sells. Up close: the all-over print is soaring then cliff-diving line charts, the crest is a condo tower stacked like a candlestick, the sponsor bar reads PUMP & DUMP CAPITAL / WE WIN IF YOU LIVE HERE OR NOT, the roles are DEVELOPER / FLIPPER / LANDLORD / RENOVICTOR, and the nameplate names the public: BAGHOLDER.
 
-I'm a settler artist working on the unceded territories of the xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, and səlilwətaɬ peoples. No borrowed sacred imagery. I critique the colonial system with its own paperwork: the receipt, the redaction, the banknote.
+Then the collection. MADE ON SILENCE (the redacted document, worn). MADE ON THE PUBLIC DIME ($729M as couture). Nardwuar FC (research is the protest). No.5 Orange (the city sells edgy nightlife and polices the people who do the work). China Creek. Nine kits, one repeatable move: mimic the official polish, invert the payload, bake in the receipt. Every factual claim carries its citation on the hem.
 
-**What it does**
+**The bill, cited**
 
-The Receipts Engine (`/engine`) is the dev-track core. Pick one civic receipt from a public-record list. Watch it render, live and all at once, in three house voices:
-
-- MADE ON · the hem. The wearable receipt. Kit-maker spec type, citation baked into the garment.
-- FEEFA · the poster. Host-city accountability as a protest poster (feefa.ai).
-- Fashion Cake · the editorial. The same fact, shot like couture, captioned like evidence (world-cup-fashion-cake.vercel.app).
-
-Same citation on all three. The novelty isn't any single site. It's the move: take the World Cup's official spectacle, turn its own language back on it, and let AI do the production while cited Vancouver receipts and human taste hold the line.
-
-The pitch site (`/`) shows the output: nine kits across two racks, three fully designed heroes — MADE ON SILENCE, MADE ON THE PUBLIC DIME, PUMP & DUMP FC. The Process page (`/process`) walks one kit through all seven stages. The Asset Tracker (`/tracker`) is the curation gate, where roughly 246 machine generations get rated and killed down to the winners.
-
-**How I built it**
-
-The thesis is the architecture: the human bookends the machine. Voice is the input. Judgment is the output gate. The machine is the accelerant in between. Provenance in, curation out. That's the whole anti-slop argument, made literal.
-
-Stack: Vite, React 18, React Three Fiber for the portal, Tailwind, React Router. The jersey flats are code-drawn SVG, not stock, so they're original work that auto-fits numbers and silhouettes. The Asset Tracker runs a local Express and SQLite API with Notion sync to manage the rating pass on Midjourney generations. The Receipts Engine is pure data-to-voice: one `receipts.js` file, three transform functions (madeOnHem, feefaPoster, fashionEditorial), one civic fact fanned across three rendered artifacts. Devin was the dev-track tool. The three sister sites prove the method repeats across surfaces. AI made the volume. I kept the taste.
-
-**The receipts (the data spine)**
-
-Every claim on a garment carries its citation on the hem. The site flags anything unverified `[confirm]` until it's checked against a primary source. The spine:
-
-- $685M–$729M gross BC cost for seven games. Source: Government of BC, CBC, Globe and Mail, May 2026.
+- $685M–$729M gross BC cost for seven games; $242M of it security; up to $114M net to BC taxpayers. Source: Government of BC, CBC, Globe and Mail, May 2026.
+- California's host cities funded most of their budget privately. BC went nearly 100% public. Source: Globe and Mail, June 2026.
 - "Forsaken twice." The Oppal inquiry found the missing women were failed by society and by police. Source: Missing Women Commission of Inquiry, 2012.
-- Homelessness doubled before 2010 (628 to 1,576, +134%). Source: UBC Olympic Games Impact report, Pivot Legal.
+- Homelessness more than doubled before the 2010 Olympics (628 to 1,576) behind a "no displacement" pledge. Source: UBC Olympic Games Impact report, Pivot Legal.
 - The VSE, branded the "Scam Capital of the World." Source: Forbes, 1989.
-- Hogan's Alley, paved for the viaduct. Source: City of Vancouver anti-Black cultural redress record.
+- Hogan's Alley, the Black neighbourhood paved for the viaduct. Source: City of Vancouver anti-Black cultural redress record.
+
+**How we made it — voice to receipt**
+
+The human bookends the machine. Voice in, judgment out, AI the accelerant between, but a person decides at every gate. We built tooling, not just prompts: a research-and-verification spine, an ingest pipeline (scanner to manifest to SQLite), a tracker that turns roughly 246 raw generations into a rated library, code-drawn flats (deterministic SVG from spec), and a small engine that renders one civic fact across three house voices. Several models in parallel, several agents on one branch with handoff docs. Not using AI. Conducting a roomful of it. Provenance in, curation out. The anti-slop stance, made literal.
 
 **Challenges**
 
-Speed without slop. AI can flood you with 246 plausible jerseys in an afternoon. The hard part isn't generation. It's the kill list. The whole system is built so a human makes the final cut and every surviving claim has a source.
-
-The IP line. No FIFA marks, no sponsor logos, no borrowed sacred imagery. Everything original, the critique built from public paperwork instead of stolen branding.
-
-Punching up, never down. The displaced are the home team, not the punchline. Sex work is labour. The bagholders are the public. Power is the target.
-
-**Accomplishments I'm proud of**
-
-A protest brand that reads tournament-official from across the room and turns into a receipt up close. Three properties that look like three projects and are actually one repeatable pipeline. A live demo where you click a fact and watch it become a hem, a poster, and an editorial. And every number on it survives a primary-source check.
+Speed without slop. AI floods you with plausible jerseys; the hard part is the kill list. Every surviving claim has a source. The IP line: no FIFA marks, no sponsor logos, no borrowed sacred imagery. We evoke the grammar, we never reproduce a real mark, and we critique the colonial system with its own paperwork. Punching up, never down: the displaced are the home team, sex work is labour, the bagholders are the public. Power is the target.
 
 **What I learned**
 
-The machine is great at volume and terrible at meaning. The real design problem of this moment isn't "can AI make a jersey." It's where you put the human. Voice at the front. Judgment at the gate. Receipts holding the line. Get that right and AI is a brush, not a slop machine.
+The machine is great at volume and terrible at meaning. The real design problem isn't "can AI make a jersey." It's where you put the human. Voice at the front. Judgment at the gate. Receipts holding the line.
 
 **What's next**
 
-First place in the design track is ten kits manufactured. I want the three heroes off the screen and onto real bodies, ocean-bound rPET that still sublimates. Resolve the remaining six kits to full tech packs. Then point the Receipts Engine at the next host city. The pipeline doesn't care which spectacle it's aimed at.
+First place in the design track is ten kits manufactured. I want the heroes off the screen and onto real bodies, ocean-bound rPET that still sublimates. Resolve the remaining kits to full tech packs. The move repeats: point it at the next spectacle.
 
 You're not in the stands. You're the bag.
 
@@ -98,28 +74,24 @@ You're not in the stands. You're the bag.
 **Built With** (tags): `react` `vite` `react-three-fiber` `tailwindcss` `react-router` `express` `sqlite` `notion-api` `midjourney` `devin` `svg` `vercel` `javascript`
 
 **Links:**
-- Live demo (dev core): https://vancouver-made.vercel.app/engine
-- Live demo (pitch site): https://vancouver-made.vercel.app
+- Live demo: https://vancouver-made.vercel.app
 - GitHub: https://github.com/WalksWithASwagger/vancouver-made
 - Sister site (civic): https://feefa.ai
 - Sister site (editorial): https://world-cup-fashion-cake.vercel.app
 
-**Bounties to declare:**
-- Best use of AI/tools — the voice→receipt pipeline; Midjourney volume + human curation gate; three transform functions fanning one fact to three artifacts.
-- Best Vancouver narrative — Hogan's Alley, the DTES, 2010 Olympics displacement, Howe St / VSE, the three host Nations named.
-- Show your process — `/process` (7 stages) + `/tracker` (the live kill-list curation gate).
+**Bounties to declare:** Best Vancouver Narrative · Show Your Process · Best Use of AI Tools · Best Reflection of Vancouver Grassroots Culture.
 
-**Video (optional):** 60–90s screen capture of `/engine` (click a receipt, show the three voices update) + a pan of the hero kits.
+**AI answer 1 — "Where did you use AI, and where did you deliberately choose not to?"**
+AI did the volume. I kept the taste. Midjourney generated the jersey concepts, moodboards, crests, and sponsor bars, roughly 246 generations for the flagship kit alone. Devin handled dev-track scaffolding. Where I deliberately did not: the voice and the verdict. Every factual claim is a real public-record number I sourced and checked by hand. No AI invented a statistic; the site flags anything unverified until a human confirms it against a primary source. The final cut is mine. The human bookends the machine: voice in, judgment out, provenance in, curation out.
+
+**AI answer 2 — "How did you feel AI impacting your process – for better or for worse?"**
+Both better and worse, and refusing to flatten that is the point. Better: it collapsed the distance between a stance and an artifact; one person made a nine-kit collection in a day. Worse: AI is great at volume and terrible at meaning; left alone it ships the average. So the work moved. The design problem stopped being "can the machine make a jersey" and became "where do you put the human." The tool is foundational, not neutral. It amplifies whatever discipline you bring, or whatever laziness. I tried to bring receipts.
 
 ## 5. Thumbnail (3:2)
-
-- **Primary (ready, IP-safe):** `public/process/flat-hero.jpg` (1456×816 → crop to 3:2). Original code-drawn flat, no third-party marks.
-- **Optional dev shot:** a screenshot of `/engine` (the three-voice render) — most honest for a dev submission.
-- **Do NOT use** `docs/deliverables/mockups/MO-03-*.png` / `MO-09-*.png` — they carry a Nike swoosh and break the no-brand-logos IP rule.
+- Original code-drawn flat: `public/process/flat-hero.jpg` (1456×816, IP-clean).
+- Do NOT use `docs/deliverables/mockups/MO-03-*.png` / `MO-09-*.png` — they carry a Nike swoosh.
 
 ---
 
 ## Deploy notes
-- Production alias: `https://vancouver-made.vercel.app` (Vercel project `vancouver-made`, team walkswithaswaggers-projects).
-- Deployed from branch `claude/ingest-tracker-assets` as a prebuilt static SPA (vercel.json rewrites).
-- **Action needed:** Deployment Protection (Vercel Authentication) is ON, so the URL currently returns 401 to the public. Turn it off: Vercel dashboard → project `vancouver-made` → Settings → Deployment Protection → Vercel Authentication → Disabled → Save. Then the demo link is open for judges.
+- Production: `https://vancouver-made.vercel.app` (Vercel project `vancouver-made`, prebuilt static SPA, `.vercel` gitignored). Deployment Protection (Vercel Authentication) turned off so judges can reach it.
