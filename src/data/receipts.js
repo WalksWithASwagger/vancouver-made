@@ -42,7 +42,7 @@ export const receipts = [
     claim: "Black neighbourhood paved for the viaduct the Cup drives its fans across",
     detail: 'displaced by city action over decades',
     source: 'City of Vancouver anti-Black cultural redress record',
-    confirm: true,
+    confirm: false,
   },
 ]
 
