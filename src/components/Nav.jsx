@@ -40,6 +40,7 @@ export default function Nav() {
             <li key={l.to}>
               <Link
                 to={l.to}
+                aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
                   'transition hover:text-bone ' +
                   (isActive(pathname, l.to) ? 'text-hazard' : 'text-bone/60')
@@ -71,6 +72,7 @@ export default function Nav() {
               <Link
                 to={l.to}
                 onClick={() => setOpen(false)}
+                aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
                   'block py-3 transition hover:text-bone ' +
                   (isActive(pathname, l.to) ? 'text-hazard' : 'text-bone/70')
