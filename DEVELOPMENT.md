@@ -6,20 +6,22 @@ where everything lives. The collection itself, the why, and the lineup are in th
 
 Two things run here:
 
-- **The pitch site** at `/`. React + React Three Fiber. The hero portal, the
-  territorial statement, the collection, the code-drawn kit flats, the deep-dive method.
-- **The asset tracker** at `/tracker`. A workbench for the Midjourney images. Scan a
-  folder, rate what's good, push the ratings to Notion. Local-first, fast, no cloud
-  required to use it.
+- **The pitch site** at `/`. React + React Three Fiber. The hero portal, the territorial
+  statement, the collection, the code-drawn kit flats, the deep-dive method. Plus the
+  **Receipts Engine** (`/engine`), the **Process** walkthrough (`/process`), and the
+  **Hall of Fame** reference gallery (`/hall-of-fame`).
+- **The asset tracker** at `/tracker`. A workbench for the generated images: scan or
+  ingest a folder, star inline on the grid, push ratings to Notion. Local-first, fast,
+  no cloud required to use it.
 
 ## Status
 
 - [x] Concept locked: Pump & Dump FC is the lead. See `docs/design/submission-brief.md`.
 - [x] Prompt library written for the full collection. See `docs/design/prompts/`.
-- [x] Asset tracker built (scan, rate, Notion sync).
-- [ ] Generate the mood boards and flats in Midjourney.
-- [ ] Pick the winners in the tracker.
-- [ ] Final presentation.
+- [x] Asset tracker: inline grid starring + folder ingest + Notion sync.
+- [x] Generations ingested (Midjourney + Rafiki) across four concepts.
+- [ ] Star the winners in the tracker; lock the hero + the collection.
+- [ ] Final presentation + jersey deliverable.
 
 ## Run it
 
@@ -72,7 +74,7 @@ Pitch site is at `/`, tracker is at `/tracker`. Footer links jump between them.
 
 ## The asset tracker
 
-The loop is: generate, scan, rate, sync.
+The loop is: generate, scan or ingest, star, sync.
 
 **Generate.** Prompts live in `docs/design/prompts/`, one folder per kit. Each kit has
 `moodboard.md`, `graphic-elements.md`, and `jersey-flats.md`. Pump & Dump (09) and the
@@ -95,9 +97,34 @@ kits:
 
 Hit "Scan Folder" in the tracker. New images show up in the gallery.
 
-**Rate.** Click a thumbnail. The lightbox gives you stars (1-5), a like, and a notes
-field, plus the prompt if it's linked from Notion. Ratings write to SQLite the moment
-you set them. No save button.
+**Ingest (other sources).** For non-Midjourney images (Rafiki renders, re-rolls), ingest
+a folder straight into the DB under a concept/batch:
+
+```bash
+node scripts/ingest-dir.js <folder> <concept> [batch]
+# e.g. node scripts/ingest-dir.js docs/design/prompts/clubs/nardwuar-fc/rafiki/images/run-X nardwuar-fc run-X
+```
+
+Re-runnable (INSERT OR REPLACE on a stable id). The tracker holds four concepts today:
+`09-pump-and-dump`, `01-made-on-silence`, `nardwuar-fc`, `number-five-orange`. The Rafiki
+kit PNGs live under `docs/design/prompts/clubs/<concept>/rafiki/images/` (gitignored,
+local only; referenced by absolute path).
+
+**Star.** Star right on the grid: click 1-5 stars (or the heart to "keep") on each
+thumbnail. Saves to the DB on click, no modal. Use **starred only** and **sort by score**
+at the top of the grid to converge. Click a thumbnail for the lightbox if you want the
+full image + notes.
+
+**Read the picks.** The starred shortlist is one SQLite query (no app needed):
+
+```bash
+sqlite3 src/db/ratings.db "SELECT a.concept,a.batch,a.filename,r.score,r.liked \
+  FROM ratings r JOIN assets a ON a.id=r.assetId \
+  WHERE r.score>=4 OR r.liked=1 ORDER BY a.concept,r.score DESC"
+```
+
+For a zero-server visual scan of the Midjourney set, `node scripts/contact-sheet.js`
+writes a static `contact-sheet.html` grid.
 
 **Sync.** The header shows how many ratings haven't gone to Notion yet. Click sync and
 they push up. This is one-way: local is the source of truth, Notion is the shared view.
@@ -167,6 +194,9 @@ docs/
 └── research/                Knowledge base: 8 source docs + analyses + synthesis
 
 scripts/init-db.js           Builds src/db/ratings.db
+scripts/ingest-assets.js     Imports Midjourney 4-up sets from to-ingest/ (+ manifest)
+scripts/ingest-dir.js        Imports any folder of images under a concept/batch
+scripts/contact-sheet.js     Writes a static contact-sheet.html for a zero-server scan
 ```
 
 ## API routes
