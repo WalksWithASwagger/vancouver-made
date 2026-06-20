@@ -239,3 +239,13 @@ make sure a single API server is running, restart it.
 
 **API not answering.** Confirm `npm run server` is up on 3001. Check nothing else
 grabbed the port: `lsof -i :3001`.
+
+## Deployment
+
+The pitch site (`/`) is a static Vite build: run `npm run build` and push `dist/` to
+Vercel or any static host. No server required.
+
+The Asset Tracker (`/tracker`) is local-only. It depends on the Express API
+(`src/server/api.js`), the SQLite database (`src/db/ratings.db`), and the image files on
+your local machine. None of those travel with a static deploy, so the tracker is not
+intended to be hosted remotely.
