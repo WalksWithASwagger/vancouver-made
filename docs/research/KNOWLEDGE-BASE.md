@@ -13,6 +13,7 @@ build.
 | 01 | **Perplexity** — "Master Concept & Precedent" | `sources/01-master-concept-precedent.md` | ✅ Imported | `analysis/01-master-doc-analysis.md` |
 | 02 | **ChatGPT / OpenAI** — "ALLEY LEAGUE" | `sources/02-chatgpt-alley-league.md` | ✅ Imported | `analysis/02-chatgpt-alley-league-analysis.md` |
 | 03 | **Claude** — "Subversive Soccer Kits (Visual Reference Library)" | `sources/03-claude-visual-reference-library.md` | ✅ Imported | `analysis/03-claude-visual-reference-library-analysis.md` |
+| 04 | **Perplexity (2nd)** — three-concept build-out (No.5 · Nardwuar · Pump & Dump) | `sources/04-perplexity-three-concepts-buildout.md` | ✅ Imported | folded into `src/data/clubs.js` + `docs/design/clubs/` |
 
 > **All three research docs are in.** Origins: 01 = Perplexity (concept + precedent
 > survey), 02 = ChatGPT (the league system + pipeline), 03 = Claude (24 cited

@@ -1,3 +1,8 @@
+> ⚠️ SUPERSEDED for the active build. The three flagship clubs now live in
+> `docs/design/clubs/` (Number Five Orange, Nardwuar FC, Pump & Dump FC), driven by
+> `src/data/clubs.js` and shown on the site. This file is kept for the early
+> concept history + production notes only.
+
 # Kit & Paraphernalia — VANCOUVER MADE FC
 
 The kits are the centerpiece deliverable. Each is a wearable protest poster that

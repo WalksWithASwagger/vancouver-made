@@ -1,4 +1,5 @@
 import Stage from './scene/Stage.jsx'
+import Clubs from './components/Clubs.jsx'
 import { slogans, club } from './brand/tokens.js'
 
 function Marquee() {
@@ -80,35 +81,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* THE KIT */}
-      <section className="border-t border-bone/10 bg-rain/30">
-        <div className="mx-auto grid max-w-5xl gap-8 px-6 py-20 md:grid-cols-3 md:py-28">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-cyan">01 — Home Kit</p>
-            <h3 className="headline mt-2 text-2xl">THE DISPLACED XI</h3>
-            <p className="mt-3 text-sm text-bone/70">
-              Hi-vis hazard orange on rain-grey. Sponsor slot reads
-              "PUBLIC MONEY." Numbers are eviction notices.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-cyan">02 — Away Kit</p>
-            <h3 className="headline mt-2 text-2xl">THE SWEEP</h3>
-            <p className="mt-3 text-sm text-bone/70">
-              Newsprint bone with counterfeit-gold trim. A tarp-blue accent.
-              Back of shirt: a redacted address.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-cyan">03 — Paraphernalia</p>
-            <h3 className="headline mt-2 text-2xl">FAN ZONE / NO ZONE</h3>
-            <p className="mt-3 text-sm text-bone/70">
-              Scarves, stickers, riso posters, a counterfeit trophy. Every item
-              is a flyer. See <span className="text-gold">/docs/design</span>.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* THE KIT DROP — the three flagship clubs */}
+      <Clubs />
 
       <footer className="border-t border-bone/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-bone/40">
         {club.name} · {club.founded} · Made in Vancouver, not Vancouver Sold
