@@ -161,8 +161,11 @@ image.
 
 ```
 src/
-├── App.jsx                  Router: / (pitch site) and /tracker
+├── App.jsx                  Router: / · /engine · /process · /hall-of-fame · /tracker · 404
 ├── components/
+│   ├── Nav.jsx              Shared sticky nav across the pitch surfaces
+│   ├── TheMove.jsx / WhyItWins.jsx / ShareQR.jsx / PresenterControls.jsx   Pitch sections + closer
+│   ├── ReceiptsEngine.jsx / HallOfFame.jsx / Process.jsx   The /engine, /hall-of-fame, /process pages
 │   ├── AssetTracker.jsx     Tracker shell: sidebar + gallery
 │   ├── ImageGallery.jsx     Thumbnail grid
 │   ├── LightboxViewer.jsx   Image detail + rating + prompt

@@ -18,8 +18,9 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 > Not a protest about AI. AI is just the brush. The subject is greed, displacement,
 > and who pays the public bill.
 
+**Live:** https://vancouver-made.vercel.app (auto-deploys from `main`; see `docs/DEPLOY.md`).
 **Canonical deliverables:** `docs/deliverables/` (board, pitch deck, tech pack).
-**Design from:** `docs/research/analysis/SYNTHESIS.md` + `analysis/04-made-on-consolidation.md`.
+**Design from:** `docs/research/analysis/SYNTHESIS.md` + `docs/research/analysis/04-made-on-consolidation.md`.
 
 ---
 
@@ -32,13 +33,13 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 | `src/data/collection.js` | The MADE ON brand + the 9-kit / two-rack lineup |
 | `src/data/receipts.js` | The public-record receipts (the spine), `[confirm]`-tagged |
 | `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump) |
-| `src/data/clubs.js` | Deep-dive method cards (No.5 · Nardwuar · Pump & Dump) |
+| `src/data/clubs.js` | Deep-dive method cards: ALLEY LEAGUE (No.5 · Nardwuar · Pump & Dump + China Creek expansion) |
 | `src/components/` | `Collection`, `HeroKits`, `KitFlat` (code-drawn jersey flats), `Clubs`, `Crest` |
 | `src/scene/` | The R3F "World Portal" hero scene |
 | `src/brand/tokens.js` | Shared site tokens (colors, type, the MADE ON slogan/marquee bank) |
 | `docs/research/` | Knowledge base: all source docs + analyses + the synthesis |
 | `docs/design/kits/` | Filled tech-pack briefs (MO-01, MO-03, MO-09) |
-| `docs/design/clubs/` | The three deep-dive concept briefs |
+| `docs/design/clubs/` | The four deep-dive concept briefs (3 flagship + China Creek expansion) |
 | `docs/design/prompts/` | Per-kit Midjourney prompt library (mood board / graphic elements / jersey flats) + the house-style recipe |
 | `DEVELOPMENT.md` | How to run it, the asset tracker, the API, the file map |
 
@@ -87,7 +88,9 @@ Building on it, or running the Midjourney asset tracker at `/tracker`? See
       receipts wall → hero kits (code-drawn flats) → deep-dive method
 - [x] Three hero kits spec'd; tech-pack briefs filled (MO-01 / 03 / 09)
 - [x] Builds clean (`npm run build`)
-- [x] Raster kit mockups generated (Canva), now in `docs/deliverables/mockups/` (pull
-      the stray Nike swoosh before publishing; see the mockups README)
-- [ ] Verify the `[confirm]` receipts against primary sources
-- [ ] Deploy to a live URL (Vercel) for a demo QR
+- [x] **Live** at https://vancouver-made.vercel.app — auto-deploys from `main`, PRs get previews
+- [x] Receipts verified against primary sources (`docs/research/analysis/05-receipts-verification.md`; `[confirm]` flags cleared)
+- [x] Raster kit mockups generated (Canva), in `docs/deliverables/mockups/`
+- [ ] Pull the stray Nike swoosh from the Canva mockups before publishing (see the mockups README)
+
+See `docs/SUBMISSION.md` for the per-track (design + dev) submission status and punch list.

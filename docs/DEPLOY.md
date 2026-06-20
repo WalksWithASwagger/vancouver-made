@@ -12,24 +12,22 @@ deploy-safe `/tracker`) is a static Vite build. It deploys to **Vercel**.
 > The Asset Tracker's Express + SQLite backend is **local-only** and does not deploy.
 > On the hosted site `/tracker` detects no API and shows a "run it locally" notice — by design.
 
-## Connect GitHub auto-deploy (one-time, ~2 min)
+## GitHub auto-deploy (connected — live)
 
-The project currently has only manual CLI deploys, so `main` is **not** auto-shipping.
-Link it to GitHub once and every merge to `main` deploys automatically.
+The project is connected to GitHub, so shipping is automatic:
 
-1. Vercel → **vancouver-made** → **Settings → Git**.
-2. **Connect Git Repository** → `WalksWithASwagger/vancouver-made`.
-3. Set **Production Branch** = `main`.
-4. Confirm **Build & Output Settings** (should auto-detect):
-   - Framework Preset: **Vite**
-   - Build Command: `vite build`
-   - Output Directory: `dist`
-   - Install Command: `npm install`
-5. **Save**, then trigger one deploy (Deployments → **Redeploy**, or push any commit to
-   `main`) to ship the current build. After this, merges to `main` ship on their own.
+- **Every merge to `main` → production** at https://vancouver-made.vercel.app.
+- **Every PR → a preview deploy** (the `vercel[bot]` posts the preview URL + a status check
+  on the PR).
 
-The "scan to open" QR is generated at runtime from the page's own origin, so once live it
-encodes `vancouver-made.vercel.app` automatically — nothing to update.
+No manual step is needed to release; just merge to `main`. The build settings (auto-detected
+from the Vite project) are Framework **Vite**, Build `vite build`, Output `dist`, Install
+`npm install`. SPA deep links resolve via `vercel.json`.
+
+The "scan to open" QR is generated at runtime from the page's own origin, so it encodes
+`vancouver-made.vercel.app` automatically — nothing to update.
+
+> Git settings live at Vercel → **vancouver-made → Settings → Git** (production branch `main`).
 
 ## Verify a deploy
 - Open the production URL; click through `/`, `/engine`, `/process`, `/hall-of-fame`.
