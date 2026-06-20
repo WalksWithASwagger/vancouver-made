@@ -1,0 +1,89 @@
+.image-gallery {
+  padding: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gallery-thumbnail {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  background: #f0f0f0;
+  border: 2px solid #eee;
+  transition: all 0.2s;
+}
+
+.gallery-thumbnail:hover {
+  border-color: #C0392B;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s;
+}
+
+.gallery-thumbnail:hover img {
+  opacity: 0.9;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 2rem;
+}
+
+.gallery-thumbnail:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gallery-filename {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.gallery-rating {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.gallery-rating .heart {
+  color: #C0392B;
+}
+
+.gallery-rating .score {
+  color: #666;
+}

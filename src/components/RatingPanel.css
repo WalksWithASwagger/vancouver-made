@@ -1,0 +1,93 @@
+.rating-panel {
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.rating-panel h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.rating-section {
+  margin-bottom: 1.5rem;
+}
+
+.rating-section:last-child {
+  margin-bottom: 0;
+}
+
+.rating-section label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.star.filled {
+  opacity: 1;
+  color: #FDB813;
+}
+
+.star.hover {
+  opacity: 0.6;
+}
+
+.score-text {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.like-button.liked {
+  animation: heartbeat 0.3s ease-in-out;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.notes-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.notes-input:focus {
+  outline: none;
+  border-color: #C0392B;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.1);
+}

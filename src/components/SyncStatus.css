@@ -1,0 +1,65 @@
+.sync-status {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sync-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.sync-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.sync-indicator.synced {
+  background: #4caf50;
+  animation: none;
+}
+
+.sync-indicator.pending {
+  background: #ff9800;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.sync-text {
+  color: white;
+  font-weight: 500;
+}
+
+.sync-button {
+  padding: 0.5rem 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.sync-button:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.sync-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.last-sync {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}

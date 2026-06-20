@@ -11,10 +11,16 @@
     "preview": "vite preview --host"
   },
   "dependencies": {
+    "@notionhq/client": "^5.22.0",
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.10",
+    "better-sqlite3": "^12.11.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sqlite3": "^6.0.1",
     "three": "^0.169.0"
   },
   "devDependencies": {
