@@ -10,7 +10,8 @@
     "preview": "vite preview --host",
     "db:init": "node scripts/init-db.js",
     "server": "node src/server/api.js",
-    "ingest": "node scripts/ingest-assets.js --db"
+    "ingest": "node scripts/ingest-assets.js --db",
+    "stage:reel": "node scripts/stage-reel-assets.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^5.22.0",

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PUMP &amp; DUMP FC · Vancouver Made</title>
+<!--
+  Self-contained submission deck. Open in a browser.
+  Present: arrow keys / space to advance. Press F for fullscreen.
+  Export PDF: Cmd/Ctrl+P -> Save as PDF, Landscape, margins None, "Background graphics" ON.
+  Hero images: replace the .slot blocks with <img src="..."> when the picks land.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a; --bone:#f4f1ea; --rain:#1c2b33; --cedar:#3a5a40;
+    --hazard:#ff3b00; --gold:#d9a521; --cyan:#21d9c9;
+    --display:"Archivo Black",Impact,system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000;color:var(--bone);font-family:var(--mono);-webkit-font-smoothing:antialiased}
+  .deck{}
+  .slide{
+    position:relative;width:100vw;height:100vh;display:none;
+    flex-direction:column;justify-content:space-between;
+    padding:6vh 7vw;background:var(--ink);overflow:hidden;
+  }
+  .slide.active{display:flex}
+  .disp{font-family:var(--display);line-height:.95;letter-spacing:-.01em}
+  .kick{font-size:.8rem;text-transform:uppercase;letter-spacing:.3em;color:var(--cyan)}
+  .foot{font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,.5)}
+  .hz{color:var(--hazard)} .gd{color:var(--gold)} .cy{color:var(--cyan)}
+  h1{font-family:var(--display);font-size:clamp(2.4rem,7vw,6.5rem);line-height:.92}
+  h2{font-family:var(--display);font-size:clamp(1.8rem,4.5vw,4rem);line-height:.95}
+  .lead{font-size:clamp(1rem,1.7vw,1.5rem);line-height:1.5;max-width:46ch}
+  .small{font-size:.85rem;line-height:1.6;color:rgba(244,241,234,.8)}
+  ul{list-style:none} li{margin:.5rem 0}
+  .tag{display:inline-block;border:1px solid rgba(244,241,234,.3);padding:.25rem .6rem;
+       font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;margin:.2rem .3rem .2rem 0}
+  .row{display:flex;gap:3vw;align-items:center;flex-wrap:wrap}
+  .col{flex:1 1 320px}
+  .slot{border:2px dashed rgba(244,241,234,.35);border-radius:8px;display:flex;
+        align-items:center;justify-content:center;text-align:center;
+        color:rgba(244,241,234,.45);font-size:.78rem;text-transform:uppercase;
+        letter-spacing:.15em;padding:1rem;min-height:34vh}
+  .slot.sq{min-height:24vh}
+  .num{position:absolute;top:5vh;right:7vw;font-size:.75rem;letter-spacing:.2em;color:rgba(244,241,234,.4)}
+  .qa{font-size:.7rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase}
+  /* slide-specific */
+  .s-jersey{background:#070707}
+  .s-method{background:#0b1437}
+  .s-editorial{background:var(--bone);color:var(--ink)}
+  .s-editorial .kick{color:var(--rain)} .s-editorial .foot{color:rgba(10,10,10,.5)}
+  .receipts li{border-left:3px solid var(--hazard);padding-left:1rem;margin:.9rem 0}
+  .src{font-size:.72rem;color:rgba(244,241,234,.45)}
+  .nav{position:fixed;bottom:2.5vh;left:0;right:0;text-align:center;z-index:50;
+       font-size:.7rem;letter-spacing:.2em;color:rgba(244,241,234,.35)}
+  .progress{position:fixed;top:0;left:0;height:3px;background:var(--hazard);z-index:60;transition:width .2s}
+  @media print{
+    @page{size:1280px 720px;margin:0}
+    html,body{background:#fff}
+    .slide{display:flex!important;page-break-after:always;width:1280px;height:720px}
+    .nav,.progress{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 HOOK -->
+  <section class="slide active" style="background:linear-gradient(rgba(7,7,7,.84),rgba(7,7,7,.84)), url(assets/mood-neon.png) center/cover">
+    <div class="kick">Vancouver Made · FIFA World Cup 2026 · not a sponsor</div>
+    <div>
+      <h1>They asked for the<br>Vancouver story.<br><span class="hz">We finished the sentence.</span></h1>
+      <p class="lead" style="margin-top:1.4rem">PUMP &amp; DUMP FC. A Vancouver protest kit. Everyone else made a souvenir. We made the receipt.</p>
+    </div>
+    <div class="foot">Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, səlilwətaɬ territory</div>
+  </section>
+
+  <!-- 2 THE JERSEY -->
+  <section class="slide s-jersey">
+    <div class="kick">The kit</div>
+    <div class="row">
+      <div class="col">
+        <h2>Looks like a 2026 city-pride drop.<br><span class="hz">Reads like a prospectus.</span></h2>
+        <p class="small" style="margin-top:1rem">A blackout "limited edition" kit. The longer you look, the more it resolves into the fine print: a soaring-then-cliff-diving chart, condo towers, the roles instead of names.</p>
+      </div>
+      <div class="col" style="display:flex;gap:0.6rem">
+        <img src="assets/hero-front.png" alt="Pump & Dump FC jersey, front" style="width:50%;border-radius:8px;border:1px solid rgba(244,241,234,.15);background:#000;object-fit:contain" />
+        <img src="assets/hero-back.png" alt="Pump & Dump FC jersey, back" style="width:50%;border-radius:8px;border:1px solid rgba(244,241,234,.15);background:#000;object-fit:contain" />
+      </div>
+    </div>
+    <div class="foot">Q2 · what it says with no caption</div>
+  </section>
+
+  <!-- 3 WHAT PART OF VANCOUVER -->
+  <section class="slide" style="background:linear-gradient(rgba(7,7,7,.86),rgba(7,7,7,.86)), url(assets/mood-banknote.png) center/cover">
+    <span class="num">01 / Vancouver</span>
+    <div class="qa">Q1 · what part of Vancouver</div>
+    <div>
+      <h2>The spectacle itself.</h2>
+      <p class="lead" style="margin-top:1rem">The gap between the broadcast version and the bill. The World Cup as a pump and dump: hype the city, bill the public, take the exit, leave the residents holding the bag.</p>
+    </div>
+    <div>
+      <span class="tag">VSE "Scam Capital of the World" · Forbes 1989</span>
+      <span class="tag">Howe Street</span>
+      <span class="tag">price-to-income 20–30×</span>
+    </div>
+  </section>
+
+  <!-- 4 COULD ONLY COME FROM HERE -->
+  <section class="slide">
+    <span class="num">02 / only here</span>
+    <div class="qa">Q3 · could only come from Vancouver</div>
+    <h2>Could this jersey only come<br>from Vancouver?</h2>
+    <ul class="small" style="max-width:60ch">
+      <li>→ The VSE history is real. The stock exchange was actually branded the scam capital.</li>
+      <li>→ The housing numbers are Vancouver's: thousands of empty condos, income decoupled from price.</li>
+      <li>→ Culture jamming was born here. Adbusters, Vancouver, 1989.</li>
+      <li>→ The tournament is live in 2026. The hype is moving the market right now.</li>
+    </ul>
+    <h2 class="gd">Yes. Only here.</h2>
+  </section>
+
+  <!-- 5 THE METHOD -->
+  <section class="slide s-method">
+    <div class="qa" style="color:var(--cyan)">Process · the system behind it</div>
+    <div class="row">
+      <div class="col">
+        <h2>Mimic the polish.<br>Invert the payload.<br><span class="hz">Bake the receipt on the hem.</span></h2>
+        <ul class="small" style="margin-top:1rem">
+          <li>Crest: half ball, half candlestick / condo stack</li>
+          <li>Sponsor bar: <b>PUMP &amp; DUMP CAPITAL</b> · "WE WIN IF YOU LIVE HERE OR NOT"</li>
+          <li>Roles, not names: DEVELOPER · FLIPPER · LANDLORD · RENOVICTOR</li>
+          <li>Hem: the public-record citation, in kit-maker spec type</li>
+        </ul>
+        <p class="small gd" style="margin-top:1rem">One of nine kits. Same move every time: we didn't make a souvenir, we made the receipt.</p>
+      </div>
+      <div class="col">
+        <img src="assets/crest.png" alt="Pump & Dump FC crest" style="width:100%;max-height:30vh;border-radius:8px;background:#000;object-fit:contain;margin-bottom:0.75rem" />
+        <div style="display:flex;gap:0.5rem">
+          <img src="assets/hero-complete.png" alt="Pump & Dump kit" style="width:33.33%;border-radius:6px;background:#000;object-fit:cover;aspect-ratio:3/4" />
+          <img src="assets/club-nardwuar.png" alt="Nardwuar FC" style="width:33.33%;border-radius:6px;background:#000;object-fit:cover;aspect-ratio:3/4" />
+          <img src="assets/club-n5.png" alt="Number Five Orange" style="width:33.33%;border-radius:6px;background:#000;object-fit:cover;aspect-ratio:3/4" />
+        </div>
+        <p style="margin-top:.5rem;font-size:.7rem;letter-spacing:.15em;color:rgba(244,241,234,.5);text-transform:uppercase">three clubs · one method</p>
+      </div>
+    </div>
+    <div class="foot">No real FIFA / club / brand marks. Original interpretation only.</div>
+  </section>
+
+  <!-- 6 WHY PROUD -->
+  <section class="slide">
+    <span class="num">03 / pride</span>
+    <div class="qa">Q4 · why you'd be proud to wear it</div>
+    <h1 style="font-size:clamp(2rem,5.5vw,5rem)">You're not in the stands.<br><span class="hz">You're the bag.</span></h1>
+    <p class="lead">Pride here means naming the mechanism, refusing the celebration jersey, and standing with the people getting priced out instead of the spectacle pricing them out.</p>
+  </section>
+
+  <!-- 7 LINEAGE -->
+  <section class="slide">
+    <span class="num">04 / lineage</span>
+    <h2>We didn't invent this.<br>We joined a line.</h2>
+    <ul class="small" style="max-width:64ch">
+      <li><b>1968</b> ·Smith &amp; Carlos. The podium as protest surface.</li>
+      <li><b>1989</b> ·Adbusters, Vancouver. Culture jamming, born here.</li>
+      <li><b>2012</b> ·Brandalism. Perfect-mimicry fake ads over sponsors.</li>
+      <li><b>2010</b> ·The Cowichan sweater. Whose culture gets sold.</li>
+    </ul>
+    <p class="foot">We borrow no sacred imagery. We use the coloniser's own paperwork: the receipt, the redaction, the banknote.</p>
+  </section>
+
+  <!-- 8 RECEIPTS + CLOSE -->
+  <section class="slide">
+    <span class="num">05 / receipts</span>
+    <div class="qa">The receipts · all public record</div>
+    <ul class="receipts small" style="max-width:70ch">
+      <li>$685M–$729M gross BC cost for seven games. $242M security. Up to $114M net to BC taxpayers. <span class="src">Gov of BC · CBC · Globe and Mail, May 2026</span></li>
+      <li>California host cities funded most of their hosting privately. BC went nearly 100% public. <span class="src">Globe and Mail, June 2026</span></li>
+      <li>The Oppal inquiry: the women were "forsaken twice." The VPD "utterly failed" to warn them. <span class="src">Forsaken · Missing Women Commission of Inquiry, 2012</span></li>
+      <li>Before the 2010 Olympics, homelessness more than doubled; 1,400+ DTES units lost after a "no displacement" pledge. <span class="src">UBC Olympic Games Impact · Pivot Legal</span></li>
+    </ul>
+    <h2 class="gd">The part that doesn't fit<br>on a souvenir.</h2>
+  </section>
+
+</div>
+
+<div class="nav" id="navhint">← → to move · F fullscreen · <span id="counter">1 / 8</span></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const counter=document.getElementById('counter');
+  const prog=document.getElementById('prog');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    counter.textContent=(i+1)+' / '+slides.length;
+    prog.style.width=((i+1)/slides.length*100)+'%';
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){show(i+1);e.preventDefault();}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){show(i-1);e.preventDefault();}
+    else if(e.key==='Home'){show(0);}
+    else if(e.key==='End'){show(slides.length-1);}
+    else if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}
+  });
+  document.addEventListener('click',e=>{ if(!e.target.closest('a')) show(i+1); });
+  show(0);
+</script>
+</body>
+</html>

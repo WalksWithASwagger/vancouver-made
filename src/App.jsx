@@ -7,6 +7,7 @@ import AssetTracker from './components/AssetTracker.jsx'
 import HallOfFame from './components/HallOfFame.jsx'
 import ReceiptsEngine from './components/ReceiptsEngine.jsx'
 import Process from './components/Process.jsx'
+import HighlightReel from './components/HighlightReel.jsx'
 import Store from './components/Store.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
@@ -105,6 +106,8 @@ function MadeOnSite() {
           <span className="text-bone/20">·</span>
           <Link to="/hall-of-fame" className="text-bone/60 hover:text-bone transition">Hall of Fame</Link>
           <span className="text-bone/20">·</span>
+          <Link to="/highlight-reel" className="text-bone/60 hover:text-bone transition">Highlight Reel</Link>
+          <span className="text-bone/20">·</span>
           <Link to="/process" className="text-bone/60 hover:text-bone transition">Process</Link>
           <span className="text-bone/20">·</span>
           <Link to="/store" className="text-bone/60 hover:text-bone transition">Store</Link>
@@ -127,6 +130,7 @@ export default function App() {
         <Route path="/" element={<MadeOnSite />} />
         <Route path="/hall-of-fame" element={<HallOfFame />} />
         <Route path="/process" element={<Process />} />
+        <Route path="/highlight-reel" element={<HighlightReel />} />
         <Route path="/store" element={<Store />} />
         <Route path="/tracker" element={<AssetTracker />} />
         <Route path="/engine" element={<ReceiptsEngine />} />

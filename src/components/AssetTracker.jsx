@@ -11,7 +11,7 @@ export default function AssetTracker() {
   const [selectedBatch, setSelectedBatch] = useState(null)
   const [assets, setAssets] = useState([])
   const [loading, setLoading] = useState(false)
-  const [scanPath, setScanPath] = useState(process.env.VITE_IMAGE_SCAN_DIR || '~/Downloads/midjourney')
+  const [scanPath, setScanPath] = useState(import.meta.env.VITE_IMAGE_SCAN_DIR || '~/Downloads/midjourney')
 
   // Load concepts on mount
   useEffect(() => {
