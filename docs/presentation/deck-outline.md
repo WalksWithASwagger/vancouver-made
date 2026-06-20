@@ -1,4 +1,10 @@
-# Pitch Deck Outline — VANCOUVER MADE
+# Pitch Deck Outline — VANCOUVER MADE (early draft, SUPERSEDED)
+
+> ⚠️ The **actual deck now exists**: `docs/deliverables/MADEON_pitchdeck.pptx`
+> (transcribed at `docs/research/sources/06-made-on-pitchdeck.md`). The 9-slide
+> MADE ON deck is canonical — use it. This early outline is kept for history only.
+> Live deck flow: Title → Territorial Statement → The Move → The Collection →
+> Hero Kit → Our Process → The Lineage → The Rubric → The Receipts.
 
 Target: ~8–10 slides, ~5 min. Story first, artifacts second. The live 3D portal
 is the closer. Build in Canva (MCP available) or Google Slides.

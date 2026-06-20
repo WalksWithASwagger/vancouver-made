@@ -1,5 +1,7 @@
-// VANCOUVER MADE — single source of truth for brand tokens.
-// Mirrors tailwind.config.js. Import into 3D scene + design exports.
+// VANCOUVER MADE / MADE ON — base brand tokens.
+// Mirrors tailwind.config.js. The canonical MADE ON palette + collection data live
+// in src/data/collection.js; the per-kit colorways live in src/data/heroKits.js
+// and src/data/clubs.js. These are the shared site tokens (3D scene + marquee).
 
 export const colors = {
   ink: '#0a0a0a', // the void / the establishment
@@ -7,8 +9,8 @@ export const colors = {
   rain: '#1c2b33', // Vancouver wet asphalt
   cedar: '#3a5a40', // PNW forest
   hazard: '#ff3b00', // protest red-orange, spray paint
-  gold: '#d9a521', // counterfeit trophy gold
-  cyan: '#21d9c9', // future-forward signal
+  gold: '#d9a521', // banknote / counterfeit gold
+  cyan: '#21d9c9', // signal
 }
 
 export const type = {
@@ -16,22 +18,14 @@ export const type = {
   mono: '"Space Mono", ui-monospace, monospace',
 }
 
-// The brand voice — protest copy bank. Pull from here for kits, posters, deck.
+// Brand voice — the MADE ON copy bank. Drives the marquee; pull for deck/posters.
 export const slogans = [
-  'WHOSE CUP IS IT ANYWAY?',
-  'NO CUP WITHOUT CARE',
-  'OFFSIDE: THE WORLD IS NOT FOR SALE',
-  'VANCOUVER MADE — NOT VANCOUVER SOLD',
-  'TRUTH TO POWER · POWER TO THE PITCH',
-  'THE ONLY DISPLACEMENT WE WANT IS A STRIKER',
-  'PUBLIC MONEY · PRIVATE PROFIT · SAME OLD GAME',
-  'HOME GROUND, NO HOME LEFT',
+  'MADE ON STOLEN GROUND',
+  "MADE ON HOGAN'S ALLEY",
+  'MADE ON $729 MILLION OF PUBLIC MONEY',
+  'EVERYONE ELSE MADE A SOUVENIR · WE MADE THE RECEIPT',
+  'NOT ANTI-FOOTBALL · ANTI-AMNESIA',
+  'MIMIC THE POLISH · INVERT THE PAYLOAD · BAKE IN THE RECEIPT',
+  "THE PART THAT DOESN'T FIT ON A SOUVENIR",
+  'NO GAME WITHOUT THE GROUND',
 ]
-
-// Counter-FIFA fixture: the team we play FOR.
-export const club = {
-  name: 'VANCOUVER MADE FC',
-  crest: 'The Displaced XI',
-  founded: 'EST. WHENEVER THEY SWEEP THE STREETS',
-  motto: 'CIVITAS PRO POPULO', // the city, for the people
-}

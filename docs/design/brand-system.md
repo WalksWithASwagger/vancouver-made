@@ -1,8 +1,14 @@
-# Brand System — VANCOUVER MADE
+# Brand System — VANCOUVER MADE / MADE ON
+
+> Current collection name = **MADE ON** (umbrella: VANCOUVER MADE). Canonical
+> palette/voice now live in `src/data/collection.js` (official tech-pack palette:
+> Ink `0E0E0E` · Bone `EDE6D8` · Stamp red `C0392B` · Gold `B8924A` · Note green
+> `1B4D3E`) and the MADE ON deliverables in `docs/deliverables/`. The system below
+> is the foundational counter-brand thinking — still valid, naming updated.
 
 A counter-brand. It looks tournament-official from a distance and turns into a
-protest poster up close. Source of truth for color/type lives in code:
-`src/brand/tokens.js` + `tailwind.config.js` — keep design + code in sync.
+protest poster / receipt up close. Shared site tokens: `src/brand/tokens.js` +
+`tailwind.config.js` — keep design + code in sync.
 
 ## Name & meaning
 **VANCOUVER MADE.** Triple read:

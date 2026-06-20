@@ -1,8 +1,23 @@
-# Research Brief — VANCOUVER MADE
+# Research Brief — VANCOUVER MADE / MADE ON
 
-> Working research for the protest-brand concept. Verify every number before it
-> goes on a slide or a shirt — this file is a starting map, not a fact-check.
-> Cite sources as you confirm them (link + date accessed).
+> Working research + the **fact-check checklist**. Verify every number before it
+> goes on a slide, a shirt, or the site. Cite sources as you confirm them.
+> Current direction = **MADE ON** (see `analysis/04-made-on-consolidation.md` +
+> `analysis/SYNTHESIS.md`). This file remains the live "facts to confirm" hub.
+
+## ⚠️ Receipts to verify (these appear on the site / kits — confirm before final publish)
+
+Mirror of `src/data/receipts.js` + the hero-kit hem citations:
+- [ ] **$685M–$729M** gross BC cost, 7 games · **$242M** security · up to **$114M**
+      net to BC taxpayers. (CBC · Globe and Mail, 2026)
+- [ ] **California cities** ran the same tournament mostly on **private money**.
+- [ ] **Oppal inquiry** — women "forsaken twice"; VPD "utterly failed" to warn them. (Forsaken, 2012)
+- [ ] **2010 Olympics** — homelessness up **~373%**; **1,400+** DTES units lost after
+      a "no displacement" pledge.
+- [ ] **Hogan's Alley** — Black neighbourhood displaced for the viaducts (City redress record).
+- [ ] **VSE "Scam Capital of the World"** (Forbes, 1989); **BCSC 2026** pump-and-dump finding.
+- [ ] **~2,500** unsold Metro Van condos (CBC 2025); price-to-income 20–30×.
+- [ ] FOI/FIPPA: security line-item detail withheld (for Kit 01 hem). *Confirm wording.*
 
 ## The thesis (one sentence)
 
