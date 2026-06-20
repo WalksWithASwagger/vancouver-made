@@ -194,7 +194,7 @@ export default function Process() {
           <span className="text-bone/20">·</span>
           <Link to="/tracker" className="text-bone/60 transition hover:text-bone">Asset Tracker</Link>
           <span className="text-bone/20">·</span>
-          <Link to="/engine" className="text-bone/60 transition hover:text-bone">Receipts Engine</Link>
+          <Link to="/engine" className="text-bone/60 transition hover:text-bone">The Receipts</Link>
           <span className="text-bone/20">·</span>
           <span className="text-bone">Process</span>
         </div>

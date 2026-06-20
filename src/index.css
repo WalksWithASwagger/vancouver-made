@@ -91,8 +91,21 @@ body,
   .reel-img.kb-pan { animation: none !important; transform: none !important; }
   .reel-rise,
   .reel-punch { animation: reel-fade 400ms ease both !important; transform: none !important; }
+  .marquee {
+    animation: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
 }
 
 a {
   color: inherit;
+}
+
+/* Keyboard focus: a hazard ring that reads on both ink and bone surfaces */
+:focus-visible {
+  outline: 2px solid #ff3b00;
+  outline-offset: 2px;
+  border-radius: 2px;
 }

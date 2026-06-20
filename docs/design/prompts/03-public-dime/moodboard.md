@@ -1,6 +1,6 @@
-# Mood Board Prompts — 03 MADE ON THE PUBLIC DIME ★
+# Mood Board Prompts: 03 MADE ON THE PUBLIC DIME ★
 
-**The argument:** The World Cup as a public-money transfer with grass on top — worn as legal tender. *$729M as couture.*
+**The argument:** The World Cup as a public-money transfer with grass on top. Worn as legal tender. *$729M as couture.*
 
 **Look:** counterfeit currency. Guilloché banknote engraving, matte note-green jersey, metallic-gold engraving. It should feel almost legal tender, then read as the receipt.
 

@@ -27,7 +27,7 @@ the public, take the exit; you're the bagholder. **The line:** *Worn as the pros
 | 5 | Nameplate | **BAGHOLDER** (roles alt: DEVELOPER / FLIPPER / LANDLORD / RENOVICTOR) | - |
 | 6 | Number | `▲▼` (alt: floor-plan / MLS code); socks: 22× / 33× price-to-income | - |
 | 7 | Back line | BUY THE RUMOUR. SELL THE CITY. | - |
-| 8 | Hem citation | `~2,500 UNSOLD METRO VAN CONDOS · PRICE-TO-INCOME 20–30× · VSE "SCAM CAPITAL" (FORBES 1989)` | **CBC 2025 · Forbes 1989 · BCSC 2026** [confirm] |
+| 8 | Hem citation | `UNSOLD CONDOS AT A RECORD ~4,400 (CMHC 2026) · PRICE-TO-INCOME ~12× · VSE "SCAM CAPITAL" (FORBES 1989)` | **CMHC 2026 · Demographia 2025 · Forbes 1989** ✔ verified (matches `heroKits.js`) |
 | - | Allover | charts soaring then cliff-diving (2021 PEAK / FLIP TAX / FOREIGN BUYER SURCHARGE); condo towers, most dark | - |
 | - | Shorts | `VACANT` stamp pattern where a sponsor ad sits | - |
 | - | Serial | `MLS® VAN-2026-VACANT` | - |

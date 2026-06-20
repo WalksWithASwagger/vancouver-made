@@ -1,4 +1,4 @@
-# Jersey Flats Prompts — PUMP & DUMP FC
+# Jersey Flats Prompts: PUMP & DUMP FC
 
 **Goal:** Generate complete jersey flat mockups (front and back, technical illustration style) ready for presentation or iteration.
 
@@ -20,14 +20,14 @@ Each prompt should generate a complete flat-lay technical illustration showing:
 
 ---
 
-## Batch 1 — Hero Third Kit (THE FLAGSHIP)
+## Batch 1: Hero Third Kit (THE FLAGSHIP)
 
 ### Prompt 1: Full front flat (technical illustration)
 ```
 technical flat-lay fashion illustration of unisex soccer jersey,
 midnight navy body with toxic teal and magenta gradient accents,
-all-over repeating candlestick chart pattern in white,
-soaring then cliff-diving stock market visualization,
+all-over pattern of literal white candlestick chart lines (open/close bars with wicks), soaring then crashing,
+no abstract marble, no texture fills: clean thin stock-chart line art only,
 gold heraldic shield crest on left chest (soccer ball split candlestick chart),
 center chest sponsor bar reads "PUMP & DUMP CAPITAL" in metallic gold,
 professional sports apparel technical drawing,
@@ -62,7 +62,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Colorway Explorations (if needed for iteration)
+## Batch 2: Colorway Explorations (if needed for iteration)
 
 ### Prompt 4: Navy + Teal dominant variant
 ```
@@ -90,7 +90,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — Alternative Pattern Option (if candlestick alone feels thin)
+## Batch 3: Alternative Pattern Option (if candlestick alone feels thin)
 
 ### Prompt 6: Hybrid candlestick + condo towers pattern
 ```
@@ -108,7 +108,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — On-Garment Detail Shots (supporting images)
+## Batch 4: On-Garment Detail Shots (supporting images)
 
 ### Prompt 7: Crest detail close-up
 ```
@@ -146,7 +146,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 5 — Full Kit Composition (Jersey + Shorts + Socks)
+## Batch 5: Full Kit Composition (Jersey + Shorts + Socks)
 
 ### Prompt 10: Complete kit flat-lay
 ```

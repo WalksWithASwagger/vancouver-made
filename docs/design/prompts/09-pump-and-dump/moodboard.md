@@ -1,6 +1,6 @@
-# Mood Board Prompts — PUMP & DUMP FC
+# Mood Board Prompts: PUMP & DUMP FC
 
-**Goal:** Establish the visual language for "subverted corporate" — looks official/FIFA at first glance, reveals the prospectus underneath.
+**Goal:** Establish the visual language for "subverted corporate." Looks official/FIFA at first glance, reveals the prospectus underneath.
 
 **Aesthetic:** Hyped 2026 energy + banknote gravity + branded-luxury toxicity. Official polish + financial documents + neon-on-black danger.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## Batch 1 — Official Texture / Banknote DNA
+## Batch 1: Official Texture / Banknote DNA
 
 ### Prompt 1: Engraved banknote close-up
 ```
@@ -41,7 +41,7 @@ certificate aesthetic, official serif type,
 
 ---
 
-## Batch 2 — Toxic Neon / Hyped Energy
+## Batch 2: Toxic Neon / Hyped Energy
 
 ### Prompt 4: Neon against blackout backdrop
 ```
@@ -75,7 +75,7 @@ financial graph texture, repeating pattern potential,
 
 ---
 
-## Batch 3 — Real Estate / Condo Tower Silhouettes
+## Batch 3: Real Estate / Condo Tower Silhouettes
 
 ### Prompt 7: Skyline of lit and dark condo towers
 ```
@@ -99,7 +99,7 @@ Vancouver waterfront/downtown grid pattern,
 
 ---
 
-## Batch 4 — Stamp/Document/Official Mark Textures
+## Batch 4: Stamp/Document/Official Mark Textures
 
 ### Prompt 9: Red stamp marks on official document
 ```

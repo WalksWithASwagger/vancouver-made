@@ -1,6 +1,6 @@
-# Jersey Flats Prompts — 06 STARTING FROM THE LOW $900s
+# Jersey Flats Prompts: 06 STARTING FROM THE LOW $900s
 
-**Goal:** Complete jersey flat mockups for the pre-sale kit — gentrification sold back as an investment opportunity.
+**Goal:** Complete jersey flat mockups for the pre-sale kit. Gentrification sold back as an investment opportunity.
 
 **Build:** glossy bone/cream body with floor-plan line art and gold marketing accents. Crest = sales-centre flag / developer monogram. Sponsor = STARTING FROM THE LOW $900s / PRESENTATION CENTRE NOW OPEN. Number from unit codes. Nameplate = PRE-SALE.
 
@@ -8,11 +8,11 @@
 
 **MJ settings:** `--ar 3:4 --style raw` (no `--v`).
 
-> ⚠️ **Receipt to source:** see `graphic-elements.md` Prompt 8 — the hem stat is a verified placeholder pending a dedicated cited pre-sale/affordability figure.
+> ⚠️ **Receipt to source:** see `graphic-elements.md` Prompt 8. The hem stat is a verified placeholder pending a dedicated cited pre-sale/affordability figure.
 
 ---
 
-## Batch 1 — Hero street-series kit
+## Batch 1: Hero street-series kit
 
 ### Prompt 1: Full front flat
 ```
@@ -51,7 +51,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Colorway explorations
+## Batch 2: Colorway explorations
 
 ### Prompt 4: Gold-on-cream luxe variant
 ```
@@ -75,7 +75,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — On-garment detail shots
+## Batch 3: On-garment detail shots
 
 ### Prompt 6: Crest close-up
 ```
@@ -106,7 +106,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — Full kit composition
+## Batch 4: Full kit composition
 
 ### Prompt 9: Complete kit flat-lay
 ```
@@ -123,4 +123,4 @@ white background --ar 3:4 --style raw
 
 ## Presentation use
 
-Front (1) + back (2) for the deck. The eviction-notice-under-the-gloss mood (moodboard 6) is the conceptual key — pair it with the front flat to land the inversion. Crest + sponsor close-ups support the design system; full kit (9) closes.
+Front (1) + back (2) for the deck. The eviction-notice-under-the-gloss mood (moodboard 6) is the conceptual key. Pair it with the front flat to land the inversion. Crest + sponsor close-ups support the design system; full kit (9) closes.

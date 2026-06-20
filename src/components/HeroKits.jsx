@@ -62,6 +62,12 @@ function HeroKit({ kit }) {
           <span className="font-bold uppercase tracking-wider" style={{ color: c.primary }}>Why it wins: </span>
           {kit.whyItWins}
         </p>
+
+        {/* manifesto card — the hangtag that ships with the kit */}
+        <div className="mt-4 border-t border-bone/10 pt-3">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-bone/40">Manifesto card (the hangtag)</p>
+          <p className="mt-1 text-xs leading-relaxed text-bone/70">{kit.manifestoCard}</p>
+        </div>
       </div>
     </article>
   )
@@ -78,7 +84,7 @@ function Row({ label, v }) {
 
 export default function HeroKits() {
   return (
-    <section id="hero-kits" className="border-t border-bone/10 bg-rain/20">
+    <section id="hero-kits" className="scroll-mt-20 border-t border-bone/10 bg-rain/20">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="mb-10 text-center">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">Built today · hero kits</p>

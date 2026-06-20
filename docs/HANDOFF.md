@@ -2,8 +2,10 @@
 
 Last updated 2026-06-20. Where the work stands, so it's easy to pick up later.
 
-> Active branch: **`claude/ingest-tracker-assets`** (not `main`). Multiple agents have been
-> building the designathon submission here in parallel.
+> **Trunk is `main`, and it's live.** The submission is consolidated on `main` and auto-deploys
+> to https://vancouver-made.vercel.app on every merge (PRs get preview deploys). Feature branches
+> merge into `main`; there is no separate "active" build branch anymore.
+> For per-track submission status, see [`SUBMISSION.md`](SUBMISSION.md). For deploy, [`DEPLOY.md`](DEPLOY.md).
 
 ## Done (this thread: the tech pack)
 
@@ -40,12 +42,13 @@ Verified: `npm run build` clean; all three hero flats render their assigned silh
   engineered 3D-knit (Macron / Nike Aero-FIT), metallic gold. Revisit if elevating a hero kit.
 - [ ] **Formme `[confirm]` list** — spec §10: strike-off, fibre sourcing, fluorescent-ink channel,
   metallic/gloss feasibility, raglan POMs on their block.
-- [ ] **Branch → main** — decide whether to merge `claude/ingest-tracker-assets` into `main`.
+- [x] **Consolidated on `main`** and shipping via Vercel auto-deploy.
 
-## Broader branch context (other agents)
+## Broader build context
 
-The same branch also holds the wider submission build: the Receipts Engine (`/engine`), ~246
-Midjourney generations ingested + the asset tracker, and the submission deck. See `git log`.
+`main` holds the full submission: the live pitch site, the Receipts Engine (`/engine`), the
+Process page (`/process`), the Hall of Fame (`/hall-of-fame`), the Midjourney generations + asset
+tracker, and the submission deck. See `git log` and [`SUBMISSION.md`](SUBMISSION.md).
 
 ## Run / verify
 

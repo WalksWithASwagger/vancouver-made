@@ -23,7 +23,7 @@ function KitRow({ kit }) {
 
 export default function Collection() {
   return (
-    <section id="collection" className="border-t border-bone/10">
+    <section id="collection" className="scroll-mt-20 border-t border-bone/10">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         {/* the move */}
         <p className="text-xs uppercase tracking-[0.3em] text-cyan">The collection</p>

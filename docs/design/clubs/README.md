@@ -1,6 +1,6 @@
-# ALLEY LEAGUE: the three flagship clubs
+# ALLEY LEAGUE: three flagship clubs + first expansion
 
-Three kits that pass as official FIFA World Cup 2026 host-city gear from a distance
+Kits that pass as official FIFA World Cup 2026 host-city gear from a distance
 and turn the brand back on itself up close, each asking *who benefits, who pays.*
 Canonical data lives in `src/data/clubs.js`; these docs are the editorial / tech-pack
 build-out. Voice and palette: `docs/design/brand-system.md` + `src/brand/tokens.js`.
@@ -10,9 +10,12 @@ build-out. Voice and palette: `docs/design/brand-system.md` + `src/brand/tokens.
 | [Number Five Orange](./number-five-orange.md) | AWAY | 5 | Nightlife capitalism · sex-work stigma | The whole city becomes a VIP room. |
 | [Nardwuar FC](./nardwuar-fc.md) | HOME | 97 | Unaccountable power · the unasked question | Research is the protest; the receipt is the weapon. |
 | [Pump & Dump FC](./pump-and-dump-fc.md) ★ | THIRD | 89 | Speculative finance · housing · the mega-event | Hype the asset. Socialize the cost. Privatize the exit. |
+| [China Creek](./china-creek.md) ＋ | HOME | 79 | Public space · criminalize-then-monetize · skate/DIY | They banned the board, then sold the bowl. |
 
-★ = flagship. Between them the three cover the **away / home / third** slots, so the
-set reads as one host-city kit drop rather than three loose ideas.
+★ = flagship. The three flagship clubs cover the **away / home / third** slots, so
+the set reads as one host-city kit drop rather than three loose ideas. ＋ = expansion:
+**China Creek** opens the expansion bench (Vancouver-icon trio: music / nightlife /
+skate) and runs its own away / home / third off the same shared spoof system.
 
 ## The reveal mechanic
 Every kit is built on the same two-distance trick: the engine of the whole

@@ -248,6 +248,76 @@ export const clubs = [
   },
 
   // ────────────────────────────────────────────────────────────────────────
+  // First expansion club (beyond the flagship trio).
+  {
+    id: 'china-creek',
+    name: 'CHINA CREEK',
+    number: '79', // the China Creek bowls, built 1979
+    heroKit: 'HOME',
+    kitName: 'Public Land Home Kit',
+    tagline: 'They banned the board, then sold the bowl.',
+    target: 'Public space and who it is for · the criminalize-then-monetize playbook · skate and DIY culture',
+    summary:
+      'China Creek, the East Vancouver bowls built in 1979 and defended by skaters ever since, is the city\'s living monument to public space won the hard way. For decades the city treated street skating as a nuisance to ban and police; then it built the parks, branded Vancouver a skate-tourism destination, and cheered skateboarding into the Olympics. The Cup runs the same play on a bigger field: criminalize a subculture, then sell it back as flavour. The home ground was never the gift; it was the fight.',
+    palette: {
+      base: '#9aa0a3', // raw concrete
+      ink: '#0a0a0a', // marker black
+      accent: '#f4c20d', // caution yellow (city signage)
+      signal: '#1f9e8a', // creek teal
+    },
+    type: 'spray-stencil display + skate-zine cut-and-paste',
+    whoBenefits: [
+      'The "skate tourism" city brand',
+      'Developers eyeing public land',
+      'Event & Olympic sponsors',
+      'Parks-as-amenity property uplift',
+    ],
+    whoPays: [
+      'Local skaters & DIY builders',
+      'East Van youth, policed then priced out',
+      'The next generation locked out of the ground',
+      'Anyone whose public space becomes a brochure',
+    ],
+    sponsorBank: [
+      'NO SKATEBOARDING', // the bylaw sign, flipped into the front mark
+      'CRIMINALIZED THEN MONETIZED',
+      'BUILT 1979 / DEFENDED EVER SINCE',
+      'PUBLIC LAND / PRIVATE PROFIT',
+      'DIY OR DIE',
+      'SKATE TOURISM DESTINATION (NOW)',
+    ],
+    crest: 'Host-city shield; inner art = a skatepark bowl cross-section and coping line with a skateboard silhouette.',
+    kits: {
+      home: 'HERO. Raw-concrete grey body, caution-yellow city-signage trim, marker-black detailing, a creek-teal coping line sweeping the torso like a bowl wall. Reads as a clean city-pride home kit on TV; a defended-public-space manifesto up close.',
+      away: 'Marker-black body, griptape texture, a "NO SKATEBOARDING" pictogram repeated and crossed out down the sleeve.',
+      third:
+        '"Skate Tourism" kit, glossy brochure cream and gold, intentionally too-polished: the city selling the thing it policed.',
+    },
+    numberTreatment:
+      'Numbers built from bowl-contour and coping curves over a griptape grid: a transition map where the digits should be.',
+    patchSpoof: 'Where "FIFA Quality Pro" sits: NUISANCE BYLAW APPROVED.',
+    trophyMisuse: 'Trophy silhouette becomes a skateboard deck (or a spray can, or a bowl coping curve).',
+    fifaSubversion:
+      'A host-city "city pride" home kit on the official template, host-city sleeve patch and trophy watermark, but the crest reads VANCOUVER 2026 · UNOFFICIAL and the sponsor block is the bylaw sign NO SKATEBOARDING set like a kit-maker mark.',
+    sourceCards: [
+      {
+        id: 'AL-CC-001',
+        claim:
+          'The China Creek bowls in East Vancouver were built in 1979 and have been defended by the local skate community against neglect and redevelopment ever since, making the site a landmark of public space held by its users.',
+        source: 'Vancouver skate-history record; community accounts',
+        rights: 'Reference only — illustrate, do not reproduce photos. Verify specific redevelopment dates before public.',
+      },
+      {
+        id: 'AL-CC-002',
+        claim:
+          'Vancouver historically policed street skateboarding as a nuisance before shifting toward acceptance, building skateparks and promoting the city as a skate destination; skateboarding was later added to the Olympic program at Tokyo 2020.',
+        source: 'Vancouver bylaw/parks record; IOC (skateboarding added Tokyo 2020)',
+        rights: 'Cite sources; verify exact bylaw wording and dates before public.',
+      },
+    ],
+    ethics:
+      'Punch up at the bylaw, redevelopment pressure, and the tourism/Olympic monetization of a policed subculture. The skaters, the DIY builders and East Van youth are the home team, never the joke.',
+  },
   {
     id: 'hogans-alley-fc',
     name: "HOGAN'S ALLEY FC",

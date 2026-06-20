@@ -1,6 +1,6 @@
-# Mood Board Prompts — 01 MADE ON SILENCE
+# Mood Board Prompts: 01 MADE ON SILENCE
 
-**The argument:** The city's record, redacted. What they won't release, worn — black bloc. *The redacted document, worn.*
+**The argument:** The city's record, redacted. What they won't release, worn. Black bloc. *The redacted document, worn.*
 
 **Look:** the FOI response that came back censored. Matte-black jersey, gloss-on-matte redaction bars that only read in raking light, a single CLASSIFIED stamp. Black bloc from across the room; the city's withheld paperwork up close.
 
@@ -13,9 +13,10 @@
 ### Prompt 1: Redacted FOI document
 ```
 close-up of a freedom-of-information response document,
-most lines blacked out with heavy redaction bars,
-"RELEASED UNDER FIPPA" header, exemption codes in the margin,
-white paper, black censorship bars, single red stamp,
+70%+ of the surface covered by solid heavy black redaction bars,
+only fragments of text visible: "RELEASED UNDER FIPPA" header, exemption codes in the margin,
+white paper, dominant black censorship bars, single red stamp,
+redaction bars must dominate: not a document with bars, a bar field with glimpsed text,
 bureaucratic withholding aesthetic,
 --ar 4:5 --style raw
 ```
@@ -49,15 +50,16 @@ reads as pure black mass,
 ### Prompt 5: Severed records / exemption codes
 ```
 stack of government records with pages severed and withheld,
-"WITHHELD IN FULL" slips, exemption-code annotations,
-beige folders, black bars, official archive aesthetic,
+70%+ of each page covered by solid heavy black redaction bars,
+"WITHHELD IN FULL" slips, exemption-code annotations barely visible,
+beige folders, dominant black bars, official archive aesthetic,
 --ar 4:5 --style raw
 ```
 
 ### Prompt 6: Official souvenir collateral, inverted
 ```
 flat lay of sleek official tournament collateral rendered entirely blacked out,
-redaction bars where the branding should be,
+70%+ of the surface covered by solid heavy black redaction bars where the branding should be,
 matte black on black, premium but censored,
 sanctioned-yet-silenced mood,
 --ar 4:5 --style raw

@@ -6,20 +6,22 @@ where everything lives. The collection itself, the why, and the lineup are in th
 
 Two things run here:
 
-- **The pitch site** at `/`. React + React Three Fiber. The hero portal, the
-  territorial statement, the collection, the code-drawn kit flats, the deep-dive method.
-- **The asset tracker** at `/tracker`. A workbench for the Midjourney images. Scan a
-  folder, rate what's good, push the ratings to Notion. Local-first, fast, no cloud
-  required to use it.
+- **The pitch site** at `/`. React + React Three Fiber. The hero portal, the territorial
+  statement, the collection, the code-drawn kit flats, the deep-dive method. Plus the
+  **Receipts Engine** (`/engine`), the **Process** walkthrough (`/process`), and the
+  **Hall of Fame** reference gallery (`/hall-of-fame`).
+- **The asset tracker** at `/tracker`. A workbench for the generated images: scan or
+  ingest a folder, star inline on the grid, push ratings to Notion. Local-first, fast,
+  no cloud required to use it.
 
 ## Status
 
 - [x] Concept locked: Pump & Dump FC is the lead. See `docs/design/submission-brief.md`.
 - [x] Prompt library written for the full collection. See `docs/design/prompts/`.
-- [x] Asset tracker built (scan, rate, Notion sync).
-- [ ] Generate the mood boards and flats in Midjourney.
-- [ ] Pick the winners in the tracker.
-- [ ] Final presentation.
+- [x] Asset tracker: inline grid starring + folder ingest + Notion sync.
+- [x] Generations ingested (Midjourney + Rafiki) across four concepts.
+- [ ] Star the winners in the tracker; lock the hero + the collection.
+- [ ] Final presentation + jersey deliverable.
 
 ## Run it
 
@@ -49,29 +51,30 @@ vars and still run the site and rate images locally. Sync just won't fire.
 Build the local database (SQLite, one file at `src/db/ratings.db`):
 
 ```bash
-node scripts/init-db.js
+npm run db:init
 ```
 
 That makes two tables: `assets` (the images it finds) and `ratings` (your scores, likes,
 notes, sync state).
 
-Then run two processes. The site:
+Then boot both processes together:
 
 ```bash
-npm run dev        # http://localhost:5173
+npm run dev:all    # API on :3001 + Vite on :5173
 ```
 
-And the tracker's API, in a second terminal:
+Or run them separately if you need independent logs:
 
 ```bash
-node src/server/api.js   # http://localhost:3001
+npm run server     # http://localhost:3001
+npm run dev        # http://localhost:5173
 ```
 
 Pitch site is at `/`, tracker is at `/tracker`. Footer links jump between them.
 
 ## The asset tracker
 
-The loop is: generate, scan, rate, sync.
+The loop is: generate, scan or ingest, star, sync.
 
 **Generate.** Prompts live in `docs/design/prompts/`, one folder per kit. Each kit has
 `moodboard.md`, `graphic-elements.md`, and `jersey-flats.md`. Pump & Dump (09) and the
@@ -94,9 +97,34 @@ kits:
 
 Hit "Scan Folder" in the tracker. New images show up in the gallery.
 
-**Rate.** Click a thumbnail. The lightbox gives you stars (1-5), a like, and a notes
-field, plus the prompt if it's linked from Notion. Ratings write to SQLite the moment
-you set them. No save button.
+**Ingest (other sources).** For non-Midjourney images (Rafiki renders, re-rolls), ingest
+a folder straight into the DB under a concept/batch:
+
+```bash
+node scripts/ingest-dir.js <folder> <concept> [batch]
+# e.g. node scripts/ingest-dir.js docs/design/prompts/clubs/nardwuar-fc/rafiki/images/run-X nardwuar-fc run-X
+```
+
+Re-runnable (INSERT OR REPLACE on a stable id). The tracker holds four concepts today:
+`09-pump-and-dump`, `01-made-on-silence`, `nardwuar-fc`, `number-five-orange`. The Rafiki
+kit PNGs live under `docs/design/prompts/clubs/<concept>/rafiki/images/` (gitignored,
+local only; referenced by absolute path).
+
+**Star.** Star right on the grid: click 1-5 stars (or the heart to "keep") on each
+thumbnail. Saves to the DB on click, no modal. Use **starred only** and **sort by score**
+at the top of the grid to converge. Click a thumbnail for the lightbox if you want the
+full image + notes.
+
+**Read the picks.** The starred shortlist is one SQLite query (no app needed):
+
+```bash
+sqlite3 src/db/ratings.db "SELECT a.concept,a.batch,a.filename,r.score,r.liked \
+  FROM ratings r JOIN assets a ON a.id=r.assetId \
+  WHERE r.score>=4 OR r.liked=1 ORDER BY a.concept,r.score DESC"
+```
+
+For a zero-server visual scan of the Midjourney set, `node scripts/contact-sheet.js`
+writes a static `contact-sheet.html` grid.
 
 **Sync.** The header shows how many ratings haven't gone to Notion yet. Click sync and
 they push up. This is one-way: local is the source of truth, Notion is the shared view.
@@ -133,8 +161,11 @@ image.
 
 ```
 src/
-├── App.jsx                  Router: / (pitch site) and /tracker
+├── App.jsx                  Router: / · /engine · /process · /hall-of-fame · /tracker · 404
 ├── components/
+│   ├── Nav.jsx              Shared sticky nav across the pitch surfaces
+│   ├── TheMove.jsx / WhyItWins.jsx / ShareQR.jsx / PresenterControls.jsx   Pitch sections + closer
+│   ├── ReceiptsEngine.jsx / HallOfFame.jsx / Process.jsx   The /engine, /hall-of-fame, /process pages
 │   ├── AssetTracker.jsx     Tracker shell: sidebar + gallery
 │   ├── ImageGallery.jsx     Thumbnail grid
 │   ├── LightboxViewer.jsx   Image detail + rating + prompt
@@ -166,6 +197,9 @@ docs/
 └── research/                Knowledge base: 8 source docs + analyses + synthesis
 
 scripts/init-db.js           Builds src/db/ratings.db
+scripts/ingest-assets.js     Imports Midjourney 4-up sets from to-ingest/ (+ manifest)
+scripts/ingest-dir.js        Imports any folder of images under a concept/batch
+scripts/contact-sheet.js     Writes a static contact-sheet.html for a zero-server scan
 ```
 
 ## API routes
@@ -210,7 +244,7 @@ sqlite3 src/db/ratings.db ".mode csv" "SELECT * FROM ratings WHERE liked = 1" > 
 Start over:
 
 ```bash
-rm src/db/ratings.db && node scripts/init-db.js
+rm src/db/ratings.db && npm run db:init
 ```
 
 ## Build and deploy
@@ -236,5 +270,15 @@ Notion URL)? Integration actually shared into both databases? All three have to 
 **"Database locked."** Only one thing can write at a time. Close other SQLite clients,
 make sure a single API server is running, restart it.
 
-**API not answering.** Confirm `node src/server/api.js` is up on 3001. Check nothing else
+**API not answering.** Confirm `npm run server` is up on 3001. Check nothing else
 grabbed the port: `lsof -i :3001`.
+
+## Deployment
+
+The pitch site (`/`) is a static Vite build: run `npm run build` and push `dist/` to
+Vercel or any static host. No server required.
+
+The Asset Tracker (`/tracker`) is local-only. It depends on the Express API
+(`src/server/api.js`), the SQLite database (`src/db/ratings.db`), and the image files on
+your local machine. None of those travel with a static deploy, so the tracker is not
+intended to be hosted remotely.

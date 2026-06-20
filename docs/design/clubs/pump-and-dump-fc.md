@@ -16,7 +16,7 @@ drown in cost. The World Cup is the ultimate pump: **hype the city as the asset,
 the public, let insiders take the exit liquidity. You are the bagholder.**
 *Who benefits:* promoters/insiders (exit liquidity), developers, flippers, foreign
 capital, FIFA. *Who pays:* the public bagholders, taxpayers (~$320–338M+), renters at
-20–30× price-to-income, the displaced.
+~12× price-to-income (Demographia 2025), the displaced.
 
 The flagship of the three because it names the *mechanism* the other two illustrate:
 the city itself is the security being pumped. The tournament is the press release

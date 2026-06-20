@@ -1,6 +1,6 @@
-# Jersey Flats Prompts — 01 MADE ON SILENCE
+# Jersey Flats Prompts: 01 MADE ON SILENCE
 
-**Goal:** Complete jersey flat mockups for the redaction kit — black bloc from afar, the city's withheld record up close.
+**Goal:** Complete jersey flat mockups for the redaction kit. Black bloc from afar, the city's withheld record up close.
 
 **Build:** matte ink-black body, gloss-on-matte redaction bars, a single CLASSIFIED stamp. Crest = redaction bar stamped CLASSIFIED. Sponsor = fully blacked out. Number = redaction bars. Nameplate = REDACTED. Back-line = WHAT THEY WON'T RELEASE, WE WEAR.
 
@@ -10,15 +10,16 @@
 
 ---
 
-## Batch 1 — Hero home kit
+## Batch 1: Hero home kit
 
 ### Prompt 1: Full front flat
 ```
 technical flat-lay fashion illustration of unisex soccer jersey,
 matte ink-black body with an all-over ghosted FOI report pattern in tonal black,
-heavy gloss-black redaction bars across the document text,
-crest on left chest is a single black redaction bar stamped red "CLASSIFIED",
-center chest sponsor bar entirely blacked out (solid redaction bar),
+70%+ of the jersey surface covered by solid heavy black redaction bars across the document text,
+bars dominate: the pattern reads as bar field, not document,
+crest on left chest is a single solid black redaction bar stamped red "CLASSIFIED",
+center chest sponsor bar entirely blacked out by a solid heavy redaction bar,
 professional sports apparel technical drawing,
 clean line work, high detail, ready for production,
 white background --ar 3:4 --style raw
@@ -28,8 +29,9 @@ white background --ar 3:4 --style raw
 ```
 technical flat-lay fashion illustration of jersey back,
 matte ink-black body matching the front, ghosted redacted-document pattern,
+70%+ of the jersey surface covered by solid heavy black redaction bars,
 arched nameplate reads "REDACTED",
-number below rendered as three heavy black redaction bars,
+number below rendered as three solid heavy black redaction bars (no digit visible),
 back-collar line reads "WHAT THEY WON'T RELEASE, WE WEAR",
 bone microprint citation along the hem (fine detail line),
 professional sportswear technical drawing,
@@ -49,7 +51,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Finish explorations
+## Batch 2: Finish explorations
 
 ### Prompt 4: Matte-on-matte raking-light proof
 ```
@@ -74,7 +76,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — On-garment detail shots
+## Batch 3: On-garment detail shots
 
 ### Prompt 6: Crest close-up
 ```
@@ -106,7 +108,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — Full kit composition
+## Batch 4: Full kit composition
 
 ### Prompt 9: Complete kit flat-lay
 ```
@@ -123,4 +125,4 @@ white background --ar 3:4 --style raw
 
 ## Presentation use
 
-Front (1) + back (2) for the deck. The matte-on-matte raking-light proof (4) is the craft-flex hero — it proves "the censorship is the craft." Crest + blacked-out sponsor close-ups support the design system; full kit (9) closes.
+Front (1) + back (2) for the deck. The matte-on-matte raking-light proof (4) is the craft-flex hero: it proves "the censorship is the craft." Crest + blacked-out sponsor close-ups support the design system; full kit (9) closes.
