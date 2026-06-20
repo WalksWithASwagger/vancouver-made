@@ -27,6 +27,7 @@ const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
 const Process = lazy(() => import('./components/Process.jsx'))
 const Store = lazy(() => import('./components/Store.jsx'))
 const HighlightReel = lazy(() => import('./components/HighlightReel.jsx'))
+const Journey = lazy(() => import('./components/Journey.jsx'))
 
 function toggleHeroFullscreen() {
   const el = document.getElementById('hero')
@@ -45,6 +46,7 @@ function RouteFallback() {
 
 const TITLES = {
   '/': 'MADE ON — Whose Cup Is It Anyway?',
+  '/journey': 'The Journey — MADE ON',
   '/engine': 'We Made the Receipt — MADE ON',
   '/hall-of-fame': 'Hall of Fame — MADE ON',
   '/process': 'Our Process — MADE ON',
@@ -97,6 +99,12 @@ function MadeOnSite() {
               <span className="text-gold">Made on stolen ground. Made on Hogan's
               Alley. Made on $729 million of public money.</span>
             </p>
+            <Link
+              to="/journey"
+              className="pointer-events-auto mt-6 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
+            >
+              Begin the journey →
+            </Link>
           </div>
 
           <div className="flex items-end justify-between gap-3 text-xs uppercase tracking-[0.2em] text-bone/50">
@@ -255,6 +263,7 @@ export default function App() {
       <Routes>
         <Route element={<PitchLayout />}>
           <Route path="/" element={<MadeOnSite />} />
+          <Route path="/journey" element={<Journey />} />
           <Route path="/engine" element={<ReceiptsEngine />} />
           <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/process" element={<Process />} />
