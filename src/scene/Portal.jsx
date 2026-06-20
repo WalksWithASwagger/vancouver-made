@@ -11,8 +11,6 @@ import {
 import * as THREE from 'three'
 import { colors } from '../brand/tokens.js'
 
-// The "World Portal": a counterfeit trophy ring framing a churning globe.
-// Future-forward FIFA-2026 branding, subverted. Spin it. It is rigged.
 function Globe() {
   const mesh = useRef()
   useFrame((_, dt) => {
@@ -51,19 +49,22 @@ function TrophyRing({ radius = 2.1, tube = 0.06, tilt = 0, color = colors.gold }
   )
 }
 
-// Orbiting "fan zone" debris — the spectacle's discarded confetti.
 function Debris({ count = 120 }) {
   const ref = useRef()
   const dummy = useMemo(() => new THREE.Object3D(), [])
   const seeds = useMemo(
     () =>
-      Array.from({ length: count }, () => ({
-        r: 2.6 + Math.random() * 3.5,
-        theta: Math.random() * Math.PI * 2,
-        phi: Math.acos(2 * Math.random() - 1),
-        speed: 0.05 + Math.random() * 0.25,
-        scale: 0.02 + Math.random() * 0.06,
-      })),
+      Array.from({ length: count }, () => {
+        const phi = Math.acos(2 * Math.random() - 1)
+        return {
+          r: 2.6 + Math.random() * 3.5,
+          theta: Math.random() * Math.PI * 2,
+          sinPhi: Math.sin(phi),
+          cosPhi: Math.cos(phi),
+          speed: 0.05 + Math.random() * 0.25,
+          scale: 0.02 + Math.random() * 0.06,
+        }
+      }),
     [count],
   )
   useFrame(({ clock }) => {
@@ -72,9 +73,9 @@ function Debris({ count = 120 }) {
     seeds.forEach((s, i) => {
       const a = s.theta + t * s.speed
       dummy.position.set(
-        s.r * Math.sin(s.phi) * Math.cos(a),
-        s.r * Math.cos(s.phi) * 0.6,
-        s.r * Math.sin(s.phi) * Math.sin(a),
+        s.r * s.sinPhi * Math.cos(a),
+        s.r * s.cosPhi * 0.6,
+        s.r * s.sinPhi * Math.sin(a),
       )
       dummy.scale.setScalar(s.scale)
       dummy.rotation.set(a, a * 1.5, 0)

@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --ink: #0a0a0a;
+  --bone: #f4f1ea;
   color-scheme: dark;
 }
 
@@ -11,8 +13,8 @@ body,
 #root {
   margin: 0;
   height: 100%;
-  background: #0a0a0a;
-  color: #f4f1ea;
+  background: var(--ink);
+  color: var(--bone);
   font-family: 'Space Mono', ui-monospace, monospace;
   -webkit-font-smoothing: antialiased;
 }
@@ -25,7 +27,7 @@ body,
   pointer-events: none;
   opacity: 0.06;
   z-index: 50;
-  background-image: radial-gradient(#f4f1ea 1px, transparent 1px);
+  background-image: radial-gradient(var(--bone) 1px, transparent 1px);
   background-size: 4px 4px;
   mix-blend-mode: overlay;
 }

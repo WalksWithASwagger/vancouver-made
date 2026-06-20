@@ -1,16 +1,14 @@
-// VANCOUVER MADE / MADE ON — base brand tokens.
-// Mirrors tailwind.config.js. The canonical MADE ON palette + collection data live
-// in src/data/collection.js; the per-kit colorways live in src/data/heroKits.js
-// and src/data/clubs.js. These are the shared site tokens (3D scene + marquee).
+// Canonical palette — imported by tailwind.config.js.
+// Collection data: src/data/collection.js · kit colorways: src/data/heroKits.js, clubs.js
 
 export const colors = {
-  ink: '#0a0a0a', // the void / the establishment
-  bone: '#f4f1ea', // paper, posters, newsprint
-  rain: '#1c2b33', // Vancouver wet asphalt
-  cedar: '#3a5a40', // PNW forest
-  hazard: '#ff3b00', // protest red-orange, spray paint
-  gold: '#d9a521', // banknote / counterfeit gold
-  cyan: '#21d9c9', // signal
+  ink: '#0a0a0a',
+  bone: '#f4f1ea',
+  rain: '#1c2b33',
+  cedar: '#3a5a40',
+  hazard: '#ff3b00',
+  gold: '#d9a521',
+  cyan: '#21d9c9',
 }
 
 export const type = {
@@ -18,7 +16,6 @@ export const type = {
   mono: '"Space Mono", ui-monospace, monospace',
 }
 
-// Brand voice — the MADE ON copy bank. Drives the marquee; pull for deck/posters.
 export const slogans = [
   'MADE ON STOLEN GROUND',
   "MADE ON HOGAN'S ALLEY",
