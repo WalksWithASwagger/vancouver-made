@@ -51,22 +51,30 @@ Reviewed representative jobs across all 33 distinct prompts. Picks below are dec
 
 ## Generation gaps — what we're missing
 
-Library baseline (prompts written): **01,03,05,06,08 = 24 each · 09 = 34 · 02,04,07 = not written (issue #8).** Generated so far: **33 distinct prompts** (32 in 09, 1 in 01).
+**Updated after the 2nd Midjourney drop** (now 583 files / 157 jobs in `ingest-manifest.json`).
+Library baseline (prompts written): **01,03,05,06,08 = 24 each · 09 = 34 · 02,04,07 = not written (issue #8).**
 
-### Prioritized "generate next"
-1. **Finish 09** (the flagship, 2 prompts left): `graphic-elements#13` (teal→magenta stripe trim) and `graphic-elements#14` (hem microprint receipt — the actual citation line). Quick win to a complete kit.
-2. **03 PUBLIC DIME** — flagship, **nothing generated.** Run its full set (banknote-green guilloché, BANK OF FIFA, the $729M denomination). 24 prompts ready in `03-public-dime/`.
-3. **01 SILENCE — beyond the moodboard.** Only the FOI texture exists. The actual matte-on-matte **redaction jersey** (flats + graphics) — the point of the kit — is ungenerated. Run `01-made-on-silence/{graphic-elements,jersey-flats}.md`.
-4. **05 / 06 / 08** — prompts written, never run (Access laminate, condo pre-sale, surveillance). 24 each.
-5. **02 / 04 / 07** — prompts not written yet; gated on tone sign-off (issue #8) before generating.
+The 2nd drop filled the big holes: **03 Public Dime** (full set), **01 Silence** (full graphics + flats + dominant-redaction mood), and **09**'s last two (#13/#14). Curation → `STORE-CANDIDATES.md` + `ALTERNATIVES.md`.
 
 ### Coverage at a glance
-- **09:** 32/34 ✓ (missing graphic #13, #14)
-- **01:** 1/24 (moodboard #1 only)
-- **03, 05, 06, 08:** 0 / 24 each (prompts ready)
-- **02, 04, 07:** 0 (prompts not written)
+- **01 SILENCE:** ✓ generated (35 jobs) — heroes picked, see STORE-CANDIDATES.
+- **03 PUBLIC DIME:** ✓ generated (39 jobs) — strongest set; **but the hem-receipt didn't render cleanly** (only job `7ec8da01`), re-roll/composite the hem.
+- **09 PUMP & DUMP:** ✓ complete (62 jobs incl. #13 stripe + #14 hem).
+- **05 / 06 / 08:** **0** — prompts written, never run (Access laminate · condo pre-sale · surveillance). 24 each. ← the remaining gap.
+- **02 / 04 / 07:** **0** — prompts not written; gated on memorial-tone sign-off (issue #8).
+- **unsorted:** 21 jobs (kit-ambiguous fronts/complete-kits/side/hem) disambiguated in curation; manifest tags them `concept:"unsorted"`.
 
-### Craft notes for the next batch
-- Push the **candlestick pattern** to render as literal chart lines, not abstract marble (name it explicitly; reference "stock chart candlesticks, thin lines").
-- For **01**, make redaction bars dominant.
-- Text marks (sponsor, nameplate, badges) are coming out clean — keep those prompts as-is.
+### Prioritized "generate next"
+1. **05 / 06 / 08** — the only ready-but-ungenerated kits. Run their full sets.
+2. **03 hem-receipt** re-roll (the one missing piece of the otherwise-complete flagship).
+3. **02 / 04 / 07** — write the memorial prompts first (needs KK's tone direction, issue #8).
+
+### ⚠️ Trademark — exclude from store + deck
+- **03 moodboard#5** — reproduces the real FIFA wordmark + crest.
+- **01 graphic#6** REDACTED nameplate, job `01713310` — reproduces real adidas 3-stripes.
+
+### Craft notes
+- The **candlestick pattern** still skews abstract-marble on some fronts — name "literal stock-chart lines."
+- Some **01** mood/pattern plates are under-redacted (read as "document"); the bars must dominate ~70%+.
+- A few text strings garbled ("PPUBLIC", "WITHELD") — re-roll those specific tiles.
+- Text marks (sponsor bars, badges, nameplates) mostly clean — keep those prompts as-is.
