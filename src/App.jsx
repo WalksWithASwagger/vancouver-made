@@ -4,6 +4,7 @@ import Clubs from './components/Clubs.jsx'
 import Collection from './components/Collection.jsx'
 import HeroKits from './components/HeroKits.jsx'
 import AssetTracker from './components/AssetTracker.jsx'
+import HallOfFame from './components/HallOfFame.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 
@@ -99,6 +100,8 @@ function MadeOnSite() {
         <div className="flex justify-center gap-6 mb-4">
           <Link to="/" className="text-bone/60 hover:text-bone transition">Pitch Site</Link>
           <span className="text-bone/20">·</span>
+          <Link to="/hall-of-fame" className="text-bone/60 hover:text-bone transition">Hall of Fame</Link>
+          <span className="text-bone/20">·</span>
           <Link to="/tracker" className="text-bone/60 hover:text-bone transition">Asset Tracker</Link>
         </div>
         {brand.name} · {brand.parent} · You asked for the Vancouver story — this is the
@@ -113,6 +116,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MadeOnSite />} />
+        <Route path="/hall-of-fame" element={<HallOfFame />} />
         <Route path="/tracker" element={<AssetTracker />} />
       </Routes>
     </BrowserRouter>
