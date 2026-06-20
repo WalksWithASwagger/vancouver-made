@@ -82,27 +82,33 @@ image each), 5 (the hinge line over a blank kit silhouette).
 room actually wants: how a point of view became a coherent product line. It does double duty —
 the design-track making-of **and** the dev-track proof-of-system.
 
-**The thesis to land:** *the human bookends the machine.* Voice is the input; judgment is the
-output gate; AI is the accelerant in the middle. Provenance in, curation out. That's the
-anti-slop stance made literal.
+**The thesis to land:** *the human bookends the machine — and holds the pen at every gate
+between.* Voice in, judgment out, AI the accelerant in the middle — but a person, not the model,
+decides at five or six points along the way. Provenance in, curation out. The anti-slop stance
+made literal.
 
-**The seven stages** (walked on **one** kit — the hero — so the room watches a jersey get made):
+**Three honesties the clean line hides** (lead with these — they're the novelty):
+- **It's a loop, not a line.** Generate → rate → re-roll → regenerate. Only 2 of 9 kits are fully
+  generated; the loop is the engine.
+- **The infrastructure is the dev-track.** Not "I used Midjourney" — *I built tooling*: a research
+  + verification spine, an ingest pipeline (scanner → manifest → SQLite), the `/tracker` that turns
+  246 raw rolls into a rated library, code-drawn flats (deterministic SVG from the spec), and the
+  Receipts Engine (one fact → hem / poster / editorial).
+- **It's orchestration.** Several models in parallel (Perplexity → concept, ChatGPT → system,
+  Claude → precedents, Midjourney → images), several agents on one branch with handoff docs.
+  Not using AI — conducting a roomful of it.
 
-1. **Voice** — the stance, not a prompt. Settler artist, punch up not down (`brand-system.md`;
-   `submission-brief.md` Q4).
-2. **Idea** — the voice fans into nine FCs, one Vancouver wound each
-   (`docs/design/clubs/pump-and-dump-fc.md`).
-3. **Prompts** — the stance encoded: the `moodboard / graphic-elements / jersey-flats` sets.
-4. **Moodboards** — direction (navy + toxic teal + magenta; banknote + prospectus DNA).
-5. **Graphic elements** — the kit-of-parts: crest, sponsor bar, nameplate, hem citation.
-6. **Flats** — the jersey, front and back.
-7. **The decision** — `/tracker`: rate the 246, kill the misses, lock the winners into the tech
-   pack (`docs/design/kits/MO-09-pump-and-dump.md`). *Curation is the human judgment gate.*
+**The pipeline, walked on one kit** (the hero, so the room watches a jersey get made) — twelve
+stations in six phases: **Ground** (00 receipts & research — a verification gate) · **Voice → Idea**
+(01–02) · **Make · the loop** (03 prompts → 04 generate ↺) · **Curate** (05 ingest & catalog · 06
+curate-at-scale — the curation gate) · **Make it real** (07 code-drawn flats · 08 multi-surface · 09
+tech pack) · **Ship** (10 verify & fact-check — a gate · 11 orchestrate & hand off).
 
-**Live demo:** `/process` (the 7 stations with the real curated images) → `/tracker` (the
-curation act, the dev-track payoff).
-**Deck slides:** 6 (the pipeline, one strip, voice→receipt), 7 (the same kit at each stage —
-the transformation is the proof), 8 (the human-bookends-the-machine thesis).
+**Live demo:** `/process` (the twelve stations, the loop, the gates, the tracks band) → `/tracker`
+(the curation act) → `/engine` (one fact, three surfaces). The dev-track payoff.
+**Deck slides:** 6 (the pipeline as a loop, voice→receipt), 7 (the same kit at each stage — the
+transformation is the proof), 8 (the human threaded through every gate), 9 (the three parallel
+tracks + the roomful of collaborators).
 
 ---
 

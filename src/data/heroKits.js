@@ -109,6 +109,43 @@ export const heroKits = [
     manifestoCard:
       'One side: the prospectus disclaimer turned on the city. Other side: housing + finance receipts + a QR to a housing-justice org.',
   },
+  {
+    id: 'hogans-alley',
+    no: '10',
+    name: "MADE ON HOGAN'S ALLEY",
+    series: 'MADE ON — what the city is built on',
+    styleNo: 'MO-10',
+    club: 'hogans-alley-fc', // deep-dive data in src/data/clubs.js
+    silhouette: 'short', // classic national-team cut — homage to the great African kits
+    fabric: 'Ocean-bound recycled PET interlock ~150 gsm; metallic-gold sublimation; original geometric jacquard trim',
+    concept:
+      'The neighbourhood the city paved over, worn as a future. Memorial and blueprint: grief in gold, the block coming home.',
+    theLine: 'The block comes home.',
+    colorway: {
+      body: '#1e1248', // deep cosmic indigo
+      primary: '#e8b04b', // Afrofuturist / jazz-brass gold
+      secondary: '#5a2d9c', // cosmic violet
+      accent: '#ede6d8', // bone / star-white
+      finish: 'cosmic-indigo body · metallic-gold engraving · star-map gradient',
+    },
+    crest: 'A jazz horn and a rising star over the reclaimed block; ribbon: STILL HERE.',
+    sponsorBar: 'BLACK CULTURAL CENTRE', // the solidarity inversion — the slot honours, not parodies
+    makerMark: 'NOT FOR SALE',
+    nameplate: 'RENAISSANCE', // a community-specific name to be chosen WITH the community (see docs)
+    number: '71', // the year the viaduct finished the erasure — memory carried on the back
+    backLine: 'STILL HERE. STILL BUILDING.',
+    allover:
+      "Original geometric weave + an Afrofuturist star-map; a ghosted Hogan's Alley street grid; gold on cosmic indigo. No appropriated sacred motifs.",
+    serial: 'SER. NO. VAN-2026-RETURN',
+    hemCitation: {
+      text: "HOGAN'S ALLEY RAZED FOR THE VIADUCT c.1971 · LAND TRUST 2022 · STILL BUILDING",
+      source: "City of Vancouver · Hogan's Alley Society 2022 [confirm]",
+    },
+    whyItWins:
+      "The collection's only kit that ends in the future tense. It names an erasure the city now admits — \"Made on Hogan's Alley\" is already in the brand triad — then hands the spotlight to the people rebuilding the block. Gold where the others are blackout; memorial and blueprint at once.",
+    manifestoCard:
+      "One side: the MADE ON statement. Other side: the Hogan's Alley timeline + a QR to Hogan's Alley Society and Ethọ́s Lab — attention and any proceeds routed to them. Made in solidarity, not authorship.",
+  },
 ]
 
 export default heroKits
