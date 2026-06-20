@@ -49,22 +49,23 @@ vars and still run the site and rate images locally. Sync just won't fire.
 Build the local database (SQLite, one file at `src/db/ratings.db`):
 
 ```bash
-node scripts/init-db.js
+npm run db:init
 ```
 
 That makes two tables: `assets` (the images it finds) and `ratings` (your scores, likes,
 notes, sync state).
 
-Then run two processes. The site:
+Then boot both processes together:
 
 ```bash
-npm run dev        # http://localhost:5173
+npm run dev:all    # API on :3001 + Vite on :5173
 ```
 
-And the tracker's API, in a second terminal:
+Or run them separately if you need independent logs:
 
 ```bash
-node src/server/api.js   # http://localhost:3001
+npm run server     # http://localhost:3001
+npm run dev        # http://localhost:5173
 ```
 
 Pitch site is at `/`, tracker is at `/tracker`. Footer links jump between them.
@@ -210,7 +211,7 @@ sqlite3 src/db/ratings.db ".mode csv" "SELECT * FROM ratings WHERE liked = 1" > 
 Start over:
 
 ```bash
-rm src/db/ratings.db && node scripts/init-db.js
+rm src/db/ratings.db && npm run db:init
 ```
 
 ## Build and deploy
@@ -236,5 +237,5 @@ Notion URL)? Integration actually shared into both databases? All three have to 
 **"Database locked."** Only one thing can write at a time. Close other SQLite clients,
 make sure a single API server is running, restart it.
 
-**API not answering.** Confirm `node src/server/api.js` is up on 3001. Check nothing else
+**API not answering.** Confirm `npm run server` is up on 3001. Check nothing else
 grabbed the port: `lsof -i :3001`.
