@@ -25,6 +25,8 @@ const ReceiptsEngine = lazy(() => import('./components/ReceiptsEngine.jsx'))
 const HallOfFame = lazy(() => import('./components/HallOfFame.jsx'))
 const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
 const Process = lazy(() => import('./components/Process.jsx'))
+const Store = lazy(() => import('./components/Store.jsx'))
+const HighlightReel = lazy(() => import('./components/HighlightReel.jsx'))
 
 function toggleHeroFullscreen() {
   const el = document.getElementById('hero')
@@ -46,6 +48,7 @@ const TITLES = {
   '/engine': 'We Made the Receipt — MADE ON',
   '/hall-of-fame': 'Hall of Fame — MADE ON',
   '/process': 'Our Process — MADE ON',
+  '/store': 'The Store — MADE ON',
   '/tracker': 'Asset Tracker — MADE ON',
 }
 
@@ -255,7 +258,16 @@ export default function App() {
           <Route path="/engine" element={<ReceiptsEngine />} />
           <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/process" element={<Process />} />
+          <Route path="/store" element={<Store />} />
         </Route>
+        <Route
+          path="/highlight-reel"
+          element={
+            <Suspense fallback={<RouteFallback />}>
+              <HighlightReel />
+            </Suspense>
+          }
+        />
         <Route
           path="/tracker"
           element={

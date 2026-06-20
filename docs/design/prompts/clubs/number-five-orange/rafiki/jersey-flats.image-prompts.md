@@ -17,7 +17,7 @@ Full away/home/third family as technical flat-lay illustrations. Generate with
 ## 3. Away hero — side / sleeve + collar detail
 **Aspect Ratio:** 3:4
 **Prompt:**
-> Technical fashion flat of the complete away jersey showing side and sleeve detail, orange body with white sleeve, a sleeve cuff patch reading "UNLICENSED / UNPAID / UNAPOLOGETIC", the collar printed as a perforated tear-off VIP wristband band, gold cuff trim. white background.
+> Technical flat-lay fashion illustration of a unisex soccer away jersey, side and sleeve view, safety-cone orange body with a white sleeve, a sleeve cuff patch reading "UNLICENSED / UNPAID / UNAPOLOGETIC", the collar printed as a perforated tear-off VIP wristband band, gold cuff trim. white background.
 
 ## 4. Home — full front flat
 **Aspect Ratio:** 3:4
@@ -37,7 +37,7 @@ Full away/home/third family as technical flat-lay illustrations. Generate with
 ## 7. Third — sleeve stamp-repeat detail
 **Aspect Ratio:** 3:4
 **Prompt:**
-> Technical fashion flat showing sleeve detail of the champagne-room third kit, cover-charge rubber-stamp marks repeating down the sleeve in gold and orange, a dirty-gold gloss finish, faded stamp impressions. white background.
+> Technical flat-lay fashion illustration of a soccer jersey sleeve, "Champagne Room Economy" third kit in dirty merch-gold over safety-cone orange, cover-charge rubber-stamp marks repeating down the sleeve in gold and orange, a dirty-gold gloss finish, faded stamp impressions. white background.
 
 ## 8. Crest detail close-up
 **Aspect Ratio:** 3:4

@@ -52,7 +52,45 @@ body,
   }
 }
 
+/* ── Highlight reel ── Ken Burns + kinetic type, CSS-only (no motion libs). */
+@keyframes kenburns-in {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.12) translate(-1.5%, -1%); }
+}
+@keyframes kenburns-pan {
+  from { transform: scale(1.1) translateX(-2.5%); }
+  to { transform: scale(1.1) translateX(2.5%); }
+}
+@keyframes reel-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes reel-rise {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes reel-punch {
+  0% { opacity: 0; transform: scale(1.35); }
+  60% { opacity: 1; }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes reel-bar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.reel-img { will-change: transform; }
+.reel-img.kb-in { animation: kenburns-in linear both; }
+.reel-img.kb-pan { animation: kenburns-pan ease-in-out both; }
+.reel-rise { animation: reel-rise 620ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.reel-punch { animation: reel-punch 540ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.reel-bar-fill { transform-origin: left; animation: reel-bar linear both; }
+
 @media (prefers-reduced-motion: reduce) {
+  .reel-img.kb-in,
+  .reel-img.kb-pan { animation: none !important; transform: none !important; }
+  .reel-rise,
+  .reel-punch { animation: reel-fade 400ms ease both !important; transform: none !important; }
   .marquee {
     animation: none;
   }
