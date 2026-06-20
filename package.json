@@ -10,7 +10,8 @@
     "preview": "vite preview --host",
     "db:init": "node scripts/init-db.js",
     "server": "node src/server/api.js",
-    "ingest": "node scripts/ingest-assets.js --db"
+    "ingest": "node scripts/ingest-assets.js --db",
+    "dev:all": "concurrently \"node src/server/api.js\" \"vite\""
   },
   "dependencies": {
     "@notionhq/client": "^5.22.0",
@@ -23,12 +24,12 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.18.0",
-    "sqlite3": "^6.0.1",
     "three": "^0.169.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^10.0.3",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
     "vite": "^5.4.10"
