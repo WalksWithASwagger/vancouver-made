@@ -88,6 +88,20 @@ export const products = [
     status: 'preorder',
     tint: TINT['pump-and-dump-fc'],
   },
+  {
+    id: 'patch-china-creek-crest',
+    title: 'CHINA CREEK — crest patch',
+    category: 'patches',
+    club: 'china-creek',
+    price: 14,
+    currency: 'CAD',
+    image: '/store/patch-china-creek-crest.png',
+    blurb: 'The bowl, as a coat of arms.',
+    description:
+      'The club crest: a host-city shield with the skatepark bowl cross-section and coping line drawn in creek-teal and caution-yellow on raw concrete grey. Public space, held by its users — built 1979, defended ever since.',
+    status: 'preorder',
+    tint: TINT['china-creek'],
+  },
 
   // ── STICKERS ─────────────────────────────────────────────────────────────
   {
@@ -240,6 +254,36 @@ export const products = [
       'The flagship blackout third kit: midnight navy and crash-red, a candlestick-chart skyline of stacked-coin condo towers climbing the body, toxic teal and magenta gradients straight out of the hype deck. Vancouver as the asset, the public as the exit liquidity. You are the bagholder — wear it like a prospectus nobody read.',
     status: 'preorder',
     tint: TINT['pump-and-dump-fc'],
+  },
+  {
+    id: 'jersey-china-creek',
+    title: 'CHINA CREEK — Public Land home kit',
+    category: 'jerseys',
+    club: 'china-creek',
+    price: 95,
+    currency: 'CAD',
+    image: '/store/jersey-china-creek.png',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
+    blurb: 'They banned the board, then sold the bowl.',
+    description:
+      'Raw-concrete grey with the China Creek bowl contours mapped all over the body in creek-teal and caution-yellow, the bowl-crest on the chest. Reads as a clean city-pride home kit on TV; a defended-public-space manifesto up close. The home ground was never the gift — it was the fight.',
+    status: 'preorder',
+    tint: TINT['china-creek'],
+  },
+  {
+    id: 'jersey-five-orange-cover-charge',
+    title: 'NUMBER FIVE ORANGE — Cover Charge strip',
+    category: 'jerseys',
+    club: 'number-five-orange',
+    price: 95,
+    currency: 'CAD',
+    image: '/store/jersey-five-orange-cover-charge.png',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
+    blurb: 'Cover charge $25. Drink minimum 2. Total due: priceless.',
+    description:
+      'Safety-cone orange with the No.5 Orange neon crest and the whole night-out itemized down the chest — COVER CHARGE, DRINK MINIMUM, SERVICE FEE, TOTAL DUE [Priceless] — COVER CHARGE tape running the sleeves. The spectacle economy, printed like a receipt you never agreed to.',
+    status: 'preorder',
+    tint: TINT['number-five-orange'],
   },
 ]
 
