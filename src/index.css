@@ -52,6 +52,15 @@ body,
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
 a {
   color: inherit;
 }

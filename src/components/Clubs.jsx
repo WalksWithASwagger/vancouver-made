@@ -107,6 +107,33 @@ function ClubCard({ club }) {
           </p>
         </div>
 
+        {/* full kit family + number treatment — collapsed to keep the card calm */}
+        <details className="mt-4 text-xs text-bone/75">
+          <summary className="cursor-pointer list-none text-[10px] uppercase tracking-[0.2em] text-bone/40 transition hover:text-bone/70">
+            ▸ The full kit family + number treatment
+          </summary>
+          <div className="mt-3 space-y-2">
+            {['home', 'away', 'third'].map(
+              (slot) =>
+                club.kits[slot] && (
+                  <p key={slot}>
+                    <span className="font-bold uppercase tracking-wider" style={{ color: palette.base }}>
+                      {slot}
+                      {slot === club.heroKit.toLowerCase() ? ' (hero)' : ''}:{' '}
+                    </span>
+                    {club.kits[slot]}
+                  </p>
+                ),
+            )}
+            <p>
+              <span className="font-bold uppercase tracking-wider" style={{ color: palette.signal }}>
+                Number treatment:{' '}
+              </span>
+              {club.numberTreatment}
+            </p>
+          </div>
+        </details>
+
         {/* source cards (receipts) */}
         <div className="mt-5 border-t border-bone/10 pt-4">
           <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-bone/40">

@@ -2,6 +2,7 @@ import { Suspense, Component } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Portal from './Portal.jsx'
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion.js'
 
 class SceneErrorBoundary extends Component {
   state = { failed: false }
@@ -19,6 +20,7 @@ class SceneErrorBoundary extends Component {
 }
 
 export default function Stage() {
+  const reduced = usePrefersReducedMotion()
   return (
     <SceneErrorBoundary>
       <Canvas
@@ -27,12 +29,12 @@ export default function Stage() {
         gl={{ antialias: true, powerPreference: 'high-performance' }}
       >
         <Suspense fallback={null}>
-          <Portal />
+          <Portal reduced={reduced} />
         </Suspense>
         <OrbitControls
           enablePan={false}
           enableZoom={false}
-          autoRotate
+          autoRotate={!reduced}
           autoRotateSpeed={0.4}
           minPolarAngle={Math.PI / 3}
           maxPolarAngle={(2 * Math.PI) / 3}

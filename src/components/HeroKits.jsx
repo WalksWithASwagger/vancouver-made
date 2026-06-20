@@ -62,6 +62,12 @@ function HeroKit({ kit }) {
           <span className="font-bold uppercase tracking-wider" style={{ color: c.primary }}>Why it wins: </span>
           {kit.whyItWins}
         </p>
+
+        {/* manifesto card — the hangtag that ships with the kit */}
+        <div className="mt-4 border-t border-bone/10 pt-3">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-bone/40">Manifesto card (the hangtag)</p>
+          <p className="mt-1 text-xs leading-relaxed text-bone/70">{kit.manifestoCard}</p>
+        </div>
       </div>
     </article>
   )

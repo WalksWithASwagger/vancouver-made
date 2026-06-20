@@ -11,10 +11,10 @@ import {
 import * as THREE from 'three'
 import { colors } from '../brand/tokens.js'
 
-function Globe() {
+function Globe({ reduced }) {
   const mesh = useRef()
   useFrame((_, dt) => {
-    if (mesh.current) mesh.current.rotation.y += dt * 0.15
+    if (!reduced && mesh.current) mesh.current.rotation.y += dt * 0.15
   })
   return (
     <Sphere ref={mesh} args={[1.35, 64, 64]}>
@@ -25,16 +25,16 @@ function Globe() {
         roughness={0.35}
         metalness={0.6}
         distort={0.28}
-        speed={1.4}
+        speed={reduced ? 0 : 1.4}
       />
     </Sphere>
   )
 }
 
-function TrophyRing({ radius = 2.1, tube = 0.06, tilt = 0, color = colors.gold }) {
+function TrophyRing({ radius = 2.1, tube = 0.06, tilt = 0, color = colors.gold, reduced }) {
   const ref = useRef()
   useFrame((_, dt) => {
-    if (ref.current) ref.current.rotation.z += dt * 0.08
+    if (!reduced && ref.current) ref.current.rotation.z += dt * 0.08
   })
   return (
     <Torus ref={ref} args={[radius, tube, 16, 128]} rotation={[Math.PI / 2 + tilt, 0, 0]}>
@@ -49,8 +49,9 @@ function TrophyRing({ radius = 2.1, tube = 0.06, tilt = 0, color = colors.gold }
   )
 }
 
-function Debris({ count = 120 }) {
+function Debris({ count = 120, reduced }) {
   const ref = useRef()
+  const placed = useRef(false)
   const dummy = useMemo(() => new THREE.Object3D(), [])
   const seeds = useMemo(
     () =>
@@ -69,7 +70,9 @@ function Debris({ count = 120 }) {
   )
   useFrame(({ clock }) => {
     if (!ref.current) return
-    const t = clock.getElapsedTime()
+    // reduced motion: place the debris once at t=0, then stop updating
+    if (reduced && placed.current) return
+    const t = reduced ? 0 : clock.getElapsedTime()
     seeds.forEach((s, i) => {
       const a = s.theta + t * s.speed
       dummy.position.set(
@@ -83,6 +86,7 @@ function Debris({ count = 120 }) {
       ref.current.setMatrixAt(i, dummy.matrix)
     })
     ref.current.instanceMatrix.needsUpdate = true
+    placed.current = true
   })
   return (
     <instancedMesh ref={ref} args={[null, null, count]}>
@@ -92,7 +96,7 @@ function Debris({ count = 120 }) {
   )
 }
 
-export default function Portal() {
+export default function Portal({ reduced = false }) {
   return (
     <>
       <color attach="background" args={[colors.ink]} />
@@ -103,16 +107,20 @@ export default function Portal() {
       <pointLight position={[-6, -3, -4]} intensity={40} color={colors.hazard} />
       <spotLight position={[0, 8, 2]} angle={0.5} penumbra={1} intensity={50} color={colors.gold} />
 
-      <Float speed={1.2} rotationIntensity={0.4} floatIntensity={0.6}>
-        <Globe />
-        <TrophyRing radius={2.0} tilt={0} color={colors.gold} />
-        <TrophyRing radius={2.3} tilt={0.5} color={colors.cyan} />
-        <TrophyRing radius={2.55} tilt={-0.4} color={colors.hazard} />
+      <Float
+        speed={reduced ? 0 : 1.2}
+        rotationIntensity={reduced ? 0 : 0.4}
+        floatIntensity={reduced ? 0 : 0.6}
+      >
+        <Globe reduced={reduced} />
+        <TrophyRing radius={2.0} tilt={0} color={colors.gold} reduced={reduced} />
+        <TrophyRing radius={2.3} tilt={0.5} color={colors.cyan} reduced={reduced} />
+        <TrophyRing radius={2.55} tilt={-0.4} color={colors.hazard} reduced={reduced} />
       </Float>
 
-      <Debris />
-      <Sparkles count={80} scale={9} size={3} speed={0.3} color={colors.bone} />
-      <Stars radius={40} depth={30} count={1500} factor={3} saturation={0} fade speed={0.5} />
+      <Debris reduced={reduced} />
+      <Sparkles count={80} scale={9} size={3} speed={reduced ? 0 : 0.3} color={colors.bone} />
+      <Stars radius={40} depth={30} count={1500} factor={3} saturation={0} fade speed={reduced ? 0 : 0.5} />
     </>
   )
 }
