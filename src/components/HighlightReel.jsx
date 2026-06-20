@@ -158,10 +158,10 @@ export default function HighlightReel() {
               className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-xl"
             />
           )}
-          <div className="absolute inset-0 flex items-center justify-center p-6 md:p-12">
+          <div className="absolute inset-0 flex items-start justify-center px-6 pt-[7vh] md:pt-[9vh]">
             <div
               key={index}
-              className="reel-rise w-[min(88vw,540px)] rounded-2xl border p-5 shadow-2xl md:p-8"
+              className="reel-rise w-[min(82vw,500px)] rounded-2xl border p-5 shadow-2xl md:p-7"
               style={{ borderColor: `${pal.accent}55`, background: `${pal.ink}cc` }}
             >
               <KitFlat kit={kitObj} />
