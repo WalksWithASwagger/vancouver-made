@@ -27,6 +27,12 @@ function getImageMetadata(filePath) {
   }
 }
 
+// Stable, URL-safe asset id derived from a file's path (no slashes/spaces)
+function relativePathFor(filePath, baseDir) {
+  const rel = path.relative(baseDir, filePath)
+  return rel.replace(/[^a-zA-Z0-9._-]+/g, '_')
+}
+
 // Extract concept and batch from filename or path
 function parseAssetInfo(filePath, baseDir) {
   const filename = path.basename(filePath)
@@ -101,8 +107,8 @@ export function scanFolder(scanDir) {
           const stats = fs.statSync(fullPath)
           const { concept, batch, promptId } = parseAssetInfo(fullPath, expandedDir)
 
-          // Generate a unique asset ID
-          const assetId = `${concept}-${batch}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+          // Deterministic asset ID (stable across re-scans, URL-safe — no slashes)
+          const assetId = relativePathFor(fullPath, expandedDir)
 
           // Check if already imported
           const existing = getAssetById(assetId)
@@ -145,7 +151,7 @@ export function importImageFile(filePath, concept, batch, promptId = null) {
 
   const stats = fs.statSync(filePath)
   const filename = path.basename(filePath)
-  const assetId = `${concept}-${batch}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+  const assetId = relativePathFor(filePath, path.dirname(filePath))
 
   const metadata = getImageMetadata(filePath)
 
