@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { products, categories } from '../data/products.js'
 
 function Price({ value, currency }) {
+  if (value == null) return null
   return (
     <span className="font-mono">
       ${value} <span className="text-[10px] opacity-70">{currency}</span>
@@ -11,6 +12,13 @@ function Price({ value, currency }) {
 }
 
 function Cta({ status }) {
+  if (status === 'lookbook') {
+    return (
+      <span className="text-[11px] font-bold uppercase tracking-wider text-bone/40">
+        Lookbook
+      </span>
+    )
+  }
   if (status === 'blessing-pending') {
     return (
       <button
@@ -25,7 +33,7 @@ function Cta({ status }) {
   return (
     <button
       type="button"
-      className="bg-hazard px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink transition hover:opacity-80"
+      className="bg-hazard px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-ink transition hover:opacity-80"
       title="Pre-orders open with the drop — checkout isn't live yet"
     >
       Pre-order →
@@ -36,19 +44,22 @@ function Cta({ status }) {
 function ProductCard({ p }) {
   const [imgError, setImgError] = useState(false)
   return (
-    <article className="flex flex-col overflow-hidden border border-bone/15 bg-ink">
+    <article
+      className="flex flex-col overflow-hidden border border-bone/15 bg-ink"
+      title={p.description || p.blurb}
+    >
       <div
-        className="flex items-center justify-between px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em]"
+        className="flex items-center justify-between px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em]"
         style={{ background: p.tint.bar, color: p.tint.ink }}
       >
-        <span>{p.category}</span>
-        <span><Price value={p.price} currency={p.currency} /></span>
+        <span className="truncate">{p.category}</span>
+        {p.ethicsNote && <span title={p.ethicsNote}>✦</span>}
       </div>
 
       {/* product art — flats/graphics ride on a paper-cream panel */}
-      <div className="flex aspect-[4/3] items-center justify-center bg-bone p-4">
+      <div className="flex aspect-square items-center justify-center bg-bone p-2">
         {imgError ? (
-          <span className="font-mono text-[11px] uppercase tracking-wider text-ink/40">
+          <span className="px-2 text-center font-mono text-[10px] uppercase tracking-wider text-ink/40">
             {p.title}
           </span>
         ) : (
@@ -62,32 +73,13 @@ function ProductCard({ p }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="headline text-lg leading-tight text-bone">{p.title}</h3>
-        <p className="mt-1 text-sm italic text-bone/80">“{p.blurb}”</p>
-        <p className="mt-3 text-sm leading-relaxed text-bone/70">{p.description}</p>
-
-        {p.sizes && (
-          <div className="mt-4 flex flex-wrap gap-1.5">
-            {p.sizes.map((s) => (
-              <span
-                key={s}
-                className="border border-bone/20 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-bone/60"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
+      <div className="flex flex-1 flex-col gap-1.5 p-3">
+        <h3 className="headline text-sm leading-tight text-bone">{p.title}</h3>
+        {p.blurb && (
+          <p className="line-clamp-2 text-[11px] italic leading-snug text-bone/55">“{p.blurb}”</p>
         )}
-
-        {p.ethicsNote && (
-          <p className="mt-4 border-l-2 border-gold pl-3 font-mono text-[11px] leading-relaxed text-gold/90">
-            {p.ethicsNote}
-          </p>
-        )}
-
-        <div className="mt-5 flex items-center justify-between pt-2">
-          <span className="text-lg text-bone">
+        <div className="mt-auto flex items-center justify-between gap-2 pt-1">
+          <span className="text-sm text-bone">
             <Price value={p.price} currency={p.currency} />
           </span>
           <Cta status={p.status} />
@@ -109,7 +101,7 @@ export default function Store() {
     <div className="grain min-h-screen bg-ink text-bone">
       {/* HEADER */}
       <section className="border-b border-bone/10">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6 py-10 md:py-12">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">
             The store · MADE ON
           </p>
@@ -169,12 +161,12 @@ export default function Store() {
         if (items.length === 0) return null
         return (
           <section key={cat.key} className="border-b border-bone/10">
-            <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-              <div className="mb-8">
+            <div className="mx-auto max-w-6xl px-6 py-8">
+              <div className="mb-5 flex items-baseline justify-between gap-4">
                 <h2 className="headline text-2xl text-bone md:text-3xl">{cat.label}</h2>
-                <p className="mt-1 text-sm text-bone/55">{cat.blurb}</p>
+                <p className="hidden text-sm text-bone/55 sm:block">{cat.blurb}</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {items.map((p) => (
                   <ProductCard key={p.id} p={p} />
                 ))}
