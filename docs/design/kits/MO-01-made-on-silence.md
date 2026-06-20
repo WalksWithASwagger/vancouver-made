@@ -1,7 +1,7 @@
 # TECH PACK: MO-01 · MADE ON SILENCE
 
 Collection: MADE ON · Series: *what the city is built on* · Designer: Kris Krüg ·
-Category: soccer jersey (home) · Fit: unisex match-fit · Sizes XS–XXL.
+Category: soccer jersey (home) · Fit: unisex relaxed match-fit · Sizes XS–3XL.
 Data: `src/data/heroKits.js#made-on-silence` · Flat: rendered in-app (KitFlat).
 
 **Silhouette:** **¾ raglan** — redaction bars are discrete (the diagonal seam doesn't fight them); the cut reads black-bloc / refusal of the official kit.
@@ -34,6 +34,24 @@ Black bloc. **The line:** *The redacted document, worn.*
 ## Print method
 **Key effect:** redaction bars = contrasting *finish* (gloss bar on matte body), not
 just colour. Spec this with Formme. Allover ghosted document = dye-sublimation.
+
+## Sizing
+Sizes **XS–3XL**, unisex relaxed match-fit. Full POM grid, grading and tolerances:
+[tech-pack-spec §2](../../research/tech-pack-spec.md#2-sizing--fit).
+**This kit = ¾ raglan:** sleeve measured **CB-neck to cuff along the raglan seam** ≈ 24–27″ /
+61–68.5 cm `[confirm]`; add raglan-seam length + cuff-opening POMs at sampling.
+
+## Bill of materials (BOM)
+| Component | Spec |
+|---|---|
+| Body | **Dope-dyed recycled black** poly (near-waterless colour), ~150 gsm |
+| Trim | Self-fabric bound or 1×1 rib; ¾ raglan sleeves |
+| Ground graphic | Ghosted FOI / consultation doc = dye-sublimation (tonal, low-contrast) |
+| Redaction bars | **Gloss-over-matte:** 3D silicone / gloss transfer on the matte ground; keep on low-flex zones |
+| Name / number / hem | Sublimated; CLASSIFIED stamp-red accent |
+| Labels | Tagless care + woven flag; hangtag = manifesto + FOI how-to + QR |
+
+Full BOM + finish feasibility: [§3](../../research/tech-pack-spec.md#3-materials--bom), [§5](../../research/tech-pack-spec.md#5-concept-specific-finishes).
 
 ## Why it wins
 Matte-on-matte redaction is a real novelty-of-output move: the censorship is the

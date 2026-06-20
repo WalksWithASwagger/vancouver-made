@@ -1,6 +1,6 @@
-# Mood Board Prompts — 01 MADE ON SILENCE
+# Mood Board Prompts: 01 MADE ON SILENCE
 
-**The argument:** The city's record, redacted. What they won't release, worn — black bloc. *The redacted document, worn.*
+**The argument:** The city's record, redacted. What they won't release, worn. Black bloc. *The redacted document, worn.*
 
 **Look:** the FOI response that came back censored. Matte-black jersey, gloss-on-matte redaction bars that only read in raking light, a single CLASSIFIED stamp. Black bloc from across the room; the city's withheld paperwork up close.
 

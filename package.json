@@ -8,8 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --host",
-    "server": "node src/server/api.js",
     "db:init": "node scripts/init-db.js",
+    "server": "node src/server/api.js",
+    "ingest": "node scripts/ingest-assets.js --db",
     "dev:all": "concurrently \"node src/server/api.js\" \"vite\""
   },
   "dependencies": {

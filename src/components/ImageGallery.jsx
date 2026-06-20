@@ -33,7 +33,7 @@ export default function ImageGallery({ assets }) {
         {assets.map(asset => (
           <div key={asset.id} className="gallery-item">
             <div className="gallery-thumbnail" onClick={() => setSelectedAsset(asset)}>
-              <img src={`file:///${asset.path}`} alt={asset.filename} onError={e => {
+              <img src={`/api/asset/${asset.id}/raw`} alt={asset.filename} loading="lazy" onError={e => {
                 e.target.src = '/placeholder.png'
               }} />
               <div className="gallery-overlay">

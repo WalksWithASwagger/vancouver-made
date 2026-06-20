@@ -1,14 +1,14 @@
-# Mood Board Prompts — 08 SMART CITY
+# Mood Board Prompts: 08 SMART CITY
 
 **The argument:** You didn't read the terms, but you agreed to them by living here. *Surveillance as a terms-of-service.*
 
-**Look:** the EULA, the camera grid, the QR turnstile, the cookie banner. Cool civic-tech polish — the dashboard that watches back.
+**Look:** the EULA, the camera grid, the QR turnstile, the cookie banner. Cool civic-tech polish. The dashboard that watches back.
 
 **Palette:** rain `#1c2b33` (wet asphalt) · cyan glow `#21d9c9` · bone `#EDE6D8` · ink `#0E0E0E`.
 
 **MJ settings:** `--ar 4:5 --style raw` (no `--v`).
 
-> ⚠️ **Receipt note:** the hem here is a satirical terms-of-service clause (an invented-copy device, not a factual claim — so no citation is required). If you'd rather carry a sourced surveillance/procurement fact, swap one in and cite it.
+> ⚠️ **Receipt note:** the hem here is a satirical terms-of-service clause (an invented-copy device, not a factual claim, so no citation is required). If you'd rather carry a sourced surveillance/procurement fact, swap one in and cite it.
 
 ---
 

@@ -1,6 +1,6 @@
-# Jersey Flats Prompts — 03 MADE ON THE PUBLIC DIME ★
+# Jersey Flats Prompts: 03 MADE ON THE PUBLIC DIME ★
 
-**Goal:** Complete jersey flat mockups (front / back / detail) for the banknote kit — the flagship "$729M as couture."
+**Goal:** Complete jersey flat mockups (front / back / detail) for the banknote kit. The flagship "$729M as couture."
 
 **Build:** matte note-green body, edge-to-edge guilloché engraving, metallic-gold marks. Crest = casino chip with FIFA-shield. Sponsor = BANK OF FIFA. Number = the denomination. Back-line = THE HOUSE ALWAYS WINS.
 
@@ -10,7 +10,7 @@
 
 ---
 
-## Batch 1 — Hero home kit
+## Batch 1: Hero home kit
 
 ### Prompt 1: Full front flat
 ```
@@ -48,7 +48,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Finish / colorway explorations
+## Batch 2: Finish / colorway explorations
 
 ### Prompt 4: Heavy-engraving variant
 ```
@@ -73,7 +73,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — On-garment detail shots
+## Batch 3: On-garment detail shots
 
 ### Prompt 6: Crest close-up
 ```
@@ -105,7 +105,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — Full kit composition
+## Batch 4: Full kit composition
 
 ### Prompt 9: Complete kit flat-lay
 ```
@@ -122,4 +122,4 @@ white background --ar 3:4 --style raw
 
 ## Presentation use
 
-Front (1) + back (2) are the hero deck visuals. Crest / sponsor / denomination close-ups (6–8) support the "design system" section. Full kit (9) closes. The denomination number is the most quotable object on the floor — lead with it.
+Front (1) + back (2) are the hero deck visuals. Crest / sponsor / denomination close-ups (6–8) support the "design system" section. Full kit (9) closes. The denomination number is the most quotable object on the floor. Lead with it.
