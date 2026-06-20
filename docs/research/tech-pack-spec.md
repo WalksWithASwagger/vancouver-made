@@ -58,15 +58,33 @@ clean football block so the *graphics* carry the concept.
 |---|---|
 | Category | Soccer kit — jersey (home) + match shorts |
 | Fit | **Unisex relaxed match-fit** ("standard football block") — trim, not boxy; not the slim authentic cut. See [§2.1](#21-fit-decision). |
+| Silhouette | **Varies per kit** — signature **¾ raglan**; graphic-dense continuous-print kits use a clean **long/short** sleeve. Per-kit map below + [§2.2](#22-jersey--finished-garment-measurements-pom). |
 | Sizes | **XS–3XL** (extendable to 5XL — grade is documented; +YS–YXL youth + women's cut as options) |
-| Body fabric | **100% recycled polyester interlock, ~150 gsm**, sublimation-ready ([§3.1](#31-body-fabric-jersey)) |
-| Shorts fabric | **100% recycled polyester interlock, ~180 gsm** ([§3.3](#33-shorts-fabric)) |
+| Body fabric | **Ocean-bound / Parley-style recycled PET interlock, ~150 gsm**, optical-bright, sublimation-ready ([§3.1](#31-body-fabric-jersey)) |
+| Shorts fabric | **Ocean-bound recycled PET interlock, ~180 gsm** ([§3.3](#33-shorts-fabric)) |
 | Neckline | V-neck or crew — **self-fabric bound** (lets art wrap edge-to-edge) **or** 1×1 rib ([§3.4](#34-collar--cuff--trim--waistband)) |
 | Waistband | Elastic + internal drawcord (upgrade: jacquard elastic w/ MADE ON wordmark) |
 | Primary decoration | **Dye-sublimation, edge-to-edge, before cut-and-sew** ([§4](#4-decoration--print-methods)) |
 | Construction | Standard jersey construction — overlock seams, coverstitch hems, flatlock at skin-contact zones, tonal thread ([§8](#8-construction--stitching)) |
 | Labels | Tagless heat-transfer care/size at neck + small woven brand flag; territorial acknowledgement on neck label ([§7](#7-labels--legal)) |
 | Packaging | Minimal/recycled — anti-merch finish ([§9](#9-packaging)) |
+
+### Per-kit silhouette + material map
+
+Silhouette and lead fabric are chosen per concept's graphic logic: continuous all-over print wants
+an **unbroken canvas** (clean sleeve); color-block / discrete-element kits suit a **raglan seam**.
+*Material as message — the MADE ON sentence extends to the fibre: made on ocean plastic / made on
+ghost nets.*
+
+| Kit | Silhouette | Construction | Lead fabric |
+|---|---|---|---|
+| **MO-03 Public Dime** (banknote, continuous edge-to-edge) | **Long sleeve** | Set-in | Optical-bright ocean-bound recycled PET ([§3.1](#31-body-fabric-jersey)) |
+| **MO-01 Made on Silence** (redaction, black-bloc) | **¾ raglan** | Raglan | **Dope-dyed recycled black** poly — waterless ([§3.5](#35-recycled-content--certifications-how-to-spec-it)) |
+| **MO-09 Pump and Dump** (blokecore) | **¾ raglan, boxy** | Raglan | Ocean-bound recycled PET + **ECONYL ghost-net trim** |
+
+> Remaining 6 kits default to the relaxed short-sleeve block unless a concept argues otherwise.
+> ¾ raglan is not match-legal for sanctioned play — fine here (these are art objects; refusing the
+> official cut is on-theme).
 
 ---
 
@@ -126,6 +144,22 @@ ratios and flagged `[confirm]` — validate against Formme's block before cuttin
 
 *Hem note: football jerseys run roughly straight-cut (hem ≈ chest). Values keep hem ~0.5″ under
 chest for a slight clean taper; set hem = chest for a true straight box if Formme prefers.*
+
+#### Sleeve-length variants (per the §1 per-kit map)
+
+POM **D** above is the **short** set-in default. For the long and ¾-raglan kits, swap in the row
+below. **Measure-method differs:** set-in sleeves measure **shoulder seam → cuff**; a **¾ raglan
+has no shoulder seam — measure from centre-back neck along the raglan seam to the cuff**, so its
+number is *not* directly comparable to a set-in length. All variant values are starting estimates
+`[confirm]` — validate on Formme's block. *Cells = inch / cm.*
+
+| Silhouette | Measure method | XS | S | M | L | XL | 2XL | 3XL | Tol. |
+|---|---|---|---|---|---|---|---|---|---|
+| Short set-in (default) | shoulder→cuff | 7¾ / 19.5 | 8 / 20.5 | 8¼ / 21 | 8½ / 21.5 | 8¾ / 22 | 9 / 23 | 9¼ / 23.5 | ±¼″ |
+| **Long set-in** (MO-03) | shoulder→cuff | 22 / 56 `[c]` | 22½ / 57 `[c]` | 23 / 58.5 `[c]` | 23½ / 60 `[c]` | 24 / 61 `[c]` | 24½ / 62.5 `[c]` | 25 / 63.5 `[c]` | ±½″ |
+| **¾ raglan** (MO-01, MO-09) | CB-neck→cuff (along raglan) | 24 / 61 `[c]` | 24½ / 62 `[c]` | 25 / 63.5 `[c]` | 25½ / 65 `[c]` | 26 / 66 `[c]` | 26½ / 67.5 `[c]` | 27 / 68.5 `[c]` | ±½″ |
+
+*¾ = ends mid-forearm / just past the elbow. Raglan also needs a **raglan-seam length** (neck→underarm) and **cuff opening** POM added at sampling `[confirm]`.*
 
 ### 2.3 Jersey — body measurements (wearer self-select)
 
@@ -257,14 +291,17 @@ only gas-bonds to synthetic fibre.
 | Double-knit (heavy) | 100% poly | 160–280 | Good but warmer/heavier than needed | — |
 | Jacquard | 100% poly | ~150–180 `[c]` | Raised texture distorts fine detail | Tonal interest only |
 
-> **★ PRIMARY: 100% recycled-polyester interlock, ~150 gsm**, optical-bright base,
-> sublimation-ready. Best balance of print sharpness, opacity under stadium light, durability
-> for ~10 wearers, and the light soccer hand.
+> **★ PRIMARY: ocean-bound / Parley-style recycled-PET interlock, ~150 gsm**, optical-bright base,
+> sublimation-ready. Same knit as standard recycled interlock — but the fibre is sourced from
+> **ocean-bound plastic** so the base fabric *itself* carries the MADE ON message ("made on ocean
+> plastic"). Best balance of print sharpness, opacity under stadium light, durability, light hand.
 > **Alt 1:** 100% poly micro-piqué ~150 gsm (drier, more breathable; accept slightly softer fine detail).
-> **Alt 2 (engineered knit-map):** interlock body + micro-mesh side/back vent panels (~140 gsm)
-> for airflow — adds seams/cost, only if ventilation is a priority.
+> **Alt 2 (dark/solid kits):** **dope-dyed recycled poly** (pigment in the melt = near-waterless) for
+> kits with a solid dark ground and no full-colour all-over print (e.g. MO-01) — see [§3.5](#35-recycled-content--certifications-how-to-spec-it).
 
-*Real suppliers to source from: Wooter, Ninghow, Rajco USA (100% recycled poly interlock), Soardist, Rex Fabrics.*
+*Sustainable-novel fibre is the chosen material direction — full sourcing + sublimation
+reconciliation in [§3.5](#35-recycled-content--certifications-how-to-spec-it). Suppliers: Wooter,
+Ninghow, Rajco USA, Soardist, Rex Fabrics; ocean-PET via Parley/SEAQUAL-type mills, ECONYL via Aquafil.*
 
 ### 3.2 gsm verification
 
@@ -279,7 +316,7 @@ interlock, not soccer tops.
 
 ### 3.3 Shorts fabric
 
-**100% recycled-poly interlock, ~180 gsm** — heavier than the jersey for abrasion (slide
+**Ocean-bound recycled-PET interlock, ~180 gsm** — heavier than the jersey for abrasion (slide
 tackles) + opacity when stretched over the thigh; still lightweight. 100% poly for cleanest
 sublimation (add 90/10 poly/elastane only if a fitted short is wanted). Alt: lightweight woven
 micro-poly for a crisper short — but confirm sublimation strike-off and recovery `[confirm]`.
@@ -304,8 +341,23 @@ elastic band with the MADE ON wordmark** woven in (subtle anti-merch branding; c
 ### 3.5 Recycled content + certifications (how to spec it)
 
 **BOM line, written properly:**
-> *Body: 100% recycled polyester (rPET), GRS-certified, [REPREVE® branded fiber], ~150 gsm
-> interlock, OEKO-TEX STANDARD 100 certified, optical-bright sublimation-ready.*
+> *Body: 100% recycled polyester — **ocean-bound rPET** (or REPREVE® traceable rPET), GRS-certified,
+> ~150 gsm interlock, OEKO-TEX STANDARD 100, optical-bright, sublimation-ready.*
+
+#### Sustainable-novel fibre direction (chosen) — and the sublimation reconciliation
+
+Material is treated as message. The catch: **dye-sublimation needs an optical-bright polyester base**
+for vivid colour, so each novel fibre maps to where it actually works:
+
+| Fibre | What / story | Sublimation fit | Use it for |
+|---|---|---|---|
+| **Ocean-bound / Parley-style recycled PET** (polyester) | rPET from ocean-bound plastic — "made on ocean plastic" | ✅ Excellent (it *is* bright poly) | **Base fabric** for print-heavy kits (MO-03, MO-09) |
+| **Dope-dyed recycled poly** | pigment in the melt → near-**waterless** colour | ⚠️ Solid/dark grounds only (no white base for full-colour print) | **Dark/solid kits** — MO-01 black-bloc ground |
+| **ECONYL** regenerated nylon (Aquafil) | from **ghost fishing nets** — "made on what's discarded" | ⚠️ Nylon sublimates poorly vs poly | **Tactile accent / trim** (collar bind, cuffs) — MO-09; or production-spec hero, accept softer print |
+
+> Net: base = **named ocean-bound recycled PET** (prints clean + tells the story); **dope-dyed** for
+> dark grounds; **ECONYL** as a premium accent — the "made on what's discarded" story is real
+> *without* breaking the sublimation method. All three: confirm Formme's mill offers them `[confirm]`.
 
 | Cert | Body | Certifies | Threshold |
 |---|---|---|---|
@@ -335,9 +387,9 @@ waterless dye, made in a small ~10-kit run to avoid overproduction."*
 
 | Component | Material / spec | Notes |
 |---|---|---|
-| Main body (jersey) | 100% recycled poly interlock, ~150 gsm, GRS + OEKO-TEX 100, optical-bright, fibre-integrated wicking | Sublimation-ready |
-| Shorts body | 100% recycled poly interlock, ~180 gsm, GRS + OEKO-TEX 100 | Sublimation-ready |
-| Neck/cuff trim | Self-fabric bound (or 1×1 poly/spandex rib) | Self-fabric lets art wrap |
+| Main body (jersey) | **Ocean-bound recycled-PET interlock**, ~150 gsm, GRS + OEKO-TEX 100, optical-bright, fibre-integrated wicking | Sublimation-ready; dope-dyed black for MO-01 |
+| Shorts body | Ocean-bound recycled-PET interlock, ~180 gsm, GRS + OEKO-TEX 100 | Sublimation-ready |
+| Neck/cuff trim | Self-fabric bound (or 1×1 poly/spandex rib); **ECONYL ghost-net accent** option | Self-fabric lets art wrap; ECONYL = "made on discarded" |
 | Waistband | Elastic + internal drawcord (or jacquard elastic w/ wordmark) | — |
 | All-over print | Dye-sublimation, edge-to-edge, pre-cut | 300 DPI at size; 0.25″ bleed |
 | Micro-type (hem citations) | Dye-sublimation, vector, sans-serif | ~6–8 pt safe on hem ([§5.3](#53-micro-type-hem-citations-all-kits)) |
@@ -352,7 +404,7 @@ For the official Formme template's "no technical terms needed" Materials pages:
 
 | Component | Material / description / notes |
 |---|---|
-| Main body | Smooth, lightweight recycled performance knit — soft, breathable, holds bright edge-to-edge print |
+| Main body | Smooth, lightweight knit made from **recycled ocean-bound plastic** — soft, breathable, holds bright edge-to-edge print |
 | Shorts | Same recycled performance knit, a touch heavier so it's tough and never see-through |
 | Collar & cuffs | Bound in the same fabric so the artwork runs right to the edge (or a soft ribbed trim) |
 | Waistband | Stretchy elastic with an inside drawcord |

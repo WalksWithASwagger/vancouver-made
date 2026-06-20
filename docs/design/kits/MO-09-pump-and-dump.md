@@ -1,7 +1,7 @@
 # TECH PACK: MO-09 · PUMP AND DUMP
 
 Collection: MADE ON · Series: *STREET SERIES: who it got built without* ·
-Designer: Kris Krüg · Category: soccer jersey (third) · Fit: unisex match-fit · XS–XXL.
+Designer: Kris Krüg · Category: soccer jersey (third) · Fit: unisex relaxed match-fit · XS–3XL.
 Data: `src/data/heroKits.js#pump-and-dump` (+ deep dive `src/data/clubs.js#pump-and-dump-fc`).
 
 **Silhouette:** **¾ raglan, boxy / oversized** (blokecore) — the silhouette *is* the hypebeast-on-TikTok read.
@@ -35,6 +35,24 @@ the public, take the exit; you're the bagholder. **The line:** *Worn as the pros
 ## Print method
 Toxic-neon gradients + allover charts/towers = dye-sublimation. Hem micro-type = fine
 screen / heat transfer.
+
+## Sizing
+Sizes **XS–3XL**, unisex relaxed match-fit; **cut boxy / oversized** (blokecore: dropped shoulder,
+straight hem). Full POM grid, grading and tolerances:
+[tech-pack-spec §2](../../research/tech-pack-spec.md#2-sizing--fit). **¾ raglan** sleeve ≈ 24–27″ /
+61–68.5 cm (CB-neck to cuff) `[confirm]`; widen chest/hem ~2–4 cm for the boxy fit `[confirm]`.
+
+## Bill of materials (BOM)
+| Component | Spec |
+|---|---|
+| Body | **Ocean-bound recycled-PET interlock**, ~150 gsm jersey / ~180 gsm shorts |
+| Trim | **ECONYL ghost-net** accent (collar bind / cuffs); jacquard elastic waistband option |
+| All-over (charts / towers) | Dye-sublimation |
+| Toxic-neon | **Fluorescent sublimation ink** (confirm Formme runs an Fp/Fy channel); else near-neon + spot-screened fluo |
+| Name / number / hem | Sublimated; socks 22× / 33× price-to-income |
+| Labels | Tagless care + woven flag; hangtag = manifesto + housing-justice QR |
+
+Full BOM + finish feasibility: [§3](../../research/tech-pack-spec.md#3-materials--bom), [§5](../../research/tech-pack-spec.md#5-concept-specific-finishes).
 
 ## Why it wins
 Connects the event, finance and the housing crisis in one blackout kit that reads
