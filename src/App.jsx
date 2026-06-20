@@ -43,7 +43,7 @@ function RouteFallback() {
 
 const TITLES = {
   '/': 'MADE ON — Whose Cup Is It Anyway?',
-  '/engine': 'The Receipts Engine — MADE ON',
+  '/engine': 'We Made the Receipt — MADE ON',
   '/hall-of-fame': 'Hall of Fame — MADE ON',
   '/process': 'Our Process — MADE ON',
   '/tracker': 'Asset Tracker — MADE ON',

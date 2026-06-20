@@ -196,7 +196,7 @@ npm run dev:all   # API :3001 + site :5173`}
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-5 text-xs uppercase tracking-[0.2em]">
         <Link to="/" className="text-hazard transition hover:text-bone">← Back to the pitch</Link>
-        <Link to="/engine" className="text-bone/60 transition hover:text-bone">Receipts Engine</Link>
+        <Link to="/engine" className="text-bone/60 transition hover:text-bone">The Receipts</Link>
         <Link to="/hall-of-fame" className="text-bone/60 transition hover:text-bone">Hall of Fame</Link>
       </div>
     </div>

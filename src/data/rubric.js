@@ -24,8 +24,8 @@ export const rubric = [
     crit: 'Show your process',
     ask: 'Make the method visible.',
     delivery:
-      'One civic receipt goes into the Receipts Engine and comes out as three artifacts — a hem, a poster, an editorial — each in its own house voice, each carrying the same citation. A wall of sources, a documented technique.',
-    proof: { label: 'Run the Receipts Engine', to: '/engine' },
+      "One real Vancouver number, said three ways: stitched on a kit's hem, pasted up as a poster, shot like couture. Same receipt every time, source attached. A wall of sources, a documented technique.",
+    proof: { label: 'See the receipts', to: '/engine' },
   },
   {
     id: 'ai-tools',
