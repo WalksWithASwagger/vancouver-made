@@ -9,14 +9,20 @@ Submission status + punch list (both tracks): **[`SUBMISSION.md`](SUBMISSION.md)
 - [`DEPLOY.md`](DEPLOY.md) — Vercel auto-deploy (connected; merge `main` → production).
 - [`HANDOFF.md`](HANDOFF.md) — where the tech-pack work stands; pick-up notes.
 
+## features/ — the five site surfaces
+- [`SITE-GUIDE.md`](SITE-GUIDE.md) — the five routes: what each page is and why it exists.
+- [`PROCESS.md`](PROCESS.md) — the /process page: the thesis, the 7 stages, who holds the pen at each.
+- [`RECEIPTS-ENGINE.md`](RECEIPTS-ENGINE.md) — the /engine: one receipt, three voices (hem/poster/editorial), how to add a receipt.
+- [`HALL-OF-FAME.md`](HALL-OF-FAME.md) — the /hall-of-fame: wings, filters, data files, rights policy.
+- [`CURATION-WORKFLOW.md`](CURATION-WORKFLOW.md) — generate, ingest, star, read picks: the full local curation loop.
+
 ## presentation/ — the pitch
 - [`presentation-flow.md`](presentation/presentation-flow.md) — **design track**: the 8-slide /
   ~5-min submission flow (the "trailer"). **Start here for the design deck.**
 - [`talk-flow.md`](presentation/talk-flow.md) — the 10-slide "director's cut" live talk.
 - [`dev-pitch.md`](presentation/dev-pitch.md) — **dev track** (Devin Open Hackathon): the
   Receipts-Engine pipeline + three live surfaces, mapped to the 4 criteria.
-- [`deck.html`](presentation/deck.html) — self-contained playable slides (image slots are placeholders).
-- [`deck-outline.md`](presentation/deck-outline.md) — early outline. **Superseded** by the two flows above.
+- [`deck.html`](presentation/deck.html) — self-contained playable slides with the real jersey, mood, and crest imagery wired in.
 
 ## design/ — brand, kits, clubs, prompts
 - [`submission-brief.md`](design/submission-brief.md) — the locked **Four Questions** for the hero
@@ -26,8 +32,6 @@ Submission status + punch list (both tracks): **[`SUBMISSION.md`](SUBMISSION.md)
 - [`kits/`](design/kits/) — filled tech-pack briefs (MO-01 / MO-03 / MO-09).
 - [`prompts/`](design/prompts/) — the Midjourney prompt library + the `GENERATION-QUEUE.md` /
   `INGEST-REVIEW.md` runbooks (operational scratch for the generation work).
-- [`jersey-kit.md`](design/jersey-kit.md) — early kit concept. **Superseded** by `clubs/` + `kits/`.
-
 ## research/ — sources → analysis → synthesis
 - [`KNOWLEDGE-BASE.md`](research/KNOWLEDGE-BASE.md) — registry + research protocol.
 - [`brief.md`](research/brief.md) — facts to confirm / threads.
