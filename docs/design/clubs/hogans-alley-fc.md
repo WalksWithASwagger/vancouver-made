@@ -83,10 +83,10 @@ proceeds to them; reference the culture, never appropriate sacred or specific mo
 and shaped by — the community, with their blessing first.** (Same discipline as Nardwuar
 FC: homage, not ownership.)
 
-## Receipts: confirm before public
+## Receipts (verified 2026-06-20)
 - Hogan's Alley as Vancouver's main Black neighbourhood; razed via urban renewal + the
-  Georgia Viaduct, c.1967–71. *Confirm exact viaduct dates.* (`AL-HA-001`)
+  Georgia Viaduct, c.1967–71. *Verified.* (`AL-HA-001`)
 - 2022 City–Hogan's Alley Society MOU → community land trust (affordable housing, Black
-  Cultural Centre, child care, small business). *Cite with date.* (`AL-HA-002`)
+  Cultural Centre, child care, small business). *Verified.* (`AL-HA-002`)
 - Ethọ́s Lab: Black-led Vancouver STEAM academy, Afrofuturist; Galaxy Project scaling to
   2,500+ Black youth. *Reference; amplify, don't represent.* (`AL-HA-003`)

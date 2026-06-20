@@ -139,7 +139,7 @@ export const heroKits = [
     serial: 'SER. NO. VAN-2026-RETURN',
     hemCitation: {
       text: "HOGAN'S ALLEY RAZED FOR THE VIADUCT c.1971 · LAND TRUST 2022 · STILL BUILDING",
-      source: "City of Vancouver · Hogan's Alley Society 2022 [confirm]",
+      source: "City of Vancouver · Hogan's Alley Society 2022",
     },
     whyItWins:
       "The collection's only kit that ends in the future tense. It names an erasure the city now admits — \"Made on Hogan's Alley\" is already in the brand triad — then hands the spotlight to the people rebuilding the block. Gold where the others are blackout; memorial and blueprint at once.",

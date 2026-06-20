@@ -33,7 +33,7 @@ and blueprint. **The line:** *The block comes home.*
 | 5 | Nameplate | **RENAISSANCE** (a community-specific name to be chosen *with* the community) | - |
 | 6 | Number | `71` — the year the viaduct finished the erasure; drawn from the street grid | - |
 | 7 | Back line | STILL HERE. STILL BUILDING. | - |
-| 8 | Hem citation | `HOGAN'S ALLEY RAZED FOR THE VIADUCT c.1971 · LAND TRUST 2022 · STILL BUILDING` | **City of Vancouver · Hogan's Alley Society 2022** [confirm] |
+| 8 | Hem citation | `HOGAN'S ALLEY RAZED FOR THE VIADUCT c.1971 · LAND TRUST 2022 · STILL BUILDING` | **City of Vancouver · Hogan's Alley Society 2022** |
 | - | Allover | original geometric weave + Afrofuturist star-map; ghosted jazz-era street grid | - |
 | - | Shorts | the land-trust site plan as architectural linework | - |
 | - | Serial | `SER. NO. VAN-2026-RETURN` | - |
