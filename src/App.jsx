@@ -1,7 +1,9 @@
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Stage from './scene/Stage.jsx'
 import Clubs from './components/Clubs.jsx'
 import Collection from './components/Collection.jsx'
 import HeroKits from './components/HeroKits.jsx'
+import AssetTracker from './components/AssetTracker.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 
@@ -17,7 +19,7 @@ function Marquee() {
   )
 }
 
-export default function App() {
+function MadeOnSite() {
   return (
     <div className="grain min-h-screen bg-ink text-bone">
       {/* HERO — the World Portal + the MADE ON statement */}
@@ -94,9 +96,25 @@ export default function App() {
       <Clubs />
 
       <footer className="border-t border-bone/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-bone/40">
+        <div className="flex justify-center gap-6 mb-4">
+          <Link to="/" className="text-bone/60 hover:text-bone transition">Pitch Site</Link>
+          <span className="text-bone/20">·</span>
+          <Link to="/tracker" className="text-bone/60 hover:text-bone transition">Asset Tracker</Link>
+        </div>
         {brand.name} · {brand.parent} · You asked for the Vancouver story — this is the
         part that doesn't fit on a souvenir.
       </footer>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MadeOnSite />} />
+        <Route path="/tracker" element={<AssetTracker />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
