@@ -6,7 +6,7 @@
 
 **The spectacle itself.** The gap between the broadcast version and what it actually costs. Specifically: the World Cup 2026 as a pump-and-dump cycle: hype the asset (the city, the tournament), bill the public, take the exit liquidity, leave the bagholders. This is the mechanism that runs underneath gentrification, mega-events, and real-estate financialization in Vancouver.
 
-The specific wound: ~$320–338M public cost + $67–74M other public-sector spending + ~$242M security, while ~2,500 condos sit unsold and the price-to-income ratio is 20–30×. Foreign capital flipped the market; the World Cup is the press release that moved the price. The residents are the retail buyers left holding the bag after the smart money exited.
+The specific wound: ~$320–338M public cost + $67–74M other public-sector spending + ~$242M security, while ~2,500 condos sit unsold and the price-to-income ratio is ~12× (Demographia 2025) — among the world's most unaffordable. Foreign capital flipped the market; the World Cup is the press release that moved the price. The residents are the retail buyers left holding the bag after the smart money exited.
 
 ### 2. What story or feeling does the design communicate?
 
@@ -22,7 +22,7 @@ You're wearing a blackout kit dressed as a hyped 2026 "limited-edition city prid
 
 Yes. This argument only lands in Vancouver in 2026 because:
 - **The VSE history is real.** "Scam Capital of the World" (Forbes 1989) is not metaphor. It's how the stock exchange was actually branded. Howe Street jargon ("pump and dump," "forward-looking statements," "exit liquidity") is Vancouver native.
-- **The housing specificity is unavoidable.** 20–30× price-to-income is Vancouver-specific; the World Cup cost figures are specific; the BCSC 2026 pump-and-dump finding is real. A jersey with a generic chart could come from any city. A jersey with these numbers and this history could only come from here.
+- **The housing specificity is unavoidable.** A ~12× price-to-income multiple (Demographia 2025) is Vancouver-specific; the World Cup cost figures are specific; the BCSC 2026 pump-and-dump finding is real. A jersey with a generic chart could come from any city. A jersey with these numbers and this history could only come from here.
 - **The spectacle is live.** The tournament is actually happening in 2026; the hype is actually moving the market. The jersey isn't a historical critique. It's a real-time indictment.
 - **Adbusters lineage is local.** The brand-hijack technique (mimicry + inverted payload) is Vancouver homegrown (Kalle Lasn, 1989). This jersey is wearing the city's own protest tradition.
 
@@ -62,7 +62,7 @@ It's proud because it **refuses the souvenir**. Everyone else makes the celebrat
 - VSE "Scam Capital of the World" (Forbes 1989) → folded into Canadian Venture Exchange. Quote with citation.
 - ~2,500 unsold Metro Vancouver condos / foreign money skewing market (CBC 2025; BIV; Macleans). Cite with date; confirm current figures.
 - World Cup cost ~$320–338M core, plus $67–74M other public-sector, ~$242M combined safety/security. Confirm latest figures before publishing.
-- Price-to-income ratio 20–30× (real estate / affordability research). Verify latest.
+- Price-to-income ratio ~12× median multiple (Demographia 2025). ✔ verified — not the 20–30× sometimes cited.
 
 ---
 

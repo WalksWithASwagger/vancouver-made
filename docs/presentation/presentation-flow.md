@@ -50,7 +50,7 @@ talk first.
 **3. What part of Vancouver.** The spectacle itself: the gap between the broadcast
 version and the bill. The World Cup as a pump and dump. Hype the city, bill the public,
 take the exit, leave the residents holding the bag. Ground it: VSE "Scam Capital of the
-World," Howe Street, 20–30× price-to-income.
+World," Howe Street, ~12× price-to-income (Demographia 2025).
 *Job: Q1, specific not generic.*
 
 **4. Could only come from here.** Run the test out loud. The VSE history is real. The
@@ -106,7 +106,7 @@ SLIDE 2 · THE JERSEY
 SLIDE 3 · WHAT PART OF VANCOUVER (Q1)
   Headline:  The spectacle itself.
   Body:      [hype the asset, bill the public, take the exit, you're the bag]
-  Anchors:   VSE "Scam Capital" (Forbes 1989) · Howe St · 20–30× price-to-income
+  Anchors:   VSE "Scam Capital" (Forbes 1989) · Howe St · ~12× price-to-income (Demographia 2025)
 
 SLIDE 4 · COULD ONLY COME FROM HERE (Q3)
   Headline:  Could this jersey only come from Vancouver?
