@@ -8,8 +8,9 @@
 // fan-zone wristbands, "city pride" third kits — but never reproduce actual FIFA
 // marks. Build a parallel, counterfeit-official identity in our own voice.
 //
-// `confirm: true` on a source card = fact still needs primary-source verification
-// before it goes public (slide/shirt/site). See docs/research/brief.md.
+// A source card's `confirm` flag, when truthy, marks a fact still needing
+// primary-source verification before it goes public. All cards verified 2026-06-20
+// (see docs/research/analysis/05-receipts-verification.md). See also brief.md.
 
 export const league = {
   name: 'VANCOUVER MADE',
@@ -85,16 +86,16 @@ export const clubs = [
       {
         id: 'AL-N5-001',
         claim:
-          'No.5 Orange (Main & Powell) began as the Melbourne Hotel (1904), became No.5 Orange in 1971, and is woven into Vancouver nightlife lore.',
-        source: 'No5orange.ca; Eve Lazarus archive; local history',
+          'No.5 Orange (205 Main St, at Main & Powell) opened as the Melbourne Hotel in August 1904 and became No.5 Orange in 1971 — one of the last of old Gastown.',
+        source: 'Eve Lazarus, "How the Melbourne Hotel became No5 Orange" (2022); no5orange.ca',
         rights: 'Reference only — recreate/illustrate, do not reproduce photos.',
         confirm: false,
       },
       {
         id: 'AL-N5-002',
         claim:
-          "Vancouver's Host City Human Rights Action Plan names sex-worker safety, gender-based violence, and vulnerable-population outreach as live World Cup issues.",
-        source: 'City of Vancouver Host City Human Rights Action Plan',
+          "Vancouver's Host City Human Rights Action Plan (HRAP, final released May 25, 2026) explicitly names sex-worker safety, gender-based violence and MMIWG2S+ response among its World Cup priority areas.",
+        source: 'FIFA World Cup 2026 Vancouver Host Committee / City of Vancouver HRAP; CBC & Global News, May 2026',
         rights: 'Public document — quote with citation.',
         confirm: false,
       },
@@ -157,8 +158,8 @@ export const clubs = [
       {
         id: 'AL-NW-001',
         claim:
-          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray; Chrétien quipped "pepper, I put it on my plate" — ahead of the inquiry into police pepper-spraying protesters.',
-        source: 'APEC 1997 / CBC archives; Nardwuar interview record',
+          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate" — ahead of the Hughes/APEC inquiry into RCMP conduct.',
+        source: 'Nardwuar footage; The Canadian Encyclopedia; CBC archives',
         rights: 'Reference / quote with citation; do not reproduce footage stills.',
         confirm: false,
       },
@@ -202,7 +203,7 @@ export const clubs = [
     whoPays: [
       'The public — the bagholders',
       'Taxpayers: ~$320–338M+ in city costs',
-      'Renters at 20–30× price-to-income',
+      'Renters in one of the world’s least-affordable markets (~12× price-to-income)',
       'The displaced, swept before the open bell',
     ],
     sponsorBank: [
@@ -231,25 +232,25 @@ export const clubs = [
       {
         id: 'AL-PD-001',
         claim:
-          'The Vancouver Stock Exchange was nicknamed the "Scam Capital of the World" (Forbes, 1989); it later folded into the Canadian Venture Exchange.',
-        source: 'Forbes 1989; TMX / BC Studies historical record',
+          'The Vancouver Stock Exchange was branded the "scam capital of the world" by Forbes in 1989; it merged with the Alberta Stock Exchange in 1999 to form the CDNX, acquired by the TSX Group in 2001 and renamed the TSX Venture Exchange.',
+        source: 'Forbes (1989); Vancouver Stock Exchange historical record',
         rights: 'Quote with citation.',
         confirm: false,
       },
       {
         id: 'AL-PD-002',
         claim:
-          'Reporting describes foreign money skewing the market and ~2,500 unsold Metro Vancouver condos (CBC, 2025); a "freak show" of price-to-income unaffordability.',
-        source: 'CBC 2025; BIV; Macleans (Ian Young)',
-        rights: 'Cite with date; confirm current figures.',
+          'CMHC counted ~2,500 completed-and-unsold (unabsorbed) new condos in the Vancouver area in May 2025, rising to ~4,400 by May 2026; Vancouver is among the world\'s least-affordable markets at a price-to-income median multiple of ~12 (Demographia 2025) — not the 20–30× sometimes cited.',
+        source: 'CMHC via Business in Vancouver (2025–26); Demographia Intl Housing Affordability 2025',
+        rights: 'Cite with date; "unabsorbed" ≠ "vacant".',
         confirm: false,
       },
       {
         id: 'AL-PD-003',
         claim:
-          'The City projects roughly $320–338M core/essential World Cup costs, plus $67–74M other public-sector, with ~$242M combined safety/security.',
-        source: 'City of Vancouver / Province World Cup cost reports',
-        rights: 'Public figures — confirm latest update before publishing.',
+          'The City projects ~$320–338M core/essential World Cup costs, plus $67–74M other public-sector, with ~$242M combined safety/security (May 2026 update).',
+        source: 'Government of BC / City of Vancouver cost update, May 2026; BIV; Daily Hive',
+        rights: 'Public figures — use the May 2026 numbers.',
         confirm: false,
       },
     ],
