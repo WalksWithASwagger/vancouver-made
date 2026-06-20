@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import {
   BrowserRouter,
   Routes,
@@ -7,19 +7,38 @@ import {
   Outlet,
   useLocation,
 } from 'react-router-dom'
-import Stage from './scene/Stage.jsx'
 import Clubs from './components/Clubs.jsx'
 import Collection from './components/Collection.jsx'
 import HeroKits from './components/HeroKits.jsx'
 import TheMove from './components/TheMove.jsx'
 import WhyItWins from './components/WhyItWins.jsx'
-import AssetTracker from './components/AssetTracker.jsx'
-import HallOfFame from './components/HallOfFame.jsx'
-import ReceiptsEngine from './components/ReceiptsEngine.jsx'
 import Nav from './components/Nav.jsx'
 import ShareQR from './components/ShareQR.jsx'
+import PresenterControls from './components/PresenterControls.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
+
+// Code-split the heavy bits: the R3F/three hero scene and the secondary routes
+// load as separate chunks so the initial pitch view paints fast.
+const Stage = lazy(() => import('./scene/Stage.jsx'))
+const ReceiptsEngine = lazy(() => import('./components/ReceiptsEngine.jsx'))
+const HallOfFame = lazy(() => import('./components/HallOfFame.jsx'))
+const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
+
+function toggleHeroFullscreen() {
+  const el = document.getElementById('hero')
+  if (!el) return
+  if (document.fullscreenElement) document.exitFullscreen?.()
+  else el.requestFullscreen?.()
+}
+
+function RouteFallback() {
+  return (
+    <div className="grain flex min-h-screen items-center justify-center bg-ink text-[11px] uppercase tracking-[0.3em] text-bone/40">
+      Loading…
+    </div>
+  )
+}
 
 const TITLES = {
   '/': 'MADE ON — Whose Cup Is It Anyway?',
@@ -43,10 +62,14 @@ function Marquee() {
 function MadeOnSite() {
   return (
     <div className="grain min-h-screen bg-ink text-bone">
+      <PresenterControls />
+
       {/* HERO — the World Portal + the MADE ON statement */}
-      <section className="relative h-[88vh] w-full">
+      <section id="hero" className="relative h-[88svh] min-h-[34rem] w-full">
         <div className="absolute inset-0">
-          <Stage />
+          <Suspense fallback={<div className="h-full w-full bg-ink" />}>
+            <Stage />
+          </Suspense>
         </div>
 
         <div className="pointer-events-none relative z-10 flex h-full flex-col justify-between p-6 md:p-10">
@@ -71,9 +94,18 @@ function MadeOnSite() {
             </p>
           </div>
 
-          <div className="flex items-end justify-between text-xs uppercase tracking-[0.2em] text-bone/50">
-            <span>↻ Everyone else made a souvenir. We made the receipt.</span>
-            <span className="hidden md:inline">{brand.author}</span>
+          <div className="flex items-end justify-between gap-3 text-xs uppercase tracking-[0.2em] text-bone/50">
+            <span className="max-w-[14rem] sm:max-w-none">↻ Everyone else made a souvenir. We made the receipt.</span>
+            <div className="flex shrink-0 items-center gap-3">
+              <span className="hidden md:inline">{brand.author}</span>
+              <button
+                type="button"
+                onClick={toggleHeroFullscreen}
+                className="pointer-events-auto border border-bone/20 px-2 py-1 text-[10px] tracking-[0.2em] text-bone/60 transition hover:border-bone/50 hover:text-bone"
+              >
+                ⤢ Fullscreen
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -195,7 +227,9 @@ function PitchLayout() {
   return (
     <>
       <Nav />
-      <Outlet />
+      <Suspense fallback={<RouteFallback />}>
+        <Outlet />
+      </Suspense>
     </>
   )
 }
@@ -209,7 +243,14 @@ export default function App() {
           <Route path="/engine" element={<ReceiptsEngine />} />
           <Route path="/hall-of-fame" element={<HallOfFame />} />
         </Route>
-        <Route path="/tracker" element={<AssetTracker />} />
+        <Route
+          path="/tracker"
+          element={
+            <Suspense fallback={<RouteFallback />}>
+              <AssetTracker />
+            </Suspense>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
