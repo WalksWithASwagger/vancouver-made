@@ -218,11 +218,13 @@ export default function HallOfFame() {
   const tab = TABS.find((t) => t.id === tabId)
   const { categories, entries } = tab
 
-  const shown = useMemo(
-    () => (filter === 'all' ? entries : entries.filter((e) => e.category === filter)),
-    [filter, entries],
-  )
+  const shown = useMemo(() => {
+    if (filter === 'all') return entries
+    if (filter === 'vancouver') return entries.filter((e) => e.vancouver)
+    return entries.filter((e) => e.category === filter)
+  }, [filter, entries])
   const localCount = entries.filter((e) => e.src).length
+  const vancouverCount = entries.filter((e) => e.vancouver).length
 
   const selectTab = (id) => {
     setTabId(id)
@@ -279,6 +281,15 @@ export default function HallOfFame() {
               count={entries.length}
               onClick={() => setFilter('all')}
             />
+            {vancouverCount > 0 && (
+              <FilterButton
+                active={filter === 'vancouver'}
+                color="#8ab38f"
+                label="Vancouver"
+                count={vancouverCount}
+                onClick={() => setFilter('vancouver')}
+              />
+            )}
             {categories.map((c) => (
               <FilterButton
                 key={c.id}

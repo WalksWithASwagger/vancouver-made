@@ -9,6 +9,7 @@ const LINKS = [
   { label: 'Hero Kits', to: '/#hero-kits' },
   { label: 'Why It Wins', to: '/#why-it-wins' },
   { label: 'Receipts Engine', to: '/engine' },
+  { label: 'Process', to: '/process' },
   { label: 'Hall of Fame', to: '/hall-of-fame' },
 ]
 

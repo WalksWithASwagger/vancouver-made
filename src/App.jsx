@@ -24,6 +24,7 @@ const Stage = lazy(() => import('./scene/Stage.jsx'))
 const ReceiptsEngine = lazy(() => import('./components/ReceiptsEngine.jsx'))
 const HallOfFame = lazy(() => import('./components/HallOfFame.jsx'))
 const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
+const Process = lazy(() => import('./components/Process.jsx'))
 
 function toggleHeroFullscreen() {
   const el = document.getElementById('hero')
@@ -44,6 +45,7 @@ const TITLES = {
   '/': 'MADE ON — Whose Cup Is It Anyway?',
   '/engine': 'The Receipts Engine — MADE ON',
   '/hall-of-fame': 'Hall of Fame — MADE ON',
+  '/process': 'Our Process — MADE ON',
   '/tracker': 'Asset Tracker — MADE ON',
 }
 
@@ -173,6 +175,8 @@ function MadeOnSite() {
           <span className="text-bone/20">·</span>
           <Link to="/hall-of-fame" className="text-bone/60 hover:text-bone transition">Hall of Fame</Link>
           <span className="text-bone/20">·</span>
+          <Link to="/process" className="text-bone/60 hover:text-bone transition">Process</Link>
+          <span className="text-bone/20">·</span>
           <Link to="/tracker" className="text-bone/60 hover:text-bone transition">Asset Tracker</Link>
         </div>
         {brand.name} · {brand.parent} · You asked for the Vancouver story — this is the
@@ -242,6 +246,7 @@ export default function App() {
           <Route path="/" element={<MadeOnSite />} />
           <Route path="/engine" element={<ReceiptsEngine />} />
           <Route path="/hall-of-fame" element={<HallOfFame />} />
+          <Route path="/process" element={<Process />} />
         </Route>
         <Route
           path="/tracker"
