@@ -1,4 +1,4 @@
-# Graphic Elements Prompts — 05 ACCESS: ALL AREAS
+# Graphic Elements Prompts: 05 ACCESS: ALL AREAS
 
 Extractable parts for the accreditation kit. White background throughout.
 
@@ -10,7 +10,7 @@ Extractable parts for the accreditation kit. White background throughout.
 
 ---
 
-### Prompt 1: All-over pattern — laminates + lanyards
+### Prompt 1: All-over pattern: laminates + lanyards
 ```
 seamless repeating pattern of event accreditation laminates and lanyard straps,
 barcodes and "ACCESS" tier tags, hi-vis orange and gold line art on black,
@@ -19,7 +19,7 @@ official credential aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 2: Crest — laminate badge with barcode
+### Prompt 2: Crest: laminate badge with barcode
 ```
 heraldic sports crest shaped like an event accreditation laminate,
 football-federation shield in the photo window, barcode across the base,
@@ -28,7 +28,7 @@ official badge / credential aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 3: Primary sponsor bar — ACCESS: ALL AREAS
+### Prompt 3: Primary sponsor bar: ACCESS: ALL AREAS
 ```
 official sponsor bar / wordmark layout,
 text reads "ACCESS: ALL AREAS",
@@ -37,7 +37,7 @@ event-credential / tournament-sponsor aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 4: Secondary tag — (unless you live here)
+### Prompt 4: Secondary tag: (unless you live here)
 ```
 official secondary tagline bar,
 text reads "(UNLESS YOU LIVE HERE)",
@@ -46,7 +46,7 @@ fine-print disclaimer aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 5: "Fair Play" spoof badge — SECURE PERIMETER
+### Prompt 5: "Fair Play" spoof badge: SECURE PERIMETER
 ```
 official circular fair-play-style badge,
 reads "SECURE PERIMETER",
@@ -55,7 +55,7 @@ tournament conduct-badge aesthetic, sleeve-placement size,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 6: Nameplate — ACCREDITED / RESIDENT
+### Prompt 6: Nameplate: ACCREDITED / RESIDENT
 ```
 athletic jersey nameplate, arched banner format,
 reads "ACCREDITED" (alt: "RESIDENT" with a red ACCESS DENIED stamp across it),
@@ -64,7 +64,7 @@ professional jersey back-name aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 7: Number treatment — pass ID barcode
+### Prompt 7: Number treatment: pass ID barcode
 ```
 oversized jersey number built from a barcode and a credential pass-ID,
 machine-readable bars forming the digits, gold tier-code accent,
@@ -73,7 +73,7 @@ modern athletic number, chest / back placement,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 8: Hem microtext — the receipt
+### Prompt 8: Hem microtext: the receipt
 ```
 dense technical microtext strip for jersey hem,
 reads "HOMELESSNESS +134% BEFORE 2010 (628 TO 1,576) · 1,400+ SRO UNITS LOST · 'NO DISPLACEMENT' PLEDGE",

@@ -1,6 +1,6 @@
-# Jersey Flats Prompts — 08 SMART CITY
+# Jersey Flats Prompts: 08 SMART CITY
 
-**Goal:** Complete jersey flat mockups for the surveillance kit — the city that watches back, consent by default.
+**Goal:** Complete jersey flat mockups for the surveillance kit. The city that watches back, consent by default.
 
 **Build:** wet-asphalt dark body with a camera-grid / QR / fine-print pattern and cyan glow. Crest = CCTV lens. Sponsor = SMART CITY / BY USING THIS CITY YOU AGREE. Number from a tracking ID. Nameplate = USER (alt DATA SUBJECT).
 
@@ -8,11 +8,11 @@
 
 **MJ settings:** `--ar 3:4 --style raw` (no `--v`).
 
-> ⚠️ **Receipt note:** hem is a satirical terms-of-service clause (see `graphic-elements.md` Prompt 8) — swap in a sourced surveillance fact if preferred.
+> ⚠️ **Receipt note:** hem is a satirical terms-of-service clause (see `graphic-elements.md` Prompt 8). Swap in a sourced surveillance fact if preferred.
 
 ---
 
-## Batch 1 — Hero street-series kit
+## Batch 1: Hero street-series kit
 
 ### Prompt 1: Full front flat
 ```
@@ -51,7 +51,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Colorway explorations
+## Batch 2: Colorway explorations
 
 ### Prompt 4: Cyan-glow dominant variant
 ```
@@ -75,7 +75,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — On-garment detail shots
+## Batch 3: On-garment detail shots
 
 ### Prompt 6: Crest close-up
 ```
@@ -106,7 +106,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — Full kit composition
+## Batch 4: Full kit composition
 
 ### Prompt 9: Complete kit flat-lay
 ```
@@ -123,4 +123,4 @@ white background --ar 3:4 --style raw
 
 ## Presentation use
 
-Front (1) + back (2) for the deck. The "DATA SUBJECT" nameplate (8) and the EULA hem are the inversion — feature them together. Crest + sponsor close-ups support the design system; full kit (9) closes.
+Front (1) + back (2) for the deck. The "DATA SUBJECT" nameplate (8) and the EULA hem are the inversion. Feature them together. Crest + sponsor close-ups support the design system; full kit (9) closes.

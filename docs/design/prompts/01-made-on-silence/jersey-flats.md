@@ -1,6 +1,6 @@
-# Jersey Flats Prompts — 01 MADE ON SILENCE
+# Jersey Flats Prompts: 01 MADE ON SILENCE
 
-**Goal:** Complete jersey flat mockups for the redaction kit — black bloc from afar, the city's withheld record up close.
+**Goal:** Complete jersey flat mockups for the redaction kit. Black bloc from afar, the city's withheld record up close.
 
 **Build:** matte ink-black body, gloss-on-matte redaction bars, a single CLASSIFIED stamp. Crest = redaction bar stamped CLASSIFIED. Sponsor = fully blacked out. Number = redaction bars. Nameplate = REDACTED. Back-line = WHAT THEY WON'T RELEASE, WE WEAR.
 
@@ -10,7 +10,7 @@
 
 ---
 
-## Batch 1 — Hero home kit
+## Batch 1: Hero home kit
 
 ### Prompt 1: Full front flat
 ```
@@ -49,7 +49,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Finish explorations
+## Batch 2: Finish explorations
 
 ### Prompt 4: Matte-on-matte raking-light proof
 ```
@@ -74,7 +74,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — On-garment detail shots
+## Batch 3: On-garment detail shots
 
 ### Prompt 6: Crest close-up
 ```
@@ -106,7 +106,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — Full kit composition
+## Batch 4: Full kit composition
 
 ### Prompt 9: Complete kit flat-lay
 ```
@@ -123,4 +123,4 @@ white background --ar 3:4 --style raw
 
 ## Presentation use
 
-Front (1) + back (2) for the deck. The matte-on-matte raking-light proof (4) is the craft-flex hero — it proves "the censorship is the craft." Crest + blacked-out sponsor close-ups support the design system; full kit (9) closes.
+Front (1) + back (2) for the deck. The matte-on-matte raking-light proof (4) is the craft-flex hero: it proves "the censorship is the craft." Crest + blacked-out sponsor close-ups support the design system; full kit (9) closes.

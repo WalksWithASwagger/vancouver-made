@@ -1,6 +1,6 @@
-# Jersey Flats Prompts — 05 ACCESS: ALL AREAS
+# Jersey Flats Prompts: 05 ACCESS: ALL AREAS
 
-**Goal:** Complete jersey flat mockups for the accreditation kit — the AAA laminate that lets the world in and keeps the city out.
+**Goal:** Complete jersey flat mockups for the accreditation kit. The AAA laminate that lets the world in and keeps the city out.
 
 **Build:** ink-black body with hi-vis accreditation accents and a holographic security stripe. Crest = laminate badge with barcode. Sponsor = ACCESS: ALL AREAS / (UNLESS YOU LIVE HERE). Number from a pass-ID barcode. Nameplate = ACCREDITED (alt RESIDENT, stamped ACCESS DENIED).
 
@@ -10,7 +10,7 @@
 
 ---
 
-## Batch 1 — Hero street-series kit
+## Batch 1: Hero street-series kit
 
 ### Prompt 1: Full front flat
 ```
@@ -50,7 +50,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 2 — Colorway explorations
+## Batch 2: Colorway explorations
 
 ### Prompt 4: Hi-vis dominant variant
 ```
@@ -75,7 +75,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 3 — On-garment detail shots
+## Batch 3: On-garment detail shots
 
 ### Prompt 6: Crest close-up
 ```
@@ -95,7 +95,7 @@ official event-credential branding detail, product-shot quality,
 white background --ar 3:4 --style raw
 ```
 
-### Prompt 8: Nameplate close-up — RESIDENT / ACCESS DENIED
+### Prompt 8: Nameplate close-up: RESIDENT / ACCESS DENIED
 ```
 close-up technical illustration of jersey back nameplate,
 arched banner reads "RESIDENT", a red "ACCESS DENIED" stamp struck across it,
@@ -107,7 +107,7 @@ white background --ar 3:4 --style raw
 
 ---
 
-## Batch 4 — Full kit composition
+## Batch 4: Full kit composition
 
 ### Prompt 9: Complete kit flat-lay
 ```
@@ -124,4 +124,4 @@ white background --ar 3:4 --style raw
 
 ## Presentation use
 
-Front (1) + back (2) are the hero deck visuals. The "RESIDENT / ACCESS DENIED" nameplate (8) is the gut-punch detail — feature it. Crest + sponsor close-ups support the design-system section; full kit (9) closes.
+Front (1) + back (2) are the hero deck visuals. The "RESIDENT / ACCESS DENIED" nameplate (8) is the gut-punch detail. Feature it. Crest + sponsor close-ups support the design-system section; full kit (9) closes.
