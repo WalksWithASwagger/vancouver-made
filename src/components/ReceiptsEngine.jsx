@@ -91,6 +91,7 @@ export default function ReceiptsEngine() {
                 the kit ↗
               </Link>
             </div>
+            <img src="/engine/voice-madeon.png" alt="redacted public document" className="mb-4 h-28 w-full rounded border border-bone/10 object-cover" />
             <p className="font-mono text-[11px] uppercase leading-relaxed tracking-wide text-bone/90">
               {hem.body}
             </p>
@@ -114,6 +115,7 @@ export default function ReceiptsEngine() {
                 feefa.ai ↗
               </a>
             </div>
+            <img src="/engine/voice-feefa.png" alt="dense condo development" className="mb-4 h-28 w-full rounded border border-hazard/20 object-cover" />
             <p className="headline text-4xl leading-none text-hazard md:text-6xl">{poster.big}</p>
             <p className="mt-4 max-w-xl text-lg leading-snug text-bone">{poster.charge}</p>
             <p className="mt-4 text-xs uppercase tracking-[0.25em] text-bone/60">{poster.brand}</p>
@@ -137,6 +139,7 @@ export default function ReceiptsEngine() {
                 the editorial ↗
               </a>
             </div>
+            <img src="/engine/voice-cake.png" alt="engraved banknote detail" className="mb-4 h-28 w-full rounded border border-ink/10 object-cover" />
             <p className="max-w-xl text-lg italic leading-relaxed text-ink/90">{ed.caption}</p>
             <p className="mt-3 text-base italic text-ink/60">{ed.coda}</p>
             <p className="mt-3 font-mono text-[10px] uppercase tracking-wide text-ink/40">

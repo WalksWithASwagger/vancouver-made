@@ -72,7 +72,7 @@ white background --ar 16:9 --style raw
 ```
 professional sponsor bar / brand bar layout,
 text reads: "PUMP & DUMP CAPITAL"
-styled like official sports sponsor wordmark (e.g., ADIDAS, NIKE branding),
+styled like a generic official sports-sponsor wordmark (bold condensed sans, no real brand marks),
 set in clean sans-serif, 
 metallic gold on navy blue rectangle,
 official tournament sponsor aesthetic,

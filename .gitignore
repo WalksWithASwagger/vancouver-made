@@ -15,3 +15,4 @@ npm-debug.log*
 # Working assets — never commit raw generations or the local ratings DB
 to-ingest/
 src/db/*.db
+contact-sheet.html
