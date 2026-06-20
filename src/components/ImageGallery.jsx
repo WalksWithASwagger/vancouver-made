@@ -18,7 +18,8 @@ export default function ImageGallery({ assets }) {
     try {
       const res = await fetch(`/api/ratings/${assetId}`)
       // cache null for unrated so we don't refetch every render
-      setRatings(prev => ({ ...prev, [assetId]: res.ok ? await res.json() : null }))
+      const rating = res.ok ? await res.json() : null
+      setRatings(prev => ({ ...prev, [assetId]: rating }))
     } catch (err) {
       console.error(`Error fetching rating for ${assetId}:`, err)
     }
