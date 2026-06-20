@@ -17,6 +17,7 @@ const TINT = {
   'nardwuar-fc': { bar: '#1d7a46', ink: '#f4f1ea' },
   'number-five-orange': { bar: '#ff6a00', ink: '#0a0a0a' },
   'china-creek': { bar: '#5b6770', ink: '#f4f1ea' },
+  'pump-and-dump-fc': { bar: '#21f0d0', ink: '#050608' },
   thesis: { bar: '#ff3b00', ink: '#0a0a0a' },
 }
 
@@ -72,6 +73,20 @@ export const products = [
     status: 'blessing-pending',
     ethicsNote: 'Tied to the Nardwuar homage. Not for sale until blessing is given.',
     tint: TINT['nardwuar-fc'],
+  },
+  {
+    id: 'patch-pump-and-dump-crest',
+    title: 'PUMP & DUMP — crest patch',
+    category: 'patches',
+    club: 'pump-and-dump-fc',
+    price: 14,
+    currency: 'CAD',
+    image: '/store/patch-pump-and-dump-crest.png',
+    blurb: 'Half the beautiful game, half the candlestick chart.',
+    description:
+      'The club crest, gold engraving on midnight navy: a heraldic shield split down the middle — one half a soccer ball, the other a candlestick chart climbing into a condo tower. Motto ribbon: INFLATE. EXTRACT. ABANDON. Worn like a banknote engraving, because that is the joke.',
+    status: 'preorder',
+    tint: TINT['pump-and-dump-fc'],
   },
 
   // ── STICKERS ─────────────────────────────────────────────────────────────
@@ -210,6 +225,21 @@ export const products = [
       'Saturated safety-cone orange, white sleeves, metallic-gold trim, a "pole" stripe down the torso — a glam World Cup away strip on TV, WORK IS WORK where the sponsor goes. The Cup turns public land into a private champagne room; this is the kit for everyone charged admission to their own night.',
     status: 'preorder',
     tint: TINT['number-five-orange'],
+  },
+  {
+    id: 'jersey-pump-and-dump',
+    title: 'PUMP & DUMP FC — Speculation City kit',
+    category: 'jerseys',
+    club: 'pump-and-dump-fc',
+    price: 95,
+    currency: 'CAD',
+    image: '/store/jersey-pump-and-dump.png',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
+    blurb: 'The whole grift, worn as the prospectus.',
+    description:
+      'The flagship blackout third kit: midnight navy and crash-red, a candlestick-chart skyline of stacked-coin condo towers climbing the body, toxic teal and magenta gradients straight out of the hype deck. Vancouver as the asset, the public as the exit liquidity. You are the bagholder — wear it like a prospectus nobody read.',
+    status: 'preorder',
+    tint: TINT['pump-and-dump-fc'],
   },
 ]
 

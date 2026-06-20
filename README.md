@@ -61,6 +61,23 @@ Stack: **Vite · React 18 · React Three Fiber · drei · Tailwind CSS**.
 Building on it, or running the Midjourney asset tracker at `/tracker`? See
 `DEVELOPMENT.md`.
 
+## Highlight reel
+
+A cinematic, auto-advancing showcase of the kits lives at **`/highlight-reel`**
+(`src/components/HighlightReel.jsx`; beat sheet in `src/data/highlightReel.js`).
+Full-hype cut — today's ALLEY LEAGUE club gens (Nardwuar · No.5 Orange · China
+Creek) + flagships 03 Public Dime & 09 Pump and Dump. Flagships render the live
+`KitFlat` SVG (swoosh-free); memorial kits 02/04/07 are intentionally out.
+
+```bash
+npm run stage:reel    # copy curated design images docs/ → public/highlight-reel/
+npm run record:reel   # capture the page → dist/highlight-reel.mp4 (needs playwright + ffmpeg + dev server)
+```
+
+Drop an audio render at `public/highlight-reel/audio/reel.mp3` to score both the
+page (muted-autoplay + tap-to-unmute) and the exported mp4. Two Suno-ready anthem
+versions — terrace-punk and west-coast folk — live in `docs/presentation/anthem.md`.
+
 ## The collection in one breath
 
 - **Brand:** VANCOUVER MADE → **MADE ON**. *They asked for the Vancouver story. We finished the sentence.*
@@ -91,6 +108,7 @@ Building on it, or running the Midjourney asset tracker at `/tracker`? See
 - [x] **Live** at https://vancouver-made.vercel.app — auto-deploys from `main`, PRs get previews
 - [x] Receipts verified against primary sources (`docs/research/analysis/05-receipts-verification.md`; `[confirm]` flags cleared)
 - [x] Raster kit mockups generated (Canva), in `docs/deliverables/mockups/`
+- [x] Cinematic highlight reel at `/highlight-reel` (+ `stage:reel`/`record:reel` mp4 pipeline, two Suno anthem versions)
 - [ ] Pull the stray Nike swoosh from the Canva mockups before publishing (see the mockups README)
 
 See `docs/SUBMISSION.md` for the per-track (design + dev) submission status and punch list.
