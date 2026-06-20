@@ -7,10 +7,6 @@
 // host-city lockups, hospitality/credential/sponsor-board language, the trophy,
 // fan-zone wristbands, "city pride" third kits — but never reproduce actual FIFA
 // marks. Build a parallel, counterfeit-official identity in our own voice.
-//
-// A source card's `confirm` flag, when truthy, marks a fact still needing
-// primary-source verification before it goes public. All cards verified 2026-06-20
-// (see docs/research/analysis/05-receipts-verification.md). See also brief.md.
 
 export const league = {
   name: 'VANCOUVER MADE',
@@ -89,7 +85,6 @@ export const clubs = [
           'No.5 Orange (205 Main St, at Main & Powell) opened as the Melbourne Hotel in August 1904 and became No.5 Orange in 1971 — one of the last of old Gastown.',
         source: 'Eve Lazarus, "How the Melbourne Hotel became No5 Orange" (2022); no5orange.ca',
         rights: 'Reference only — recreate/illustrate, do not reproduce photos.',
-        confirm: false,
       },
       {
         id: 'AL-N5-002',
@@ -97,7 +92,6 @@ export const clubs = [
           "Vancouver's Host City Human Rights Action Plan (HRAP, final released May 25, 2026) explicitly names sex-worker safety, gender-based violence and MMIWG2S+ response among its World Cup priority areas.",
         source: 'FIFA World Cup 2026 Vancouver Host Committee / City of Vancouver HRAP; CBC & Global News, May 2026',
         rights: 'Public document — quote with citation.',
-        confirm: false,
       },
     ],
     ethics:
@@ -161,7 +155,6 @@ export const clubs = [
           'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate" — ahead of the Hughes/APEC inquiry into RCMP conduct.',
         source: 'Nardwuar footage; The Canadian Encyclopedia; CBC archives',
         rights: 'Reference / quote with citation; do not reproduce footage stills.',
-        confirm: false,
       },
       {
         id: 'AL-NW-002',
@@ -169,7 +162,6 @@ export const clubs = [
           'Nardwuar (frontman of The Evaporators, based at CiTR/UBC) models accountability through exhaustive research, then the uncomfortable question.',
         source: 'Wikipedia; UBC alumni magazine; nardwuar.com',
         rights: 'HOMAGE, not likeness. See ethics note.',
-        confirm: false,
       },
     ],
     ethics:
@@ -235,7 +227,6 @@ export const clubs = [
           'The Vancouver Stock Exchange was branded the "scam capital of the world" by Forbes in 1989; it merged with the Alberta Stock Exchange in 1999 to form the CDNX, acquired by the TSX Group in 2001 and renamed the TSX Venture Exchange.',
         source: 'Forbes (1989); Vancouver Stock Exchange historical record',
         rights: 'Quote with citation.',
-        confirm: false,
       },
       {
         id: 'AL-PD-002',
@@ -243,7 +234,6 @@ export const clubs = [
           'CMHC counted ~2,500 completed-and-unsold (unabsorbed) new condos in the Vancouver area in May 2025, rising to ~4,400 by May 2026; Vancouver is among the world\'s least-affordable markets at a price-to-income median multiple of ~12 (Demographia 2025) — not the 20–30× sometimes cited.',
         source: 'CMHC via Business in Vancouver (2025–26); Demographia Intl Housing Affordability 2025',
         rights: 'Cite with date; "unabsorbed" ≠ "vacant".',
-        confirm: false,
       },
       {
         id: 'AL-PD-003',
@@ -251,7 +241,6 @@ export const clubs = [
           'The City projects ~$320–338M core/essential World Cup costs, plus $67–74M other public-sector, with ~$242M combined safety/security (May 2026 update).',
         source: 'Government of BC / City of Vancouver cost update, May 2026; BIV; Daily Hive',
         rights: 'Public figures — use the May 2026 numbers.',
-        confirm: false,
       },
     ],
     ethics:

@@ -3,8 +3,7 @@
 // 09 Pump and Dump. Each renders as a code-drawn jersey flat (see KitFlat.jsx) and
 // fills the tech pack's Section 5 (artwork & placement with citations).
 //
-// hemCitation = the receipt baked into the garment. `confirm: true` = verify the
-// stat against a primary source before final publish.
+// hemCitation = the receipt baked into the garment.
 
 export const heroKits = [
   {
@@ -33,7 +32,6 @@ export const heroKits = [
     hemCitation: {
       text: 'SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN\'T',
       source: 'Government of BC · Globe and Mail, May 2026',
-      confirm: false,
     },
     whyItWins:
       'The number IS the kit — the most quotable object on the floor. Metallic banknote engraving is a genuine craft flex, and the public-cost receipt is printed into the garment, not captioned beside it.',
@@ -66,7 +64,6 @@ export const heroKits = [
     hemCitation: {
       text: 'SECURITY $242M · LINE-ITEM DETAIL WITHHELD · RECORDS SEVERED UNDER EXEMPTION',
       source: 'FIPPA / FOI · CBC, 2026',
-      confirm: false,
     },
     whyItWins:
       'Matte-on-matte redaction is a real novelty-of-output move — the censorship is the craft. Reads as black-bloc protest from across the room; up close it\'s the city\'s own withheld paperwork.',
@@ -100,7 +97,6 @@ export const heroKits = [
     hemCitation: {
       text: 'UNSOLD CONDOS AT A RECORD ~4,400 (CMHC 2026) · PRICE-TO-INCOME ~12× · VSE "SCAM CAPITAL" (FORBES 1989)',
       source: 'CMHC via BIV 2026 · Demographia 2025 · Forbes 1989',
-      confirm: false,
     },
     whyItWins:
       'Connects the event, finance and the housing crisis in one blackout kit that reads hypebeast on TikTok and indictment up close. The wearer\'s nameplate — BAGHOLDER — is the public.',

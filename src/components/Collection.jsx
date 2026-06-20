@@ -68,7 +68,7 @@ export default function Collection() {
                 <p className="mt-1 text-xs text-bone/75">{r.claim}</p>
                 <p className="mt-1 text-[11px] text-bone/50">{r.detail}</p>
                 <p className="mt-1 font-mono text-[10px] text-cyan">
-                  {r.source} {r.confirm && <span className="text-hazard">· [confirm]</span>}
+                  {r.source}
                 </p>
               </div>
             ))}

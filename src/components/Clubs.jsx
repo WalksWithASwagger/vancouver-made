@@ -118,8 +118,7 @@ function ClubCard({ club }) {
                 <span className="font-mono" style={{ color: palette.signal }}>
                   {c.id}
                 </span>{' '}
-                {c.claim}{' '}
-                {c.confirm && <span className="text-hazard">[confirm]</span>}
+                {c.claim}
               </li>
             ))}
           </ul>

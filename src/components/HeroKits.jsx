@@ -32,7 +32,7 @@ function HeroKit({ kit }) {
           <p className="text-[10px] uppercase tracking-[0.2em] text-bone/40">Hem citation (the receipt)</p>
           <p className="mt-1 font-mono text-[11px] text-bone/85">{kit.hemCitation.text}</p>
           <p className="mt-1 font-mono text-[10px] text-cyan">
-            {kit.hemCitation.source} {kit.hemCitation.confirm && <span className="text-hazard">· [confirm]</span>}
+            {kit.hemCitation.source}
           </p>
         </div>
 
