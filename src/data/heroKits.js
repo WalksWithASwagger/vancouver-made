@@ -1,0 +1,112 @@
+// MADE ON — HERO KITS, built to full spec (the tech-pack + deck-slide-5 fill).
+// Three kits chosen as heroes: 01 Made on Silence, 03 Made on the Public Dime,
+// 09 Pump and Dump. Each renders as a code-drawn jersey flat (see KitFlat.jsx) and
+// fills the tech pack's Section 5 (artwork & placement with citations).
+//
+// hemCitation = the receipt baked into the garment. `confirm: true` = verify the
+// stat against a primary source before final publish.
+
+export const heroKits = [
+  {
+    id: 'public-dime',
+    no: '03',
+    name: 'MADE ON THE PUBLIC DIME',
+    series: 'MADE ON — what the city is built on',
+    styleNo: 'MO-03',
+    concept: 'The World Cup as a public-money transfer with grass on top — worn as legal tender.',
+    theLine: '$729M as couture.',
+    colorway: {
+      body: '#1B4D3E', // banknote green
+      primary: '#B8924A', // engraved gold (metallic if Formme can run it)
+      secondary: '#0E0E0E', // ink
+      accent: '#EDE6D8', // bone
+      finish: 'matte jersey body · metallic-gold engraving',
+    },
+    crest: 'A casino chip with a FIFA-shield silhouette inside it.',
+    sponsorBar: 'BANK OF FIFA',
+    makerMark: 'LEGAL TENDER FOR ALL DEBTS, PUBLIC',
+    nameplate: 'LEGAL TENDER',
+    number: '$729,000,000',
+    backLine: 'THE HOUSE ALWAYS WINS',
+    allover: 'Guilloché banknote engraving (fine line art, dye-sublimated edge-to-edge).',
+    serial: 'SER. NO. VAN-2026-PUBLIC',
+    hemCitation: {
+      text: 'SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN\'T',
+      source: 'CBC · Globe and Mail, 2026',
+      confirm: true,
+    },
+    whyItWins:
+      'The number IS the kit — the most quotable object on the floor. Metallic banknote engraving is a genuine craft flex, and the public-cost receipt is printed into the garment, not captioned beside it.',
+    manifestoCard:
+      'One side: the souvenir line ("you asked for the Vancouver story…"). Other side: the public-cost receipts + a QR to a DTES / land-back org.',
+  },
+  {
+    id: 'made-on-silence',
+    no: '01',
+    name: 'MADE ON SILENCE',
+    series: 'MADE ON — what the city is built on',
+    styleNo: 'MO-01',
+    concept: 'The city\'s record, redacted. What they won\'t release, worn — black bloc.',
+    theLine: 'The redacted document, worn.',
+    colorway: {
+      body: '#0E0E0E', // ink, matte
+      primary: '#141414', // redaction bar — matte-on-matte (gloss finish)
+      secondary: '#EDE6D8', // bone
+      accent: '#C0392B', // stamp red (CLASSIFIED)
+      finish: 'matte body · gloss redaction bars (matte-on-matte) · stamp-red accent',
+    },
+    crest: 'The federation badge replaced by a single black redaction bar, stamped CLASSIFIED.',
+    sponsorBar: '████████████', // the sponsor, blacked out
+    makerMark: 'ACCESS DENIED',
+    nameplate: 'REDACTED',
+    number: '███',
+    backLine: 'WHAT THEY WON\'T RELEASE, WE WEAR',
+    allover: 'A ghosted consultation report / FOI response, redaction bars across it; matte-on-matte so it only reads in raking light.',
+    serial: 'FOI REQ. VAN-2026-■■■',
+    hemCitation: {
+      text: 'SECURITY $242M · LINE-ITEM DETAIL WITHHELD · RECORDS SEVERED UNDER EXEMPTION',
+      source: 'FIPPA / FOI · CBC, 2026',
+      confirm: true,
+    },
+    whyItWins:
+      'Matte-on-matte redaction is a real novelty-of-output move — the censorship is the craft. Reads as black-bloc protest from across the room; up close it\'s the city\'s own withheld paperwork.',
+    manifestoCard:
+      'One side: the MADE ON statement. Other side: what was redacted + how to file your own FOI + a QR.',
+  },
+  {
+    id: 'pump-and-dump',
+    no: '09',
+    name: 'PUMP AND DUMP',
+    series: 'STREET SERIES — who it got built without',
+    styleNo: 'MO-09',
+    club: 'pump-and-dump-fc', // deep-dive data in src/data/clubs.js
+    concept: 'The whole grift, worn as the prospectus. Hype the city, bill the public, take the exit. You\'re the bagholder.',
+    theLine: 'Worn as the prospectus.',
+    colorway: {
+      body: '#0b1437', // midnight navy / blackout
+      primary: '#21f0d0', // toxic teal
+      secondary: '#ff2bd6', // toxic magenta
+      accent: '#dc2626', // crash red
+      finish: 'blackout body · toxic-neon gradient print',
+    },
+    crest: 'Shield split — half soccer ball, half candlestick chart / stacked-coin condo tower. Ribbon: INFLATE. EXTRACT. ABANDON.',
+    sponsorBar: 'PUMP & DUMP CAPITAL',
+    makerMark: 'NOT FINANCIAL ADVICE',
+    nameplate: 'BAGHOLDER',
+    number: '▲▼',
+    backLine: 'BUY THE RUMOUR. SELL THE CITY.',
+    allover: 'Line charts soaring then cliff-diving (2021 PEAK, FLIP TAX, FOREIGN BUYER SURCHARGE); repeating condo towers, most of them dark/vacant.',
+    serial: 'MLS® VAN-2026-VACANT',
+    hemCitation: {
+      text: '~2,500 UNSOLD METRO VAN CONDOS · PRICE-TO-INCOME 20–30× · VSE "SCAM CAPITAL" (FORBES 1989)',
+      source: 'CBC 2025 · Forbes 1989 · BCSC 2026',
+      confirm: true,
+    },
+    whyItWins:
+      'Connects the event, finance and the housing crisis in one blackout kit that reads hypebeast on TikTok and indictment up close. The wearer\'s nameplate — BAGHOLDER — is the public.',
+    manifestoCard:
+      'One side: the prospectus disclaimer turned on the city. Other side: housing + finance receipts + a QR to a housing-justice org.',
+  },
+]
+
+export default heroKits
