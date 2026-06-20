@@ -5,19 +5,32 @@
 > Current direction = **MADE ON** (see `analysis/04-made-on-consolidation.md` +
 > `analysis/SYNTHESIS.md`). This file remains the live "facts to confirm" hub.
 
-## ⚠️ Receipts to verify (these appear on the site / kits — confirm before final publish)
+## ✅ Receipts — verified 2026-06-20 (see `analysis/05-receipts-verification.md`)
 
-Mirror of `src/data/receipts.js` + the hero-kit hem citations:
-- [ ] **$685M–$729M** gross BC cost, 7 games · **$242M** security · up to **$114M**
-      net to BC taxpayers. (CBC · Globe and Mail, 2026)
-- [ ] **California cities** ran the same tournament mostly on **private money**.
-- [ ] **Oppal inquiry** — women "forsaken twice"; VPD "utterly failed" to warn them. (Forsaken, 2012)
-- [ ] **2010 Olympics** — homelessness up **~373%**; **1,400+** DTES units lost after
-      a "no displacement" pledge.
-- [ ] **Hogan's Alley** — Black neighbourhood displaced for the viaducts (City redress record).
-- [ ] **VSE "Scam Capital of the World"** (Forbes, 1989); **BCSC 2026** pump-and-dump finding.
-- [ ] **~2,500** unsold Metro Van condos (CBC 2025); price-to-income 20–30×.
-- [ ] FOI/FIPPA: security line-item detail withheld (for Kit 01 hem). *Confirm wording.*
+Verified via the deep-research harness. Two numbers were **corrected**. Outstanding
+items are the only ones left unchecked.
+- [x] **$685M–$729M** gross BC cost, 7 games · **$242M** security · up to **$114M**
+      net (May 2026 update). ✔ TRUE — Gov of BC / CBC / Globe.
+- [x] **California** — SF Bay Area's operating budget is mostly **private** (~US$45M);
+      federal money still funds security/transit. ✔ PARTIALLY TRUE (reworded).
+- [x] **Oppal inquiry** — "forsaken twice… by society and by the police"; VPD "utterly
+      failed" to warn. ✔ TRUE (verbatim). (Forsaken, 2012)
+- [x] **2010 Olympics** — homelessness **more than doubled (+134%, 628→1,576)**; the
+      ~373% figure is *street* homelessness only; **1,400+** DTES units lost despite a
+      "no displacement" pledge. ✔ corrected (UBC OGI 2009 · Pivot Legal).
+- [x] **VSE "scam capital"** (Forbes, **1989**) → CDNX 1999 → TSX Venture 2001. ✔ TRUE.
+- [x] **Condos / affordability** — ~2,488 completed-&-unabsorbed (May 2025) → ~4,376
+      (May 2026); **price-to-income ~12×, NOT 20–30×** (Demographia). ✔ corrected.
+- [x] **No.5 Orange** = Melbourne Hotel (opened Aug 1904, 205 Main) → No.5 Orange 1971. ✔ TRUE.
+- [x] **Nardwuar/Chrétien** — "**For me,** pepper, I put it on my plate" (APEC 1997). ✔ corrected.
+- [x] **Host City Human Rights Action Plan** (final May 25, 2026) names sex-worker
+      safety, GBV, MMIWG2S+. ✔ TRUE.
+
+### Still outstanding (left `confirm: true` on purpose)
+- [ ] **Hogan's Alley** — Black neighbourhood displaced for the viaducts (City redress
+      record). Well-documented but not yet run through the pass.
+- [ ] **Kit 01 hem** — "records severed under exemption" needs a real FOI/FIPPA
+      response, or rephrase as clearly rhetorical.
 
 ## The thesis (one sentence)
 

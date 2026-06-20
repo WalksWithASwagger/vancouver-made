@@ -32,8 +32,8 @@ export const heroKits = [
     serial: 'SER. NO. VAN-2026-PUBLIC',
     hemCitation: {
       text: 'SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN\'T',
-      source: 'CBC · Globe and Mail, 2026',
-      confirm: true,
+      source: 'Government of BC · Globe and Mail, May 2026',
+      confirm: false,
     },
     whyItWins:
       'The number IS the kit — the most quotable object on the floor. Metallic banknote engraving is a genuine craft flex, and the public-cost receipt is printed into the garment, not captioned beside it.',
@@ -98,9 +98,9 @@ export const heroKits = [
     allover: 'Line charts soaring then cliff-diving (2021 PEAK, FLIP TAX, FOREIGN BUYER SURCHARGE); repeating condo towers, most of them dark/vacant.',
     serial: 'MLS® VAN-2026-VACANT',
     hemCitation: {
-      text: '~2,500 UNSOLD METRO VAN CONDOS · PRICE-TO-INCOME 20–30× · VSE "SCAM CAPITAL" (FORBES 1989)',
-      source: 'CBC 2025 · Forbes 1989 · BCSC 2026',
-      confirm: true,
+      text: 'UNSOLD CONDOS AT A RECORD ~4,400 (CMHC 2026) · PRICE-TO-INCOME ~12× · VSE "SCAM CAPITAL" (FORBES 1989)',
+      source: 'CMHC via BIV 2026 · Demographia 2025 · Forbes 1989',
+      confirm: false,
     },
     whyItWins:
       'Connects the event, finance and the housing crisis in one blackout kit that reads hypebeast on TikTok and indictment up close. The wearer\'s nameplate — BAGHOLDER — is the public.',
