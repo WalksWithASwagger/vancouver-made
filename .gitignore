@@ -16,3 +16,5 @@ npm-debug.log*
 to-ingest/
 src/db/*.db
 contact-sheet.html
+# Rafiki-generated kit images stay local (heavy binaries); prompts + STARRED lists are tracked
+docs/design/prompts/clubs/**/rafiki/images/

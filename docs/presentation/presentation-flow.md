@@ -1,5 +1,9 @@
 # Presentation Flow + Template · Pump & Dump FC
 
+> **This is the trailer.** The 5-minute, hero-led brief cut. The longer **talk** (the
+> director's cut — provocation → canon → method → work, presented live off the site) is
+> [`talk-flow.md`](talk-flow.md). Same spine, same receipts; pick the cut to fit the room.
+
 The working spec for the submission deck. Build the actual slides from this (Canva,
 Google Slides, or the Formme template). This supersedes `deck-outline.md` and the
 `FILL IN ON COMMIT` placeholder in `MADEON_pitchdeck.pptx`: rebuild the deck from here.
