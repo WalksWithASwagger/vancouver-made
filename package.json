@@ -6,6 +6,7 @@
   "description": "VANCOUVER MADE — an anti-establishment protest brand confronting FIFA World Cup 2026, mega-event capitalism, and Vancouver's history of displacement.",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/check-confirmed.js",
     "build": "vite build",
     "preview": "vite preview --host"
   },

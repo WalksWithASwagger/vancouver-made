@@ -6,11 +6,12 @@ import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 
 function Marquee() {
-  const line = slogans.join('   ✦   ')
+  const line = slogans.join('   ✦   ') + '   ✦   '
   return (
     <div className="overflow-hidden border-y border-hazard/40 bg-ink py-3">
       <div className="marquee text-hazard text-sm font-bold tracking-widest">
-        {line}   ✦   {line}   ✦{'  '}
+        <span>{line}</span>
+        <span aria-hidden="true">{line}</span>
       </div>
     </div>
   )
