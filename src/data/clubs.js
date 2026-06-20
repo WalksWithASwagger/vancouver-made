@@ -246,6 +246,85 @@ export const clubs = [
     ethics:
       'Punch up at promoters, developers, foreign capital, FIFA and the insiders who take the exit. The bagholders are the public — they are the home team, not the joke.',
   },
+
+  // ────────────────────────────────────────────────────────────────────────
+  {
+    id: 'hogans-alley-fc',
+    name: "HOGAN'S ALLEY FC",
+    number: '71', // the year the Georgia Viaduct finished the erasure
+    heroKit: 'HOME',
+    kitName: 'Renaissance Home Kit',
+    tagline: 'The block the city paved over — worn as a future.',
+    target: 'Urban-renewal erasure · anti-Black displacement · civic amnesia — and the reclamation answering it',
+    summary:
+      "Hogan's Alley was Vancouver's most prominent Black neighbourhood — Black-owned businesses, churches and a jazz heart in Strathcona from the early 1900s — cleared through urban renewal and the Georgia Viaduct around 1967–71. \"Made on Hogan's Alley\" is already one of the three answers in the MADE ON triad, but no kit has carried it. This one does, and it ends in the future tense: a 2022 land trust is bringing the block home (affordable housing, a Black Cultural Centre), and Ethọ́s Lab is building Afrofuturist Black-youth futures right now. The collection's only memorial-and-generative kit — grief in gold, the block coming home.",
+    palette: {
+      base: '#1e1248', // deep cosmic indigo
+      ink: '#050416', // void
+      accent: '#e8b04b', // Afrofuturist / jazz-brass gold
+      signal: '#5a2d9c', // cosmic violet
+    },
+    type: 'jazz-marquee brass + Afrofuturist star-map',
+    whoBenefits: [
+      'The mid-century freeway / urban-renewal agenda',
+      'Property and redevelopment interests',
+      'A city that paved over its own Black history',
+      'The souvenir version of Vancouver that leaves it out',
+    ],
+    whoPays: [
+      'The Black families of Hogan\'s Alley, displaced',
+      "Vancouver's Black cultural memory and its descendants",
+      'A jazz district erased from the broadcast story',
+      'Everyone handed a sanitized version of the city',
+    ],
+    sponsorBank: [
+      'BLACK CULTURAL CENTRE', // the slot honours, it does not parody
+      "HOGAN'S ALLEY SOCIETY",
+      'COMMUNITY LAND TRUST',
+      'STILL HERE. STILL BUILDING.',
+      'NO GAME WITHOUT THE GROUND',
+      'THE BLOCK COMES HOME',
+    ],
+    crest:
+      "Host-city shield silhouette; inner art = a brass jazz horn and a rising star over the reclaimed block. Ribbon: STILL HERE.",
+    kits: {
+      home: 'HERO. Cosmic indigo with metallic-gold engraving — a gorgeous Afrofuturist heritage kit in the lineage of the great African national strips (Zaire ’74, Nigeria ’94/’18). A rising star-map and a ghosted jazz-era street grid; the crest a horn over the block.',
+      away: 'Bone and gold — the blueprint kit. The Hogan\'s Alley street grid and the land-trust site plan as architectural linework; STILL BUILDING across the back.',
+      third:
+        '"Jazz District" — deep violet with brass-gold marquee type, a memorial strip that swings; any names honoured here chosen with the community, never assigned.',
+    },
+    numberTreatment:
+      "Numbers drawn from the Hogan's Alley street grid and the land-trust floor-plans — the block redrawn. The nameplate honours a community name chosen with Hogan's Alley Society, not assigned by us.",
+    patchSpoof: 'Where "FIFA Quality Pro" sits: COMMUNITY LAND TRUST / BUILT TO RETURN.',
+    trophyMisuse: 'The trophy silhouette becomes a brass jazz horn / the rising tower of the new Black Cultural Centre.',
+    fifaSubversion:
+      'Host-city kits flatten local culture into friendly merch (see Ilanaaq 2010). This refuses the flattening: it puts a neighbourhood the city bulldozed back on the official map, in future tense — heritage-kit polish in service of a reclamation, not a souvenir.',
+    sourceCards: [
+      {
+        id: 'AL-HA-001',
+        claim:
+          "Hogan's Alley — centred on a lane off the 200-block of Union Street in Strathcona — was Vancouver's most prominent Black neighbourhood from the early 1900s (Black-owned businesses, the African Methodist Episcopal Fountain Chapel, jazz nightlife), cleared through urban renewal and the building of the Georgia Viaduct around 1967–71.",
+        source: "City of Vancouver; Hogan's Alley Society (hogansalleysociety.org); Wikipedia",
+        rights: 'Reference / cite with date; confirm exact viaduct dates before publish [confirm].',
+      },
+      {
+        id: 'AL-HA-002',
+        claim:
+          "In 2022 the City of Vancouver and the Hogan's Alley Society signed an MOU toward a long-term lease / community land trust for the Hogan's Alley Block — planned to deliver affordable housing, a Black Cultural Centre, child care and small-business space.",
+        source: 'City of Vancouver; CBC; Globe and Mail, 2022',
+        rights: 'Public — cite with date [confirm].',
+      },
+      {
+        id: 'AL-HA-003',
+        claim:
+          "Ethọ́s Lab is a Black-led Vancouver STEAM academy drawing on Afrofuturism / Black speculative arts; its Galaxy Project (Rideau Hall Foundation Catapult Canada) aims to reach 2,500+ Black youth across Greater Vancouver.",
+        source: 'BC Business; Georgia Straight; ethoslab.dev',
+        rights: 'Reference — this kit amplifies, it does not represent, these orgs.',
+      },
+    ],
+    ethics:
+      "A settler artist amplifying, not authoring. This kit is a tribute to Hogan's Alley and a signal-boost for the people rebuilding it — not a claim on a story that isn't mine to tell. Credit and link Hogan's Alley Society and Ethọ́s Lab; route attention and any proceeds to them; reference the culture, never appropriate sacred or specific motifs. Before this moves past exhibition toward anything public or sold, it should be shown to — and shaped by — the community, with their blessing first.",
+  },
 ]
 
 export default clubs
