@@ -12,10 +12,11 @@ synthesized concept document with: a design thesis, ethical guardrails, eight
 fully-specified kit concepts, a precedent board, and a process/tooling strategy.
 It is the strongest single input we have and should anchor the project.
 
-It also **relocates the center of gravity** of our scaffold. My initial build framed
-this as generic "FIFA greed + displacement" satire. This doc is far more specific,
-more local, and more serious — it's grounded in named Vancouver histories and comes
-with hard ethical constraints. **The build needs to grow up to match it.**
+It also **deepens the center of gravity** of our scaffold. My initial build framed
+this as generic "FIFA greed + displacement" satire. This doc is far more specific
+and local — grounded in named Vancouver histories — and stakes out a set of ethical
+positions. The build can stay as edgy/provocative as the owner wants; what this doc
+adds is the *specific local ammunition* to make the edge land on real targets.
 
 ## 2. The core thesis (refined)
 
@@ -103,12 +104,13 @@ system can become the front-end/showcase for this pipeline, and the
 
 What Doc 01 changes about the scaffold I shipped:
 
-### Tone — needs a serious recalibration ⚠️
-My scaffolded copy is flippant satire ("The only displacement we want is a striker",
-"WORLD CUP OF DISPLACEMENT"). Against MMIWG2S, overdose deaths, and the Pickton
-context, that register is **tonally wrong and a real risk**. The doc's voice is
-deadpan-official + documentary-serious, not jokey. Recommend rewriting the slogan
-bank and manifesto copy to match. (Holding until the user confirms — see chat.)
+### Tone — two registers on the table, owner's call
+My scaffolded copy is edgy/flippant satire ("The only displacement we want is a
+striker", "WORLD CUP OF DISPLACEMENT"). Doc 01's own voice runs more
+deadpan-official + documentary-serious. These aren't mutually exclusive — provocative
+satire pointed at the *systems* in Doc 01 is a valid lane. **The owner is the ethical
+guard and will calibrate how scathing/in-your-face to go per item** as research lands.
+No copy changes until then; both registers stay available.
 
 ### Brand tokens
 - Palette mostly holds, but the doc implies a *per-kit* palette system (concrete grey,

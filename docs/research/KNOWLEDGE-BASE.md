@@ -39,21 +39,23 @@ docs/research/
    process ideas, and **impact on the current build**.
 4. Synthesis (written after all 3 land) is the single doc the team designs from.
 
-## Ethical guardrails (promoted to top level — non-negotiable)
+## Ethical considerations raised by Doc 01 (human-calibrated)
 
-These come from Doc 01 and govern everything regardless of final direction:
-- **Punch up, never down.** Target systems (policing, developers, FIFA, capital),
-  never the displaced, the dead, or survivors.
-- **No appropriation of Indigenous regalia, sacred symbols, or community-owned
-  motifs.** Symbolism targets *colonial systems*, not spiritual iconography.
-  (See: Cowichan sweater dispute, 2010.)
-- **MMIWG2S references foreground settler/state responsibility** — no grief
-  commodification, no trauma cosplay.
-- **Center systems over individuals.** Do not turn perpetrators (e.g. Pickton)
-  into edgy motifs; indict the institutions that enabled the violence.
-- **Sex work framing = labor, risk, criminalization** — never punchline.
-- **Land acknowledgement is substance, not decoration.** Unceded xʷməθkʷəy̓əm
-  (Musqueam), Sḵwx̱wú7mesh (Squamish), səlilwətaɬ (Tsleil-Waututh).
+> **The human (project owner) is the ethical guard.** These are *not* locked-in
+> rules the AI enforces — they're the positions Doc 01 stakes out, captured here
+> as input. The owner decides per-item how edgy / scathing / provocative to be as
+> the research develops. Documented for reference, not imposed.
+
+Doc 01's stated positions:
+- **Punch up at systems** (policing, developers, FIFA, capital) vs. the displaced.
+- **Avoid appropriating Indigenous regalia / sacred / community-owned motifs**;
+  target *colonial systems* instead. (Anchored by the Cowichan sweater dispute, 2010.)
+- **MMIWG2S references foreground settler/state responsibility.**
+- **Center systems over individuals** (e.g. Pickton case → indict policing/courts,
+  per the doc's own framing).
+- **Sex work framing = labor, risk, criminalization.**
+- **Land acknowledgement as substance.** Unceded xʷməθkʷəy̓əm (Musqueam),
+  Sḵwx̱wú7mesh (Squamish), səlilwətaɬ (Tsleil-Waututh).
 
 ## Event context
 
