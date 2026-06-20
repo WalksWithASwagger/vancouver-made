@@ -26,8 +26,8 @@ Each prompt should generate a complete flat-lay technical illustration showing:
 ```
 technical flat-lay fashion illustration of unisex soccer jersey,
 midnight navy body with toxic teal and magenta gradient accents,
-all-over repeating candlestick chart pattern in white,
-soaring then cliff-diving stock market visualization,
+all-over pattern of literal white candlestick chart lines (open/close bars with wicks), soaring then crashing,
+no abstract marble, no texture fills: clean thin stock-chart line art only,
 gold heraldic shield crest on left chest (soccer ball split candlestick chart),
 center chest sponsor bar reads "PUMP & DUMP CAPITAL" in metallic gold,
 professional sports apparel technical drawing,
