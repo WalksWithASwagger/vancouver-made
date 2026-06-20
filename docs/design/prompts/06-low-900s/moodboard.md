@@ -1,14 +1,14 @@
-# Mood Board Prompts — 06 STARTING FROM THE LOW $900s
+# Mood Board Prompts: 06 STARTING FROM THE LOW $900s
 
 **The argument:** Displacement sold back to you as an investment opportunity. *Gentrification sold back as a pre-sale.*
 
-**Look:** the condo pre-sale brochure. Glossy lifestyle renders, calm sans-serif, gold accents, "PRESENTATION CENTRE NOW OPEN." Aspirational developer polish — with the eviction underneath.
+**Look:** the condo pre-sale brochure. Glossy lifestyle renders, calm sans-serif, gold accents, "PRESENTATION CENTRE NOW OPEN." Aspirational developer polish. With the eviction underneath.
 
 **Palette:** bone `#EDE6D8` · gold `#B8924A` · calm teal `#21d9c9` (muted) · ink `#0E0E0E`.
 
 **MJ settings:** `--ar 4:5 --style raw` (no `--v`).
 
-> ⚠️ **Receipt to source:** this kit needs its own sourced displacement / affordability figure for the hem. The graphic-elements file uses a verified 2010-displacement line as a placeholder — swap in a dedicated, cited pre-sale/affordability stat before final generation. No unsourced number ships.
+> ⚠️ **Receipt to source:** this kit needs its own sourced displacement / affordability figure for the hem. The graphic-elements file uses a verified 2010-displacement line as a placeholder. Swap in a dedicated, cited pre-sale/affordability stat before final generation. No unsourced number ships.
 
 ---
 

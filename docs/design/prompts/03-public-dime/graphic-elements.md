@@ -1,4 +1,4 @@
-# Graphic Elements Prompts — 03 MADE ON THE PUBLIC DIME ★
+# Graphic Elements Prompts: 03 MADE ON THE PUBLIC DIME ★
 
 Extractable parts for the banknote kit. White background throughout for clean compositing.
 
@@ -17,7 +17,7 @@ official currency texture,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 2: Crest — casino chip with FIFA-shield
+### Prompt 2: Crest: casino chip with FIFA-shield
 ```
 heraldic sports crest: a casino chip with a football-federation shield silhouette inside it,
 engraved gold outline on banknote green,
@@ -26,7 +26,7 @@ official badge / currency-seal aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 3: Primary sponsor bar — BANK OF FIFA
+### Prompt 3: Primary sponsor bar: BANK OF FIFA
 ```
 official sponsor bar / wordmark layout,
 text reads "BANK OF FIFA",
@@ -36,7 +36,7 @@ central-bank / legal-tender aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 4: Maker mark — LEGAL TENDER
+### Prompt 4: Maker mark: LEGAL TENDER
 ```
 small engraved maker mark band,
 text reads "LEGAL TENDER FOR ALL DEBTS, PUBLIC",
@@ -45,7 +45,7 @@ currency fine-print aesthetic, suitable for collar or cuff,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 5: "Fair Play" spoof badge — THE HOUSE ALWAYS WINS
+### Prompt 5: "Fair Play" spoof badge: THE HOUSE ALWAYS WINS
 ```
 official circular fair-play-style badge,
 reads "THE HOUSE ALWAYS WINS",
@@ -54,7 +54,7 @@ tournament conduct-badge aesthetic, sleeve-placement size,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 6: Nameplate — LEGAL TENDER
+### Prompt 6: Nameplate: LEGAL TENDER
 ```
 athletic jersey nameplate, arched banner format,
 reads "LEGAL TENDER",
@@ -63,7 +63,7 @@ banknote serif, professional jersey back-name aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 7: Number treatment — the denomination
+### Prompt 7: Number treatment: the denomination
 ```
 oversized jersey number rendered as an engraved currency denomination,
 "$729,000,000" styled as a banknote figure with guilloché shading,
@@ -72,7 +72,7 @@ modern athletic number, chest / back placement,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 8: Hem microtext — the receipt
+### Prompt 8: Hem microtext: the receipt
 ```
 dense technical microtext strip for jersey hem,
 reads "SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN'T",

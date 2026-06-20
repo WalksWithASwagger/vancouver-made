@@ -1,4 +1,4 @@
-# Graphic Elements Prompts — PUMP & DUMP FC
+# Graphic Elements Prompts: PUMP & DUMP FC
 
 **Goal:** Generate standalone graphics that can be composited onto jersey templates. These are the building blocks: print patterns, crests, sponsor bars, chart graphics.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## Batch 1 — All-Over Print Pattern Options
+## Batch 1: All-Over Print Pattern Options
 
 ### Prompt 1: Candlestick chart all-over repeat
 ```
@@ -40,7 +40,7 @@ subtle ornamental detail layer,
 
 ---
 
-## Batch 2 — Crest / Shield Designs
+## Batch 2: Crest / Shield Designs
 
 ### Prompt 4: Split soccer ball / candlestick crest
 ```
@@ -66,7 +66,7 @@ white background --ar 16:9 --style raw
 
 ---
 
-## Batch 3 — Sponsor Bar / Brand Treatments
+## Batch 3: Sponsor Bar / Brand Treatments
 
 ### Prompt 6: PUMP & DUMP CAPITAL sponsor bar
 ```
@@ -103,7 +103,7 @@ white background --ar 16:9 --style raw
 
 ---
 
-## Batch 4 — Number / Name Graphics
+## Batch 4: Number / Name Graphics
 
 ### Prompt 9: Role-based name treatment
 ```
@@ -130,7 +130,7 @@ white background --ar 16:9 --style raw
 
 ---
 
-## Batch 5 — Shorts / Socks / Trim Graphics
+## Batch 5: Shorts / Socks / Trim Graphics
 
 ### Prompt 11: VACANT stamp pattern
 ```
@@ -153,7 +153,7 @@ technical sports apparel typography,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 13: Stripe detail — toxic gradient
+### Prompt 13: Stripe detail: toxic gradient
 ```
 clean vertical stripe or gradient bar,
 transitions from toxic teal (#21d9c9) through to magenta,
@@ -165,7 +165,7 @@ white background --ar 16:9 --style raw
 
 ---
 
-## Batch 6 — Miscellaneous Details
+## Batch 6: Miscellaneous Details
 
 ### Prompt 14: Microprint citation
 ```

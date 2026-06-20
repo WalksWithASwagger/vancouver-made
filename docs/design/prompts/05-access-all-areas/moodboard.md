@@ -1,8 +1,8 @@
-# Mood Board Prompts — 05 ACCESS: ALL AREAS
+# Mood Board Prompts: 05 ACCESS: ALL AREAS
 
-**The argument:** The mega-event grants total access to outsiders and revokes it for residents. *Access: all areas — (unless you live here).* The 2010 sweep, again.
+**The argument:** The mega-event grants total access to outsiders and revokes it for residents. *Access: all areas (unless you live here).* The 2010 sweep, again.
 
-**Look:** event accreditation. The AAA laminate, the lanyard, the secure perimeter, the turnstile. Official-issue access control — turned into exclusion.
+**Look:** event accreditation. The AAA laminate, the lanyard, the secure perimeter, the turnstile. Official-issue access control turned into exclusion.
 
 **Palette:** ink `#0E0E0E` · hazard `#ff3b00` · accreditation gold `#B8924A` · bone `#EDE6D8` · holographic security stripe.
 

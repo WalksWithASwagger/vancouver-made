@@ -1,4 +1,4 @@
-# Graphic Elements Prompts — 08 SMART CITY
+# Graphic Elements Prompts: 08 SMART CITY
 
 Extractable parts for the surveillance kit. White background throughout.
 
@@ -12,7 +12,7 @@ Extractable parts for the surveillance kit. White background throughout.
 
 ---
 
-### Prompt 1: All-over pattern — camera grid + QR + fine print
+### Prompt 1: All-over pattern: camera grid + QR + fine print
 ```
 seamless repeating pattern of CCTV camera lenses, QR codes, and fine-print clauses,
 cyan line art on wet-asphalt dark, tight repeat for sublimated jersey fabric,
@@ -20,7 +20,7 @@ surveillance / civic-tech UI aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 2: Crest — CCTV lens in a shield
+### Prompt 2: Crest: CCTV lens in a shield
 ```
 heraldic sports crest with a CCTV camera lens where the federation badge sits,
 concentric cyan rings, aperture iris,
@@ -29,7 +29,7 @@ official badge / surveillance aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 3: Primary sponsor bar — SMART CITY
+### Prompt 3: Primary sponsor bar: SMART CITY
 ```
 official sponsor bar / wordmark layout,
 text reads "SMART CITY",
@@ -38,7 +38,7 @@ civic-tech startup branding aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 4: Secondary tag — BY USING THIS CITY YOU AGREE
+### Prompt 4: Secondary tag: BY USING THIS CITY YOU AGREE
 ```
 official secondary tagline bar,
 text reads "BY USING THIS CITY YOU AGREE",
@@ -47,7 +47,7 @@ terms-of-service fine-print aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 5: "Fair Play" spoof badge — UNDER SURVEILLANCE
+### Prompt 5: "Fair Play" spoof badge: UNDER SURVEILLANCE
 ```
 official circular fair-play-style badge,
 reads "UNDER SURVEILLANCE",
@@ -56,7 +56,7 @@ tournament conduct-badge aesthetic, sleeve-placement size,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 6: Nameplate — USER / DATA SUBJECT
+### Prompt 6: Nameplate: USER / DATA SUBJECT
 ```
 athletic jersey nameplate, arched banner format,
 reads "USER" (alt: "DATA SUBJECT"),
@@ -65,7 +65,7 @@ professional jersey back-name aesthetic,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 7: Number treatment — tracking ID
+### Prompt 7: Number treatment: tracking ID
 ```
 oversized jersey number built from a device tracking-ID / IP-address string,
 monospace digits with a QR fragment, cyan on dark,
@@ -73,7 +73,7 @@ clean modern athletic number, chest / back placement,
 white background --ar 16:9 --style raw
 ```
 
-### Prompt 8: Hem microtext — the clause
+### Prompt 8: Hem microtext: the clause
 ```
 dense technical microtext strip for jersey hem,
 reads "BY ENTERING THE CITY YOU CONSENT TO COLLECTION, RETENTION & SHARING OF YOUR DATA",
