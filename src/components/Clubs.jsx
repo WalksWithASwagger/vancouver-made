@@ -138,13 +138,19 @@ export default function Clubs() {
   return (
     <section id="clubs" className="border-t border-bone/10 bg-rain/20">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        {/* counterfeit-official drop header */}
+        {/* deep-dive header */}
         <div className="mb-10 border border-bone/15 p-5 text-center">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">
-            {league.umbrella} · {league.edition}
+            Deep dive · three kits, fully built
           </p>
-          <h2 className="headline mt-2 text-3xl text-bone md:text-5xl">THE KIT DROP</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-bone/70">{league.thesis}</p>
+          <h2 className="headline mt-2 text-3xl text-bone md:text-5xl">
+            HOW A KIT BECOMES A RECEIPT
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-bone/70">
+            Pump &amp; Dump is Kit 09 of MADE ON. Number Five Orange and Nardwuar FC
+            are companion concepts — same method: mimic the official polish, invert
+            the payload, bake in the receipt.
+          </p>
           <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-hazard">
             {league.sharedSpoof.fauxPatch.join(' · ')}
           </p>

@@ -1,17 +1,25 @@
-# VANCOUVER MADE
+# VANCOUVER MADE · **MADE ON**
 
-**A protest brand. Not a sponsor.**
+**A protest collection. Not a sponsor.**
 
-The world's biggest sporting spectacle — FIFA World Cup 2026 — is coming to
-Vancouver. So are the cost overruns, the street sweeps, and the corporate flags
-planted over a city already struggling to house its own people.
+> **They asked for the Vancouver story. We finished the sentence.**
+> *Made on stolen ground. Made on Hogan's Alley. Made on $729 million of public money.*
 
-**VANCOUVER MADE** wears the language of the tournament against itself — the kits,
-the crest, the trophy, the fan-zone portal — and reissues all of it as *evidence*.
-This is anti-establishment protest art aimed at international sports greed,
-mega-event capitalism, and displacement. It speaks truth to power.
+**MADE ON** is a FIFA-World-Cup-2026 protest kit collection (BCIT Tech Collider).
+Everyone else made a souvenir; we made the **receipt**. Nine kits, two racks, one
+argument — rebuilding the tournament's official visual language (kits, crests,
+sponsor bars, kit-maker spec type) and **inverting the payload**, with every factual
+claim carrying its citation *on the hem*. A settler artist's refusal to make the
+celebration jersey: no borrowed sacred imagery — the coloniser's own paperwork
+instead, the receipt, the redaction, the banknote.
 
-> This is **not** a protest about AI. AI is just the brush. The subject is greed.
+— Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, səlilwətaɬ territory
+
+> Not a protest about AI. AI is just the brush. The subject is greed, displacement,
+> and who pays the public bill.
+
+**Canonical deliverables:** `docs/deliverables/` (board, pitch deck, tech pack).
+**Design from:** `docs/research/analysis/SYNTHESIS.md` + `analysis/04-made-on-consolidation.md`.
 
 ---
 

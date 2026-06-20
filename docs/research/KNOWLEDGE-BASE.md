@@ -14,6 +14,13 @@ build.
 | 02 | **ChatGPT / OpenAI** — "ALLEY LEAGUE" | `sources/02-chatgpt-alley-league.md` | ✅ Imported | `analysis/02-chatgpt-alley-league-analysis.md` |
 | 03 | **Claude** — "Subversive Soccer Kits (Visual Reference Library)" | `sources/03-claude-visual-reference-library.md` | ✅ Imported | `analysis/03-claude-visual-reference-library-analysis.md` |
 | 04 | **Perplexity (2nd)** — three-concept build-out (No.5 · Nardwuar · Pump & Dump) | `sources/04-perplexity-three-concepts-buildout.md` | ✅ Imported | folded into `src/data/clubs.js` + `docs/design/clubs/` |
+| 05 | **MADE ON — Board** (Kris Krüg) | `sources/05-made-on-board.md` (binary: `docs/deliverables/MADEON_board.pdf`) | ✅ Imported | `analysis/04-made-on-consolidation.md` |
+| 06 | **MADE ON — Pitch Deck** (Kris Krüg) | `sources/06-made-on-pitchdeck.md` (binary: `docs/deliverables/MADEON_pitchdeck.pptx`) | ✅ Imported | `analysis/04-made-on-consolidation.md` |
+| 07 | **MADE ON — Tech Pack** (Formme track) | `sources/07-made-on-techpack.md` (binary: `docs/deliverables/MADEON_techpack.pdf`) | ✅ Imported | `analysis/04-made-on-consolidation.md` |
+
+> **⭐ CANONICAL DIRECTION = MADE ON.** Docs 05–07 are owner-authored, hackathon-ready
+> deliverables; they consolidate all prior research. Brand: **VANCOUVER MADE → MADE ON**
+> (9 kits, two racks). See `analysis/04-made-on-consolidation.md` and `analysis/SYNTHESIS.md`.
 
 > **All three research docs are in.** Origins: 01 = Perplexity (concept + precedent
 > survey), 02 = ChatGPT (the league system + pipeline), 03 = Claude (24 cited
