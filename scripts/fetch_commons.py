@@ -10,7 +10,7 @@ Two modes (Commons only hosts free content — anything returned is CC / PD):
   download : stdin = JSON [[id, thumburl, ext], ...]
              -> downloads each thumburl to <outdir>/<id><ext>
 """
-import json, sys, os, urllib.parse, urllib.request
+import json, sys, os, time, urllib.parse, urllib.request
 
 API = "https://commons.wikimedia.org/w/api.php"
 UA = "vancouver-made-hall-of-fame/1.0 (research reference gallery; contact feelmoreplants@gmail.com)"
@@ -92,6 +92,7 @@ def main():
             except Exception as e:
                 manifest[_id] = {"ok": False, "error": str(e)}
                 print(f"  ! {_id}: {e}", file=sys.stderr)
+            time.sleep(1.5)  # respect Wikimedia rate limits
         with open(manifest_path, "w") as f:
             json.dump(manifest, f, indent=2)
         ok = sum(1 for v in manifest.values() if v.get("ok"))

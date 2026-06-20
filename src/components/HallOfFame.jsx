@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { categories, entries } from '../data/hallOfFame.js'
+import { categories as storyCategories, entries as storyEntries } from '../data/hallOfFame.js'
+import { categories as kitCategories, entries as kitEntries } from '../data/kitGallery.js'
 
 // One accent per thread — drawn from the brand palette, lightly extended so the
 // seven filters stay legible against ink.
 const CAT_COLOR = {
+  // The Whole Story
   'design-canon': '#d9a521',    // gold
   'protest-kits': '#ff3b00',    // hazard
   'athlete-protest': '#21d9c9', // cyan
@@ -12,9 +14,22 @@ const CAT_COLOR = {
   'fifa-2026': '#f4f1ea',       // bone
   'subvertising': '#ff8a5b',    // coral
   'merch-swag': '#c6a4db',      // lilac
+  // Best Kits
+  'intl-classics': '#d9a521',   // gold
+  'club-icons': '#21d9c9',      // cyan
+  'keeper-weird': '#ff8a5b',    // coral
+  'modern-fashion': '#c6a4db',  // lilac
 }
 const colorFor = (id) => CAT_COLOR[id] ?? '#f4f1ea'
-const labelFor = (id) => categories.find((c) => c.id === id)?.label ?? id
+
+const TABS = [
+  { id: 'story', label: 'The Whole Story', categories: storyCategories, entries: storyEntries },
+  { id: 'kits', label: 'Best Kits', categories: kitCategories, entries: kitEntries },
+]
+const LABELS = Object.fromEntries(
+  [...storyCategories, ...kitCategories].map((c) => [c.id, c.label]),
+)
+const labelFor = (id) => LABELS[id] ?? id
 
 function FilterButton({ active, color, label, count, onClick }) {
   return (
@@ -196,15 +211,23 @@ function Lightbox({ entry, onClose }) {
 }
 
 export default function HallOfFame() {
+  const [tabId, setTabId] = useState('story')
   const [filter, setFilter] = useState('all')
   const [active, setActive] = useState(null)
 
+  const tab = TABS.find((t) => t.id === tabId)
+  const { categories, entries } = tab
+
   const shown = useMemo(
     () => (filter === 'all' ? entries : entries.filter((e) => e.category === filter)),
-    [filter],
+    [filter, entries],
   )
   const localCount = entries.filter((e) => e.src).length
-  const refCount = entries.length - localCount
+
+  const selectTab = (id) => {
+    setTabId(id)
+    setFilter('all')
+  }
 
   return (
     <div className="grain min-h-screen bg-ink text-bone">
@@ -217,18 +240,38 @@ export default function HallOfFame() {
           <h1 className="headline mt-2 text-4xl text-bone md:text-6xl">
             THE HALL OF <span className="text-hazard">FAME</span>
           </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-bone/70">
-            The best kits, the loudest podiums, the cleanest brand hijacks — the lineage
-            MADE ON draws from. {entries.length} works across {categories.length} threads,
-            weighted toward protest, the podium, and the press conference.
+
+          {/* TABS */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {TABS.map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => selectTab(t.id)}
+                className="border px-4 py-2 text-xs font-bold uppercase tracking-wider transition"
+                style={
+                  tabId === t.id
+                    ? { background: '#ff3b00', color: '#0a0a0a', borderColor: '#ff3b00' }
+                    : { borderColor: '#ff3b0066', color: '#f4f1ea' }
+                }
+              >
+                {t.label} <span className="opacity-50">{t.entries.length}</span>
+              </button>
+            ))}
+          </div>
+
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-bone/70">
+            {tabId === 'story'
+              ? `The loudest podiums, the cleanest brand hijacks, the kits that refused to stay quiet — the lineage MADE ON draws from. ${entries.length} works across ${categories.length} threads, weighted toward protest.`
+              : `The greatest jersey designs ever cut — protest and otherwise. ${entries.length} kits across ${categories.length} threads, from the Aztec calendar to the carbon-neutral terrace.`}
           </p>
           <p className="mt-3 max-w-2xl font-mono text-[11px] leading-relaxed text-bone/45">
-            Rights-honest: {localCount} freely-licensed works archived here · {refCount}{' '}
-            rights-restricted gems linked at source. Cite the receipt, link the source.
+            Rights-honest: {localCount} freely-licensed works archived here ·{' '}
+            {entries.length - localCount} rights-restricted gems linked at source.
           </p>
 
           {/* FILTER */}
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             <FilterButton
               active={filter === 'all'}
               color="#f4f1ea"
