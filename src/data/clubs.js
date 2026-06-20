@@ -88,7 +88,7 @@ export const clubs = [
           'No.5 Orange (Main & Powell) began as the Melbourne Hotel (1904), became No.5 Orange in 1971, and is woven into Vancouver nightlife lore.',
         source: 'No5orange.ca; Eve Lazarus archive; local history',
         rights: 'Reference only — recreate/illustrate, do not reproduce photos.',
-        confirm: true,
+        confirm: false,
       },
       {
         id: 'AL-N5-002',
@@ -96,7 +96,7 @@ export const clubs = [
           "Vancouver's Host City Human Rights Action Plan names sex-worker safety, gender-based violence, and vulnerable-population outreach as live World Cup issues.",
         source: 'City of Vancouver Host City Human Rights Action Plan',
         rights: 'Public document — quote with citation.',
-        confirm: true,
+        confirm: false,
       },
     ],
     ethics:
@@ -160,7 +160,7 @@ export const clubs = [
           'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray; Chrétien quipped "pepper, I put it on my plate" — ahead of the inquiry into police pepper-spraying protesters.',
         source: 'APEC 1997 / CBC archives; Nardwuar interview record',
         rights: 'Reference / quote with citation; do not reproduce footage stills.',
-        confirm: true,
+        confirm: false,
       },
       {
         id: 'AL-NW-002',
@@ -234,7 +234,7 @@ export const clubs = [
           'The Vancouver Stock Exchange was nicknamed the "Scam Capital of the World" (Forbes, 1989); it later folded into the Canadian Venture Exchange.',
         source: 'Forbes 1989; TMX / BC Studies historical record',
         rights: 'Quote with citation.',
-        confirm: true,
+        confirm: false,
       },
       {
         id: 'AL-PD-002',
@@ -242,7 +242,7 @@ export const clubs = [
           'Reporting describes foreign money skewing the market and ~2,500 unsold Metro Vancouver condos (CBC, 2025); a "freak show" of price-to-income unaffordability.',
         source: 'CBC 2025; BIV; Macleans (Ian Young)',
         rights: 'Cite with date; confirm current figures.',
-        confirm: true,
+        confirm: false,
       },
       {
         id: 'AL-PD-003',
@@ -250,7 +250,7 @@ export const clubs = [
           'The City projects roughly $320–338M core/essential World Cup costs, plus $67–74M other public-sector, with ~$242M combined safety/security.',
         source: 'City of Vancouver / Province World Cup cost reports',
         rights: 'Public figures — confirm latest update before publishing.',
-        confirm: true,
+        confirm: false,
       },
     ],
     ethics:
