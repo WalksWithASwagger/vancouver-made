@@ -16,9 +16,10 @@
 ```
 technical flat-lay fashion illustration of unisex soccer jersey,
 matte ink-black body with an all-over ghosted FOI report pattern in tonal black,
-heavy gloss-black redaction bars across the document text,
-crest on left chest is a single black redaction bar stamped red "CLASSIFIED",
-center chest sponsor bar entirely blacked out (solid redaction bar),
+70%+ of the jersey surface covered by solid heavy black redaction bars across the document text,
+bars dominate: the pattern reads as bar field, not document,
+crest on left chest is a single solid black redaction bar stamped red "CLASSIFIED",
+center chest sponsor bar entirely blacked out by a solid heavy redaction bar,
 professional sports apparel technical drawing,
 clean line work, high detail, ready for production,
 white background --ar 3:4 --style raw
@@ -28,8 +29,9 @@ white background --ar 3:4 --style raw
 ```
 technical flat-lay fashion illustration of jersey back,
 matte ink-black body matching the front, ghosted redacted-document pattern,
+70%+ of the jersey surface covered by solid heavy black redaction bars,
 arched nameplate reads "REDACTED",
-number below rendered as three heavy black redaction bars,
+number below rendered as three solid heavy black redaction bars (no digit visible),
 back-collar line reads "WHAT THEY WON'T RELEASE, WE WEAR",
 bone microprint citation along the hem (fine detail line),
 professional sportswear technical drawing,
