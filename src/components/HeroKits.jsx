@@ -1,6 +1,8 @@
 import { heroKits } from '../data/heroKits.js'
 import KitFlat from './KitFlat.jsx'
 
+const SLEEVE_LABEL = { short: 'short sleeve', long: 'long sleeve', raglan: '¾ raglan' }
+
 function Swatch({ hex }) {
   return <span className="inline-block h-3 w-3 rounded-sm border border-bone/30" style={{ background: hex }} />
 }
@@ -44,6 +46,8 @@ function HeroKit({ kit }) {
           <Row label="Back line" v={kit.backLine} />
           <Row label="Allover" v={kit.allover} />
           <Row label="Serial" v={kit.serial} />
+          <Row label="Silhouette" v={SLEEVE_LABEL[kit.silhouette] || 'short sleeve'} />
+          <Row label="Fabric" v={kit.fabric} />
         </dl>
 
         {/* colorway */}

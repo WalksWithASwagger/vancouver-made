@@ -12,6 +12,8 @@ export const heroKits = [
     name: 'MADE ON THE PUBLIC DIME',
     series: 'MADE ON — what the city is built on',
     styleNo: 'MO-03',
+    silhouette: 'long', // set-in long sleeve — max unbroken banknote-engraving canvas
+    fabric: 'Optical-bright ocean-bound recycled PET interlock ~150 gsm (sublimation base)',
     concept: 'The World Cup as a public-money transfer with grass on top — worn as legal tender.',
     theLine: '$729M as couture.',
     colorway: {
@@ -44,6 +46,8 @@ export const heroKits = [
     name: 'MADE ON SILENCE',
     series: 'MADE ON — what the city is built on',
     styleNo: 'MO-01',
+    silhouette: 'raglan', // ¾ raglan — black-bloc / refusal-of-the-official-cut read
+    fabric: 'Dope-dyed recycled black poly (waterless) + gloss redaction bars',
     concept: 'The city\'s record, redacted. What they won\'t release, worn — black bloc.',
     theLine: 'The redacted document, worn.',
     colorway: {
@@ -77,6 +81,8 @@ export const heroKits = [
     series: 'STREET SERIES — who it got built without',
     styleNo: 'MO-09',
     club: 'pump-and-dump-fc', // deep-dive data in src/data/clubs.js
+    silhouette: 'raglan', // ¾ raglan, boxy/blokecore — the hypebeast-on-TikTok read
+    fabric: 'Ocean-bound recycled PET interlock; ECONYL ghost-net trim accent',
     concept: 'The whole grift, worn as the prospectus. Hype the city, bill the public, take the exit. You\'re the bagholder.',
     theLine: 'Worn as the prospectus.',
     colorway: {

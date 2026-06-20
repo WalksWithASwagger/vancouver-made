@@ -64,7 +64,7 @@ export default function LightboxViewer({ asset, onClose }) {
 
         <div className="lightbox-content">
           <div className="lightbox-image-section">
-            <img src={`file:///${asset.path}`} alt={asset.filename} className="lightbox-image" onError={e => {
+            <img src={`/api/asset/${asset.id}/raw`} alt={asset.filename} className="lightbox-image" onError={e => {
               e.target.src = '/placeholder.png'
             }} />
             <div className="lightbox-asset-info">

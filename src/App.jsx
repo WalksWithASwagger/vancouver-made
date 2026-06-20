@@ -5,6 +5,7 @@ import Collection from './components/Collection.jsx'
 import HeroKits from './components/HeroKits.jsx'
 import AssetTracker from './components/AssetTracker.jsx'
 import HallOfFame from './components/HallOfFame.jsx'
+import ReceiptsEngine from './components/ReceiptsEngine.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 
@@ -103,6 +104,8 @@ function MadeOnSite() {
           <Link to="/hall-of-fame" className="text-bone/60 hover:text-bone transition">Hall of Fame</Link>
           <span className="text-bone/20">·</span>
           <Link to="/tracker" className="text-bone/60 hover:text-bone transition">Asset Tracker</Link>
+          <span className="text-bone/20">·</span>
+          <Link to="/engine" className="text-bone/60 hover:text-bone transition">Receipts Engine</Link>
         </div>
         {brand.name} · {brand.parent} · You asked for the Vancouver story — this is the
         part that doesn't fit on a souvenir.
@@ -118,6 +121,7 @@ export default function App() {
         <Route path="/" element={<MadeOnSite />} />
         <Route path="/hall-of-fame" element={<HallOfFame />} />
         <Route path="/tracker" element={<AssetTracker />} />
+        <Route path="/engine" element={<ReceiptsEngine />} />
       </Routes>
     </BrowserRouter>
   )

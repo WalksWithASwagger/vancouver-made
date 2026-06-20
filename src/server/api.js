@@ -1,9 +1,11 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
+import fs from 'fs'
 import {
   saveAsset,
   getAssets,
+  getAssetById,
   getAssetsConcepts,
   getAssetsBatches,
   saveRating,
@@ -54,6 +56,15 @@ app.get('/api/assets', (req, res) => {
   const { concept, batch } = req.query
   const assets = getAssets(concept, batch)
   res.json(assets)
+})
+
+// Serve an asset's raw image bytes by id (local dev tool — browsers block file://)
+app.get('/api/asset/:id/raw', (req, res) => {
+  const asset = getAssetById(req.params.id)
+  if (!asset || !fs.existsSync(asset.path)) {
+    return res.status(404).json({ error: 'Asset file not found' })
+  }
+  res.sendFile(asset.path)
 })
 
 app.get('/api/assets/concepts', (req, res) => {

@@ -11,3 +11,7 @@ dist-ssr
 *.log
 npm-debug.log*
 .claude/
+
+# Working assets — never commit raw generations or the local ratings DB
+to-ingest/
+src/db/*.db
