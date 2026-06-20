@@ -27,15 +27,15 @@ export default function ReceiptsEngine() {
       {/* HEADER */}
       <header className="border-b border-bone/10 px-6 py-10 md:px-10">
         <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">
-          Vancouver Made · Devin Open Hackathon
+          Vancouver Made · MADE ON · not a sponsor
         </p>
         <h1 className="headline text-4xl text-bone md:text-6xl">
-          THE <span className="text-hazard">RECEIPTS</span> ENGINE
+          WE MADE THE <span className="text-hazard">RECEIPT</span>.
         </h1>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-bone/80 md:text-base">
-          One Vancouver civic receipt goes in. Three counter-spectacle artifacts come out,
-          each in its property's house voice, each carrying the same citation. Not three
-          projects. One pipeline pointed at three surfaces.
+          Pick a number this World Cup would rather keep off the jumbotron. Watch the same
+          truth land three ways: stitched on a kit's hem, pasted up as a poster, shot like
+          couture. Same receipt. Three rooms. Harder to look away.
         </p>
         <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.2em]">
           {Object.values(properties).map((p) => (
@@ -151,13 +151,13 @@ export default function ReceiptsEngine() {
 
       {/* PROCESS / FOOTER */}
       <footer className="border-t border-bone/10 px-6 py-10 md:px-10">
-        <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">The process</h2>
+        <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">Why we made this</h2>
         <p className="max-w-3xl text-sm leading-relaxed text-bone/80">
-          The novelty is not any one site. It is the move: take the World Cup's official
-          spectacle, turn its own language back on it, and let AI do the production while
-          cited Vancouver receipts and human taste hold the line. The same civic fact
-          becomes a hem, a poster, and an editorial. A repeatable way of making, not a
-          one-off. Built today, AI-assisted, on real public-record data.
+          This isn't a protest about AI. AI's just the brush. The subject is greed,
+          displacement, and who pays the public bill. They asked for the Vancouver story.
+          We finished the sentence: made on stolen ground, made on Hogan's Alley, made on
+          $729 million of public money. Everyone else made a souvenir. We made the receipt,
+          and we put the source on the hem so you can check our math.
         </p>
         <div className="mt-5 flex flex-wrap gap-6 text-xs uppercase tracking-[0.2em] text-bone/50">
           <Link to="/" className="hover:text-bone">Pitch site</Link>

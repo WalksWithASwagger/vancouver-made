@@ -1,28 +1,27 @@
-// THE RECEIPTS ENGINE — one civic receipt, three counter-spectacle voices.
-// Same public-record fact, rendered in the house voice of each property:
-//   MADE ON (the wearable receipt) · FEEFA (the civic receipt) · FASHION CAKE (the editorial receipt)
-// The point is the pipeline: receipt in, three artifacts out, every one carrying the same citation.
+// THE RECEIPTS — one real Vancouver number, said three ways.
+// The kit stitches it on the hem. FEEFA pastes it on a wall. Fashion Cake shoots it like
+// couture. Same receipt every time, source attached. Everyone made a souvenir; we made the receipt.
 
 export const properties = {
   madeon: {
     key: 'madeon',
     name: 'MADE ON',
     role: 'the hem',
-    blurb: 'The wearable receipt. Kit-maker spec type, the citation baked into the garment.',
+    blurb: 'On the kit. The number stitched into the hem, in kit-maker spec type, where the sponsor logo should be.',
     url: '/',
   },
   feefa: {
     key: 'feefa',
     name: 'FEEFA',
     role: 'the poster',
-    blurb: 'The civic receipt. Host-city accountability as a protest poster.',
+    blurb: 'On the wall. The bill, pasted up as a poster nobody approved.',
     url: 'https://feefa.ai/',
   },
   cake: {
     key: 'cake',
     name: 'WORLD CUP FASHION CAKE',
     role: 'the editorial',
-    blurb: 'The editorial receipt. The same fact, shot like couture, captioned like evidence.',
+    blurb: 'On the body. The same number, shot like couture, captioned like evidence.',
     url: 'https://world-cup-fashion-cake.vercel.app/',
   },
 }

@@ -171,7 +171,7 @@ function MadeOnSite() {
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
           <Link to="/" className="text-bone/60 hover:text-bone transition">Pitch Site</Link>
           <span className="text-bone/20">·</span>
-          <Link to="/engine" className="text-bone/60 hover:text-bone transition">Receipts Engine</Link>
+          <Link to="/engine" className="text-bone/60 hover:text-bone transition">The Receipts</Link>
           <span className="text-bone/20">·</span>
           <Link to="/hall-of-fame" className="text-bone/60 hover:text-bone transition">Hall of Fame</Link>
           <span className="text-bone/20">·</span>
