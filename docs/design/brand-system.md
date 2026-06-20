@@ -1,22 +1,22 @@
-# Brand System — VANCOUVER MADE / MADE ON
+# Brand System: VANCOUVER MADE / MADE ON
 
 > Current collection name = **MADE ON** (umbrella: VANCOUVER MADE). Canonical
 > palette/voice now live in `src/data/collection.js` (official tech-pack palette:
 > Ink `0E0E0E` · Bone `EDE6D8` · Stamp red `C0392B` · Gold `B8924A` · Note green
 > `1B4D3E`) and the MADE ON deliverables in `docs/deliverables/`. The system below
-> is the foundational counter-brand thinking — still valid, naming updated.
+> is the foundational counter-brand thinking. Still valid, naming updated.
 
 A counter-brand. It looks tournament-official from a distance and turns into a
 protest poster / receipt up close. Shared site tokens: `src/brand/tokens.js` +
-`tailwind.config.js` — keep design + code in sync.
+`tailwind.config.js`: keep design + code in sync.
 
 ## Name & meaning
 **VANCOUVER MADE.** Triple read:
-1. *Made in Vancouver* — local, by us.
-2. *Vancouver, made [up]* — the official story is fabricated, staged for broadcast.
-3. *Who was Vancouver made for?* — the core question.
+1. *Made in Vancouver*: local, by us.
+2. *Vancouver, made [up]*: the official story is fabricated, staged for broadcast.
+3. *Who was Vancouver made for?*: the core question.
 
-Club: **VANCOUVER MADE FC** — crest "The Displaced XI" — motto *Civitas Pro
+Club: **VANCOUVER MADE FC**, crest "The Displaced XI", motto *Civitas Pro
 Populo* (the city, for the people).
 
 ## Color
@@ -34,15 +34,15 @@ Primary contrast pair: **hazard on ink** and **ink on bone**. Gold is an accent,
 used like fake luxury. Cyan belongs to the 3D portal / "future" surfaces.
 
 ## Type
-- **Display:** Archivo Black (Impact fallback) — loud, stadium, tabloid.
-- **Body / mono:** Space Mono — receipts, transcripts, evidence, fine print.
+- **Display:** Archivo Black (Impact fallback): loud, stadium, tabloid.
+- **Body / mono:** Space Mono: receipts, transcripts, evidence, fine print.
 The tension (shouting headline + receipt body) is the whole personality.
 
 ## Logo / crest direction
 - A football that doubles as a wrecking ball / a globe with a fence around it.
 - Crest shaped like an official federation badge but filled with protest iconography
   (a tarp, a tent, a "SOLD" sticker, a maple leaf made of caution tape).
-- "Counterfeit official" — every mark should feel like it was *almost* approved.
+- "Counterfeit official": every mark should feel like it was *almost* approved.
 
 ## Texture & motion
 - Riso/halftone grain (see `.grain` overlay in `index.css`).

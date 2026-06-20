@@ -6,9 +6,9 @@ where everything lives. The collection itself, the why, and the lineup are in th
 
 Two things run here:
 
-- **The pitch site** at `/` — React + React Three Fiber. The hero portal, the
+- **The pitch site** at `/`. React + React Three Fiber. The hero portal, the
   territorial statement, the collection, the code-drawn kit flats, the deep-dive method.
-- **The asset tracker** at `/tracker` — a workbench for the Midjourney images. Scan a
+- **The asset tracker** at `/tracker`. A workbench for the Midjourney images. Scan a
   folder, rate what's good, push the ratings to Notion. Local-first, fast, no cloud
   required to use it.
 
@@ -106,8 +106,8 @@ they push up. This is one-way: local is the source of truth, Notion is the share
 Two databases. Make them in Notion, share them with your integration, drop the IDs in
 `.env.local` (the ID is the chunk in the database URL).
 
-**Prompts** — where the Midjourney prompts live so the tracker can show them next to the
-image:
+**Prompts**: where the Midjourney prompts live so the tracker can show them next to the
+image.
 
 | Property | Type | Holds |
 |----------|------|-------|
@@ -119,7 +119,7 @@ image:
 | Status | Select | `draft`, `ready`, `generated`, `locked` |
 | Category | Select | Optional grouping |
 
-**Ratings** — where your picks land for a shared view:
+**Ratings**: where your picks land for a shared view.
 
 | Property | Type | Holds |
 |----------|------|-------|

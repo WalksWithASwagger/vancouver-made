@@ -1,10 +1,10 @@
-# MADE ON — Kit Mockups (Canva)
+# MADE ON: Kit Mockups (Canva)
 
 Raster hero-kit mockups generated via the Canva MCP, 2026-06-20. PNGs in this folder.
 
-## ⚠️ Known issue — REMOVE BEFORE PUBLISHING
+## ⚠️ Known issue: REMOVE BEFORE PUBLISHING
 Canva's generator added a **Nike swoosh** to each jersey render despite explicit
-"no logos" prompts. It must be removed — both a trademark issue and a direct
+"no logos" prompts. It must be removed: both a trademark issue and a direct
 contradiction of the MADE ON thesis (no borrowed brand imagery). Each design is
 editable in Canva (links below): delete the swoosh, optionally drop in a plain
 `MADE ON` maker dot. ~30 seconds per kit.
@@ -22,7 +22,7 @@ filler) and was replaced by the v2 single-jersey render below.
 
 Assessment: **01 and 09 are strong, on-brand renders** (document/redaction print +
 candlestick/condo print respectively); **03 v2** is a clean banknote-green render
-(headline reads "BANK FIFA" — tweak to "BANK OF FIFA" in the editor if wanted).
+(headline reads "BANK FIFA"; tweak to "BANK OF FIFA" in the editor if wanted).
 All three: remove the swoosh.
 
 ## Notes
