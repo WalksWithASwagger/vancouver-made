@@ -1,285 +1,240 @@
-# Development Guide — Vancouver Made
+# Building MADE ON
 
-## Project Status
+This is the working doc for the repo: how to run it, how the asset tracker works, and
+where everything lives. The collection itself, the why, and the lineup are in the root
+`README.md`. This is the how.
 
-**Active Submission:** Pump & Dump FC (Third Kit) for Vancouver Made Designathon
+Two things run here:
 
-**Deliverables:**
-- [x] Concept locked (submission-brief.md)
-- [x] Prompt sets written (3 suites: mood-board, graphics-elements, jersey-flats)
-- [x] Asset tracker built (Midjourney image management + Notion integration)
-- [ ] Mood board generated (in progress)
-- [ ] Jersey design finalized (pending)
-- [ ] Presentation complete (pending)
+- **The pitch site** at `/` — React + React Three Fiber. The hero portal, the
+  territorial statement, the collection, the code-drawn kit flats, the deep-dive method.
+- **The asset tracker** at `/tracker` — a workbench for the Midjourney images. Scan a
+  folder, rate what's good, push the ratings to Notion. Local-first, fast, no cloud
+  required to use it.
 
----
+## Status
 
-## Local Development Setup
+- [x] Concept locked: Pump & Dump FC is the lead. See `docs/design/submission-brief.md`.
+- [x] Prompt library written for the full collection. See `docs/design/prompts/`.
+- [x] Asset tracker built (scan, rate, Notion sync).
+- [ ] Generate the mood boards and flats in Midjourney.
+- [ ] Pick the winners in the tracker.
+- [ ] Final presentation.
 
-### Prerequisites
-- Node 18+
-- npm or yarn
-- A Notion workspace with API key
+## Run it
 
-### Install Dependencies
+You need Node 18 or newer. That's it for the pitch site. The tracker adds a Notion key
+if you want sync.
 
 ```bash
 npm install
 ```
 
-### Environment Configuration
+Copy the env template and fill in what you have:
 
-1. Copy environment template:
 ```bash
 cp .env.example .env.local
 ```
 
-2. Add your credentials:
 ```env
-VITE_NOTION_API_KEY=your_notion_api_key
-VITE_NOTION_PROMPTS_DB_ID=your_prompts_db_id
-VITE_NOTION_RATINGS_DB_ID=your_ratings_db_id
+VITE_NOTION_API_KEY=...
+VITE_NOTION_PROMPTS_DB_ID=...
+VITE_NOTION_RATINGS_DB_ID=...
 IMAGE_SCAN_DIR=~/Downloads/midjourney
 ```
 
-Get your Notion API key: https://www.notion.com/my-integrations
+Get a Notion key at https://www.notion.com/my-integrations. You can skip all the Notion
+vars and still run the site and rate images locally. Sync just won't fire.
 
-### Initialize Database
+Build the local database (SQLite, one file at `src/db/ratings.db`):
 
 ```bash
 node scripts/init-db.js
 ```
 
-Creates SQLite database at `src/db/ratings.db` with:
-- `assets` table (images with metadata)
-- `ratings` table (scores, likes, notes, sync status)
+That makes two tables: `assets` (the images it finds) and `ratings` (your scores, likes,
+notes, sync state).
 
-### Run Development Servers
+Then run two processes. The site:
 
-**Terminal 1 — Backend API (port 3001):**
 ```bash
-node src/server/api.js
+npm run dev        # http://localhost:5173
 ```
 
-**Terminal 2 — Frontend (port 5173):**
+And the tracker's API, in a second terminal:
+
 ```bash
-npm run dev
+node src/server/api.js   # http://localhost:3001
 ```
 
-Access the app at `http://localhost:5173`
+Pitch site is at `/`, tracker is at `/tracker`. Footer links jump between them.
 
----
+## The asset tracker
 
-## App Navigation
+The loop is: generate, scan, rate, sync.
 
-- **`/`** — Main pitch site (MADE ON collection, hero kits, club cards)
-- **`/tracker`** — Asset Tracker (image gallery, rating UI, Notion sync)
+**Generate.** Prompts live in `docs/design/prompts/`, one folder per kit. Each kit has
+`moodboard.md`, `graphic-elements.md`, and `jersey-flats.md`. Pump & Dump (09) and the
+Public Dime (03) are written out; the rest of the lineup is indexed in
+`docs/design/prompts/README.md`. Run them in Midjourney, save the PNGs.
 
-Switch between routes via footer links or direct URL.
+**Scan.** Drop the images in `IMAGE_SCAN_DIR` (default `~/Downloads/midjourney`). The
+scanner reads concept and batch from the folder layout, so name the folders like the
+kits:
 
----
-
-## Asset Tracker Workflow
-
-### 1. Generate Images
-
-Use prompts from:
-- `docs/design/moodboard-prompts.md` (9 images)
-- `docs/design/graphic-elements-prompts.md` (15 images)
-- `docs/design/jersey-flats-prompts.md` (10 images)
-
-Save to `~/Downloads/midjourney/` organized by concept and batch:
 ```
-pump-and-dump/
-├── mood-board/
-├── graphics-elements/
-└── jersey-flats/
+~/Downloads/midjourney/
+├── pump-and-dump/
+│   ├── mood-board/
+│   ├── graphics-elements/
+│   └── jersey-flats/
+└── public-dime/
+    └── mood-board/
 ```
 
-### 2. Import & Rate
+Hit "Scan Folder" in the tracker. New images show up in the gallery.
 
-In the Asset Tracker (`http://localhost:5173/tracker`):
+**Rate.** Click a thumbnail. The lightbox gives you stars (1-5), a like, and a notes
+field, plus the prompt if it's linked from Notion. Ratings write to SQLite the moment
+you set them. No save button.
 
-1. Click "Scan Folder" → auto-imports new images
-2. Click image thumbnail → opens lightbox
-3. Rate: stars (1-5), heart (like), notes (text)
-4. Ratings save instantly to SQLite
+**Sync.** The header shows how many ratings haven't gone to Notion yet. Click sync and
+they push up. This is one-way: local is the source of truth, Notion is the shared view.
 
-### 3. Sync to Notion
+## Notion setup
 
-- Unsynced ratings show in "Sync Status" header
-- Click "Sync to Notion" → pushes to your Notion database
-- View and organize ratings in Notion alongside prompts
+Two databases. Make them in Notion, share them with your integration, drop the IDs in
+`.env.local` (the ID is the chunk in the database URL).
 
----
+**Prompts** — where the Midjourney prompts live so the tracker can show them next to the
+image:
 
-## File Structure
+| Property | Type | Holds |
+|----------|------|-------|
+| Name | Title | Prompt name |
+| Concept | Select | `pump-and-dump-fc`, `made-on-public-dime`, etc. |
+| Batch | Select | `mood-board`, `graphics-elements`, `jersey-flats` |
+| PromptId | Text | Stable id, e.g. `pd-moodboard-01` |
+| PromptText | Rich text | The full prompt |
+| Status | Select | `draft`, `ready`, `generated`, `locked` |
+| Category | Select | Optional grouping |
+
+**Ratings** — where your picks land for a shared view:
+
+| Property | Type | Holds |
+|----------|------|-------|
+| AssetId | Title | The image id |
+| Score | Number | 1-5 |
+| Liked | Checkbox | The heart |
+| Notes | Text | Your note |
+| SyncedAt | Date | Last push |
+
+## Where things live
 
 ```
 src/
+├── App.jsx                  Router: / (pitch site) and /tracker
 ├── components/
-│   ├── AssetTracker.jsx          Main gallery + filters
-│   ├── ImageGallery.jsx          Thumbnail grid
-│   ├── LightboxViewer.jsx        Image detail view
-│   ├── RatingPanel.jsx           Star/like/notes UI
-│   ├── PromptDetails.jsx         Prompt display
-│   ├── ConceptFilter.jsx         Sidebar filters
-│   ├── SyncStatus.jsx            Notion sync indicator
-│   ├── [design components]       Pitch site components
-│   └── *.css                     Component styles
-├── server/
-│   └── api.js                    Express API routes
+│   ├── AssetTracker.jsx     Tracker shell: sidebar + gallery
+│   ├── ImageGallery.jsx     Thumbnail grid
+│   ├── LightboxViewer.jsx   Image detail + rating + prompt
+│   ├── RatingPanel.jsx      Stars / like / notes
+│   ├── PromptDetails.jsx    Prompt text, copy button
+│   ├── ConceptFilter.jsx    Sidebar filters
+│   ├── SyncStatus.jsx       Notion sync indicator
+│   ├── Collection / HeroKits / KitFlat / Clubs / Crest   The pitch site
+│   └── *.css
+├── server/api.js            Express API on :3001
 ├── utils/
-│   ├── sqlite.js                 Database queries
-│   ├── notion.js                 Notion API client
-│   ├── imageScanner.js           Folder scanner
-│   └── [other utils]
-├── db/
-│   └── ratings.db                SQLite database
-├── data/
-│   ├── collection.js             MADE ON collection config
-│   ├── clubs.js                  Club definitions
-│   └── [other data]
-├── scene/
-│   └── Stage.jsx                 R3F World Portal
-└── App.jsx                       Router + main layout
+│   ├── sqlite.js            DB queries
+│   ├── notion.js            Notion client
+│   └── imageScanner.js      Folder scanner
+├── db/ratings.db            SQLite (created by init-db.js)
+├── data/                    collection.js, receipts.js, heroKits.js, clubs.js
+├── scene/Stage.jsx          The R3F World Portal hero
+└── brand/tokens.js          Palette, type, slogan bank
 
 docs/
 ├── design/
-│   ├── submission-brief.md       Pump & Dump FC concept (LOCKED)
-│   ├── moodboard-prompts.md      9 mood board Midjourney prompts
-│   ├── graphic-elements-prompts.md 15 graphics element prompts
-│   ├── jersey-flats-prompts.md   10 jersey flat prompts
-│   └── clubs/                    Club briefs (No.5, Nardwuar, P&D)
-├── research/
-│   ├── KNOWLEDGE-BASE.md         Research index
-│   ├── brief.md                  Live facts checklist
-│   ├── sources/                  7 imported research docs
-│   └── analysis/                 Synthesis + 3-way analysis
-└── deliverables/                 Pitch deck, board, tech pack
+│   ├── submission-brief.md  Pump & Dump FC, the locked concept
+│   ├── brand-system.md      The visual system
+│   ├── prompts/             Midjourney prompt library, one folder per kit
+│   ├── clubs/               The three deep-dive concept briefs
+│   └── kits/                Filled tech-pack briefs (MO-01 / 03 / 09)
+├── presentation/            Deck outline
+├── deliverables/            Board (PDF), pitch deck (PPTX), tech pack (PDF), mockups/
+└── research/                Knowledge base: 8 source docs + analyses + synthesis
 
-ASSET-TRACKER-README.md           Full tracker documentation
-DEVELOPMENT.md                    This file
+scripts/init-db.js           Builds src/db/ratings.db
 ```
 
----
+## API routes
 
-## API Routes
+Express, on `http://localhost:3001`. The Notion routes return 503 until you've set the
+matching database ID.
 
-### Assets
-- `GET /api/assets` — List assets (filter: concept, batch)
-- `GET /api/assets/concepts` — Get all concepts
-- `GET /api/assets/batches?concept=X` — Get batches for concept
-- `POST /api/scan-folder` — Scan folder and import
-- `POST /api/import-image` — Manual image import
+| Method | Route | Does |
+|--------|-------|------|
+| GET | `/api/health` | Liveness check |
+| GET | `/api/assets` | List assets (filter: `concept`, `batch`) |
+| GET | `/api/assets/concepts` | Distinct concepts in the DB |
+| GET | `/api/assets/batches` | Batches for a concept |
+| POST | `/api/scan-folder` | Scan `scanDir` (or `IMAGE_SCAN_DIR`) and import |
+| POST | `/api/import-image` | Import one image by path |
+| GET | `/api/prompts` | Prompts from Notion (filter: `concept`, `batch`) |
+| GET | `/api/prompts/:promptId` | One prompt by id |
+| GET | `/api/prompts-metadata/concepts` | Concepts from the Notion prompts DB |
+| GET | `/api/prompts-metadata/batches` | Batches for a concept (Notion) |
+| GET | `/api/ratings` | List ratings (filter: `concept`, `batch`) |
+| GET | `/api/ratings/:assetId` | One rating |
+| POST | `/api/ratings` | Save or update a rating |
+| GET | `/api/ratings-stats` | Count and averages (filter: `concept`) |
+| GET | `/api/sync-status` | How many ratings are unsynced |
+| POST | `/api/sync-notion` | Push unsynced ratings to Notion |
 
-### Prompts (Notion)
-- `GET /api/prompts` — List prompts (filter: concept, batch)
-- `GET /api/prompts/:promptId` — Get single prompt
-- `GET /api/prompts-metadata/concepts` — Get concepts from Notion
-- `GET /api/prompts-metadata/batches?concept=X` — Get batches from Notion
+## The database
 
-### Ratings (SQLite)
-- `GET /api/ratings` — List ratings (filter: concept, batch)
-- `GET /api/ratings/:assetId` — Get rating for image
-- `POST /api/ratings` — Save/update rating
-
-### Sync
-- `GET /api/sync-status` — Check unsynced count
-- `POST /api/sync-notion` — Push unsynced ratings to Notion
-
----
-
-## Building for Production
+It's just a SQLite file. Query it straight when you want a quick read:
 
 ```bash
-npm run build
-```
-
-Outputs to `dist/`. Can be deployed to Vercel, Netlify, or static host.
-
----
-
-## Database Operations
-
-### Query SQLite directly
-
-```bash
-# List all assets
+# everything you've imported
 sqlite3 src/db/ratings.db "SELECT * FROM assets"
 
-# Get rating stats by concept
-sqlite3 src/db/ratings.db "SELECT concept, COUNT(*) as total, AVG(score) as avg FROM ratings GROUP BY concept"
+# how each concept is scoring
+sqlite3 src/db/ratings.db "SELECT concept, COUNT(*) total, AVG(score) avg FROM ratings GROUP BY concept"
 
-# Export liked images
+# pull the keepers
 sqlite3 src/db/ratings.db ".mode csv" "SELECT * FROM ratings WHERE liked = 1" > liked.csv
 ```
 
-### Reset database
+Start over:
 
 ```bash
-rm src/db/ratings.db
-node scripts/init-db.js
+rm src/db/ratings.db && node scripts/init-db.js
 ```
 
----
-
-## Troubleshooting
-
-### Images not loading in gallery
-- Check file paths are correct (`file:///full/path/to/image.png`)
-- Ensure images are PNG, JPG, or WEBP
-- Check browser DevTools console for errors
-
-### Notion sync failing
-- Verify API key in `.env.local`
-- Confirm database IDs are correct (from Notion URL)
-- Check that Notion integration has database permissions
-
-### Database locked error
-- Ensure only one API server is running
-- Close any other SQLite clients
-- Restart `node src/server/api.js`
-
-### API not responding
-- Check that `node src/server/api.js` is running on port 3001
-- Verify no other process is using port 3001: `lsof -i :3001`
-
----
-
-## Next Steps
-
-1. **Set up Notion** (15 min) — Create Prompts and Ratings databases
-2. **Generate images** (30-45 min) — Use prompt sets, save to folders
-3. **Import & rate** (15 min) — Scan folder, rate in tracker
-4. **Refine design** (ongoing) — Iterate based on ratings
-5. **Finalize presentation** (1 hour) — Use top images + concept
-
----
-
-## Deployment
-
-To go live (Vercel):
+## Build and deploy
 
 ```bash
-# Push to remote
-git push origin claude/vancouver-ai-protest-design-12kdvk
-
-# Create PR to main
-gh pr create
-
-# Deploy when ready
-vercel --prod
+npm run build      # into dist/
+npm run preview    # serve that build
 ```
 
-Or use GitHub integration: push to `main` → auto-deploys.
+`dist/` is a static bundle. Push to Vercel or any static host. The tracker's API
+(`src/server/api.js`) is a local tool and does not deploy with the site; it's for working
+on a machine where the images and the database live.
 
----
+## When it breaks
 
-## Resources
+**Images don't show after a scan.** Check the path resolves
+(`file:///full/path/image.png`), the format is PNG/JPG/WEBP, and the browser console for
+errors.
 
-- **Asset Tracker Docs:** ASSET-TRACKER-README.md
-- **Submission Brief:** docs/design/submission-brief.md
-- **Research KB:** docs/research/KNOWLEDGE-BASE.md
-- **Prompt Sets:** docs/design/*-prompts.md
-- **Notion API:** https://developers.notion.com
+**Notion sync fails.** Key right in `.env.local`? Database IDs right (the chunk from the
+Notion URL)? Integration actually shared into both databases? All three have to be true.
+
+**"Database locked."** Only one thing can write at a time. Close other SQLite clients,
+make sure a single API server is running, restart it.
+
+**API not answering.** Confirm `node src/server/api.js` is up on 3001. Check nothing else
+grabbed the port: `lsof -i :3001`.

@@ -55,6 +55,9 @@ npm run preview  # serve the production build
 
 Stack: **Vite · React 18 · React Three Fiber · drei · Tailwind CSS**.
 
+Building on it, or running the Midjourney asset tracker at `/tracker`? See
+`DEVELOPMENT.md`.
+
 ## The collection in one breath
 
 - **Brand:** VANCOUVER MADE → **MADE ON** — *They asked for the Vancouver story. We finished the sentence.*
@@ -76,12 +79,13 @@ Stack: **Vite · React 18 · React Three Fiber · drei · Tailwind CSS**.
 
 ## Status
 
-- [x] Knowledge base: 7 source docs imported + analyzed + synthesized
+- [x] Knowledge base: 8 source docs imported + analyzed + synthesized
 - [x] Canonical direction consolidated to MADE ON (board / deck / tech pack in repo)
 - [x] Pitch site mirrors the deck: hero → territorial statement → collection +
       receipts wall → hero kits (code-drawn flats) → deep-dive method
 - [x] Three hero kits spec'd; tech-pack briefs filled (MO-01 / 03 / 09)
 - [x] Builds clean (`npm run build`)
+- [x] Raster kit mockups generated (Canva) — `docs/deliverables/mockups/` (pull the
+      stray Nike swoosh before publishing; see the mockups README)
 - [ ] Verify the `[confirm]` receipts against primary sources
-- [ ] Raster kit mockups (Canva / image-gen MCP when reconnected)
 - [ ] Deploy to a live URL (Vercel) for a demo QR

@@ -1,9 +1,9 @@
 # Knowledge Base — VANCOUVER MADE
 
-Central registry for project research. Three research docs are incoming (from
-Perplexity, Claude, and ChatGPT). Each gets imported **verbatim** into
-`sources/`, then **parsed** into a matching analysis in `analysis/`. Once all
-three are in, we write one **synthesis** that reconciles them and drives the
+Central registry for project research. Eight source docs are in (Perplexity,
+ChatGPT, Claude, plus the owner-authored board / deck / tech pack). Each was
+imported **verbatim** into `sources/`, then **parsed** into a matching analysis in
+`analysis/`. With all of them in, the **synthesis** reconciles them and drives the
 build.
 
 ## Source registry
@@ -17,19 +17,24 @@ build.
 | 05 | **MADE ON — Board** (Kris Krüg) | `sources/05-made-on-board.md` (binary: `docs/deliverables/MADEON_board.pdf`) | ✅ Imported | `analysis/04-made-on-consolidation.md` |
 | 06 | **MADE ON — Pitch Deck** (Kris Krüg) | `sources/06-made-on-pitchdeck.md` (binary: `docs/deliverables/MADEON_pitchdeck.pptx`) | ✅ Imported | `analysis/04-made-on-consolidation.md` |
 | 07 | **MADE ON — Tech Pack** (Formme track) | `sources/07-made-on-techpack.md` (binary: `docs/deliverables/MADEON_techpack.pdf`) | ✅ Imported | `analysis/04-made-on-consolidation.md` |
+| 08 | **ChatGPT** — "ALLEY LEAGUE × VANCOUVER MADE" (Pump & Dump as hero) | `sources/08-chatgpt-alley-league-vancouver-made.md` | ✅ Imported | `analysis/08-chatgpt-alley-league-vancouver-made-analysis.md` |
 
 > **⭐ CANONICAL DIRECTION = MADE ON.** Docs 05–07 are owner-authored, hackathon-ready
 > deliverables; they consolidate all prior research. Brand: **VANCOUVER MADE → MADE ON**
 > (9 kits, two racks). See `analysis/04-made-on-consolidation.md` and `analysis/SYNTHESIS.md`.
 
-> **All three research docs are in.** Origins: 01 = Perplexity (concept + precedent
-> survey), 02 = ChatGPT (the league system + pipeline), 03 = Claude (24 cited
-> precedent works + techniques + rights). They interlock: WHY / HOW / EVIDENCE.
+> **The core research trio anchors the rest.** Origins: 01 = Perplexity (concept +
+> precedent survey), 02 = ChatGPT (the league system + pipeline), 03 = Claude (24
+> cited precedent works + techniques + rights). They interlock: WHY / HOW / EVIDENCE.
+> Docs 04–08 build out concepts and the hero pick on top of that base.
 
 ### ⭐ Start here
 - **`analysis/SYNTHESIS.md`** — the single doc to design from (merged roster,
-  design system, pipeline, the risk dial, build order). Written now that all 3 land.
+  design system, pipeline, the risk dial, build order).
 - **`analysis/cross-source-comparison.md`** — the 3-way agree/diverge breakdown.
+- **`tech-pack-spec.md`** — manufacturer-ready **sizing + materials** research (size
+  charts, BOM, decoration/finishes, labels, construction). Drops into the Formme
+  template + the pro tech pack. Generated 2026-06-20, fully sourced, `[confirm]` flags.
 
 ## How this KB works
 
@@ -49,7 +54,7 @@ docs/research/
    cited source and **independently confirmed** — research docs are leads, not proof.
 3. Analysis files extract: thesis, concepts, ethical constraints, precedents,
    process ideas, and **impact on the current build**.
-4. Synthesis (written after all 3 land) is the single doc the team designs from.
+4. Synthesis (written once the sources are in) is the single doc the team designs from.
 
 ## Ethical considerations raised by Doc 01 (human-calibrated)
 
