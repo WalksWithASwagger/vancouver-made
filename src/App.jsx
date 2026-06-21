@@ -28,6 +28,7 @@ const Process = lazy(() => import('./components/Process.jsx'))
 const Store = lazy(() => import('./components/Store.jsx'))
 const HighlightReel = lazy(() => import('./components/HighlightReel.jsx'))
 const Journey = lazy(() => import('./components/Journey.jsx'))
+const Gallery = lazy(() => import('./components/Gallery.jsx'))
 
 function toggleHeroFullscreen() {
   const el = document.getElementById('hero')
@@ -47,6 +48,7 @@ function RouteFallback() {
 const TITLES = {
   '/': 'MADE ON — Whose Cup Is It Anyway?',
   '/journey': 'The Journey — MADE ON',
+  '/gallery': 'The Gallery — MADE ON',
   '/engine': 'We Made the Receipt — MADE ON',
   '/hall-of-fame': 'Hall of Fame — MADE ON',
   '/process': 'Our Process — MADE ON',
@@ -264,6 +266,7 @@ export default function App() {
         <Route element={<PitchLayout />}>
           <Route path="/" element={<MadeOnSite />} />
           <Route path="/journey" element={<Journey />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/engine" element={<ReceiptsEngine />} />
           <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/process" element={<Process />} />

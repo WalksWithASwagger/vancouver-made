@@ -155,6 +155,12 @@ export default function Journey() {
             >
               See all nine kits →
             </Link>
+            <Link
+              to="/gallery"
+              className="mt-4 ml-0 inline-block border border-bone/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-bone/70 transition hover:border-hazard hover:text-hazard md:ml-3"
+            >
+              The gallery →
+            </Link>
           </div>
           <div className="j-reveal rounded-lg border border-bone/15 bg-black/30 p-4">
             <KitFlat kit={heroKit} />
