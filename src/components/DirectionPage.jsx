@@ -532,17 +532,26 @@ export default function DirectionPage({ data }) {
 
       <ProvocationSection concept={data.concept} palette={data.palette} />
 
-      <SectionDivider />
+      {data.kit?.flats?.length || data.kit?.details?.length ? (
+        <>
+          <SectionDivider />
+          <KitSection kit={data.kit} palette={data.palette} />
+        </>
+      ) : null}
 
-      <KitSection kit={data.kit} palette={data.palette} />
+      {data.lifestyle?.length ? (
+        <>
+          <SectionDivider />
+          <LifestyleSection lifestyle={data.lifestyle} palette={data.palette} />
+        </>
+      ) : null}
 
-      <SectionDivider />
-
-      <LifestyleSection lifestyle={data.lifestyle} palette={data.palette} />
-
-      <SectionDivider />
-
-      <CollectionSection collection={data.collection} palette={data.palette} />
+      {data.collection?.length ? (
+        <>
+          <SectionDivider />
+          <CollectionSection collection={data.collection} palette={data.palette} />
+        </>
+      ) : null}
 
       <SectionDivider />
 

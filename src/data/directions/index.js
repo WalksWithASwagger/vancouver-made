@@ -4,9 +4,11 @@
 //   3. add it to the map below
 // The /kit/:slug route + DirectionPage template do the rest.
 import nardwuar from './nardwuar.js'
+import pumpAndDump from './pump-and-dump.js'
 
 export const directions = {
   'nardwuar-fc': nardwuar,
+  'pump-and-dump-fc': pumpAndDump,
 }
 
 export function getDirection(slug) {
