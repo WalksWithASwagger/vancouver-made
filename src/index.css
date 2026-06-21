@@ -35,6 +35,29 @@ body,
   mix-blend-mode: multiply;
 }
 
+/* Locked Vancouver tartan — the iconic brand thread, woven faintly site-wide behind the
+   cream. Same multiply-overlay trick as .grain so it reads as part of the paper without
+   touching component backgrounds. Palette = tokens (tartan-red #d11f2a · cedar #2f5436 ·
+   gold #b8841a). Subtle on purpose; .tartan / .tartan-dark below are the loud accent grounds. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(26, 20, 16, 0.12) 0 1.5px, transparent 1.5px 46px),
+    repeating-linear-gradient(0deg, rgba(26, 20, 16, 0.12) 0 1.5px, transparent 1.5px 46px),
+    repeating-linear-gradient(90deg, rgba(209, 31, 42, 0.9) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(0deg, rgba(209, 31, 42, 0.9) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(90deg, rgba(47, 84, 54, 0.85) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(0deg, rgba(47, 84, 54, 0.85) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(90deg, rgba(184, 132, 26, 0.9) 34px 37px, transparent 37px 46px),
+    repeating-linear-gradient(0deg, rgba(184, 132, 26, 0.9) 34px 37px, transparent 37px 46px);
+}
+
 /* Vancouver-tartan plaid band — layered stripes in tartan red, forest green and
    gold over cream. Used for accent bands (footer, dividers, the marquee backing). */
 .tartan {
