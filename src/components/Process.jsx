@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { stages, thesis, HANDS, phases, tracks, collaborators } from '../data/process.js'
+import ProductStrip from './ProductStrip.jsx'
 
 function HandBadge({ hand }) {
   const h = HANDS[hand]
@@ -185,6 +186,9 @@ export default function Process() {
         ))}
         <ClosingBand />
       </main>
+
+      {/* THE STORE — the receipt, now wearable */}
+      <ProductStrip heading="THE DROP" />
 
       <footer className="border-t border-bone/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-bone/40">
         <div className="mb-4 flex flex-wrap justify-center gap-6">

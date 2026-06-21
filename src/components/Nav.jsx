@@ -13,6 +13,7 @@ const LINKS = [
   { label: 'The Receipts', to: '/engine' },
   { label: 'Store', to: '/store' },
   { label: 'Reel', to: '/highlight-reel' },
+  { label: 'Wall', to: '/wall' },
   { label: 'Process', to: '/process' },
   { label: 'Hall of Fame', to: '/hall-of-fame' },
 ]

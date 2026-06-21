@@ -14,7 +14,9 @@
     "dev:all": "concurrently \"node src/server/api.js\" \"vite\"",
     "test:smoke": "node scripts/smoke-test.js",
     "stage:reel": "node scripts/stage-reel-assets.mjs",
-    "record:reel": "node scripts/record-reel.mjs"
+    "record:reel": "node scripts/record-reel.mjs",
+    "stage:wall": "node scripts/stage-wall-assets.mjs",
+    "record:wall": "node scripts/record-wall.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^5.22.0",
