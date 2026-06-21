@@ -1,4 +1,9 @@
-# Presentation Flow + Template · Pump & Dump FC
+# Presentation Flow + Template · Pump & Dump FC (companion kit)
+
+> ⚠️ **Superseded — companion kit.** This documents the **Pump & Dump FC** direction (an earlier
+> hero candidate). The submitted and **winning 🥈 Designathon hero is NARDWUAR FC "Deep Cut"**
+> (`docs/design/kits/NW-01-nardwuar-vancouver.md`, `docs/deliverables/nardwuar-presentation/`).
+> Kept for the record; Pump & Dump remains a built companion kit.
 
 > **This is the trailer.** The 5-minute, hero-led brief cut. The longer **talk** (the
 > director's cut — provocation → canon → method → work, presented live off the site) is
