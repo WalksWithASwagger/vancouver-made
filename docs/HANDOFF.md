@@ -4,7 +4,7 @@
 > (~100, $300) and 2nd in the Formme Design Challenge (~50; prize: 5 jerseys produced). The
 > competition is over; submission/rehearsal items below are historical. See [`AWARDS.md`](AWARDS.md).
 
-Last updated 2026-06-21. Where the work stands, so it's easy to pick up later.
+Last updated 2026-06-21. Where the work stands, so it's easy to pick up later. For the forward plan see [`ROADMAP.md`](ROADMAP.md).
 
 > **Trunk is `main`, and it's live.** The submission is consolidated on `main` and auto-deploys
 > to https://vancouver-made.vercel.app on every merge (PRs get preview deploys). Feature branches
@@ -23,19 +23,14 @@ Last updated 2026-06-21. Where the work stands, so it's easy to pick up later.
   `SUBMISSION.md` Track 1 reconciled (PR #37). Imagery: `deliverables/nardwuar-presentation/`
   (18-image reel). Top-5 flat+lifestyle export set placed on KK's Desktop.
 
-### Not on `main` yet / open (what's outstanding)
+### Open (what's outstanding)
 
-- **Homepage store strip + Generative Wall — in-flight, UNCOMMITTED (parallel lane).** `ProductStrip`
-  ("THE DROP", committed in `252bd35`) is wired into `App.jsx`, plus a new `/wall` `GenerativeWall`
-  feature — but the `App.jsx` / `Nav.jsx` / `package.json` wiring and `GenerativeWall.jsx/.css` +
-  `public/wall/` are uncommitted. Builds clean; needs that lane to commit + merge. Until then the
-  homepage "THE DROP" strip and `/wall` are not live.
-- **Stray root junk:** `club-nardwuar.png`, `crest.png`, `hero-complete.png` at the repo root are
-  dupes of `docs/presentation/assets/` (a staging-script misfire) — safe to `rm`.
-- ~~**Submission mechanics still TBD**~~ — ✅ moot: the competition is over and we placed 2nd in both tracks.
 - **Nardwuar blessing** — homage ethics gate (`kits/NW-01`): now relevant — the design prize is
   **producing 5 jerseys**, so get Nardwuar's blessing before that production run (it moves past exhibition).
 - **Store CTAs are placeholders** — no live checkout by design; data is Shopify-ready.
+- **Homepage store strip + Generative Wall — live on `main`.** `ProductStrip` ("THE DROP") is wired
+  into `App.jsx`; `GenerativeWall.jsx/.css` + `public/wall/` are committed and the `/wall` route is
+  live. Both ship with the static build.
 
 ## Done (this thread: the tech pack)
 

@@ -10,7 +10,6 @@ const LINKS = [
   { label: 'Awards', to: '/awards' },
   { label: 'The Collection', to: '/#collection' },
   { label: 'Hero Kits', to: '/#hero-kits' },
-  { label: 'Why It Wins', to: '/#why-it-wins' },
   { label: 'The Receipts', to: '/engine' },
   { label: 'Store', to: '/store' },
   { label: 'Reel', to: '/highlight-reel' },
