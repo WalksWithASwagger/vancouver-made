@@ -7,6 +7,10 @@ export default function LightboxViewer({ asset, onClose }) {
   const [rating, setRating] = useState(null)
   const [prompt, setPrompt] = useState(null)
 
+  let meta = {}
+  try { meta = asset.metadata ? JSON.parse(asset.metadata) : {} } catch { meta = {} }
+  const tags = Array.isArray(meta.tags) ? meta.tags : []
+
   useEffect(() => {
     // Fetch current rating
     fetchRating()
@@ -68,11 +72,14 @@ export default function LightboxViewer({ asset, onClose }) {
               e.target.src = '/placeholder.png'
             }} />
             <div className="lightbox-asset-info">
+              {(meta.caption || meta.promptLabel) && <p><strong>Caption:</strong> {meta.caption || meta.promptLabel}</p>}
+              {tags.length > 0 && <p><strong>Tags:</strong> {tags.join(', ')}</p>}
               <p><strong>Filename:</strong> {asset.filename}</p>
               <p><strong>Concept:</strong> {asset.concept}</p>
               <p><strong>Batch:</strong> {asset.batch}</p>
               {asset.width && <p><strong>Dimensions:</strong> {asset.width}x{asset.height}</p>}
               {asset.filesize && <p><strong>Size:</strong> {(asset.filesize / 1024 / 1024).toFixed(2)} MB</p>}
+              {meta.prompt && <p><strong>Prompt:</strong> {meta.prompt}</p>}
             </div>
           </div>
 

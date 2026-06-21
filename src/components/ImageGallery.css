@@ -74,6 +74,33 @@
   font-weight: 500;
 }
 
+.gallery-caption {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #222;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gallery-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag-chip {
+  font-size: 0.68rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  color: #555;
+  white-space: nowrap;
+}
+
 .gallery-rating {
   display: flex;
   gap: 0.5rem;

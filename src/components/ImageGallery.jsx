@@ -8,22 +8,31 @@ export default function ImageGallery({ assets }) {
   const [starredOnly, setStarredOnly] = useState(false)
   const [sortByScore, setSortByScore] = useState(false)
 
+  // One batched fetch for all ratings, mapped by assetId — never one request per card
+  // (that storm of ~N fetches exhausted sockets and threw "Failed to fetch" en masse).
   useEffect(() => {
-    assets.forEach(asset => {
-      if (ratings[asset.id] === undefined) fetchRating(asset.id)
-    })
+    if (!assets.length) return
+    let cancelled = false
+    fetch('/api/ratings')
+      .then(res => (res.ok ? res.json() : []))
+      .then(list => {
+        if (cancelled) return
+        const map = {}
+        for (const r of list) map[r.assetId] = r
+        setRatings(map)
+      })
+      .catch(err => console.error('Error fetching ratings:', err))
+    return () => { cancelled = true }
   }, [assets])
 
-  const fetchRating = async assetId => {
-    try {
-      const res = await fetch(`/api/ratings/${assetId}`)
-      // cache null for unrated so we don't refetch every render
-      const rating = res.ok ? await res.json() : null
-      setRatings(prev => ({ ...prev, [assetId]: rating }))
-    } catch (err) {
-      console.error(`Error fetching rating for ${assetId}:`, err)
+  // Parse each asset's metadata JSON string once per assets change.
+  const metaById = useMemo(() => {
+    const m = {}
+    for (const a of assets) {
+      try { m[a.id] = a.metadata ? JSON.parse(a.metadata) : {} } catch { m[a.id] = {} }
     }
-  }
+    return m
+  }, [assets])
 
   // 1-click inline rating. Optimistic local update, then persist to the DB.
   const saveRating = async (asset, patch) => {
@@ -81,6 +90,9 @@ export default function ImageGallery({ assets }) {
         {displayed.map(asset => {
           const r = ratings[asset.id] || {}
           const score = r.score || 0
+          const meta = metaById[asset.id] || {}
+          const caption = meta.caption || meta.promptLabel || asset.filename
+          const tags = Array.isArray(meta.tags) ? meta.tags : []
           return (
             <div key={asset.id} className="gallery-item">
               <div className="gallery-thumbnail" onClick={() => setSelectedAsset(asset)}>
@@ -99,7 +111,12 @@ export default function ImageGallery({ assets }) {
                   ))}
                   <span className="keep" onClick={() => toggleLike(asset)} title="keep">{r.liked ? '❤️' : '🤍'}</span>
                 </div>
-                <p className="gallery-filename">{asset.filename}</p>
+                <p className="gallery-caption" title={asset.filename}>{caption}</p>
+                {tags.length > 0 && (
+                  <div className="gallery-tags">
+                    {tags.slice(0, 6).map(t => <span key={t} className="tag-chip">{t}</span>)}
+                  </div>
+                )}
               </div>
             </div>
           )

@@ -18,4 +18,6 @@ src/db/*.db
 contact-sheet.html
 # Rafiki-generated kit images stay local (heavy binaries); prompts + STARRED lists are tracked
 docs/design/prompts/clubs/**/rafiki/images/
+# Consolidated raw-image archives (heavy; sources live in to-ingest/ and rafiki dirs)
+archive/
 .vercel
