@@ -1,4 +1,9 @@
-# Talk Flow — the Director's Cut · Pump & Dump FC / MADE ON
+# Talk Flow — the Director's Cut · Pump & Dump FC (companion kit) / MADE ON
+
+> ⚠️ **Superseded — companion kit.** This documents the **Pump & Dump FC** direction (an earlier
+> hero candidate). The submitted and **winning 🥈 Designathon hero is NARDWUAR FC "Deep Cut"**
+> (`docs/design/kits/NW-01-nardwuar-vancouver.md`, `docs/deliverables/nardwuar-presentation/`).
+> Kept for the record; Pump & Dump remains a built companion kit.
 
 The long cut of the pitch. Where [`presentation-flow.md`](presentation-flow.md) is the
 5-minute **trailer** built tight to the designathon brief (one jersey, hero-led), this is the

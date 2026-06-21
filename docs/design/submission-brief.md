@@ -1,4 +1,9 @@
-# PUMP & DUMP FC: Designathon Submission Brief
+# PUMP & DUMP FC: Designathon Submission Brief (companion kit)
+
+> ⚠️ **Superseded — companion kit.** This is the **Pump & Dump FC** brief (an earlier hero
+> candidate). The submitted and **winning 🥈 Designathon hero is NARDWUAR FC "Deep Cut"**
+> (`docs/design/kits/NW-01-nardwuar-vancouver.md`, `docs/deliverables/nardwuar-presentation/`).
+> Kept for the record; Pump & Dump remains a built companion kit.
 
 ## The Four Questions (LOCKED)
 
