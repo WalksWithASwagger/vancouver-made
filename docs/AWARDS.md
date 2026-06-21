@@ -14,11 +14,13 @@ red Vancouver-tartan kit — research as the protest, the receipt as the weapon.
 The design prize is production: **five of the kits get made.** Locking the final Nardwuar
 design for that run is tracked in [#26](https://github.com/WalksWithASwagger/vancouver-made/issues/26).
 
-## Photos
+## Certificates
 
-_Win photos + details to come — drop them in `docs/deliverables/awards/` and link here._
+The two Second Place certificates (cleaned up: perspective-corrected, squared, lighting flattened). Full-resolution source for reuse on the site, socials, and print.
 
-<!-- ![Double silver — BCIT Tech Collider 2026](deliverables/awards/...) -->
+![Second Place, Devin Open Hackathon Track — $300, June 20 2026, BCIT Tech Collider](deliverables/awards/devin-hackathon-2nd.jpg)
+
+![Second Place, Fashion Design Track — 5 jerseys produced by Formmé, June 20 2026, BCIT Tech Collider](deliverables/awards/formme-design-2nd.jpg)
 
 ---
 
