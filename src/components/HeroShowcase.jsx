@@ -20,7 +20,7 @@ export default function HeroShowcase() {
   }, [])
 
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-bone/15 bg-gradient-to-b from-white to-zinc-200 shadow-2xl">
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-white to-zinc-200 shadow-2xl">
       {SHOTS.map((s, n) => (
         <img
           key={s.src}
@@ -33,8 +33,8 @@ export default function HeroShowcase() {
           }
         />
       ))}
-      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-ink/80 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-bone backdrop-blur">
-        <span className="text-hazard">{SHOTS[i].label}</span>
+      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-ink/85 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-bone backdrop-blur">
+        <span className="font-bold text-hazard">{SHOTS[i].label}</span>
         <span className="flex gap-1.5">
           {SHOTS.map((s, n) => (
             <button
@@ -42,7 +42,7 @@ export default function HeroShowcase() {
               type="button"
               onClick={() => setI(n)}
               aria-label={`Show ${s.label}`}
-              className={'h-1.5 w-1.5 rounded-full transition ' + (n === i ? 'bg-hazard' : 'bg-bone/30 hover:bg-bone/60')}
+              className={'h-1.5 w-1.5 rounded-full transition ' + (n === i ? 'bg-hazard' : 'bg-bone/40 hover:bg-bone/70')}
             />
           ))}
         </span>

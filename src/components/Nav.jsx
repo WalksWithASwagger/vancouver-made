@@ -29,12 +29,12 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-bone/10 bg-ink/85 backdrop-blur supports-[backdrop-filter]:bg-ink/70">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-bone/85 backdrop-blur supports-[backdrop-filter]:bg-bone/70">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-6">
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          className="headline text-sm tracking-tight text-bone transition hover:text-hazard"
+          className="headline text-sm tracking-tight text-ink transition hover:text-hazard"
         >
           MADE <span className="text-hazard">ON</span>
         </Link>
@@ -47,8 +47,8 @@ export default function Nav() {
                 to={l.to}
                 aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
-                  'transition hover:text-bone ' +
-                  (isActive(pathname, l.to) ? 'text-hazard' : 'text-bone/60')
+                  'transition hover:text-ink ' +
+                  (isActive(pathname, l.to) ? 'text-hazard' : 'text-ink/60')
                 }
               >
                 {l.label}
@@ -63,7 +63,7 @@ export default function Nav() {
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="text-xs uppercase tracking-[0.2em] text-bone/70 md:hidden"
+          className="text-xs uppercase tracking-[0.2em] text-ink/70 md:hidden"
         >
           {open ? '✕ Close' : 'Menu ☰'}
         </button>
@@ -71,16 +71,16 @@ export default function Nav() {
 
       {/* mobile drawer */}
       {open && (
-        <ul className="border-t border-bone/10 px-5 pb-4 pt-1 text-xs uppercase tracking-[0.2em] md:hidden">
+        <ul className="border-t border-ink/10 px-5 pb-4 pt-1 text-xs uppercase tracking-[0.2em] md:hidden">
           {LINKS.map((l) => (
-            <li key={l.to} className="border-b border-bone/5">
+            <li key={l.to} className="border-b border-ink/5">
               <Link
                 to={l.to}
                 onClick={() => setOpen(false)}
                 aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
-                  'block py-3 transition hover:text-bone ' +
-                  (isActive(pathname, l.to) ? 'text-hazard' : 'text-bone/70')
+                  'block py-3 transition hover:text-ink ' +
+                  (isActive(pathname, l.to) ? 'text-hazard' : 'text-ink/70')
                 }
               >
                 {l.label}

@@ -96,11 +96,11 @@ export default function KitFlat({ kit }) {
     <div className="grid grid-cols-2 gap-2">
       <div>
         <Jersey kit={kit} side="front" />
-        <p className="mt-1 text-center text-[9px] uppercase tracking-widest text-bone/40">Front</p>
+        <p className="mt-1 text-center text-[9px] uppercase tracking-widest text-ink/40">Front</p>
       </div>
       <div>
         <Jersey kit={kit} side="back" />
-        <p className="mt-1 text-center text-[9px] uppercase tracking-widest text-bone/40">Back</p>
+        <p className="mt-1 text-center text-[9px] uppercase tracking-widest text-ink/40">Back</p>
       </div>
     </div>
   )

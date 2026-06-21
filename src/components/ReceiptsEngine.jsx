@@ -5,8 +5,8 @@ import { properties, madeOnHem, feefaPoster, fashionEditorial } from '../data/vo
 
 function PropTag({ p }) {
   const inner = (
-    <span className="text-bone/80 hover:text-bone transition">
-      {p.name} <span className="text-bone/40">· {p.role}</span>
+    <span className="text-ink/80 hover:text-ink transition">
+      {p.name} <span className="text-ink/40">· {p.role}</span>
     </span>
   )
   return p.url.startsWith('http') ? (
@@ -23,16 +23,16 @@ export default function ReceiptsEngine() {
   const ed = fashionEditorial(active)
 
   return (
-    <div className="grain min-h-screen bg-ink text-bone">
+    <div className="grain min-h-screen bg-bone text-ink">
       {/* HEADER */}
-      <header className="border-b border-bone/10 px-6 py-10 md:px-10">
+      <header className="border-b border-ink/10 px-6 py-10 md:px-10">
         <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">
           Vancouver Made · MADE ON · not a sponsor
         </p>
-        <h1 className="headline text-4xl text-bone md:text-6xl">
+        <h1 className="headline text-4xl text-ink md:text-6xl">
           WE MADE THE <span className="text-hazard">RECEIPT</span>.
         </h1>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-bone/80 md:text-base">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/80 md:text-base">
           Pick a number this World Cup would rather keep off the jumbotron. Watch the same
           truth land three ways: stitched on a kit's hem, pasted up as a poster, shot like
           couture. Same receipt. Three rooms. Harder to look away.
@@ -46,8 +46,8 @@ export default function ReceiptsEngine() {
 
       <div className="grid grid-cols-1 gap-0 md:grid-cols-[320px_1fr]">
         {/* RECEIPT PICKER */}
-        <aside className="border-b border-bone/10 p-6 md:border-b-0 md:border-r">
-          <h2 className="mb-4 text-xs uppercase tracking-[0.3em] text-bone/50">
+        <aside className="border-b border-ink/10 p-6 md:border-b-0 md:border-r">
+          <h2 className="mb-4 text-xs uppercase tracking-[0.3em] text-ink/50">
             Pick a receipt
           </h2>
           <ul className="space-y-2">
@@ -61,11 +61,11 @@ export default function ReceiptsEngine() {
                       'w-full rounded border p-3 text-left transition ' +
                       (on
                         ? 'border-hazard bg-hazard/10'
-                        : 'border-bone/15 hover:border-bone/40')
+                        : 'border-ink/15 hover:border-ink/40')
                     }
                   >
                     <span className="font-mono text-base font-bold text-gold">{r.stat}</span>
-                    <span className="mt-1 block text-xs leading-snug text-bone/70">
+                    <span className="mt-1 block text-xs leading-snug text-ink/70">
                       {r.claim}
                     </span>
                   </button>
@@ -73,7 +73,7 @@ export default function ReceiptsEngine() {
               )
             })}
           </ul>
-          <p className="mt-6 font-mono text-[11px] leading-relaxed text-bone/40">
+          <p className="mt-6 font-mono text-[11px] leading-relaxed text-ink/40">
             Source data: <code>src/data/receipts.js</code>. Every figure is public record,
             flagged for primary-source confirmation before publish.
           </p>
@@ -82,26 +82,26 @@ export default function ReceiptsEngine() {
         {/* THREE VOICES */}
         <main className="space-y-6 p-6 md:p-10">
           {/* MADE ON — the hem */}
-          <article className="rounded-lg border border-bone/15 bg-black/40 p-6">
+          <article className="rounded-lg border border-ink bg-ink p-6">
             <div className="mb-3 flex items-baseline justify-between">
               <h3 className="text-xs uppercase tracking-[0.3em] text-hazard">
                 MADE ON · the hem
               </h3>
-              <Link to="/" className="text-[11px] uppercase tracking-widest text-bone/40 hover:text-bone">
+              <Link to="/" className="text-[11px] uppercase tracking-widest text-bone/50 hover:text-bone">
                 the kit ↗
               </Link>
             </div>
-            <img src="/engine/voice-madeon.png" alt="redacted public document" className="mb-4 h-28 w-full rounded border border-bone/10 object-cover" />
+            <img src="/engine/voice-madeon.png" alt="redacted public document" className="mb-4 h-28 w-full rounded border border-bone/15 object-cover" />
             <p className="font-mono text-[11px] uppercase leading-relaxed tracking-wide text-bone/90">
               {hem.body}
             </p>
-            <p className="mt-2 font-mono text-[10px] uppercase tracking-wide text-bone/40">
+            <p className="mt-2 font-mono text-[10px] uppercase tracking-wide text-bone/50">
               {hem.source}
             </p>
           </article>
 
           {/* FEEFA — the poster */}
-          <article className="rounded-lg border border-hazard/40 bg-ink p-6">
+          <article className="rounded-lg border border-hazard/40 bg-bone p-6">
             <div className="mb-3 flex items-baseline justify-between">
               <h3 className="text-xs uppercase tracking-[0.3em] text-hazard">
                 FEEFA · the poster
@@ -110,22 +110,22 @@ export default function ReceiptsEngine() {
                 href={properties.feefa.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[11px] uppercase tracking-widest text-bone/40 hover:text-bone"
+                className="text-[11px] uppercase tracking-widest text-ink/40 hover:text-ink"
               >
                 feefa.ai ↗
               </a>
             </div>
             <img src="/engine/voice-feefa.png" alt="dense condo development" className="mb-4 h-28 w-full rounded border border-hazard/20 object-cover" />
             <p className="headline text-4xl leading-none text-hazard md:text-6xl">{poster.big}</p>
-            <p className="mt-4 max-w-xl text-lg leading-snug text-bone">{poster.charge}</p>
-            <p className="mt-4 text-xs uppercase tracking-[0.25em] text-bone/60">{poster.brand}</p>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-bone/40">
+            <p className="mt-4 max-w-xl text-lg leading-snug text-ink">{poster.charge}</p>
+            <p className="mt-4 text-xs uppercase tracking-[0.25em] text-ink/60">{poster.brand}</p>
+            <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-ink/40">
               {poster.stamp} · {poster.source}
             </p>
           </article>
 
           {/* FASHION CAKE — the editorial */}
-          <article className="rounded-lg border border-bone/15 bg-bone p-6 text-ink">
+          <article className="rounded-lg border border-ink/15 bg-bone p-6 text-ink">
             <div className="mb-3 flex items-baseline justify-between">
               <h3 className="text-xs uppercase tracking-[0.3em] text-rain">
                 Fashion Cake · the editorial
@@ -150,20 +150,20 @@ export default function ReceiptsEngine() {
       </div>
 
       {/* PROCESS / FOOTER */}
-      <footer className="border-t border-bone/10 px-6 py-10 md:px-10">
+      <footer className="border-t border-ink/10 px-6 py-10 md:px-10">
         <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">Why we made this</h2>
-        <p className="max-w-3xl text-sm leading-relaxed text-bone/80">
+        <p className="max-w-3xl text-sm leading-relaxed text-ink/80">
           This isn't a protest about AI. AI's just the brush. The subject is greed,
           displacement, and who pays the public bill. They asked for the Vancouver story.
           We finished the sentence: made on stolen ground, made on Hogan's Alley, made on
           $729 million of public money. Everyone else made a souvenir. We made the receipt,
           and we put the source on the hem so you can check our math.
         </p>
-        <div className="mt-5 flex flex-wrap gap-6 text-xs uppercase tracking-[0.2em] text-bone/50">
-          <Link to="/" className="hover:text-bone">Pitch site</Link>
-          <Link to="/tracker" className="hover:text-bone">Asset tracker</Link>
-          <a href={properties.feefa.url} target="_blank" rel="noreferrer" className="hover:text-bone">feefa.ai ↗</a>
-          <a href={properties.cake.url} target="_blank" rel="noreferrer" className="hover:text-bone">fashion cake ↗</a>
+        <div className="mt-5 flex flex-wrap gap-6 text-xs uppercase tracking-[0.2em] text-ink/50">
+          <Link to="/" className="hover:text-ink">Pitch site</Link>
+          <Link to="/tracker" className="hover:text-ink">Asset tracker</Link>
+          <a href={properties.feefa.url} target="_blank" rel="noreferrer" className="hover:text-ink">feefa.ai ↗</a>
+          <a href={properties.cake.url} target="_blank" rel="noreferrer" className="hover:text-ink">fashion cake ↗</a>
         </div>
       </footer>
     </div>

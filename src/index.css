@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0a0a0a;
+  --ink: #1a1410;
   --bone: #f4f1ea;
-  color-scheme: dark;
+  --hazard: #d11f2a;
+  --cedar: #2f5436;
+  --gold: #b8841a;
+  color-scheme: light;
 }
 
 html,
@@ -13,23 +16,49 @@ body,
 #root {
   margin: 0;
   height: 100%;
-  background: var(--ink);
-  color: var(--bone);
+  background: var(--bone);
+  color: var(--ink);
   font-family: 'Space Mono', ui-monospace, monospace;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Halftone / risograph protest-poster grain overlay */
+/* Halftone / risograph protest-poster grain overlay — dark dots on cream paper */
 .grain::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.05;
   z-index: 50;
-  background-image: radial-gradient(var(--bone) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(26, 20, 16, 0.55) 1px, transparent 1px);
   background-size: 4px 4px;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
+}
+
+/* Vancouver-tartan plaid band — layered stripes in tartan red, forest green and
+   gold over cream. Used for accent bands (footer, dividers, the marquee backing). */
+.tartan {
+  background-color: #ece4d4;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(26, 20, 16, 0.06) 0 2px, transparent 2px 46px),
+    repeating-linear-gradient(0deg, rgba(26, 20, 16, 0.06) 0 2px, transparent 2px 46px),
+    repeating-linear-gradient(90deg, rgba(209, 31, 42, 0.5) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(0deg, rgba(209, 31, 42, 0.5) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(90deg, rgba(47, 84, 54, 0.5) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(0deg, rgba(47, 84, 54, 0.5) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(90deg, rgba(184, 132, 26, 0.55) 34px 37px, transparent 37px 46px),
+    repeating-linear-gradient(0deg, rgba(184, 132, 26, 0.55) 34px 37px, transparent 37px 46px);
+}
+/* Dark tartan ground for dramatic beats: same plaid over oxblood. */
+.tartan-dark {
+  background-color: #2a0d12;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(209, 31, 42, 0.55) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(0deg, rgba(209, 31, 42, 0.55) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(90deg, rgba(47, 84, 54, 0.5) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(0deg, rgba(47, 84, 54, 0.5) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(90deg, rgba(184, 132, 26, 0.5) 34px 37px, transparent 37px 46px),
+    repeating-linear-gradient(0deg, rgba(184, 132, 26, 0.5) 34px 37px, transparent 37px 46px);
 }
 
 .headline {
@@ -105,7 +134,7 @@ a {
 
 /* Keyboard focus: a hazard ring that reads on both ink and bone surfaces */
 :focus-visible {
-  outline: 2px solid #ff3b00;
+  outline: 2px solid #d11f2a;
   outline-offset: 2px;
   border-radius: 2px;
 }

@@ -23,20 +23,20 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
   const items = (picked.length ? picked : products).slice(0, count)
 
   return (
-    <section className="border-y border-bone/10 bg-ink py-14 md:py-20">
+    <section className="border-y border-ink/10 bg-bone py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">
               {heading} · MADE ON
             </p>
-            <h2 className="headline mt-2 text-3xl text-bone md:text-5xl">
+            <h2 className="headline mt-2 text-3xl text-ink md:text-5xl">
               THE <span className="text-hazard">RECEIPT</span>, WORN
             </h2>
           </div>
           <Link
             to="/store"
-            className="shrink-0 border border-hazard/60 px-4 py-2 text-xs font-bold uppercase tracking-wider text-bone transition hover:bg-hazard hover:text-ink"
+            className="shrink-0 border border-hazard/60 px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-hazard hover:text-ink"
           >
             Shop all {products.length} →
           </Link>
@@ -47,7 +47,7 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
             <Link
               key={p.id}
               to="/store"
-              className="group flex flex-col overflow-hidden border border-bone/15 bg-ink transition hover:border-bone/40"
+              className="group flex flex-col overflow-hidden border border-ink/15 bg-bone transition hover:border-ink/40"
               title={p.title}
             >
               <div className="flex aspect-square items-center justify-center bg-bone p-2">
@@ -59,9 +59,9 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
                 />
               </div>
               <div className="flex items-center justify-between gap-2 px-2 py-1.5">
-                <span className="truncate text-[11px] text-bone/80">{p.title}</span>
+                <span className="truncate text-[11px] text-ink/80">{p.title}</span>
                 {p.price != null && (
-                  <span className="shrink-0 font-mono text-[11px] text-bone/50">${p.price}</span>
+                  <span className="shrink-0 font-mono text-[11px] text-ink/50">${p.price}</span>
                 )}
               </div>
             </Link>

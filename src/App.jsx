@@ -33,7 +33,7 @@ import HeroShowcase from './components/HeroShowcase.jsx'
 
 function RouteFallback() {
   return (
-    <div className="grain flex min-h-screen items-center justify-center bg-ink text-[11px] uppercase tracking-[0.3em] text-bone/40">
+    <div className="grain flex min-h-screen items-center justify-center bg-bone text-[11px] uppercase tracking-[0.3em] text-ink/40">
       Loading…
     </div>
   )
@@ -53,8 +53,8 @@ const TITLES = {
 function Marquee() {
   const line = slogans.join('   ✦   ') + '   ✦   '
   return (
-    <div className="overflow-hidden border-y border-hazard/40 bg-ink py-3">
-      <div className="marquee text-hazard text-sm font-bold tracking-widest">
+    <div className="tartan-dark overflow-hidden border-y-2 border-ink py-3">
+      <div className="marquee text-bone text-sm font-bold tracking-widest [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
         <span>{line}</span>
         <span aria-hidden="true">{line}</span>
       </div>
@@ -64,25 +64,25 @@ function Marquee() {
 
 function MadeOnSite() {
   return (
-    <div className="grain min-h-screen bg-ink text-bone">
+    <div className="grain min-h-screen bg-bone text-ink">
       <PresenterControls />
 
       {/* HERO — the MADE ON statement + a lookbook of the actual kits */}
-      <section id="hero" className="relative w-full overflow-hidden border-b border-bone/10">
+      <section id="hero" className="relative w-full overflow-hidden border-b border-ink/10">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-24">
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-bone/55">
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-ink/55">
               {brand.parent} · {brand.name}
             </p>
             <p className="mb-4 text-xs uppercase tracking-[0.3em] text-cyan">
               {brand.kind} · not a sponsor
             </p>
-            <h1 className="headline text-5xl text-bone md:text-7xl lg:text-8xl">
+            <h1 className="headline text-5xl text-ink md:text-7xl lg:text-8xl">
               MADE
               <br />
               <span className="text-hazard">ON</span> WHAT?
             </h1>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-bone/80 md:text-base">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-ink/80 md:text-base">
               They asked for the Vancouver story. We finished the sentence.{' '}
               <span className="text-gold">Made on stolen ground. Made on Hogan's
               Alley. Made on $729 million of public money.</span>
@@ -96,12 +96,12 @@ function MadeOnSite() {
               </Link>
               <Link
                 to="/gallery"
-                className="inline-block border border-bone/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-bone/70 transition hover:border-bone hover:text-bone"
+                className="inline-block border border-ink/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink/70 transition hover:border-ink hover:text-ink"
               >
                 See the gallery →
               </Link>
             </div>
-            <p className="mt-7 text-xs uppercase tracking-[0.2em] text-bone/45">
+            <p className="mt-7 text-xs uppercase tracking-[0.2em] text-ink/45">
               ↻ Everyone else made a souvenir. We made the receipt.
             </p>
           </div>
@@ -119,8 +119,8 @@ function MadeOnSite() {
         <h2 className="headline mb-8 text-3xl text-gold md:text-5xl">
           THE TERRITORIAL STATEMENT
         </h2>
-        <div className="space-y-5 text-sm leading-relaxed text-bone/85 md:text-base">
-          <p className="headline text-xl text-bone md:text-2xl">
+        <div className="space-y-5 text-sm leading-relaxed text-ink/85 md:text-base">
+          <p className="headline text-xl text-ink md:text-2xl">
             Made on stolen ground. Made on Hogan's Alley. Made on $729 million of
             public money.
           </p>
@@ -135,7 +135,7 @@ function MadeOnSite() {
             used the coloniser's own paperwork instead: the receipt, the redaction,
             the banknote. A settler artist's refusal to make the celebration jersey.
           </p>
-          <p className="text-xs uppercase tracking-[0.2em] text-bone/50">
+          <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
             {brand.author} · {brand.land}
           </p>
         </div>
@@ -161,27 +161,27 @@ function MadeOnSite() {
       <WhyItWins />
 
       {/* THE CLOSER — scan to open the live site */}
-      <section className="border-t border-bone/10 bg-rain/10">
+      <section className="border-t border-ink/10 bg-rain/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-6 py-16 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-cyan">Take it with you</p>
-          <h2 className="headline max-w-2xl text-2xl text-bone md:text-4xl">
+          <h2 className="headline max-w-2xl text-2xl text-ink md:text-4xl">
             THE PART THAT DOESN'T FIT ON A <span className="text-hazard">SOUVENIR.</span>
           </h2>
           <ShareQR />
         </div>
       </section>
 
-      <footer className="border-t border-bone/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-bone/40">
+      <footer className="border-t border-ink/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
-          <Link to="/" className="text-bone/60 hover:text-bone transition">Pitch Site</Link>
-          <span className="text-bone/20">·</span>
-          <Link to="/engine" className="text-bone/60 hover:text-bone transition">The Receipts</Link>
-          <span className="text-bone/20">·</span>
-          <Link to="/hall-of-fame" className="text-bone/60 hover:text-bone transition">Hall of Fame</Link>
-          <span className="text-bone/20">·</span>
-          <Link to="/process" className="text-bone/60 hover:text-bone transition">Process</Link>
-          <span className="text-bone/20">·</span>
-          <Link to="/tracker" className="text-bone/60 hover:text-bone transition">Asset Tracker</Link>
+          <Link to="/" className="text-ink/60 hover:text-ink transition">Pitch Site</Link>
+          <span className="text-ink/20">·</span>
+          <Link to="/engine" className="text-ink/60 hover:text-ink transition">The Receipts</Link>
+          <span className="text-ink/20">·</span>
+          <Link to="/hall-of-fame" className="text-ink/60 hover:text-ink transition">Hall of Fame</Link>
+          <span className="text-ink/20">·</span>
+          <Link to="/process" className="text-ink/60 hover:text-ink transition">Process</Link>
+          <span className="text-ink/20">·</span>
+          <Link to="/tracker" className="text-ink/60 hover:text-ink transition">Asset Tracker</Link>
         </div>
         {brand.name} · {brand.parent} · You asked for the Vancouver story — this is the
         part that doesn't fit on a souvenir.
@@ -192,12 +192,12 @@ function MadeOnSite() {
 
 function NotFound() {
   return (
-    <div className="grain flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center text-bone">
+    <div className="grain flex min-h-screen flex-col items-center justify-center bg-bone px-6 text-center text-ink">
       <p className="text-xs uppercase tracking-[0.3em] text-cyan">404 · off the record</p>
-      <h1 className="headline mt-3 text-5xl text-bone md:text-7xl">
+      <h1 className="headline mt-3 text-5xl text-ink md:text-7xl">
         NO <span className="text-hazard">RECEIPT</span> FOUND
       </h1>
-      <p className="mt-4 max-w-md text-sm text-bone/70">
+      <p className="mt-4 max-w-md text-sm text-ink/70">
         This page isn't in the public record. Everything that is starts at the top.
       </p>
       <Link
@@ -236,7 +236,7 @@ function PitchLayout() {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded focus:border focus:border-hazard focus:bg-ink focus:px-4 focus:py-2 focus:text-xs focus:uppercase focus:tracking-[0.2em] focus:text-hazard"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded focus:border focus:border-hazard focus:bg-bone focus:px-4 focus:py-2 focus:text-xs focus:uppercase focus:tracking-[0.2em] focus:text-hazard"
       >
         Skip to content
       </a>

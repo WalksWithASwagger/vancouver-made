@@ -30,9 +30,9 @@ export default function ShareQR({ size = 132 }) {
         alt={`QR code to ${pretty}`}
         width={size}
         height={size}
-        className="rounded-sm border border-bone/20"
+        className="rounded-sm border border-ink/20"
       />
-      <span className="text-[10px] uppercase tracking-[0.25em] text-bone/50">
+      <span className="text-[10px] uppercase tracking-[0.25em] text-ink/50">
         ↗ Scan to open
       </span>
       <span className="font-mono text-[10px] lowercase tracking-normal text-cyan">{pretty}</span>

@@ -17,7 +17,7 @@ function ClubCard({ club }) {
   const hero = club.kits[club.heroKit.toLowerCase()]
   return (
     <article
-      className="relative overflow-hidden border border-bone/15"
+      className="relative overflow-hidden border border-ink/15"
       style={{ background: `linear-gradient(160deg, ${palette.ink} 60%, ${palette.base}22)` }}
     >
       {/* counterfeit-official top bar */}
@@ -36,30 +36,30 @@ function ClubCard({ club }) {
             <h3 className="headline text-2xl leading-none md:text-3xl" style={{ color: palette.base }}>
               {club.name}
             </h3>
-            <p className="mt-2 text-sm italic text-bone/80">“{club.tagline}”</p>
-            <p className="mt-1 text-[11px] uppercase tracking-wider text-bone/50">{club.target}</p>
+            <p className="mt-2 text-sm italic text-ink/80">“{club.tagline}”</p>
+            <p className="mt-1 text-[11px] uppercase tracking-wider text-ink/50">{club.target}</p>
           </div>
         </div>
 
-        <p className="mt-4 text-sm leading-relaxed text-bone/85">{club.summary}</p>
+        <p className="mt-4 text-sm leading-relaxed text-ink/85">{club.summary}</p>
 
         {/* WHO BENEFITS / WHO PAYS */}
-        <div className="mt-5 grid grid-cols-2 gap-px border border-bone/10 bg-bone/10 text-xs">
-          <div className="bg-ink p-3">
+        <div className="mt-5 grid grid-cols-2 gap-px border border-ink/10 bg-bone/10 text-xs">
+          <div className="bg-bone p-3">
             <p className="mb-2 font-bold uppercase tracking-wider" style={{ color: palette.signal }}>
               Who benefits
             </p>
-            <ul className="space-y-1 text-bone/75">
+            <ul className="space-y-1 text-ink/75">
               {club.whoBenefits.map((x) => (
                 <li key={x}>↑ {x}</li>
               ))}
             </ul>
           </div>
-          <div className="bg-ink p-3">
+          <div className="bg-bone p-3">
             <p className="mb-2 font-bold uppercase tracking-wider" style={{ color: palette.accent }}>
               Who pays
             </p>
-            <ul className="space-y-1 text-bone/75">
+            <ul className="space-y-1 text-ink/75">
               {club.whoPays.map((x) => (
                 <li key={x}>↓ {x}</li>
               ))}
@@ -69,7 +69,7 @@ function ClubCard({ club }) {
 
         {/* faux sponsor bank */}
         <div className="mt-5">
-          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-bone/40">Faux sponsor bank</p>
+          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-ink/40">Faux sponsor bank</p>
           <div className="flex flex-wrap gap-1.5">
             {club.sponsorBank.map((s) => (
               <Chip key={s} color={palette.base}>
@@ -80,7 +80,7 @@ function ClubCard({ club }) {
         </div>
 
         {/* hero kit + how it steals the cup */}
-        <div className="mt-5 space-y-3 text-xs text-bone/75">
+        <div className="mt-5 space-y-3 text-xs text-ink/75">
           <p>
             <span className="font-bold uppercase tracking-wider" style={{ color: palette.base }}>
               {club.heroKit} (hero):{' '}
@@ -108,8 +108,8 @@ function ClubCard({ club }) {
         </div>
 
         {/* full kit family + number treatment — collapsed to keep the card calm */}
-        <details className="mt-4 text-xs text-bone/75">
-          <summary className="cursor-pointer list-none text-[10px] uppercase tracking-[0.2em] text-bone/40 transition hover:text-bone/70">
+        <details className="mt-4 text-xs text-ink/75">
+          <summary className="cursor-pointer list-none text-[10px] uppercase tracking-[0.2em] text-ink/40 transition hover:text-ink/70">
             ▸ The full kit family + number treatment
           </summary>
           <div className="mt-3 space-y-2">
@@ -135,13 +135,13 @@ function ClubCard({ club }) {
         </details>
 
         {/* source cards (receipts) */}
-        <div className="mt-5 border-t border-bone/10 pt-4">
-          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-bone/40">
+        <div className="mt-5 border-t border-ink/10 pt-4">
+          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-ink/40">
             Receipts (QR source cards)
           </p>
           <ul className="space-y-2">
             {club.sourceCards.map((c) => (
-              <li key={c.id} className="text-[11px] leading-snug text-bone/65">
+              <li key={c.id} className="text-[11px] leading-snug text-ink/65">
                 <span className="font-mono" style={{ color: palette.signal }}>
                   {c.id}
                 </span>{' '}
@@ -152,7 +152,7 @@ function ClubCard({ club }) {
         </div>
 
         {/* back-neck campaign badge */}
-        <div className="mt-5 text-center text-[10px] uppercase tracking-[0.3em] text-bone/40">
+        <div className="mt-5 text-center text-[10px] uppercase tracking-[0.3em] text-ink/40">
           ▸ back-neck: {league.campaign}
         </div>
       </div>
@@ -162,17 +162,17 @@ function ClubCard({ club }) {
 
 export default function Clubs() {
   return (
-    <section id="clubs" className="scroll-mt-20 border-t border-bone/10 bg-rain/20">
+    <section id="clubs" className="scroll-mt-20 border-t border-ink/10 bg-rain/20">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         {/* deep-dive header */}
-        <div className="mb-10 border border-bone/15 p-5 text-center">
+        <div className="mb-10 border border-ink/15 p-5 text-center">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">
             Deep dive · three kits, fully built
           </p>
-          <h2 className="headline mt-2 text-3xl text-bone md:text-5xl">
+          <h2 className="headline mt-2 text-3xl text-ink md:text-5xl">
             HOW A KIT BECOMES A RECEIPT
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-bone/70">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-ink/70">
             Pump &amp; Dump is Kit 09 of MADE ON. Number Five Orange and Nardwuar FC
             are companion concepts — same method: mimic the official polish, invert
             the payload, bake in the receipt.
@@ -188,7 +188,7 @@ export default function Clubs() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-[11px] uppercase tracking-[0.3em] text-bone/40">
+        <p className="mt-10 text-center text-[11px] uppercase tracking-[0.3em] text-ink/40">
           Campaign — {league.campaign}
         </p>
       </div>

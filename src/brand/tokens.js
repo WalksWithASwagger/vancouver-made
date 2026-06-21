@@ -1,14 +1,18 @@
 // Canonical palette — imported by tailwind.config.js.
 // Collection data: src/data/collection.js · kit colorways: src/data/heroKits.js, clubs.js
 
+// Tartan-paper scheme: warm cream surface, warm near-black ink, Vancouver-tartan
+// accents (true red, forest green, gold) tuned to read on cream and on dark beats.
 export const colors = {
-  ink: '#0a0a0a',
-  bone: '#f4f1ea',
-  rain: '#1c2b33',
-  cedar: '#3a5a40',
-  hazard: '#ff3b00',
-  gold: '#d9a521',
-  cyan: '#21d9c9',
+  ink: '#1a1410', // warm near-black — body text + dark dramatic beats
+  bone: '#f4f1ea', // warm cream — page surface + light text on dark
+  paper: '#ece4d4', // deeper cream — panels / alternating sections
+  rain: '#1c2b33', // deep navy — dark beats
+  oxblood: '#5e1622', // deep tartan red — dark beats / tartan ground
+  cedar: '#2f5436', // forest green — tartan secondary
+  hazard: '#d11f2a', // tartan red — primary accent, headlines, CTAs
+  gold: '#b8841a', // deep gold — reads on cream
+  cyan: '#0f857a', // deep teal — eyebrows, reads on cream
 }
 
 export const type = {
