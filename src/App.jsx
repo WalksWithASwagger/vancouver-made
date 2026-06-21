@@ -28,6 +28,7 @@ const HighlightReel = lazy(() => import('./components/HighlightReel.jsx'))
 const GenerativeWall = lazy(() => import('./components/GenerativeWall.jsx'))
 const Journey = lazy(() => import('./components/Journey.jsx'))
 const Gallery = lazy(() => import('./components/Gallery.jsx'))
+const Awards = lazy(() => import('./components/Awards.jsx'))
 import ProductStrip from './components/ProductStrip.jsx'
 import HeroShowcase from './components/HeroShowcase.jsx'
 
@@ -43,6 +44,7 @@ const TITLES = {
   '/': 'MADE ON — Whose Cup Is It Anyway?',
   '/journey': 'The Journey — MADE ON',
   '/gallery': 'The Gallery — MADE ON',
+  '/awards': 'Awards — Double Silver — MADE ON',
   '/engine': 'We Made the Receipt — MADE ON',
   '/hall-of-fame': 'Hall of Fame — MADE ON',
   '/process': 'Our Process — MADE ON',
@@ -160,6 +162,26 @@ function MadeOnSite() {
       {/* WHY IT WINS — the rubric, with proof links into the site */}
       <WhyItWins />
 
+      {/* AWARDS — double silver */}
+      <section id="awards" className="scroll-mt-20 tartan-dark border-t border-ink/10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-14 text-center md:py-16">
+          <p className="text-xs uppercase tracking-[0.3em] text-bone/70">Vancouver Made · BCIT Tech Collider · 2026</p>
+          <h2 className="headline text-3xl text-bone md:text-5xl [text-shadow:0_2px_6px_rgba(0,0,0,0.6)]">
+            DOUBLE <span className="text-hazard">SILVER</span>
+          </h2>
+          <p className="max-w-xl text-sm leading-relaxed text-bone/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.7)]">
+            Second place in both tracks. The Devin Open Hackathon (2nd, $300) and the Formmé
+            Fashion Design challenge (2nd, five kits manufactured).
+          </p>
+          <Link
+            to="/awards"
+            className="mt-2 inline-block border border-hazard bg-hazard px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-bone transition hover:bg-bone hover:text-ink"
+          >
+            See the awards →
+          </Link>
+        </div>
+      </section>
+
       {/* THE CLOSER — scan to open the live site */}
       <section className="border-t border-ink/10 bg-rain/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-6 py-16 text-center">
@@ -265,6 +287,7 @@ export default function App() {
           <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/process" element={<Process />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/awards" element={<Awards />} />
         </Route>
         <Route
           path="/highlight-reel"

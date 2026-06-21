@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom'
 const LINKS = [
   { label: 'The Journey', to: '/journey' },
   { label: 'The Gallery', to: '/gallery' },
+  { label: 'Awards', to: '/awards' },
   { label: 'The Collection', to: '/#collection' },
   { label: 'Hero Kits', to: '/#hero-kits' },
   { label: 'Why It Wins', to: '/#why-it-wins' },
