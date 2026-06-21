@@ -1,0 +1,17 @@
+/* Scroll-reveal for the journey scenes. Elements rise + fade in as they enter view. */
+.j-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.j-reveal.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .j-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

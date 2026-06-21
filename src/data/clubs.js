@@ -375,14 +375,14 @@ export const clubs = [
         claim:
           "Hogan's Alley — centred on a lane off the 200-block of Union Street in Strathcona — was Vancouver's most prominent Black neighbourhood from the early 1900s (Black-owned businesses, the African Methodist Episcopal Fountain Chapel, jazz nightlife), cleared through urban renewal and the building of the Georgia Viaduct around 1967–71.",
         source: "City of Vancouver; Hogan's Alley Society (hogansalleysociety.org); Wikipedia",
-        rights: 'Reference / cite with date; confirm exact viaduct dates before publish [confirm].',
+        rights: 'Reference / cite with date. Verified 2026-06-20.',
       },
       {
         id: 'AL-HA-002',
         claim:
           "In 2022 the City of Vancouver and the Hogan's Alley Society signed an MOU toward a long-term lease / community land trust for the Hogan's Alley Block — planned to deliver affordable housing, a Black Cultural Centre, child care and small-business space.",
         source: 'City of Vancouver; CBC; Globe and Mail, 2022',
-        rights: 'Public — cite with date [confirm].',
+        rights: 'Public — cite with date (verified 2026-06-20).',
       },
       {
         id: 'AL-HA-003',
