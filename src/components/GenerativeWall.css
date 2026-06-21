@@ -1,0 +1,44 @@
+/* THE DEVELOP — generative wall tile lifecycle. Each tile develops in (blur→sharp),
+   holds, then fades; spawn/fade churn carries the motion. The tile div keeps its
+   inline translate+rotate, so the keyframe only touches opacity + blur. */
+
+@keyframes wall-tile {
+  0% {
+    opacity: 0;
+    filter: blur(8px) brightness(0.6);
+  }
+  9% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+  84% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(3px) brightness(0.9);
+  }
+}
+
+.wall-tile {
+  animation-name: wall-tile;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  will-change: opacity, filter;
+}
+
+.wall-img {
+  animation: wall-drift 9s ease-out both;
+  will-change: transform;
+}
+
+/* slow ken-burns drift on the image inside each tile */
+@keyframes wall-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}

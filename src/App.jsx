@@ -27,6 +27,8 @@ const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
 const Process = lazy(() => import('./components/Process.jsx'))
 const Store = lazy(() => import('./components/Store.jsx'))
 const HighlightReel = lazy(() => import('./components/HighlightReel.jsx'))
+const GenerativeWall = lazy(() => import('./components/GenerativeWall.jsx'))
+import ProductStrip from './components/ProductStrip.jsx'
 
 function toggleHeroFullscreen() {
   const el = document.getElementById('hero')
@@ -153,6 +155,10 @@ function MadeOnSite() {
       {/* HERO KITS — 01 / 03 / 09 built to spec, with code-drawn flats */}
       <HeroKits />
 
+      {/* THE STORE — the drop, woven into the pitch (not a siloed tab) */}
+      <ProductStrip heading="THE DROP" />
+
+
       {/* DEEP DIVE — the club-card method behind the kits */}
       <Clubs />
 
@@ -265,6 +271,14 @@ export default function App() {
           element={
             <Suspense fallback={<RouteFallback />}>
               <HighlightReel />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/wall"
+          element={
+            <Suspense fallback={<RouteFallback />}>
+              <GenerativeWall />
             </Suspense>
           }
         />
