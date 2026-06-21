@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUMP &amp; DUMP FC — Prompts</title>
+<style>
+:root {
+  --bg:      #0d0b18;
+  --bg2:     #171428;
+  --surface: rgba(255,255,255,0.045);
+  --border:  #252040;
+  --ink:     #edeaff;
+  --dim:     #8a86b0;
+  --accent:  #7c6af7;
+  --teal:    #00c8b4;
+  --gold:    #f5c518;
+  --card-w:  280px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.8rem;
+  color: var(--dim);
+  align-items: center;
+}
+.meta code {
+  background: rgba(255,255,255,0.07);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--teal);
+  font-family: ui-monospace, monospace;
+}
+.pill {
+  background: rgba(124,106,247,0.15);
+  border: 1px solid rgba(124,106,247,0.3);
+  color: var(--accent);
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.6rem 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.filter-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--dim);
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  user-select: none;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--ink); }
+.filter-btn.active { background: rgba(124,106,247,0.18); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.grid-size-label {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--dim);
+  user-select: none;
+}
+#grid-sizer { width: 80px; accent-color: var(--accent); cursor: pointer; }
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-w), 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem 4rem;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(124,106,247,0.2);
+}
+.card.rated-star   { border-color: var(--gold) !important; box-shadow: 0 0 20px rgba(245,197,24,0.2); }
+.card.rated-reject { opacity: 0.38; }
+.card.hidden-filter { display: none !important; }
+
+/* ── Image wrapper ── */
+.img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #080612;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.card:hover .img-wrap img { transform: scale(1.03); }
+.img-num {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  background: rgba(0,0,0,0.6);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: ui-monospace, monospace;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  user-select: none;
+}
+.missing-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* ── Card prompt ── */
+.card-prompt {
+  padding: 0.55rem 0.75rem 0.4rem;
+  font-size: 0.72rem;
+  color: var(--dim);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Card footer ── */
+.card-foot {
+  padding: 0.4rem 0.65rem 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.card-name {
+  flex: 1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-rate {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--dim);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btn-rate:hover { border-color: rgba(255,255,255,0.25); color: var(--ink); }
+.btn-rate.starred  { background: rgba(245,197,24,0.15); border-color: var(--gold); color: var(--gold); }
+.btn-rate.rejected { background: rgba(255,60,60,0.1); border-color: rgba(255,80,80,0.5); color: #ff6060; }
+
+/* ── Lightbox ── */
+.lb {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.97);
+  z-index: 9000;
+  flex-direction: column;
+  align-items: center;
+}
+.lb.open { display: flex; }
+
+.lb-top {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  z-index: 9001;
+}
+.lb-counter {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  font-variant-numeric: tabular-nums;
+}
+.lb-top-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.lb-close {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 1.1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.lb-close:hover { background: rgba(255,255,255,0.22); }
+.lb-action-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.76rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.lb-action-btn:hover { background: rgba(255,255,255,0.16); color: #fff; border-color: rgba(255,255,255,0.3); }
+.lb-action-btn.copied { border-color: var(--teal); color: var(--teal); }
+
+.lb-img-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+  padding: 3.5rem 5rem 0.5rem;
+  min-height: 0;
+}
+.lb-img-area img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.9);
+  display: block;
+}
+.lb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  user-select: none;
+  z-index: 2;
+  line-height: 1;
+}
+.lb-arrow:hover { background: rgba(255,255,255,0.18); }
+.lb-arrow.prev { left: 1rem; }
+.lb-arrow.next { right: 1rem; }
+
+.lb-bottom {
+  width: 100%;
+  max-width: 900px;
+  padding: 0.6rem 1.5rem 1rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.lb-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.lb-prompt {
+  font-size: 0.78rem;
+  color: var(--dim);
+  line-height: 1.6;
+  max-height: 7rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* ── Lightbox meta ── */
+.lb-meta {
+  font-size: 0.7rem;
+  color: var(--dim);
+  font-family: ui-monospace, monospace;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Search + sort ── */
+#search {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  outline: none;
+  flex: 1;
+  min-width: 100px;
+  max-width: 220px;
+  transition: border-color 0.15s;
+}
+#search:focus, #search:hover { border-color: var(--accent); }
+#search::placeholder { color: var(--dim); opacity: 0.6; }
+.sort-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--dim);
+  padding: 0.22rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+.sort-select:focus, .sort-select:hover { border-color: var(--accent); color: var(--ink); }
+
+/* ── Run strip (compare lightbox) ── */
+.lb-run-strip {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1.5rem 0.75rem;
+  flex-shrink: 0;
+}
+.lb-run-dot {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--dim);
+  padding: 0.18rem 0.55rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+}
+.lb-run-dot:hover { border-color: var(--teal); color: var(--teal); }
+.lb-run-dot.active { background: rgba(0,200,180,0.18); border-color: var(--teal); color: var(--teal); font-weight: 600; }
+</style>
+<style>
+.run-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.6rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.15);
+  align-items: center;
+}
+.run-tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--dim);
+  padding: 0.28rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  user-select: none;
+}
+.run-tab:hover { border-color: var(--accent); color: var(--ink); }
+.run-tab.active { background: rgba(124,106,247,0.2); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.run-tab.compare-btn {
+  margin-left: auto;
+  background: rgba(0,200,180,0.08);
+  border-color: rgba(0,200,180,0.3);
+  color: var(--teal);
+}
+.run-tab.compare-btn.active {
+  background: rgba(0,200,180,0.2);
+  border-color: var(--teal);
+}
+/* Compare table */
+.compare-table { display: none; padding: 1.5rem 1.5rem 4rem; overflow-x: auto; }
+.compare-table.visible { display: block; }
+.compare-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0.75rem 0 0.4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.6rem;
+}
+.compare-row {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  align-items: start;
+}
+.compare-cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.compare-cell:hover { border-color: var(--accent); transform: translateY(-2px); }
+.compare-cell .run-badge {
+  font-size: 0.68rem;
+  color: var(--accent);
+  padding: 0.3rem 0.6rem 0.2rem;
+  font-weight: 600;
+  font-family: ui-monospace, monospace;
+}
+.no-runs { padding: 4rem; text-align: center; color: var(--dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PUMP &amp; DUMP — Prompts</h1>
+  <div class="meta">
+    <span class="pill" id="run-pill">3 groups</span>
+    <span id="cur-model"></span>
+    <span id="cur-ts"></span>
+  </div>
+</header>
+
+<div class="run-tabs" id="run-tabs">
+  <button class="run-tab compare-btn" id="compare-btn" onclick="toggleCompare()">⊞ Compare all</button>
+</div>
+
+<div class="filter-bar" id="filter-bar">
+  <button class="filter-btn active" id="fb-all"        onclick="filterCards('all')">All <span id="fc-all"></span></button>
+  <button class="filter-btn"        id="fb-star"       onclick="filterCards('star')">&#9733; Starred <span id="fc-star"></span></button>
+  <button class="filter-btn"        id="fb-reject"     onclick="filterCards('reject')">&#x2715; Rejected <span id="fc-reject"></span></button>
+  <button class="filter-btn"        id="fb-unreviewed" onclick="filterCards('unreviewed')">Unreviewed <span id="fc-unreviewed"></span></button>
+  <input id="search" type="text" placeholder="Search prompts…" autocomplete="off"
+         oninput="_searchQuery=this.value.toLowerCase().trim();applyFilters()">
+  <label class="grid-size-label">
+    <select class="sort-select" onchange="applySort(this.value)">
+      <option value="default">⇅ Order</option>
+      <option value="name">A → Z</option>
+    </select>
+    Grid <input type="range" min="160" max="560" value="280" id="grid-sizer" oninput="resizeGrid(this.value)">
+  </label>
+</div>
+<div class="grid" id="grid"></div>
+<div class="compare-table" id="compare-table"></div>
+
+<div class="lb" id="lb" onclick="lbClickBg(event)">
+  <div class="lb-top">
+    <span class="lb-counter" id="lb-counter"></span>
+    <div class="lb-top-actions">
+      <a id="lb-download" class="lb-action-btn" download="">&#11015; Download</a>
+      <button id="lb-copy" class="lb-action-btn" onclick="lbCopyPrompt(); event.stopPropagation()">&#x2398; Copy prompt</button>
+      <button class="lb-close" onclick="lbClose()" title="Close (Esc)">&#x2715;</button>
+    </div>
+  </div>
+  <div class="lb-img-area" onclick="event.stopPropagation()">
+    <button class="lb-arrow prev" onclick="lbStep(-1); event.stopPropagation()">&#8592;</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-arrow next" onclick="lbStep(1); event.stopPropagation()">&#8594;</button>
+  </div>
+  <div class="lb-bottom" onclick="event.stopPropagation()">
+    <div class="lb-name" id="lb-name"></div>
+    <div class="lb-meta" id="lb-meta"></div>
+    <div class="lb-prompt" id="lb-prompt"></div>
+  </div>
+  <div class="lb-run-strip" id="lb-run-strip"></div>
+</div>
+
+<script>
+const RUNS = [{"id":"moodboard","dir":"moodboard","timestamp":"36 images","model":"THE MOODBOARD","style":"pump-and-dump","aspect_ratio":"4:5","prompt_file":"moodboard.md","images":[{"name":"Engraved banknote close-up ★","prompt":"close-up macro of intricately engraved banknote detail, \nguilloché pattern with geometric precision, \ngold and black ink, official currency texture, \nhigh contrast fine line work, financial document aesthetic,\n--ar 4:5 --style raw","file":"001.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Engraved banknote close-up ★","prompt":"close-up macro of intricately engraved banknote detail, \nguilloché pattern with geometric precision, \ngold and black ink, official currency texture, \nhigh contrast fine line work, financial document aesthetic,\n--ar 4:5 --style raw","file":"002.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Engraved banknote close-up ★","prompt":"close-up macro of intricately engraved banknote detail, \nguilloché pattern with geometric precision, \ngold and black ink, official currency texture, \nhigh contrast fine line work, financial document aesthetic,\n--ar 4:5 --style raw","file":"003.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Holographic hype material ★","prompt":"iridescent holographic material surface,\ntoxic teal fading to magenta,\npremium limited-edition product styling,\nlight hitting the texture,\nhyped sneaker or luxury merchandise unboxing aesthetic,\n--ar 4:5 --style raw","file":"004.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Holographic hype material ★","prompt":"iridescent holographic material surface,\ntoxic teal fading to magenta,\npremium limited-edition product styling,\nlight hitting the texture,\nhyped sneaker or luxury merchandise unboxing aesthetic,\n--ar 4:5 --style raw","file":"005.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Holographic hype material ★","prompt":"iridescent holographic material surface,\ntoxic teal fading to magenta,\npremium limited-edition product styling,\nlight hitting the texture,\nhyped sneaker or luxury merchandise unboxing aesthetic,\n--ar 4:5 --style raw","file":"006.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Holographic hype material ★","prompt":"iridescent holographic material surface,\ntoxic teal fading to magenta,\npremium limited-edition product styling,\nlight hitting the texture,\nhyped sneaker or luxury merchandise unboxing aesthetic,\n--ar 4:5 --style raw","file":"007.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Neon against blackout ★","prompt":"toxic teal and magenta neon glowing lines,\ngeometric patterns, circuit board or market ticker aesthetic,\nagainst pure black background,\nhigh contrast, retro-futuristic hype energy,\nglitch potential, dystopian vibes,\n--ar 4:5 --style raw","file":"008.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Neon against blackout ★","prompt":"toxic teal and magenta neon glowing lines,\ngeometric patterns, circuit board or market ticker aesthetic,\nagainst pure black background,\nhigh contrast, retro-futuristic hype energy,\nglitch potential, dystopian vibes,\n--ar 4:5 --style raw","file":"009.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Neon against blackout ★","prompt":"toxic teal and magenta neon glowing lines,\ngeometric patterns, circuit board or market ticker aesthetic,\nagainst pure black background,\nhigh contrast, retro-futuristic hype energy,\nglitch potential, dystopian vibes,\n--ar 4:5 --style raw","file":"010.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Neon against blackout ★","prompt":"toxic teal and magenta neon glowing lines,\ngeometric patterns, circuit board or market ticker aesthetic,\nagainst pure black background,\nhigh contrast, retro-futuristic hype energy,\nglitch potential, dystopian vibes,\n--ar 4:5 --style raw","file":"011.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Engraved banknote close-up","prompt":"close-up macro of intricately engraved banknote detail, \nguilloché pattern with geometric precision, \ngold and black ink, official currency texture, \nhigh contrast fine line work, financial document aesthetic,\n--ar 4:5 --style raw","file":"012.jpg","ok":true,"state":"succeeded","liked":false},{"name":"FIFA official collateral","prompt":"flat lay of official FIFA 2026 World Cup marketing materials, \nsleek tournament branding, metallic gold on navy,\nbranded merchandise presentation,\nprofessional sports marketing aesthetic,\nhigh-end event collateral,\n--ar 4:5 --style raw","file":"013.jpg","ok":true,"state":"succeeded","liked":false},{"name":"FIFA official collateral","prompt":"flat lay of official FIFA 2026 World Cup marketing materials, \nsleek tournament branding, metallic gold on navy,\nbranded merchandise presentation,\nprofessional sports marketing aesthetic,\nhigh-end event collateral,\n--ar 4:5 --style raw","file":"014.jpg","ok":true,"state":"succeeded","liked":false},{"name":"FIFA official collateral","prompt":"flat lay of official FIFA 2026 World Cup marketing materials, \nsleek tournament branding, metallic gold on navy,\nbranded merchandise presentation,\nprofessional sports marketing aesthetic,\nhigh-end event collateral,\n--ar 4:5 --style raw","file":"015.jpg","ok":true,"state":"succeeded","liked":false},{"name":"FIFA official collateral","prompt":"flat lay of official FIFA 2026 World Cup marketing materials, \nsleek tournament branding, metallic gold on navy,\nbranded merchandise presentation,\nprofessional sports marketing aesthetic,\nhigh-end event collateral,\n--ar 4:5 --style raw","file":"016.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick chart close-up","prompt":"macro shot of candlestick chart pattern,\nwhite lines on deep navy background,\nchart needles soaring then cliff-diving,\nstock market rise and crash visualization,\nfinancial graph texture, repeating pattern potential,\n--ar 4:5 --style raw","file":"017.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick chart close-up","prompt":"macro shot of candlestick chart pattern,\nwhite lines on deep navy background,\nchart needles soaring then cliff-diving,\nstock market rise and crash visualization,\nfinancial graph texture, repeating pattern potential,\n--ar 4:5 --style raw","file":"018.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick chart close-up","prompt":"macro shot of candlestick chart pattern,\nwhite lines on deep navy background,\nchart needles soaring then cliff-diving,\nstock market rise and crash visualization,\nfinancial graph texture, repeating pattern potential,\n--ar 4:5 --style raw","file":"019.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick chart close-up","prompt":"macro shot of candlestick chart pattern,\nwhite lines on deep navy background,\nchart needles soaring then cliff-diving,\nstock market rise and crash visualization,\nfinancial graph texture, repeating pattern potential,\n--ar 4:5 --style raw","file":"020.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Prospectus / financial document","prompt":"open pages of financial prospectus document,\ndense microprint, charts, disclaimers, fine typography,\nofficial legal language layout,\ncandlestick charts and line graphs embedded,\ncertificate aesthetic, official serif type,\n--ar 4:5 --style raw","file":"021.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Prospectus / financial document","prompt":"open pages of financial prospectus document,\ndense microprint, charts, disclaimers, fine typography,\nofficial legal language layout,\ncandlestick charts and line graphs embedded,\ncertificate aesthetic, official serif type,\n--ar 4:5 --style raw","file":"022.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Prospectus / financial document","prompt":"open pages of financial prospectus document,\ndense microprint, charts, disclaimers, fine typography,\nofficial legal language layout,\ncandlestick charts and line graphs embedded,\ncertificate aesthetic, official serif type,\n--ar 4:5 --style raw","file":"023.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Prospectus / financial document","prompt":"open pages of financial prospectus document,\ndense microprint, charts, disclaimers, fine typography,\nofficial legal language layout,\ncandlestick charts and line graphs embedded,\ncertificate aesthetic, official serif type,\n--ar 4:5 --style raw","file":"024.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Aerial condo development","prompt":"overhead view of dense high-rise condo development,\ngeometric building footprints and rooftops,\nsome units glowing windows, many dark,\nurban planning map aesthetic,\nVancouver waterfront/downtown grid pattern,\n--ar 4:5 --style raw","file":"025.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Aerial condo development","prompt":"overhead view of dense high-rise condo development,\ngeometric building footprints and rooftops,\nsome units glowing windows, many dark,\nurban planning map aesthetic,\nVancouver waterfront/downtown grid pattern,\n--ar 4:5 --style raw","file":"026.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Aerial condo development","prompt":"overhead view of dense high-rise condo development,\ngeometric building footprints and rooftops,\nsome units glowing windows, many dark,\nurban planning map aesthetic,\nVancouver waterfront/downtown grid pattern,\n--ar 4:5 --style raw","file":"027.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Aerial condo development","prompt":"overhead view of dense high-rise condo development,\ngeometric building footprints and rooftops,\nsome units glowing windows, many dark,\nurban planning map aesthetic,\nVancouver waterfront/downtown grid pattern,\n--ar 4:5 --style raw","file":"028.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Red stamp marks (VACANT/SOLD)","prompt":"series of rubber stamp marks in stamp red color,\nVACANT, SOLD, APPROVED marks repeated on white document,\nfaded stamp impressions, official seal aesthetic,\nbureaucratic paperwork texture,\n--ar 4:5 --style raw","file":"029.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Red stamp marks (VACANT/SOLD)","prompt":"series of rubber stamp marks in stamp red color,\nVACANT, SOLD, APPROVED marks repeated on white document,\nfaded stamp impressions, official seal aesthetic,\nbureaucratic paperwork texture,\n--ar 4:5 --style raw","file":"030.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Red stamp marks (VACANT/SOLD)","prompt":"series of rubber stamp marks in stamp red color,\nVACANT, SOLD, APPROVED marks repeated on white document,\nfaded stamp impressions, official seal aesthetic,\nbureaucratic paperwork texture,\n--ar 4:5 --style raw","file":"031.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Red stamp marks (VACANT/SOLD)","prompt":"series of rubber stamp marks in stamp red color,\nVACANT, SOLD, APPROVED marks repeated on white document,\nfaded stamp impressions, official seal aesthetic,\nbureaucratic paperwork texture,\n--ar 4:5 --style raw","file":"032.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Lit/dark condo skyline","prompt":"silhouette of modern condo tower skyline,\nsome towers lit from within, others completely dark (vacant),\nnight cityscape, architectural profile,\nVancouver downtown skyline reference,\ncontrast between occupied and empty towers,\n--ar 4:5 --style raw","file":"033.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Lit/dark condo skyline","prompt":"silhouette of modern condo tower skyline,\nsome towers lit from within, others completely dark (vacant),\nnight cityscape, architectural profile,\nVancouver downtown skyline reference,\ncontrast between occupied and empty towers,\n--ar 4:5 --style raw","file":"034.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Lit/dark condo skyline","prompt":"silhouette of modern condo tower skyline,\nsome towers lit from within, others completely dark (vacant),\nnight cityscape, architectural profile,\nVancouver downtown skyline reference,\ncontrast between occupied and empty towers,\n--ar 4:5 --style raw","file":"035.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Lit/dark condo skyline","prompt":"silhouette of modern condo tower skyline,\nsome towers lit from within, others completely dark (vacant),\nnight cityscape, architectural profile,\nVancouver downtown skyline reference,\ncontrast between occupied and empty towers,\n--ar 4:5 --style raw","file":"036.jpg","ok":true,"state":"succeeded","liked":false}]},{"id":"graphic-elements","dir":"graphic-elements","timestamp":"60 images","model":"GRAPHIC ELEMENTS","style":"pump-and-dump","aspect_ratio":"1:1","prompt_file":"graphic-elements.md","images":[{"name":"Banknote guilloché overlay ★","prompt":"repeating geometric guilloché pattern inspired by banknote engraving,\nthin gold lines in delicate interlocking design,\nsubtle ornamental detail layer,\n--ar 16:9 --style raw","file":"001.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Trophy silhouette variation","prompt":"FIFA World Cup trophy silhouette,\nstylized as a condo tower or candlestick chart hybrid,\ngeometric, clean line art,\nwhite outline on navy,\ncan be small accent graphic,\nsuitable for sleeve badge or collar detail,\nwhite background --ar 16:9 --style raw","file":"002.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Trophy silhouette variation","prompt":"FIFA World Cup trophy silhouette,\nstylized as a condo tower or candlestick chart hybrid,\ngeometric, clean line art,\nwhite outline on navy,\ncan be small accent graphic,\nsuitable for sleeve badge or collar detail,\nwhite background --ar 16:9 --style raw","file":"003.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Trophy silhouette variation","prompt":"FIFA World Cup trophy silhouette,\nstylized as a condo tower or candlestick chart hybrid,\ngeometric, clean line art,\nwhite outline on navy,\ncan be small accent graphic,\nsuitable for sleeve badge or collar detail,\nwhite background --ar 16:9 --style raw","file":"004.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Trophy silhouette variation","prompt":"FIFA World Cup trophy silhouette,\nstylized as a condo tower or candlestick chart hybrid,\ngeometric, clean line art,\nwhite outline on navy,\ncan be small accent graphic,\nsuitable for sleeve badge or collar detail,\nwhite background --ar 16:9 --style raw","file":"005.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Role-based nameplate","prompt":"athletic jersey nameplate style,\nreads \"DEVELOPER\" (or FLIPPER / LANDLORD / RENOVICTOR),\narched banner format,\nclean sans-serif, \nwhite lettering,\nprofessional sports jersey nameplate aesthetic,\nsuitable for jersey back placement,\nwhite background --ar 16:9 --style raw","file":"006.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Role-based nameplate","prompt":"athletic jersey nameplate style,\nreads \"DEVELOPER\" (or FLIPPER / LANDLORD / RENOVICTOR),\narched banner format,\nclean sans-serif, \nwhite lettering,\nprofessional sports jersey nameplate aesthetic,\nsuitable for jersey back placement,\nwhite background --ar 16:9 --style raw","file":"007.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Role-based nameplate","prompt":"athletic jersey nameplate style,\nreads \"DEVELOPER\" (or FLIPPER / LANDLORD / RENOVICTOR),\narched banner format,\nclean sans-serif, \nwhite lettering,\nprofessional sports jersey nameplate aesthetic,\nsuitable for jersey back placement,\nwhite background --ar 16:9 --style raw","file":"008.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Role-based nameplate","prompt":"athletic jersey nameplate style,\nreads \"DEVELOPER\" (or FLIPPER / LANDLORD / RENOVICTOR),\narched banner format,\nclean sans-serif, \nwhite lettering,\nprofessional sports jersey nameplate aesthetic,\nsuitable for jersey back placement,\nwhite background --ar 16:9 --style raw","file":"009.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Toxic gradient stripe","prompt":"clean vertical stripe or gradient bar,\ntransitions from toxic teal (#21d9c9) through to magenta,\nsleek modern gradient,\nsuitable for cuff trim or sleeve accent,\nathletic sportswear finish,\nwhite background --ar 16:9 --style raw","file":"010.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Toxic gradient stripe","prompt":"clean vertical stripe or gradient bar,\ntransitions from toxic teal (#21d9c9) through to magenta,\nsleek modern gradient,\nsuitable for cuff trim or sleeve accent,\nathletic sportswear finish,\nwhite background --ar 16:9 --style raw","file":"011.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Toxic gradient stripe","prompt":"clean vertical stripe or gradient bar,\ntransitions from toxic teal (#21d9c9) through to magenta,\nsleek modern gradient,\nsuitable for cuff trim or sleeve accent,\nathletic sportswear finish,\nwhite background --ar 16:9 --style raw","file":"012.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Toxic gradient stripe","prompt":"clean vertical stripe or gradient bar,\ntransitions from toxic teal (#21d9c9) through to magenta,\nsleek modern gradient,\nsuitable for cuff trim or sleeve accent,\nathletic sportswear finish,\nwhite background --ar 16:9 --style raw","file":"013.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hem microprint","prompt":"dense technical microtext suitable for jersey hem,\nreads like \"SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN'T\"\nin tiny monospace font,\nprofessional fine-print aesthetic,\nwhite text on navy,\nsuitable for care-label placement or hem detail,\nwhite background --ar 16:9 --style raw","file":"014.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hem microprint","prompt":"dense technical microtext suitable for jersey hem,\nreads like \"SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN'T\"\nin tiny monospace font,\nprofessional fine-print aesthetic,\nwhite text on navy,\nsuitable for care-label placement or hem detail,\nwhite background --ar 16:9 --style raw","file":"015.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hem microprint","prompt":"dense technical microtext suitable for jersey hem,\nreads like \"SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN'T\"\nin tiny monospace font,\nprofessional fine-print aesthetic,\nwhite text on navy,\nsuitable for care-label placement or hem detail,\nwhite background --ar 16:9 --style raw","file":"016.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hem microprint","prompt":"dense technical microtext suitable for jersey hem,\nreads like \"SECURITY $242M · NET TO BC TAXPAYER UP TO $114M · CALIFORNIA WENT PRIVATE · YOU DIDN'T\"\nin tiny monospace font,\nprofessional fine-print aesthetic,\nwhite text on navy,\nsuitable for care-label placement or hem detail,\nwhite background --ar 16:9 --style raw","file":"017.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + chart shield","prompt":"heraldic shield, split design,\nleft: stacked condo tower silhouettes rising,\nright: candlestick chart integrated with towers,\ngold outline, white negative space,\nnavy background,\nofficial badge style, professional crest, federal seal aesthetic,\nwhite background --ar 16:9 --style raw","file":"018.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + chart shield","prompt":"heraldic shield, split design,\nleft: stacked condo tower silhouettes rising,\nright: candlestick chart integrated with towers,\ngold outline, white negative space,\nnavy background,\nofficial badge style, professional crest, federal seal aesthetic,\nwhite background --ar 16:9 --style raw","file":"019.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + chart shield","prompt":"heraldic shield, split design,\nleft: stacked condo tower silhouettes rising,\nright: candlestick chart integrated with towers,\ngold outline, white negative space,\nnavy background,\nofficial badge style, professional crest, federal seal aesthetic,\nwhite background --ar 16:9 --style raw","file":"020.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + chart shield","prompt":"heraldic shield, split design,\nleft: stacked condo tower silhouettes rising,\nright: candlestick chart integrated with towers,\ngold outline, white negative space,\nnavy background,\nofficial badge style, professional crest, federal seal aesthetic,\nwhite background --ar 16:9 --style raw","file":"021.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Split soccer/candlestick crest","prompt":"heraldic shield split vertically in half,\nleft half: classic soccer/football ball silhouette in white,\nright half: candlestick chart with soaring peak then cliff-diving downturn,\ngold and white line art,\ndeep navy shield background,\nofficial sports crest aesthetic, federal badge style,\nwhite background --ar 16:9 --style raw","file":"022.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Split soccer/candlestick crest","prompt":"heraldic shield split vertically in half,\nleft half: classic soccer/football ball silhouette in white,\nright half: candlestick chart with soaring peak then cliff-diving downturn,\ngold and white line art,\ndeep navy shield background,\nofficial sports crest aesthetic, federal badge style,\nwhite background --ar 16:9 --style raw","file":"023.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Split soccer/candlestick crest","prompt":"heraldic shield split vertically in half,\nleft half: classic soccer/football ball silhouette in white,\nright half: candlestick chart with soaring peak then cliff-diving downturn,\ngold and white line art,\ndeep navy shield background,\nofficial sports crest aesthetic, federal badge style,\nwhite background --ar 16:9 --style raw","file":"024.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Split soccer/candlestick crest","prompt":"heraldic shield split vertically in half,\nleft half: classic soccer/football ball silhouette in white,\nright half: candlestick chart with soaring peak then cliff-diving downturn,\ngold and white line art,\ndeep navy shield background,\nofficial sports crest aesthetic, federal badge style,\nwhite background --ar 16:9 --style raw","file":"025.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Price-to-income ratios","prompt":"large bold numerals \"22x\" and \"33x\" \n(representing Vancouver price-to-income multiples),\nin clean sans-serif, white color,\ncan repeat vertically or scatter,\nsuitable for sock or trim placement,\ntechnical sports apparel typography,\nwhite background --ar 16:9 --style raw","file":"026.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Price-to-income ratios","prompt":"large bold numerals \"22x\" and \"33x\" \n(representing Vancouver price-to-income multiples),\nin clean sans-serif, white color,\ncan repeat vertically or scatter,\nsuitable for sock or trim placement,\ntechnical sports apparel typography,\nwhite background --ar 16:9 --style raw","file":"027.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Price-to-income ratios","prompt":"large bold numerals \"22x\" and \"33x\" \n(representing Vancouver price-to-income multiples),\nin clean sans-serif, white color,\ncan repeat vertically or scatter,\nsuitable for sock or trim placement,\ntechnical sports apparel typography,\nwhite background --ar 16:9 --style raw","file":"028.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Price-to-income ratios","prompt":"large bold numerals \"22x\" and \"33x\" \n(representing Vancouver price-to-income multiples),\nin clean sans-serif, white color,\ncan repeat vertically or scatter,\nsuitable for sock or trim placement,\ntechnical sports apparel typography,\nwhite background --ar 16:9 --style raw","file":"029.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Fair Play / badge variant","prompt":"official \"Fair Play\" style circular badge,\nreads \"DEEP CAPITAL\" or \"EXIT LIQUIDITY\" as the label,\ngold border, navy field,\nstyled like tournament fair-play/conduct badges,\nsmall enough for sleeve placement,\nofficial sports emblem aesthetic,\nwhite background --ar 16:9 --style raw","file":"030.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Fair Play / badge variant","prompt":"official \"Fair Play\" style circular badge,\nreads \"DEEP CAPITAL\" or \"EXIT LIQUIDITY\" as the label,\ngold border, navy field,\nstyled like tournament fair-play/conduct badges,\nsmall enough for sleeve placement,\nofficial sports emblem aesthetic,\nwhite background --ar 16:9 --style raw","file":"031.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Fair Play / badge variant","prompt":"official \"Fair Play\" style circular badge,\nreads \"DEEP CAPITAL\" or \"EXIT LIQUIDITY\" as the label,\ngold border, navy field,\nstyled like tournament fair-play/conduct badges,\nsmall enough for sleeve placement,\nofficial sports emblem aesthetic,\nwhite background --ar 16:9 --style raw","file":"032.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Fair Play / badge variant","prompt":"official \"Fair Play\" style circular badge,\nreads \"DEEP CAPITAL\" or \"EXIT LIQUIDITY\" as the label,\ngold border, navy field,\nstyled like tournament fair-play/conduct badges,\nsmall enough for sleeve placement,\nofficial sports emblem aesthetic,\nwhite background --ar 16:9 --style raw","file":"033.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Secondary tagline banner","prompt":"official sponsor/tagline bar layout,\ntext reads: \"WE WIN IF YOU LIVE HERE OR NOT\"\nstyled as secondary sponsor text under main mark,\nsmall caps, clean sans-serif,\nwhite text on navy field,\nofficial sports branding, tournament ticker aesthetic,\nwhite background --ar 16:9 --style raw","file":"034.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Secondary tagline banner","prompt":"official sponsor/tagline bar layout,\ntext reads: \"WE WIN IF YOU LIVE HERE OR NOT\"\nstyled as secondary sponsor text under main mark,\nsmall caps, clean sans-serif,\nwhite text on navy field,\nofficial sports branding, tournament ticker aesthetic,\nwhite background --ar 16:9 --style raw","file":"035.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Secondary tagline banner","prompt":"official sponsor/tagline bar layout,\ntext reads: \"WE WIN IF YOU LIVE HERE OR NOT\"\nstyled as secondary sponsor text under main mark,\nsmall caps, clean sans-serif,\nwhite text on navy field,\nofficial sports branding, tournament ticker aesthetic,\nwhite background --ar 16:9 --style raw","file":"036.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Secondary tagline banner","prompt":"official sponsor/tagline bar layout,\ntext reads: \"WE WIN IF YOU LIVE HERE OR NOT\"\nstyled as secondary sponsor text under main mark,\nsmall caps, clean sans-serif,\nwhite text on navy field,\nofficial sports branding, tournament ticker aesthetic,\nwhite background --ar 16:9 --style raw","file":"037.jpg","ok":true,"state":"succeeded","liked":false},{"name":"PUMP & DUMP CAPITAL sponsor bar","prompt":"professional sponsor bar / brand bar layout,\ntext reads: \"PUMP & DUMP CAPITAL\"\nstyled like a generic official sports-sponsor wordmark (bold condensed sans, no real brand marks),\nset in clean sans-serif, \nmetallic gold on navy blue rectangle,\nofficial tournament sponsor aesthetic,\nwhite background --ar 16:9 --style raw","file":"038.jpg","ok":true,"state":"succeeded","liked":false},{"name":"PUMP & DUMP CAPITAL sponsor bar","prompt":"professional sponsor bar / brand bar layout,\ntext reads: \"PUMP & DUMP CAPITAL\"\nstyled like a generic official sports-sponsor wordmark (bold condensed sans, no real brand marks),\nset in clean sans-serif, \nmetallic gold on navy blue rectangle,\nofficial tournament sponsor aesthetic,\nwhite background --ar 16:9 --style raw","file":"039.jpg","ok":true,"state":"succeeded","liked":false},{"name":"PUMP & DUMP CAPITAL sponsor bar","prompt":"professional sponsor bar / brand bar layout,\ntext reads: \"PUMP & DUMP CAPITAL\"\nstyled like a generic official sports-sponsor wordmark (bold condensed sans, no real brand marks),\nset in clean sans-serif, \nmetallic gold on navy blue rectangle,\nofficial tournament sponsor aesthetic,\nwhite background --ar 16:9 --style raw","file":"040.jpg","ok":true,"state":"succeeded","liked":false},{"name":"PUMP & DUMP CAPITAL sponsor bar","prompt":"professional sponsor bar / brand bar layout,\ntext reads: \"PUMP & DUMP CAPITAL\"\nstyled like a generic official sports-sponsor wordmark (bold condensed sans, no real brand marks),\nset in clean sans-serif, \nmetallic gold on navy blue rectangle,\nofficial tournament sponsor aesthetic,\nwhite background --ar 16:9 --style raw","file":"041.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Banknote guilloché overlay","prompt":"repeating geometric guilloché pattern inspired by banknote engraving,\nthin gold lines in delicate interlocking design,\nsubtle ornamental detail layer,\n--ar 16:9 --style raw","file":"042.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Banknote guilloché overlay","prompt":"repeating geometric guilloché pattern inspired by banknote engraving,\nthin gold lines in delicate interlocking design,\nsubtle ornamental detail layer,\n--ar 16:9 --style raw","file":"043.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Banknote guilloché overlay","prompt":"repeating geometric guilloché pattern inspired by banknote engraving,\nthin gold lines in delicate interlocking design,\nsubtle ornamental detail layer,\n--ar 16:9 --style raw","file":"044.jpg","ok":true,"state":"succeeded","liked":false},{"name":"VACANT stamp pattern","prompt":"repeating red rubber stamp marks spelling \"VACANT\",\nfaded impression aesthetic,\nofficial seal / stamp texture,\npattern density suitable for repeating down shorts/socks,\nstamp red color (#C0392B),\nwhite background --ar 16:9 --style raw","file":"045.jpg","ok":true,"state":"succeeded","liked":false},{"name":"VACANT stamp pattern","prompt":"repeating red rubber stamp marks spelling \"VACANT\",\nfaded impression aesthetic,\nofficial seal / stamp texture,\npattern density suitable for repeating down shorts/socks,\nstamp red color (#C0392B),\nwhite background --ar 16:9 --style raw","file":"046.jpg","ok":true,"state":"succeeded","liked":false},{"name":"VACANT stamp pattern","prompt":"repeating red rubber stamp marks spelling \"VACANT\",\nfaded impression aesthetic,\nofficial seal / stamp texture,\npattern density suitable for repeating down shorts/socks,\nstamp red color (#C0392B),\nwhite background --ar 16:9 --style raw","file":"047.jpg","ok":true,"state":"succeeded","liked":false},{"name":"VACANT stamp pattern","prompt":"repeating red rubber stamp marks spelling \"VACANT\",\nfaded impression aesthetic,\nofficial seal / stamp texture,\npattern density suitable for repeating down shorts/socks,\nstamp red color (#C0392B),\nwhite background --ar 16:9 --style raw","file":"048.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick all-over repeat","prompt":"seamless repeating pattern, candlestick charts with thin white lines,\nsoaring peaks then cliff-diving valleys animated in the pattern,\ndeep navy blue background, \ntight repeat pattern suitable for sublimated jersey fabric,\nfinancial graph texture, professional chart aesthetic,\nwhite background, 16:9 --style raw","file":"049.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick all-over repeat","prompt":"seamless repeating pattern, candlestick charts with thin white lines,\nsoaring peaks then cliff-diving valleys animated in the pattern,\ndeep navy blue background, \ntight repeat pattern suitable for sublimated jersey fabric,\nfinancial graph texture, professional chart aesthetic,\nwhite background, 16:9 --style raw","file":"050.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick all-over repeat","prompt":"seamless repeating pattern, candlestick charts with thin white lines,\nsoaring peaks then cliff-diving valleys animated in the pattern,\ndeep navy blue background, \ntight repeat pattern suitable for sublimated jersey fabric,\nfinancial graph texture, professional chart aesthetic,\nwhite background, 16:9 --style raw","file":"051.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Candlestick all-over repeat","prompt":"seamless repeating pattern, candlestick charts with thin white lines,\nsoaring peaks then cliff-diving valleys animated in the pattern,\ndeep navy blue background, \ntight repeat pattern suitable for sublimated jersey fabric,\nfinancial graph texture, professional chart aesthetic,\nwhite background, 16:9 --style raw","file":"052.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + vacancy pattern","prompt":"seamless repeating pattern of modern high-rise condo tower silhouettes,\nsome towers glowing internally, others dark/vacant,\nwhite line art on navy background,\ngeometric architectural pattern,\ntight enough for all-over fabric print,\nwhite background --ar 16:9 --style raw","file":"053.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + vacancy pattern","prompt":"seamless repeating pattern of modern high-rise condo tower silhouettes,\nsome towers glowing internally, others dark/vacant,\nwhite line art on navy background,\ngeometric architectural pattern,\ntight enough for all-over fabric print,\nwhite background --ar 16:9 --style raw","file":"054.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + vacancy pattern","prompt":"seamless repeating pattern of modern high-rise condo tower silhouettes,\nsome towers glowing internally, others dark/vacant,\nwhite line art on navy background,\ngeometric architectural pattern,\ntight enough for all-over fabric print,\nwhite background --ar 16:9 --style raw","file":"055.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Condo tower + vacancy pattern","prompt":"seamless repeating pattern of modern high-rise condo tower silhouettes,\nsome towers glowing internally, others dark/vacant,\nwhite line art on navy background,\ngeometric architectural pattern,\ntight enough for all-over fabric print,\nwhite background --ar 16:9 --style raw","file":"056.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Floor-plan number","prompt":"technical jersey number rendered from building floor-plan outlines,\nnumber composed of room layouts and architectural elements,\nclean line art,\nwhite on navy,\nmodern athletic number style,\nsuitable for jersey chest/sleeve,\nwhite background --ar 16:9 --style raw","file":"057.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Floor-plan number","prompt":"technical jersey number rendered from building floor-plan outlines,\nnumber composed of room layouts and architectural elements,\nclean line art,\nwhite on navy,\nmodern athletic number style,\nsuitable for jersey chest/sleeve,\nwhite background --ar 16:9 --style raw","file":"058.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Floor-plan number","prompt":"technical jersey number rendered from building floor-plan outlines,\nnumber composed of room layouts and architectural elements,\nclean line art,\nwhite on navy,\nmodern athletic number style,\nsuitable for jersey chest/sleeve,\nwhite background --ar 16:9 --style raw","file":"059.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Floor-plan number","prompt":"technical jersey number rendered from building floor-plan outlines,\nnumber composed of room layouts and architectural elements,\nclean line art,\nwhite on navy,\nmodern athletic number style,\nsuitable for jersey chest/sleeve,\nwhite background --ar 16:9 --style raw","file":"060.jpg","ok":true,"state":"succeeded","liked":false}]},{"id":"jersey-flats","dir":"jersey-flats","timestamp":"40 images","model":"JERSEY FLATS","style":"pump-and-dump","aspect_ratio":"3:4","prompt_file":"jersey-flats.md","images":[{"name":"Full front flat ★","prompt":"technical flat-lay fashion illustration of unisex soccer jersey,\nmidnight navy body with toxic teal and magenta gradient accents,\nall-over pattern of literal white candlestick chart lines (open/close bars with wicks), soaring then crashing,\nno abstract marble, no texture fills: clean thin stock-chart line art only,\ngold heraldic shield crest on left chest (soccer ball split candlestick chart),\ncenter chest sponsor bar reads \"PUMP & DUMP CAPITAL\" in metallic gold,\nprofessional sports apparel technical drawing,\nclean line work, high detail, ready for production,\nwhite background --ar 3:4 --style raw","file":"001.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Full front flat ★","prompt":"technical flat-lay fashion illustration of unisex soccer jersey,\nmidnight navy body with toxic teal and magenta gradient accents,\nall-over pattern of literal white candlestick chart lines (open/close bars with wicks), soaring then crashing,\nno abstract marble, no texture fills: clean thin stock-chart line art only,\ngold heraldic shield crest on left chest (soccer ball split candlestick chart),\ncenter chest sponsor bar reads \"PUMP & DUMP CAPITAL\" in metallic gold,\nprofessional sports apparel technical drawing,\nclean line work, high detail, ready for production,\nwhite background --ar 3:4 --style raw","file":"002.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Full front flat ★","prompt":"technical flat-lay fashion illustration of unisex soccer jersey,\nmidnight navy body with toxic teal and magenta gradient accents,\nall-over pattern of literal white candlestick chart lines (open/close bars with wicks), soaring then crashing,\nno abstract marble, no texture fills: clean thin stock-chart line art only,\ngold heraldic shield crest on left chest (soccer ball split candlestick chart),\ncenter chest sponsor bar reads \"PUMP & DUMP CAPITAL\" in metallic gold,\nprofessional sports apparel technical drawing,\nclean line work, high detail, ready for production,\nwhite background --ar 3:4 --style raw","file":"003.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Complete kit (jersey + shorts + socks) ★","prompt":"technical flat-lay illustration of complete soccer kit,\njersey: midnight navy with all-over candlestick pattern, gold accents,\nmatching shorts: navy base with repeating red \"VACANT\" stamp pattern,\nsocks: navy with white price-to-income ratio text (\"22x\", \"33x\") down the calf,\nall pieces showing from multiple angles (front/back/side),\nprofessional apparel design illustration,\nproduction-ready mockup quality,\nwhite background --ar 3:4 --style raw","file":"004.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Complete kit (jersey + shorts + socks) ★","prompt":"technical flat-lay illustration of complete soccer kit,\njersey: midnight navy with all-over candlestick pattern, gold accents,\nmatching shorts: navy base with repeating red \"VACANT\" stamp pattern,\nsocks: navy with white price-to-income ratio text (\"22x\", \"33x\") down the calf,\nall pieces showing from multiple angles (front/back/side),\nprofessional apparel design illustration,\nproduction-ready mockup quality,\nwhite background --ar 3:4 --style raw","file":"005.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Crest detail close-up ★","prompt":"close-up technical illustration of heraldic shield crest,\nsplit design: soccer ball on left, candlestick chart on right,\ngold outline and detail,\nnavy background,\nprofessional emblem rendering, Federal crest style,\nsuitable for zoomed product detail shot,\nwhite background --ar 3:4 --style raw","file":"006.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Full back flat ★","prompt":"technical flat-lay fashion illustration of jersey back,\nmidnight navy body matching the front,\nall-over candlestick chart pattern continues,\nlarge nameplate centered on back upper torso,\nreads \"DEVELOPER\" or \"FLIPPER\" (role instead of player name),\nnumber below composed of floor-plan architectural elements,\nnarrow horizontal stripe detail at shoulders (teal-to-magenta gradient),\nmicroprint citation along hem (appears as fine detail line),\nprofessional sportswear technical drawing,\nwhite background --ar 3:4 --style raw","file":"007.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Navy + teal colorway ★","prompt":"technical flat-lay jersey illustration,\nbase midnight navy (#0E1B2E),\nteal (#21d9c9) as the dominant accent color (larger graphic elements),\nmagenta (#FF1493) as secondary accent (stripe, badge outline),\nall-over candlestick chart pattern in white,\ncrest and sponsor bars in gold,\nprofessional sports design mockup,\nwhite background --ar 3:4 --style raw","file":"008.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Navy + teal colorway ★","prompt":"technical flat-lay jersey illustration,\nbase midnight navy (#0E1B2E),\nteal (#21d9c9) as the dominant accent color (larger graphic elements),\nmagenta (#FF1493) as secondary accent (stripe, badge outline),\nall-over candlestick chart pattern in white,\ncrest and sponsor bars in gold,\nprofessional sports design mockup,\nwhite background --ar 3:4 --style raw","file":"009.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Hybrid candlestick + towers ★","prompt":"technical flat-lay soccer jersey illustration,\nmidnight navy body,\nall-over repeating pattern mixing candlestick charts AND condo tower silhouettes,\nsome towers glowing (lit windows), others dark (vacant),\nwhite line art pattern,\nteal-to-magenta gradient stripe accent on sleeves,\ngold sponsor bar and crest,\nprofessional technical fashion design,\nready for sublimated print production,\nwhite background --ar 3:4 --style raw","file":"010.jpg","ok":true,"state":"succeeded","liked":true},{"name":"Full front flat","prompt":"technical flat-lay fashion illustration of unisex soccer jersey,\nmidnight navy body with toxic teal and magenta gradient accents,\nall-over pattern of literal white candlestick chart lines (open/close bars with wicks), soaring then crashing,\nno abstract marble, no texture fills: clean thin stock-chart line art only,\ngold heraldic shield crest on left chest (soccer ball split candlestick chart),\ncenter chest sponsor bar reads \"PUMP & DUMP CAPITAL\" in metallic gold,\nprofessional sports apparel technical drawing,\nclean line work, high detail, ready for production,\nwhite background --ar 3:4 --style raw","file":"011.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Complete kit (jersey + shorts + socks)","prompt":"technical flat-lay illustration of complete soccer kit,\njersey: midnight navy with all-over candlestick pattern, gold accents,\nmatching shorts: navy base with repeating red \"VACANT\" stamp pattern,\nsocks: navy with white price-to-income ratio text (\"22x\", \"33x\") down the calf,\nall pieces showing from multiple angles (front/back/side),\nprofessional apparel design illustration,\nproduction-ready mockup quality,\nwhite background --ar 3:4 --style raw","file":"012.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Complete kit (jersey + shorts + socks)","prompt":"technical flat-lay illustration of complete soccer kit,\njersey: midnight navy with all-over candlestick pattern, gold accents,\nmatching shorts: navy base with repeating red \"VACANT\" stamp pattern,\nsocks: navy with white price-to-income ratio text (\"22x\", \"33x\") down the calf,\nall pieces showing from multiple angles (front/back/side),\nprofessional apparel design illustration,\nproduction-ready mockup quality,\nwhite background --ar 3:4 --style raw","file":"013.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Sponsor bar close-up","prompt":"close-up of jersey sponsor bar placement,\nreads \"PUMP & DUMP CAPITAL\" in sleek sans-serif,\nmetallic gold on navy,\nunderneath: \"WE WIN IF YOU LIVE HERE OR NOT\",\nprofessional sports branding detail,\nproduct shot quality,\nwhite background --ar 3:4 --style raw","file":"014.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Sponsor bar close-up","prompt":"close-up of jersey sponsor bar placement,\nreads \"PUMP & DUMP CAPITAL\" in sleek sans-serif,\nmetallic gold on navy,\nunderneath: \"WE WIN IF YOU LIVE HERE OR NOT\",\nprofessional sports branding detail,\nproduct shot quality,\nwhite background --ar 3:4 --style raw","file":"015.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Sponsor bar close-up","prompt":"close-up of jersey sponsor bar placement,\nreads \"PUMP & DUMP CAPITAL\" in sleek sans-serif,\nmetallic gold on navy,\nunderneath: \"WE WIN IF YOU LIVE HERE OR NOT\",\nprofessional sports branding detail,\nproduct shot quality,\nwhite background --ar 3:4 --style raw","file":"016.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Sponsor bar close-up","prompt":"close-up of jersey sponsor bar placement,\nreads \"PUMP & DUMP CAPITAL\" in sleek sans-serif,\nmetallic gold on navy,\nunderneath: \"WE WIN IF YOU LIVE HERE OR NOT\",\nprofessional sports branding detail,\nproduct shot quality,\nwhite background --ar 3:4 --style raw","file":"017.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Crest detail close-up","prompt":"close-up technical illustration of heraldic shield crest,\nsplit design: soccer ball on left, candlestick chart on right,\ngold outline and detail,\nnavy background,\nprofessional emblem rendering, Federal crest style,\nsuitable for zoomed product detail shot,\nwhite background --ar 3:4 --style raw","file":"018.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Crest detail close-up","prompt":"close-up technical illustration of heraldic shield crest,\nsplit design: soccer ball on left, candlestick chart on right,\ngold outline and detail,\nnavy background,\nprofessional emblem rendering, Federal crest style,\nsuitable for zoomed product detail shot,\nwhite background --ar 3:4 --style raw","file":"019.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Crest detail close-up","prompt":"close-up technical illustration of heraldic shield crest,\nsplit design: soccer ball on left, candlestick chart on right,\ngold outline and detail,\nnavy background,\nprofessional emblem rendering, Federal crest style,\nsuitable for zoomed product detail shot,\nwhite background --ar 3:4 --style raw","file":"020.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Back nameplate close-up","prompt":"close-up technical illustration of jersey back nameplate,\narched banner format,\ntext reads \"DEVELOPER\" (or FLIPPER/LANDLORD/RENOVICTOR),\nclean athletic lettering,\nnavy and gold color scheme,\nnumber detail below (floor-plan composed),\nprofessional sports design,\nwhite background --ar 3:4 --style raw","file":"021.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Back nameplate close-up","prompt":"close-up technical illustration of jersey back nameplate,\narched banner format,\ntext reads \"DEVELOPER\" (or FLIPPER/LANDLORD/RENOVICTOR),\nclean athletic lettering,\nnavy and gold color scheme,\nnumber detail below (floor-plan composed),\nprofessional sports design,\nwhite background --ar 3:4 --style raw","file":"022.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Back nameplate close-up","prompt":"close-up technical illustration of jersey back nameplate,\narched banner format,\ntext reads \"DEVELOPER\" (or FLIPPER/LANDLORD/RENOVICTOR),\nclean athletic lettering,\nnavy and gold color scheme,\nnumber detail below (floor-plan composed),\nprofessional sports design,\nwhite background --ar 3:4 --style raw","file":"023.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Back nameplate close-up","prompt":"close-up technical illustration of jersey back nameplate,\narched banner format,\ntext reads \"DEVELOPER\" (or FLIPPER/LANDLORD/RENOVICTOR),\nclean athletic lettering,\nnavy and gold color scheme,\nnumber detail below (floor-plan composed),\nprofessional sports design,\nwhite background --ar 3:4 --style raw","file":"024.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Side / sleeve detail","prompt":"technical fashion flat of complete jersey showing side and sleeve detail,\nnavy body with all-over chart pattern,\nright sleeve featuring sleeve cuff with \"EXIT LIQUIDITY\" or \"FAIR PLAY\" badge,\ncuff color accent (teal or gold trim),\nsleeve seam detail showing construction,\nprofessional technical illustration, sportswear design,\nwhite background --ar 3:4 --style raw","file":"025.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Side / sleeve detail","prompt":"technical fashion flat of complete jersey showing side and sleeve detail,\nnavy body with all-over chart pattern,\nright sleeve featuring sleeve cuff with \"EXIT LIQUIDITY\" or \"FAIR PLAY\" badge,\ncuff color accent (teal or gold trim),\nsleeve seam detail showing construction,\nprofessional technical illustration, sportswear design,\nwhite background --ar 3:4 --style raw","file":"026.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Side / sleeve detail","prompt":"technical fashion flat of complete jersey showing side and sleeve detail,\nnavy body with all-over chart pattern,\nright sleeve featuring sleeve cuff with \"EXIT LIQUIDITY\" or \"FAIR PLAY\" badge,\ncuff color accent (teal or gold trim),\nsleeve seam detail showing construction,\nprofessional technical illustration, sportswear design,\nwhite background --ar 3:4 --style raw","file":"027.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Side / sleeve detail","prompt":"technical fashion flat of complete jersey showing side and sleeve detail,\nnavy body with all-over chart pattern,\nright sleeve featuring sleeve cuff with \"EXIT LIQUIDITY\" or \"FAIR PLAY\" badge,\ncuff color accent (teal or gold trim),\nsleeve seam detail showing construction,\nprofessional technical illustration, sportswear design,\nwhite background --ar 3:4 --style raw","file":"028.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Full back flat","prompt":"technical flat-lay fashion illustration of jersey back,\nmidnight navy body matching the front,\nall-over candlestick chart pattern continues,\nlarge nameplate centered on back upper torso,\nreads \"DEVELOPER\" or \"FLIPPER\" (role instead of player name),\nnumber below composed of floor-plan architectural elements,\nnarrow horizontal stripe detail at shoulders (teal-to-magenta gradient),\nmicroprint citation along hem (appears as fine detail line),\nprofessional sportswear technical drawing,\nwhite background --ar 3:4 --style raw","file":"029.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Full back flat","prompt":"technical flat-lay fashion illustration of jersey back,\nmidnight navy body matching the front,\nall-over candlestick chart pattern continues,\nlarge nameplate centered on back upper torso,\nreads \"DEVELOPER\" or \"FLIPPER\" (role instead of player name),\nnumber below composed of floor-plan architectural elements,\nnarrow horizontal stripe detail at shoulders (teal-to-magenta gradient),\nmicroprint citation along hem (appears as fine detail line),\nprofessional sportswear technical drawing,\nwhite background --ar 3:4 --style raw","file":"030.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Full back flat","prompt":"technical flat-lay fashion illustration of jersey back,\nmidnight navy body matching the front,\nall-over candlestick chart pattern continues,\nlarge nameplate centered on back upper torso,\nreads \"DEVELOPER\" or \"FLIPPER\" (role instead of player name),\nnumber below composed of floor-plan architectural elements,\nnarrow horizontal stripe detail at shoulders (teal-to-magenta gradient),\nmicroprint citation along hem (appears as fine detail line),\nprofessional sportswear technical drawing,\nwhite background --ar 3:4 --style raw","file":"031.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Navy + teal colorway","prompt":"technical flat-lay jersey illustration,\nbase midnight navy (#0E1B2E),\nteal (#21d9c9) as the dominant accent color (larger graphic elements),\nmagenta (#FF1493) as secondary accent (stripe, badge outline),\nall-over candlestick chart pattern in white,\ncrest and sponsor bars in gold,\nprofessional sports design mockup,\nwhite background --ar 3:4 --style raw","file":"032.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Navy + teal colorway","prompt":"technical flat-lay jersey illustration,\nbase midnight navy (#0E1B2E),\nteal (#21d9c9) as the dominant accent color (larger graphic elements),\nmagenta (#FF1493) as secondary accent (stripe, badge outline),\nall-over candlestick chart pattern in white,\ncrest and sponsor bars in gold,\nprofessional sports design mockup,\nwhite background --ar 3:4 --style raw","file":"033.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Navy + magenta colorway","prompt":"technical flat-lay jersey,\nmidnight navy base,\ntoxic magenta (#FF1493) as dominant accent color,\nteal as secondary,\nchart pattern and tower silhouette mix in white,\nsleek limited-edition hype energy,\nprofessional sportswear illustration,\nwhite background --ar 3:4 --style raw","file":"034.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Navy + magenta colorway","prompt":"technical flat-lay jersey,\nmidnight navy base,\ntoxic magenta (#FF1493) as dominant accent color,\nteal as secondary,\nchart pattern and tower silhouette mix in white,\nsleek limited-edition hype energy,\nprofessional sportswear illustration,\nwhite background --ar 3:4 --style raw","file":"035.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Navy + magenta colorway","prompt":"technical flat-lay jersey,\nmidnight navy base,\ntoxic magenta (#FF1493) as dominant accent color,\nteal as secondary,\nchart pattern and tower silhouette mix in white,\nsleek limited-edition hype energy,\nprofessional sportswear illustration,\nwhite background --ar 3:4 --style raw","file":"036.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Navy + magenta colorway","prompt":"technical flat-lay jersey,\nmidnight navy base,\ntoxic magenta (#FF1493) as dominant accent color,\nteal as secondary,\nchart pattern and tower silhouette mix in white,\nsleek limited-edition hype energy,\nprofessional sportswear illustration,\nwhite background --ar 3:4 --style raw","file":"037.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hybrid candlestick + towers","prompt":"technical flat-lay soccer jersey illustration,\nmidnight navy body,\nall-over repeating pattern mixing candlestick charts AND condo tower silhouettes,\nsome towers glowing (lit windows), others dark (vacant),\nwhite line art pattern,\nteal-to-magenta gradient stripe accent on sleeves,\ngold sponsor bar and crest,\nprofessional technical fashion design,\nready for sublimated print production,\nwhite background --ar 3:4 --style raw","file":"038.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hybrid candlestick + towers","prompt":"technical flat-lay soccer jersey illustration,\nmidnight navy body,\nall-over repeating pattern mixing candlestick charts AND condo tower silhouettes,\nsome towers glowing (lit windows), others dark (vacant),\nwhite line art pattern,\nteal-to-magenta gradient stripe accent on sleeves,\ngold sponsor bar and crest,\nprofessional technical fashion design,\nready for sublimated print production,\nwhite background --ar 3:4 --style raw","file":"039.jpg","ok":true,"state":"succeeded","liked":false},{"name":"Hybrid candlestick + towers","prompt":"technical flat-lay soccer jersey illustration,\nmidnight navy body,\nall-over repeating pattern mixing candlestick charts AND condo tower silhouettes,\nsome towers glowing (lit windows), others dark (vacant),\nwhite line art pattern,\nteal-to-magenta gradient stripe accent on sleeves,\ngold sponsor bar and crest,\nprofessional technical fashion design,\nready for sublimated print production,\nwhite background --ar 3:4 --style raw","file":"040.jpg","ok":true,"state":"succeeded","liked":false}]}];
+const AR_CSS = "16/9";
+const PROJECT = "09-pump-and-dump";
+let currentRun = RUNS.length - 1;
+let compareMode = false;
+
+
+const RATINGS_KEY = 'rafiki:ratings';
+const SERVER_MODE = location.protocol !== 'file:';
+let _currentFilter = 'all';
+let _searchQuery = '';
+
+function resizeGrid(v) {
+  document.documentElement.style.setProperty('--card-w', v + 'px');
+  localStorage.setItem('rafiki:cardWidth', v);
+}
+(function() {
+  const saved = localStorage.getItem('rafiki:cardWidth');
+  if (saved) { resizeGrid(saved); const sl = document.getElementById('grid-sizer'); if (sl) sl.value = saved; }
+})();
+
+function _loadRatings() {
+  try { return JSON.parse(localStorage.getItem(RATINGS_KEY) || '{}'); } catch(e) { return {}; }
+}
+function _saveRatings(r) { localStorage.setItem(RATINGS_KEY, JSON.stringify(r)); }
+function getRating(key) { return _loadRatings()[key] || null; }
+function setRating(key, val) {
+  const r = _loadRatings();
+  if (r[key] === val) delete r[key]; else r[key] = val;
+  _saveRatings(r);
+  if (SERVER_MODE) {
+    fetch('/api/ratings', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({key, value: r[key] !== undefined ? r[key] : null}),
+    }).catch(() => {});
+  }
+}
+function applyRating(card, key) {
+  const val = getRating(key);
+  card.classList.remove('rated-star', 'rated-reject');
+  if (val === 'star')   card.classList.add('rated-star');
+  if (val === 'reject') card.classList.add('rated-reject');
+  const btnS = card.querySelector('.btn-rate.star');
+  const btnR = card.querySelector('.btn-rate.reject');
+  if (btnS) btnS.classList.toggle('starred',  val === 'star');
+  if (btnR) btnR.classList.toggle('rejected', val === 'reject');
+}
+function rateCard(e, key, val, card) {
+  e.stopPropagation();
+  setRating(key, val);
+  applyRating(card, key);
+  updateFilterCounts();
+  if (_currentFilter !== 'all' || _searchQuery) applyFilters();
+}
+function filterCards(mode) {
+  _currentFilter = mode;
+  document.querySelectorAll('.filter-btn[id^="fb-"]').forEach(b => b.classList.remove('active'));
+  const a = document.getElementById('fb-' + mode);
+  if (a) a.classList.add('active');
+  applyFilters();
+}
+function applyFilters() {
+  const ratings = _loadRatings();
+  document.querySelectorAll('.card').forEach(card => {
+    const val = ratings[card.dataset.ratingKey] || null;
+    let show = true;
+    if (_currentFilter === 'star')            show = val === 'star';
+    else if (_currentFilter === 'reject')     show = val === 'reject';
+    else if (_currentFilter === 'unreviewed') show = !val;
+    if (show && _searchQuery) show = (card.dataset.search || '').includes(_searchQuery);
+    card.classList.toggle('hidden-filter', !show);
+  });
+}
+function updateFilterCounts() {
+  const ratings = _loadRatings();
+  const cards = Array.from(document.querySelectorAll('.card'));
+  let stars = 0, rejects = 0, unreviewed = 0;
+  cards.forEach(c => {
+    const v = ratings[c.dataset.ratingKey] || null;
+    if (v === 'star') stars++; else if (v === 'reject') rejects++; else unreviewed++;
+  });
+  const set = (id, n) => { const el = document.getElementById(id); if (el) el.textContent = n ? ` ${n}` : ''; };
+  set('fc-all', cards.length); set('fc-star', stars);
+  set('fc-reject', rejects); set('fc-unreviewed', unreviewed);
+}
+function applySort(mode) {
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  if (mode === 'default') {
+    cards.sort((a, b) => (parseInt(a.dataset.idx) || 0) - (parseInt(b.dataset.idx) || 0));
+  } else if (mode === 'name') {
+    cards.sort((a, b) => (a.dataset.name || '').localeCompare(b.dataset.name || ''));
+  } else if (mode === 'newest') {
+    cards.sort((a, b) => (b.dataset.ts || '').localeCompare(a.dataset.ts || ''));
+  } else if (mode === 'oldest') {
+    cards.sort((a, b) => (a.dataset.ts || '').localeCompare(b.dataset.ts || ''));
+  } else if (mode === 'project') {
+    cards.sort((a, b) => (a.dataset.project || '').localeCompare(b.dataset.project || ''));
+  } else if (mode === 'model') {
+    cards.sort((a, b) => (a.dataset.model || '').localeCompare(b.dataset.model || ''));
+  }
+  cards.forEach(c => grid.appendChild(c));
+}
+if (SERVER_MODE) {
+  fetch('/api/ratings').then(r => r.json()).then(sv => {
+    const merged = Object.assign(_loadRatings(), sv);
+    _saveRatings(merged);
+    document.querySelectorAll('.card').forEach(c => {
+      if (c.dataset.ratingKey) applyRating(c, c.dataset.ratingKey);
+    });
+    updateFilterCounts();
+  }).catch(() => {});
+}
+
+
+var lbIdx = 0;
+var lbItems = typeof ITEMS !== 'undefined' ? ITEMS : [];
+var lbRunIdx = -1;
+const lb        = document.getElementById('lb');
+const lbImg     = document.getElementById('lb-img');
+const lbName    = document.getElementById('lb-name');
+const lbPrompt  = document.getElementById('lb-prompt');
+const lbStrip   = document.getElementById('lb-run-strip');
+const lbCounter = document.getElementById('lb-counter');
+
+function lbOpen(i, runIdx) {
+  if (typeof runIdx !== 'undefined') lbRunIdx = runIdx;
+  lbIdx = ((i % lbItems.length) + lbItems.length) % lbItems.length;
+  const item = lbItems[lbIdx];
+  const prefix = (lbRunIdx >= 0 && typeof RUNS !== 'undefined')
+    ? RUNS[lbRunIdx].dir + '/' : '';
+  const rawImgSrc = prefix + item.file;
+  const imgSrc = typeof resolveAssetSrc === 'function'
+    ? resolveAssetSrc(rawImgSrc)
+    : rawImgSrc;
+  lbImg.src = imgSrc;
+  lbImg.alt = item.name || '';
+  lbName.textContent = item.name || '';
+  lbPrompt.textContent = item.prompt || '';
+  if (lbCounter) lbCounter.textContent = `${lbIdx + 1} / ${lbItems.length}`;
+  const metaEl = document.getElementById('lb-meta');
+  if (metaEl) {
+    const run = (typeof RUNS !== 'undefined' && lbRunIdx >= 0) ? RUNS[lbRunIdx] : null;
+    const m = item.model || (run ? run.model : '') || (typeof MODEL !== 'undefined' ? MODEL : '');
+    const s = item.style || (run ? run.style : '') || (typeof STYLE !== 'undefined' ? STYLE : '');
+    const ar = item.aspect_ratio || (run ? run.aspect_ratio : '') || (typeof AR !== 'undefined' ? AR : '');
+    const ts = item.timestamp || (run ? run.timestamp : '') || (typeof TIMESTAMP !== 'undefined' ? TIMESTAMP : '');
+    const proj = item.project || (typeof PROJECT !== 'undefined' ? PROJECT : '');
+    const rid = item.run_id || (run ? run.dir : '') || (typeof RUN_ID !== 'undefined' ? RUN_ID : '');
+    const parts = [m, s && s !== 'none' ? s : '', ar, (ts || '').slice(0, 16), proj && rid ? proj + '/' + rid : (proj || rid)].filter(Boolean);
+    metaEl.textContent = parts.join('  ·  ');
+  }
+
+  const dlBtn = document.getElementById('lb-download');
+  if (dlBtn) {
+    dlBtn.href = imgSrc;
+    dlBtn.download = (item.name || 'image').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.png';
+  }
+
+  _buildRunStrip(lbIdx);
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function _buildRunStrip(slotIdx) {
+  if (!lbStrip) return;
+  lbStrip.innerHTML = '';
+  if (typeof RUNS === 'undefined' || RUNS.length <= 1) return;
+  RUNS.forEach((run, ri) => {
+    const dot = document.createElement('button');
+    dot.className = 'lb-run-dot' + (ri === lbRunIdx ? ' active' : '');
+    dot.textContent = `${run.model || 'Run ' + (ri+1)} · ${run.timestamp}`;
+    dot.onclick = (e) => {
+      e.stopPropagation();
+      lbRunIdx = ri;
+      lbItems = run.images;
+      lbOpen(slotIdx, ri);
+    };
+    lbStrip.appendChild(dot);
+  });
+}
+
+function lbCopyPrompt() {
+  const text = document.getElementById('lb-prompt')?.textContent || '';
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('lb-copy');
+    if (!btn) return;
+    const orig = btn.innerHTML;
+    btn.innerHTML = '&#x2713; Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function lbClose() {
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbStep(dir) {
+  event.stopPropagation();
+  lbOpen(lbIdx + dir);
+}
+function lbClickBg(e) { if (e.target === lb) lbClose(); }
+
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape')     { lbClose(); return; }
+  if (e.key === 'ArrowLeft')  { lbOpen(lbIdx - 1); return; }
+  if (e.key === 'ArrowRight') { lbOpen(lbIdx + 1); return; }
+});
+
+
+function init() {
+  if (!RUNS.length) {
+    document.getElementById('grid').innerHTML = '<div style="padding:4rem;text-align:center;color:var(--dim)">No runs found.</div>';
+    return;
+  }
+  const tabsEl = document.getElementById('run-tabs');
+  const compareBtn = document.getElementById('compare-btn');
+  RUNS.forEach((run, ri) => {
+    const tab = document.createElement('button');
+    tab.className = 'run-tab' + (ri === currentRun ? ' active' : '');
+    tab.textContent = `${run.model || 'Run ' + (ri+1)}  ·  ${run.timestamp}`;
+    tab.title = run.dir;
+    tab.onclick = () => switchRun(ri);
+    tabsEl.insertBefore(tab, compareBtn);
+  });
+  showRun(currentRun);
+}
+
+function switchRun(ri) {
+  compareMode = false;
+  currentRun = ri;
+  document.querySelectorAll('.run-tab:not(.compare-btn)').forEach((t, i) => t.classList.toggle('active', i === ri));
+  document.getElementById('compare-btn').classList.remove('active');
+  document.getElementById('compare-table').classList.remove('visible');
+  const fb = document.getElementById('filter-bar');
+  if (fb) fb.style.display = 'flex';
+  showRun(ri);
+}
+
+function showRun(ri) {
+  const run = RUNS[ri];
+  const arCss = (run.aspect_ratio || '16:9').replace(':', '/');
+  lbItems = run.images;
+  lbRunIdx = ri;
+  const el = id => document.getElementById(id);
+  el('cur-model').innerHTML = run.model ? `<code>${run.model}</code>` : '';
+  el('cur-ts').textContent  = run.timestamp || '';
+
+  const grid = el('grid');
+  grid.style.display = 'grid';
+  grid.innerHTML = '';
+
+  run.images.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const rk = PROJECT + '/' + run.dir + '/' + item.file;
+    card.dataset.ratingKey = rk;
+    card.dataset.idx = i;
+    card.dataset.name = item.name || '';
+    card.dataset.ts = run.timestamp || '';
+    card.dataset.search = ((item.name || '') + ' ' + (item.prompt || '')).toLowerCase();
+    card.onclick = () => lbOpen(i, ri);
+    const missingMsg = item.error
+      ? item.error.replace(/[<>&"]/g, '').slice(0, 80)
+      : 'not generated';
+    card.innerHTML = `
+      <div class="img-wrap" style="aspect-ratio:${arCss}">
+        <span class="img-num">${String(i + 1).padStart(2, '0')}</span>
+        ${item.ok
+          ? `<img src="${item.thumbnail_file || (run.dir + '/' + item.file)}" alt="" loading="lazy">`
+          : `<div class="missing-img">${missingMsg}</div>`}
+      </div>
+      <div class="card-prompt"></div>
+      <div class="card-foot">
+        <span class="card-name">${item.name}</span>
+        <button class="btn-rate star"   onclick="rateCard(event,'${rk}','star',  this.closest('.card'))">&#9733;</button>
+        <button class="btn-rate reject" onclick="rateCard(event,'${rk}','reject',this.closest('.card'))">&#x2715;</button>
+      </div>
+    `;
+    card.querySelector('.card-prompt').textContent = item.prompt || '';
+    const img = card.querySelector('img');
+    if (img) img.addEventListener('error', () => {
+      img.closest('.img-wrap').innerHTML = '<div class="missing-img">file missing</div>';
+    });
+    grid.appendChild(card);
+    applyRating(card, rk);
+  });
+  updateFilterCounts();
+}
+
+function toggleCompare() {
+  compareMode = !compareMode;
+  document.getElementById('compare-btn').classList.toggle('active', compareMode);
+  document.getElementById('grid').style.display = compareMode ? 'none' : 'grid';
+  const fb = document.getElementById('filter-bar');
+  if (fb) fb.style.display = compareMode ? 'none' : 'flex';
+  const ct = document.getElementById('compare-table');
+  ct.classList.toggle('visible', compareMode);
+  if (compareMode) buildCompareTable();
+}
+
+function buildCompareTable() {
+  const ct = document.getElementById('compare-table');
+  ct.innerHTML = '';
+  if (!RUNS.length) return;
+  const slotCount = Math.max(...RUNS.map(r => r.images.length));
+  for (let si = 0; si < slotCount; si++) {
+    const first = RUNS.find(r => r.images[si]);
+    if (!first) continue;
+    const slotName = first.images[si]?.name || `Slot ${si + 1}`;
+    const label = document.createElement('div');
+    label.className = 'compare-label';
+    label.textContent = `${String(si + 1).padStart(2, '0')} — ${slotName}`;
+    ct.appendChild(label);
+    const row = document.createElement('div');
+    row.className = 'compare-row';
+    row.style.gridTemplateColumns = `repeat(${RUNS.length}, minmax(180px, 1fr))`;
+    ct.appendChild(row);
+    RUNS.forEach((run, ri) => {
+      const img = run.images[si];
+      const runArCss = (run.aspect_ratio || '16:9').replace(':', '/');
+      const cell = document.createElement('div');
+      cell.className = 'compare-cell';
+      if (img) cell.onclick = () => { lbItems = run.images; lbOpen(si, ri); };
+      const missingMsg = img && img.error
+        ? img.error.replace(/[<>&"]/g, '').slice(0, 60)
+        : (img ? 'failed' : '—');
+      cell.innerHTML = `
+        <div class="img-wrap" style="aspect-ratio:${runArCss}">
+          ${img && img.ok
+            ? `<img src="${img.thumbnail_file || (run.dir + '/' + img.file)}" loading="lazy">`
+            : `<div class="missing-img">${missingMsg}</div>`}
+        </div>
+        <div class="run-badge">${run.model || 'Run ' + (ri+1)}</div>
+      `;
+      const cellImg = cell.querySelector('img');
+      if (cellImg) cellImg.addEventListener('error', () => {
+        cellImg.closest('.img-wrap').innerHTML = '<div class="missing-img">file missing</div>';
+      });
+      row.appendChild(cell);
+    });
+  }
+}
+
+init();
+</script>
+</body>
+</html>
