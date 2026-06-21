@@ -17,20 +17,23 @@ Owner tags: **[me]** = in-repo, done by the build · **[you]** = needs you / des
 without a caption." Framed by the Four Questions ([`design/submission-brief.md`](design/submission-brief.md)).
 **Hard rule:** no real FIFA / club / brand marks (evoke, never reproduce).
 
+**Hero jersey: NARDWUAR FC — "DEEP CUT"** (red / Home, Vancouver tartan).
+Tech pack: [`design/kits/NW-01-nardwuar-vancouver.md`](design/kits/NW-01-nardwuar-vancouver.md).
+Submission imagery: [`deliverables/nardwuar-presentation/`](deliverables/nardwuar-presentation/)
+(18-image finale reel; a top-5 flat + lifestyle cut is the export set).
+
 | Criterion | Proof | Status |
 |-----------|-------|--------|
-| Strong, specific idea | Pump & Dump FC — the mega-event as a pump-and-dump; locked Four Questions | ✅ |
-| Reads without a caption | Code-drawn hero flats (`KitFlat.jsx`) on the live site; tech pack `kits/MO-09` | ✅ on-site; ⚠️ photoreal render still swoosh'd |
-| Vancouver-specific | VSE "Scam Capital" (Forbes 1989), Howe St, ~12× price-to-income, $729M bill — all cited | ✅ |
-| Explanation / deck | `presentation/presentation-flow.md` (8 slides) + `talk-flow.md` | ✅ written |
-| No real marks | Counterfeit-official system only (`clubs/README.md` rule) | ✅ |
+| Strong, specific idea | Nardwuar FC — a World Cup home kit as a walking archive of Vancouver's underground; *research is the protest, the receipt is the weapon*; locked Four Questions | ✅ |
+| Reads without a caption | Red Vancouver-tartan kit, WHO BENEFITS? WHO PAYS? across the chest; rendered flats + lifestyle (`nardwuar-presentation/`) | ✅ |
+| Vancouver-specific | Nardwuar the Human Serviette (CiTR/UBC, The Evaporators); APEC 1997 pepper-spray question; the city's underground music canon — all cited (`clubs.js` AL-NW-001/002) | ✅ |
+| Explanation / deck | `presentation/presentation-flow.md` (8 slides) + `talk-flow.md`; finale reel `nardwuar-presentation/` | ✅ written |
+| No real marks / ethics | Counterfeit-official system only; homage carried through objects (tam, mic, records, press pass) — never Nardwuar's likeness or name-as-merch (`kits/NW-01` ethics gate) | ✅ |
 
 **Remaining**
-- **[me]** ✔ `deck.html` now carries the approved jersey / mood / crest imagery (slides 1/2/5)
-  plus the three-club montage. Present it (Cmd+P to PDF) or demo off the live site.
-- **[you]** _(de-scoped)_ Nike swoosh on the Canva hero renders. Not blocking per your call.
-- **[me]** ✔ Stale `20–30×` price-to-income corrected to `~12× (Demographia 2025)` across all
-  presentation/design docs (matches the live data).
+- **[me]** ✔ Submission imagery rendered clean (Rafiki / Nano Banana Pro) — no brand marks on the Nardwuar renders.
+- **[you]** If this moves past exhibition toward sale / merch: get Nardwuar's blessing first (homage ethics, `kits/NW-01`).
+- **[note]** An earlier draft named **Pump & Dump FC** as the hero jersey; superseded by the Nardwuar "Deep Cut" submission (`deliverables/nardwuar-presentation/README.md`). Pump & Dump remains a built companion kit (`kits/MO-09`).
 
 ---
 
