@@ -6,7 +6,7 @@ where everything lives. The collection itself, the why, and the lineup are in th
 
 Two things run here:
 
-- **The pitch site** at `/`. React + React Three Fiber. The hero portal, the territorial
+- **The pitch site** at `/`. React + Vite. The hero kit-lookbook, the territorial
   statement, the collection, the code-drawn kit flats, the deep-dive method. Plus the
   **Receipts Engine** (`/engine`), the **Process** walkthrough (`/process`), and the
   **Hall of Fame** reference gallery (`/hall-of-fame`).
@@ -182,8 +182,7 @@ src/
 │   └── imageScanner.js      Folder scanner
 ├── db/ratings.db            SQLite (created by init-db.js)
 ├── data/                    collection.js, receipts.js, heroKits.js, clubs.js
-├── scene/Stage.jsx          The R3F World Portal hero
-└── brand/tokens.js          Palette, type, slogan bank
+└── brand/tokens.js          Palette (feeds Tailwind) + slogan bank
 
 docs/
 ├── design/
