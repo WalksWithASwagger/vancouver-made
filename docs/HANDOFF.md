@@ -7,6 +7,33 @@ Last updated 2026-06-20. Where the work stands, so it's easy to pick up later.
 > merge into `main`; there is no separate "active" build branch anymore.
 > For per-track submission status, see [`SUBMISSION.md`](SUBMISSION.md). For deploy, [`DEPLOY.md`](DEPLOY.md).
 
+## Done (this thread: the store + the submission)
+
+- **The Store (`/store`) — live on `main`.** 25-product catalog (patches · stickers · prints ·
+  jerseys · **lookbook**), built from KK's STARRED, logo-free art. Every flagship club now has a
+  jersey: Nardwuar (home/complete), Number Five Orange (home/away/cover-charge/complete),
+  Pump & Dump (Speculation City/pump/dump + crest), China Creek (home/away + crest). New
+  **Lookbook** row (on-body / in-the-wild). Nardwuar pieces gated `blessing-pending`.
+  Data `src/data/products.js`; page `src/components/Store.jsx`; images `public/store/`. PRs #33–#36.
+- **Designathon hero = NARDWUAR FC "Deep Cut"** (red / Home Vancouver tartan) — *not* Pump & Dump.
+  `SUBMISSION.md` Track 1 reconciled (PR #37). Imagery: `deliverables/nardwuar-presentation/`
+  (18-image reel). Top-5 flat+lifestyle export set placed on KK's Desktop.
+
+### Not on `main` yet / open (what's outstanding)
+
+- **Homepage store strip + Generative Wall — in-flight, UNCOMMITTED (parallel lane).** `ProductStrip`
+  ("THE DROP", committed in `252bd35`) is wired into `App.jsx`, plus a new `/wall` `GenerativeWall`
+  feature — but the `App.jsx` / `Nav.jsx` / `package.json` wiring and `GenerativeWall.jsx/.css` +
+  `public/wall/` are uncommitted. Builds clean; needs that lane to commit + merge. Until then the
+  homepage "THE DROP" strip and `/wall` are not live.
+- **Stray root junk:** `club-nardwuar.png`, `crest.png`, `hero-complete.png` at the repo root are
+  dupes of `docs/presentation/assets/` (a staging-script misfire) — safe to `rm`.
+- **Submission mechanics still TBD** in `SUBMISSION.md` (portal/form, video?, slide limit, file
+  formats, deadline) — owner to fill in.
+- **Nardwuar blessing** — homage ethics gate (`kits/NW-01`): get his blessing before anything moves
+  past exhibition toward sale / merch. Competition exhibition is clear.
+- **Store CTAs are placeholders** — no live checkout by design; data is Shopify-ready.
+
 ## Done (this thread: the tech pack)
 
 The tech pack is a main deliverable. Built out and verified:
