@@ -26,6 +26,9 @@ export default function ReceiptsEngine() {
     <div className="grain min-h-screen bg-bone text-ink">
       {/* HEADER */}
       <header className="border-b border-ink/10 px-6 py-10 md:px-10">
+        <Link to="/" className="mb-4 inline-block text-[11px] uppercase tracking-[0.3em] text-ink/40 transition hover:text-ink">
+          ← MADE ON
+        </Link>
         <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">
           Vancouver Made · MADE ON · not a sponsor
         </p>

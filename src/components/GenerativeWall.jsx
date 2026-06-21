@@ -142,6 +142,7 @@ export default function GenerativeWall() {
           <img
             src={s.src}
             alt=""
+            aria-hidden="true"
             className="wall-img block w-full rounded-sm"
             style={{ animationDuration: `${s.lifeMs}ms`, boxShadow: `0 8px 40px #000a, 0 0 0 1px ${s.accent}55` }}
           />
