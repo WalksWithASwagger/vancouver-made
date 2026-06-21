@@ -1,10 +1,37 @@
+import { Link } from 'react-router-dom'
 import { heroKits } from '../data/heroKits.js'
+import { getDirection } from '../data/directions/index.js'
 import KitFlat from './KitFlat.jsx'
 
 const SLEEVE_LABEL = { short: 'short sleeve', long: 'long sleeve', raglan: '¾ raglan' }
 
 function Swatch({ hex }) {
   return <span className="inline-block h-3 w-3 rounded-sm border border-ink/30" style={{ background: hex }} />
+}
+
+function WorldLink({ slug, colorway }) {
+  const direction = getDirection(slug)
+  if (!direction) return null
+  return (
+    <Link
+      to={`/kit/${slug}`}
+      className="group mt-5 flex items-center justify-between border border-ink/20 bg-bone px-4 py-3 transition-colors hover:border-ink/50"
+      style={{ borderColor: `${colorway.primary}40` }}
+    >
+      <span
+        className="text-[11px] font-bold uppercase tracking-[0.2em] transition-colors group-hover:opacity-100"
+        style={{ color: colorway.primary, opacity: 0.7 }}
+      >
+        Enter the world
+      </span>
+      <span
+        className="translate-x-0 text-[11px] font-bold uppercase tracking-[0.2em] transition-transform group-hover:translate-x-1"
+        style={{ color: colorway.primary }}
+      >
+        →
+      </span>
+    </Link>
+  )
 }
 
 function HeroKit({ kit }) {
@@ -26,7 +53,7 @@ function HeroKit({ kit }) {
 
       <div className="p-5">
         <h3 className="headline text-2xl" style={{ color: c.primary }}>{kit.name}</h3>
-        <p className="mt-1 text-sm italic text-ink/80">“{kit.theLine}”</p>
+        <p className="mt-1 text-sm italic text-ink/80">"{kit.theLine}"</p>
         <p className="mt-3 text-sm leading-relaxed text-ink/80">{kit.concept}</p>
 
         {/* the line / hem receipt */}
@@ -68,6 +95,9 @@ function HeroKit({ kit }) {
           <p className="text-[10px] uppercase tracking-[0.2em] text-ink/40">Manifesto card (the hangtag)</p>
           <p className="mt-1 text-xs leading-relaxed text-ink/70">{kit.manifestoCard}</p>
         </div>
+
+        {/* gateway link — only renders when a direction world exists for this kit's club */}
+        {kit.club && <WorldLink slug={kit.club} colorway={c} />}
       </div>
     </article>
   )
