@@ -34,7 +34,7 @@ export default function Journey() {
       {/* 0 — OPENER */}
       <section className="relative flex h-[92svh] min-h-[34rem] w-full flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/gallery/pd-neon.jpg" alt="" className="h-full w-full object-cover opacity-80" />
+          <img src="/gallery/pd-neon.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/45" />
         </div>
         <div className="pointer-events-none relative z-10 flex h-full flex-col justify-between p-6 md:p-10">
