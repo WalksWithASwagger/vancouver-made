@@ -161,7 +161,7 @@ image.
 
 ```
 src/
-├── App.jsx                  Router: / · /engine · /process · /hall-of-fame · /tracker · 404
+├── App.jsx                  Router: / · /journey · /gallery · /kit/:slug · /store · /engine · /process · /hall-of-fame · /awards · /highlight-reel · /wall · /tracker · 404
 ├── components/
 │   ├── Nav.jsx              Shared sticky nav across the pitch surfaces
 │   ├── TheMove.jsx / WhyItWins.jsx / ShareQR.jsx / PresenterControls.jsx   Pitch sections + closer

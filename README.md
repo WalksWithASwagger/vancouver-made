@@ -36,7 +36,7 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 | `src/` | The pitch site. React + React Three Fiber, mirrors the deck top-to-bottom |
 | `src/data/collection.js` | The MADE ON brand + the 9-kit / two-rack lineup |
 | `src/data/receipts.js` | The public-record receipts (the spine), `[confirm]`-tagged |
-| `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump) |
+| `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump · NW-01 Nardwuar "Deep Cut" (the Designathon winner)) |
 | `src/data/clubs.js` | Deep-dive method cards: ALLEY LEAGUE (No.5 · Nardwuar · Pump & Dump + China Creek expansion) |
 | `src/components/` | `Collection`, `HeroKits`, `KitFlat` (code-drawn jersey flats), `Clubs`, `Crest` |
 | `src/scene/` | The R3F "World Portal" hero scene |
@@ -46,6 +46,8 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 | `docs/design/clubs/` | The four deep-dive concept briefs (3 flagship + China Creek expansion) |
 | `docs/design/prompts/` | Per-kit Midjourney prompt library (mood board / graphic elements / jersey flats) + the house-style recipe |
 | `DEVELOPMENT.md` | How to run it, the asset tracker, the API, the file map |
+| `docs/ARCHITECTURE.md` | React app structure, routing, data flow, deploy target |
+| `docs/ROADMAP.md` | Forward plan: what's next after the competition |
 
 **Start here to design:** `docs/research/analysis/SYNTHESIS.md` and
 `docs/research/analysis/04-made-on-consolidation.md`. Research index:
@@ -113,6 +115,6 @@ versions — terrace-punk and west-coast folk — live in `docs/presentation/ant
 - [x] Receipts verified against primary sources (`docs/research/analysis/05-receipts-verification.md`; `[confirm]` flags cleared)
 - [x] Raster kit mockups generated (Canva), in `docs/deliverables/mockups/`
 - [x] Cinematic highlight reel at `/highlight-reel` (+ `stage:reel`/`record:reel` mp4 pipeline, two Suno anthem versions)
-- [ ] Pull the stray Nike swoosh from the Canva mockups before publishing (see the mockups README)
+- [x] Pull the stray Nike swoosh from the Canva mockups before publishing (see the mockups README)
 
 See `docs/SUBMISSION.md` for the per-track (design + dev) submission status and punch list.

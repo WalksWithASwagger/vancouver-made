@@ -3,6 +3,15 @@
 Live site: **https://vancouver-made.vercel.app** (auto-deploys from `main`).
 Submission status + punch list (both tracks): **[`SUBMISSION.md`](SUBMISSION.md)**.
 
+## Start here by role
+
+| Role | Go to |
+|------|-------|
+| **Designer** | [`design/brand-system.md`](design/brand-system.md) · [`design/kits/`](design/kits/) |
+| **Developer** | [`ARCHITECTURE.md`](ARCHITECTURE.md) · [`../DEVELOPMENT.md`](../DEVELOPMENT.md) · [`DEPLOY.md`](DEPLOY.md) |
+| **Evaluator / what we built** | [`AWARDS.md`](AWARDS.md) · [`SITE-GUIDE.md`](SITE-GUIDE.md) |
+| **What's next** | [`ROADMAP.md`](ROADMAP.md) |
+
 ## Operational (how the repo works)
 - [`../README.md`](../README.md) — what this is, the collection in one breath, how to run it.
 - [`../DEVELOPMENT.md`](../DEVELOPMENT.md) — run the site + asset tracker, the API, the file map.
