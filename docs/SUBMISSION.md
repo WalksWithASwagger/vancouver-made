@@ -1,12 +1,14 @@
-# Submission status — both tracks
+# Submission — both tracks · 🥈🥈 RESULTS: DOUBLE SILVER
 
 BCIT Tech Collider · Vancouver Made. Two tracks: a **Designathon** (the jersey) and the
-**Devin Open Hackathon** (the AI pipeline). This is the live status + punch list.
+**Devin Open Hackathon** (the AI pipeline). **The competition is over — we placed 2nd in both.**
 
-> **Submission mechanics / deadline:** _TBD — owner to fill in_
-> (portal/form, video?, slide limit, file formats, due date/time, per track.)
+> **🥈 Devin Technical Hackathon — 2nd of ~100 ($300).**
+> **🥈 Formme Design Challenge — 2nd of ~50 (prize: Formme produces 5 of the jerseys).**
+> Full record: [`AWARDS.md`](AWARDS.md). Submission-mechanics/deadline items below are now
+> historical — kept for the record, no longer action items.
 
-Owner tags: **[me]** = in-repo, done by the build · **[you]** = needs you / design tools.
+The detail below is preserved as the as-submitted record of what each track delivered.
 
 ---
 

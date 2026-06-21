@@ -172,6 +172,9 @@ function MadeOnSite() {
       </section>
 
       <footer className="border-t border-ink/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
+        <p className="mb-5 text-[11px] font-bold tracking-[0.2em] text-gold">
+          🥈🥈 Double silver · BCIT Tech Collider 2026 — 2nd, Devin Technical Hackathon &amp; 2nd, Formme Design Challenge
+        </p>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
           <Link to="/" className="text-ink/60 hover:text-ink transition">Pitch Site</Link>
           <span className="text-ink/20">·</span>

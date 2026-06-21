@@ -1,6 +1,10 @@
 # Handoff — Vancouver Made / MADE ON
 
-Last updated 2026-06-20. Where the work stands, so it's easy to pick up later.
+> 🥈🥈 **WON — double silver at BCIT Tech Collider 2026.** 2nd in the Devin Technical Hackathon
+> (~100, $300) and 2nd in the Formme Design Challenge (~50; prize: 5 jerseys produced). The
+> competition is over; submission/rehearsal items below are historical. See [`AWARDS.md`](AWARDS.md).
+
+Last updated 2026-06-21. Where the work stands, so it's easy to pick up later.
 
 > **Trunk is `main`, and it's live.** The submission is consolidated on `main` and auto-deploys
 > to https://vancouver-made.vercel.app on every merge (PRs get preview deploys). Feature branches
@@ -28,10 +32,9 @@ Last updated 2026-06-20. Where the work stands, so it's easy to pick up later.
   homepage "THE DROP" strip and `/wall` are not live.
 - **Stray root junk:** `club-nardwuar.png`, `crest.png`, `hero-complete.png` at the repo root are
   dupes of `docs/presentation/assets/` (a staging-script misfire) — safe to `rm`.
-- **Submission mechanics still TBD** in `SUBMISSION.md` (portal/form, video?, slide limit, file
-  formats, deadline) — owner to fill in.
-- **Nardwuar blessing** — homage ethics gate (`kits/NW-01`): get his blessing before anything moves
-  past exhibition toward sale / merch. Competition exhibition is clear.
+- ~~**Submission mechanics still TBD**~~ — ✅ moot: the competition is over and we placed 2nd in both tracks.
+- **Nardwuar blessing** — homage ethics gate (`kits/NW-01`): now relevant — the design prize is
+  **producing 5 jerseys**, so get Nardwuar's blessing before that production run (it moves past exhibition).
 - **Store CTAs are placeholders** — no live checkout by design; data is Shopify-ready.
 
 ## Done (this thread: the tech pack)

@@ -1,5 +1,9 @@
 # VANCOUVER MADE · **MADE ON**
 
+> 🥈🥈 **Double silver at BCIT Tech Collider 2026** — 2nd in the Devin Technical Hackathon
+> (~100 entrants, $300) and 2nd in the Formme Design Challenge (~50 entrants; prize: Formme
+> produces 5 of the jerseys). See [`docs/AWARDS.md`](docs/AWARDS.md).
+
 **A protest collection. Not a sponsor.**
 
 > **They asked for the Vancouver story. We finished the sentence.**
