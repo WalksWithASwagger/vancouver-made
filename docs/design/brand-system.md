@@ -19,19 +19,33 @@ protest poster / receipt up close. Shared site tokens: `src/brand/tokens.js` +
 Club: **VANCOUVER MADE FC**, crest "The Displaced XI", motto *Civitas Pro
 Populo* (the city, for the people).
 
-## Color
-| Token  | Hex      | Role |
-|--------|----------|------|
-| ink    | `#0a0a0a`| the void / the establishment / negative space |
-| bone   | `#f4f1ea`| newsprint, posters, paper |
-| rain   | `#1c2b33`| Vancouver wet-asphalt blue-grey |
-| cedar  | `#3a5a40`| PNW forest green |
-| hazard | `#ff3b00`| protest red-orange, spray paint, hi-vis |
-| gold   | `#d9a521`| counterfeit trophy gold (deliberately a touch cheap) |
-| cyan   | `#21d9c9`| future-forward signal / the portal glow |
+## Color — "Tartan Paper" (current site theme)
+The live site reads **light**: warm cream paper, warm near-black text, Vancouver-tartan
+accents (red / forest green / gold) leaning on the Nardwuar look. This replaced the old
+white-on-near-black scheme for readability and punch. Tokens in `src/brand/tokens.js`:
 
-Primary contrast pair: **hazard on ink** and **ink on bone**. Gold is an accent,
-used like fake luxury. Cyan belongs to the 3D portal / "future" surfaces.
+| Token   | Hex      | Role |
+|---------|----------|------|
+| bone    | `#f4f1ea`| **page surface** + light text on dark beats (newsprint/paper) |
+| ink     | `#1a1410`| **body text** (warm near-black) + dark dramatic beats |
+| paper   | `#ece4d4`| deeper cream — panels / alternating sections |
+| rain    | `#1c2b33`| deep navy — dark beats / subtle tints |
+| oxblood | `#5e1622`| deep tartan red — dark tartan ground |
+| cedar   | `#2f5436`| forest green — tartan secondary |
+| hazard  | `#d11f2a`| **tartan red** — primary accent, headlines, CTAs |
+| gold    | `#b8841a`| deep gold — reads on cream (counterfeit-trophy accent) |
+| cyan    | `#0f857a`| deep teal — eyebrows, reads on cream |
+
+Primary contrast pair: **ink on bone** (everything) and **hazard headlines on bone**.
+Accents (gold/teal/green) are deepened so they stay legible on cream. The few **dark
+dramatic beats** invert to bone-on-ink: the journey opener, the "MADE ON · the hem"
+blackout card, the gallery lightbox, and the tartan marquee band. The cinematic/internal
+routes (`/highlight-reel`, `/wall`, `/tracker`, the 3D `Stage`) stay fully dark on purpose.
+
+Implementation note: the site is token-driven, so the theme flip was done at the palette +
+`index.css` level (`bg-ink`→`bg-bone`, `text-bone`→`text-ink`, `border-bone`→`border-ink`).
+Inline hardcoded hexes (e.g. Store/HallOfFame filter chips, category colors) must be kept in
+sync with these tokens by hand — they bypass Tailwind.
 
 > Two palettes, two jobs. The table above is the **on-screen site palette**
 > (`src/brand/tokens.js`) the React site renders from. The **print / tech-pack palette** is
