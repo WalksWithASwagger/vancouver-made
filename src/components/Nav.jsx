@@ -34,7 +34,7 @@ export default function Nav() {
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          className="headline text-sm tracking-tight text-ink transition hover:text-hazard"
+          className="headline text-sm tracking-tight text-ink transition hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
         >
           MADE <span className="text-hazard">ON</span>
         </Link>
@@ -47,7 +47,7 @@ export default function Nav() {
                 to={l.to}
                 aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
-                  'transition hover:text-ink ' +
+                  'transition hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone ' +
                   (isActive(pathname, l.to) ? 'text-hazard' : 'text-ink/60')
                 }
               >
@@ -60,10 +60,10 @@ export default function Nav() {
         {/* mobile toggle */}
         <button
           type="button"
-          aria-label="Menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="text-xs uppercase tracking-[0.2em] text-ink/70 md:hidden"
+          className="text-xs uppercase tracking-[0.2em] text-ink/70 focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone md:hidden"
         >
           {open ? '✕ Close' : 'Menu ☰'}
         </button>
@@ -79,7 +79,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
-                  'block py-3 transition hover:text-ink ' +
+                  'block py-3 transition hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone ' +
                   (isActive(pathname, l.to) ? 'text-hazard' : 'text-ink/70')
                 }
               >

@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { products, categories } from '../data/products.js'
+import SafeImage from './SafeImage.jsx'
 
 // ── Shared lightbox / quick-look ─────────────────────────────────────────────
 // Lifted from DirectionPage.jsx pattern — same black/92 backdrop, Esc + arrow nav.
@@ -46,7 +47,13 @@ function QuickLook({ product, onClose }) {
         <div className="grid gap-0 md:grid-cols-2">
           {/* image panel */}
           <div className="flex aspect-square items-center justify-center bg-paper p-6">
-            <QuickLookImage p={p} />
+            <SafeImage
+              src={p.image}
+              alt={p.title}
+              fallbackText={p.title}
+              className="max-h-full max-w-full object-contain"
+              loading="eager"
+            />
           </div>
 
           {/* copy panel */}
@@ -92,7 +99,7 @@ function QuickLook({ product, onClose }) {
             </div>
 
             {p.sizes && (
-              <p className="font-mono text-[10px] text-ink/35">
+              <p className="font-mono text-[10px] text-ink/50">
                 Sizes: {p.sizes.join(' · ')}
               </p>
             )}
@@ -101,7 +108,7 @@ function QuickLook({ product, onClose }) {
 
         <button
           onClick={onClose}
-          className="absolute right-3 top-3 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 transition hover:text-ink"
+          className="absolute right-3 top-3 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 transition hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
           aria-label="Close quick look"
         >
           Close ✕
@@ -111,29 +118,11 @@ function QuickLook({ product, onClose }) {
   )
 }
 
-function QuickLookImage({ p }) {
-  const [err, setErr] = useState(false)
-  if (err) {
-    return (
-      <span className="text-center font-mono text-[11px] uppercase tracking-wider text-ink/35">
-        {p.title}
-      </span>
-    )
-  }
-  return (
-    <img
-      src={p.image}
-      alt={p.title}
-      className="max-h-full max-w-full object-contain"
-      onError={() => setErr(true)}
-    />
-  )
-}
 
 function QuickLookCta({ status }) {
   if (status === 'lookbook') {
     return (
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/35">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">
         Lookbook only
       </span>
     )
@@ -171,7 +160,7 @@ function Price({ value, currency }) {
 function Cta({ status }) {
   if (status === 'lookbook') {
     return (
-      <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink/35">
+      <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink/50">
         Lookbook
       </span>
     )
@@ -192,8 +181,6 @@ function Cta({ status }) {
 
 // ── Product card ─────────────────────────────────────────────────────────────
 function ProductCard({ p, onQuickLook }) {
-  const [imgError, setImgError] = useState(false)
-
   return (
     <article
       className="group flex cursor-pointer flex-col overflow-hidden border border-ink/12 bg-bone transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/30 hover:shadow-[0_8px_24px_rgba(26,20,16,0.10)]"
@@ -214,19 +201,13 @@ function ProductCard({ p, onQuickLook }) {
 
       {/* product art */}
       <div className="relative flex aspect-square items-center justify-center overflow-hidden bg-bone p-3">
-        {imgError ? (
-          <span className="px-2 text-center font-mono text-[10px] uppercase tracking-wider text-ink/35">
-            {p.title}
-          </span>
-        ) : (
-          <img
-            src={p.image}
-            alt={p.title}
-            loading="lazy"
-            onError={() => setImgError(true)}
-            className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.06]"
-          />
-        )}
+        <SafeImage
+          src={p.image}
+          alt={p.title}
+          fallbackText={p.title}
+          loading="lazy"
+          className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.06]"
+        />
         {/* quick-look hover reveal */}
         <div className="absolute inset-0 flex items-end justify-center bg-ink/0 pb-3 opacity-0 transition-all duration-300 group-hover:bg-ink/[0.04] group-hover:opacity-100">
           <span className="border border-ink/20 bg-bone/90 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-ink/70 backdrop-blur-sm">
@@ -303,7 +284,7 @@ export default function Store() {
 
             {/* drop counts — editorial sidebar detail */}
             <dl className="hidden shrink-0 space-y-1 border-l border-ink/10 pl-6 md:block">
-              <dt className="font-mono text-[9px] uppercase tracking-[0.25em] text-ink/35">
+              <dt className="font-mono text-[9px] uppercase tracking-[0.25em] text-ink/50">
                 The drop
               </dt>
               {[
@@ -331,7 +312,8 @@ export default function Store() {
                   type="button"
                   onClick={() => setFilter(key)}
                   className={[
-                    'border px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] transition-all duration-150',
+                    'border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-all duration-150',
+                    'focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone',
                     active
                       ? 'border-hazard bg-hazard text-bone'
                       : 'border-ink/18 bg-transparent text-ink/65 hover:border-ink/40 hover:text-ink',

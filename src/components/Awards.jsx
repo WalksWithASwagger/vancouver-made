@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SafeImage from './SafeImage.jsx'
 
 // The double-silver result, the certificates, the winning kit, and the event itself.
 // Assets served from public/awards/. Event facts from the Luma listing.
@@ -57,13 +58,13 @@ export default function Awards() {
                 </span>
               </div>
               <a href={t.cert} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded border border-ink/15 bg-ink/[0.04]">
-                <img src={t.cert} alt={`Second place certificate, ${t.track}`} loading="lazy" className="w-full transition group-hover:opacity-95" />
+                <SafeImage src={t.cert} alt={`Second place certificate, ${t.track}`} loading="lazy" className="w-full transition group-hover:opacity-95" />
               </a>
               <p className="headline mt-4 text-lg text-gold">{t.prize}</p>
               <p className="mt-2 text-sm leading-relaxed text-ink/75">{t.note}</p>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-ink/45">
+              <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-ink/50">
                 Sponsored by{' '}
-                <a href={t.url} target="_blank" rel="noreferrer" className="text-ink/70 underline-offset-2 hover:text-hazard hover:underline">
+                <a href={t.url} target="_blank" rel="noreferrer" className="text-ink/70 underline-offset-2 hover:text-hazard hover:underline focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">
                   {t.sponsor}
                 </a>
               </p>
@@ -83,12 +84,12 @@ export default function Awards() {
               Who pays? This is the kit Formmé is putting into production.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em]">
-              <Link to="/gallery" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-hazard hover:text-hazard">The gallery →</Link>
-              <Link to="/#hero-kits" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-hazard hover:text-hazard">The collection →</Link>
+              <Link to="/gallery" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-hazard hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">The gallery →</Link>
+              <Link to="/#hero-kits" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-hazard hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">The collection →</Link>
             </div>
           </div>
           <div className="mx-auto w-full max-w-sm overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-white to-zinc-200 shadow-lg">
-            <img src="/gallery/nw-front.jpg" alt="Nardwuar FC red Vancouver-tartan kit" loading="lazy" className="w-full object-contain" />
+            <SafeImage src="/gallery/nw-front.jpg" alt="Nardwuar FC red Vancouver-tartan kit" loading="lazy" className="w-full object-contain" />
           </div>
         </div>
       </section>
@@ -110,13 +111,13 @@ export default function Awards() {
               <div><dt className="inline text-ink/45">Hosts </dt><dd className="inline">Students@AI · Young Guns Studio</dd></div>
               <div><dt className="inline text-ink/45">Sponsors </dt><dd className="inline">Devin by Cognition · Formmé</dd></div>
             </dl>
-            <a href="https://luma.com/erjpeza4" target="_blank" rel="noreferrer" className="mt-7 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-bone">
+            <a href="https://luma.com/erjpeza4" target="_blank" rel="noreferrer" className="mt-7 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-bone focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">
               The event page →
             </a>
           </div>
           <figure className="self-start">
             <div className="overflow-hidden rounded-lg border border-ink/15 bg-ink/[0.04]">
-              <img src="/awards/event-poster.jpg" alt="Vancouver Made Designathon event poster" loading="lazy" className="w-full object-contain" />
+              <SafeImage src="/awards/event-poster.jpg" alt="Vancouver Made Designathon event poster" loading="lazy" className="w-full object-contain" />
             </div>
             <figcaption className="mt-2 text-[11px] leading-snug text-ink/45">
               Event poster by Vancouver Made · Digital Arts, Media &amp; Design @ BCIT. Photographed at the event.
@@ -130,7 +131,7 @@ export default function Awards() {
         <p className="headline text-2xl text-ink md:text-3xl">
           Everyone else made a souvenir. <span className="text-hazard">We made the receipt.</span>
         </p>
-        <Link to="/" className="mt-6 inline-block text-xs uppercase tracking-[0.2em] text-ink/60 transition hover:text-hazard">
+        <Link to="/" className="mt-6 inline-block text-xs uppercase tracking-[0.2em] text-ink/60 transition hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">
           ← back to the pitch
         </Link>
       </section>

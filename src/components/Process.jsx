@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { stages, thesis, HANDS, phases, tracks, collaborators } from '../data/process.js'
 import ProductStrip from './ProductStrip.jsx'
+import SafeImage from './SafeImage.jsx'
 
 function HandBadge({ hand }) {
   const h = HANDS[hand]
@@ -25,7 +26,7 @@ function Rail() {
           <span key={s.key} className="flex items-center gap-1">
             <a
               href={`#stage-${s.key}`}
-              className="flex items-center gap-1.5 border border-ink/15 px-2 py-1 transition hover:border-ink/40"
+              className="flex items-center gap-1.5 border border-ink/15 px-2 py-1 transition hover:border-ink/40 focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
             >
               <span style={{ color: h.color }}>{s.no}</span>
               <span className="text-ink/70">{s.title}</span>
@@ -83,7 +84,7 @@ function Station({ s }) {
               {s.images.map((img) => (
                 <figure key={img.src} className="border border-ink/15 bg-rain/20">
                   <div className="flex aspect-[4/3] items-center justify-center p-2">
-                    <img
+                    <SafeImage
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
@@ -107,7 +108,7 @@ function Station({ s }) {
             </Link>
           )}
 
-          <p className="mt-4 font-mono text-[10px] uppercase tracking-wide text-ink/35">{s.source}</p>
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-wide text-ink/50">{s.source}</p>
         </div>
       </div>
     </article>
