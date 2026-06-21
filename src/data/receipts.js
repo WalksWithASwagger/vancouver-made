@@ -35,15 +35,15 @@ export const receipts = [
     id: 'R-HOGANS',
     stat: "Hogan's Alley",
     claim: "Black neighbourhood paved for the viaduct the Cup drives its fans across",
-    detail: 'razed through urban renewal and the Georgia Viaduct, late 1960s–early 1970s',
-    source: 'City of Vancouver anti-Black cultural redress record',
+    detail: 'razed through 1960s urban renewal; the houses came down in 1970, the Georgia Viaduct opened 1972',
+    source: 'BC Black History Awareness Society · City of Vancouver redress record',
   },
   {
     id: 'R-RETURN',
     stat: '2022',
     claim: "the Hogan's Alley Block is returning to the community as a land trust",
     detail:
-      "City–Hogan's Alley Society MOU toward a long-term lease: affordable housing, a Black Cultural Centre, child care and small-business space",
+      "City–Hogan's Alley Society MOU (September 2022) toward a long-term lease: affordable housing, a Black Cultural Centre, child care and small-business space",
     source: "City of Vancouver · Hogan's Alley Society, 2022",
   },
 ]
