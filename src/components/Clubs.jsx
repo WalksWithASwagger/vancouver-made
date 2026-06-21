@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { league, clubs } from '../data/clubs.js'
 import Crest from './Crest.jsx'
 
@@ -18,7 +19,7 @@ function ClubCard({ club }) {
   return (
     <article
       className="relative overflow-hidden border border-ink/15"
-      style={{ background: `linear-gradient(160deg, ${palette.ink} 60%, ${palette.base}22)` }}
+      style={{ background: `linear-gradient(155deg, ${palette.base}1f 0%, #ece4d4 58%)` }}
     >
       {/* counterfeit-official top bar */}
       <div
@@ -42,6 +43,15 @@ function ClubCard({ club }) {
         </div>
 
         <p className="mt-4 text-sm leading-relaxed text-ink/85">{club.summary}</p>
+
+        {club.id === 'nardwuar-fc' && (
+          <Link
+            to="/kit/nardwuar-fc"
+            className="mt-4 inline-block border border-ink/30 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition hover:bg-ink hover:text-bone"
+          >
+            🥈 Explore the winning kit →
+          </Link>
+        )}
 
         {/* WHO BENEFITS / WHO PAYS */}
         <div className="mt-5 grid grid-cols-2 gap-px border border-ink/10 bg-bone/10 text-xs">

@@ -6,6 +6,7 @@ import {
   Link,
   Outlet,
   useLocation,
+  useParams,
 } from 'react-router-dom'
 import Clubs from './components/Clubs.jsx'
 import Collection from './components/Collection.jsx'
@@ -17,8 +18,15 @@ import ShareQR from './components/ShareQR.jsx'
 import PresenterControls from './components/PresenterControls.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
+import nardwuar from './data/directions/nardwuar.js'
+
+// slug → manifest map; extend as new directions land
+const DIRECTION_MANIFESTS = {
+  'nardwuar-fc': nardwuar,
+}
 
 // Code-split the secondary routes so the initial pitch view paints fast.
+const DirectionPage = lazy(() => import('./components/DirectionPage.jsx'))
 const ReceiptsEngine = lazy(() => import('./components/ReceiptsEngine.jsx'))
 const HallOfFame = lazy(() => import('./components/HallOfFame.jsx'))
 const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
@@ -30,6 +38,14 @@ const Journey = lazy(() => import('./components/Journey.jsx'))
 const Gallery = lazy(() => import('./components/Gallery.jsx'))
 import ProductStrip from './components/ProductStrip.jsx'
 import HeroShowcase from './components/HeroShowcase.jsx'
+
+// Wraps DirectionPage so the route can pass the manifest from the slug map.
+// Unknown slugs fall back to nardwuar (only one exists for now).
+function KitRoute() {
+  const { slug } = useParams()
+  const manifest = DIRECTION_MANIFESTS[slug] ?? nardwuar
+  return <DirectionPage data={manifest} />
+}
 
 function RouteFallback() {
   return (
@@ -48,6 +64,7 @@ const TITLES = {
   '/process': 'Our Process — MADE ON',
   '/store': 'The Store — MADE ON',
   '/tracker': 'Asset Tracker — MADE ON',
+  '/kit/nardwuar-fc': 'Nardwuar FC — Deep Cut — MADE ON',
 }
 
 function Marquee() {
@@ -265,6 +282,7 @@ export default function App() {
           <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/process" element={<Process />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/kit/:slug" element={<KitRoute />} />
         </Route>
         <Route
           path="/highlight-reel"
