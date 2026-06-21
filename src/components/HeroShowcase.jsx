@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
-// The hero used to be a 3D portal. Now it's the actual work: a slow crossfade
-// through the flagship kits on a studio-white card (the source flats are on white,
-// so they blend into the card seamlessly). Auto-advance pauses for reduced-motion.
+// The hero: a slow crossfade through the flagship kits on a studio-white card
+// (the source flats are on white, so they blend into the card seamlessly).
+// Auto-advance pauses for reduced-motion.
 // All four load eagerly: they're small and above the fold, and a lazy frame that
 // isn't ready yet would let the outgoing kit linger under the new caption.
 const SHOTS = [

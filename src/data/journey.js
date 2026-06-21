@@ -1,4 +1,4 @@
-// THE JOURNEY — the guided experience. Opens on the World Portal, then scrolls
+// THE JOURNEY — the guided experience. Opens on the hero, then scrolls
 // through the lineage of protest at the world games, our method, and the kit we made
 // for Vancouver 2026. Narration is Kris's voice: short punches, name the thing, no
 // em-dashes, no emoji. Lineage images live in public/hall-of-fame/.

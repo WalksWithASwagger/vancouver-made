@@ -15,11 +15,6 @@ export const colors = {
   cyan: '#0f857a', // deep teal — eyebrows, reads on cream
 }
 
-export const type = {
-  display: '"Archivo Black", Impact, system-ui, sans-serif',
-  mono: '"Space Mono", ui-monospace, monospace',
-}
-
 export const slogans = [
   'MADE ON STOLEN GROUND',
   "MADE ON HOGAN'S ALLEY",

@@ -33,14 +33,13 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 | Path | What it is |
 |------|------------|
 | `docs/deliverables/` | **Canonical artifacts**: board (PDF), pitch deck (PPTX), tech pack (PDF) |
-| `src/` | The pitch site. React + React Three Fiber, mirrors the deck top-to-bottom |
+| `src/` | The pitch site. React + Vite, mirrors the deck top-to-bottom |
 | `src/data/collection.js` | The MADE ON brand + the 9-kit / two-rack lineup |
 | `src/data/receipts.js` | The public-record receipts (the spine), `[confirm]`-tagged |
 | `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump · NW-01 Nardwuar "Deep Cut" (the Designathon winner)) |
 | `src/data/clubs.js` | Deep-dive method cards: ALLEY LEAGUE (No.5 · Nardwuar · Pump & Dump + China Creek expansion) |
 | `src/components/` | `Collection`, `HeroKits`, `KitFlat` (code-drawn jersey flats), `Clubs`, `Crest` |
-| `src/scene/` | The R3F "World Portal" hero scene |
-| `src/brand/tokens.js` | Shared site tokens (colors, type, the MADE ON slogan/marquee bank) |
+| `src/brand/tokens.js` | Shared site tokens (the palette feeding Tailwind + the MADE ON slogan/marquee bank) |
 | `docs/research/` | Knowledge base: all source docs + analyses + the synthesis |
 | `docs/design/kits/` | Filled tech-pack briefs (MO-01, MO-03, MO-09) |
 | `docs/design/clubs/` | The four deep-dive concept briefs (3 flagship + China Creek expansion) |
@@ -53,7 +52,7 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 `docs/research/analysis/04-made-on-consolidation.md`. Research index:
 `docs/research/KNOWLEDGE-BASE.md`.
 
-## Run the portal
+## Run the site
 
 ```bash
 npm install
@@ -62,7 +61,7 @@ npm run build    # production build into dist/
 npm run preview  # serve the production build
 ```
 
-Stack: **Vite · React 18 · React Three Fiber · drei · Tailwind CSS**.
+Stack: **Vite · React 18 · React Router · Tailwind CSS**.
 
 Building on it, or running the Midjourney asset tracker at `/tracker`? See
 `DEVELOPMENT.md`.

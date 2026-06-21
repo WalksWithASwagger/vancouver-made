@@ -62,5 +62,6 @@ roadmap to all five directions is [`ROADMAP.md`](ROADMAP.md) (epic #56).
 
 Cream "Tartan Paper" theme — surface `bone`/`paper`, text warm `ink`, tartan-red/green/gold accents
 (`src/brand/tokens.js`). The `.grain` halftone overlay + `.tartan` plaid bands live in `src/index.css`.
-The 3D World Portal was retired from the home in favor of a kit lookbook (cleanup tracked in #39).
+The 3D World Portal was retired from the home in favor of a kit lookbook (`HeroShowcase`); the
+`src/scene/` R3F code and the three/drei dependencies were removed in #39.
 Full visual direction: [`design/brand-system.md`](design/brand-system.md).
