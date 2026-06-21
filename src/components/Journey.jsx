@@ -1,11 +1,10 @@
-import { useEffect, useRef, lazy, Suspense } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { lineage, acts } from '../data/journey.js'
 import KitFlat from './KitFlat.jsx'
 import { heroKits } from '../data/heroKits.js'
 import './Journey.css'
 
-const Stage = lazy(() => import('../scene/Stage.jsx'))
 const heroKit = heroKits.find((k) => k.id === 'pump-and-dump') || heroKits[0]
 
 // Reveal-on-scroll: add .in to any .j-reveal as it enters the viewport.
@@ -32,12 +31,11 @@ export default function Journey() {
 
   return (
     <div ref={root} className="grain bg-ink text-bone">
-      {/* 0 — PORTAL OPENER */}
+      {/* 0 — OPENER */}
       <section className="relative flex h-[92svh] min-h-[34rem] w-full flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
-          <Suspense fallback={<div className="h-full w-full bg-ink" />}>
-            <Stage />
-          </Suspense>
+          <img src="/gallery/pd-neon.jpg" alt="" className="h-full w-full object-cover opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/45" />
         </div>
         <div className="pointer-events-none relative z-10 flex h-full flex-col justify-between p-6 md:p-10">
           <p className="text-xs uppercase tracking-[0.3em] text-bone/70">

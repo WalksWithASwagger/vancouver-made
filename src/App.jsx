@@ -18,9 +18,7 @@ import PresenterControls from './components/PresenterControls.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 
-// Code-split the heavy bits: the R3F/three hero scene and the secondary routes
-// load as separate chunks so the initial pitch view paints fast.
-const Stage = lazy(() => import('./scene/Stage.jsx'))
+// Code-split the secondary routes so the initial pitch view paints fast.
 const ReceiptsEngine = lazy(() => import('./components/ReceiptsEngine.jsx'))
 const HallOfFame = lazy(() => import('./components/HallOfFame.jsx'))
 const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
@@ -31,13 +29,7 @@ const GenerativeWall = lazy(() => import('./components/GenerativeWall.jsx'))
 const Journey = lazy(() => import('./components/Journey.jsx'))
 const Gallery = lazy(() => import('./components/Gallery.jsx'))
 import ProductStrip from './components/ProductStrip.jsx'
-
-function toggleHeroFullscreen() {
-  const el = document.getElementById('hero')
-  if (!el) return
-  if (document.fullscreenElement) document.exitFullscreen?.()
-  else el.requestFullscreen?.()
-}
+import HeroShowcase from './components/HeroShowcase.jsx'
 
 function RouteFallback() {
   return (
@@ -75,54 +67,47 @@ function MadeOnSite() {
     <div className="grain min-h-screen bg-ink text-bone">
       <PresenterControls />
 
-      {/* HERO — the World Portal + the MADE ON statement */}
-      <section id="hero" className="relative h-[88svh] min-h-[34rem] w-full">
-        <div className="absolute inset-0">
-          <Suspense fallback={<div className="h-full w-full bg-ink" />}>
-            <Stage />
-          </Suspense>
-        </div>
-
-        <div className="pointer-events-none relative z-10 flex h-full flex-col justify-between p-6 md:p-10">
-          <header className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-bone/70">
-            <span>{brand.parent} · {brand.name}</span>
-            <span className="hidden md:inline">{brand.event}</span>
-          </header>
-
-          <div className="max-w-3xl">
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">
+      {/* HERO — the MADE ON statement + a lookbook of the actual kits */}
+      <section id="hero" className="relative w-full overflow-hidden border-b border-bone/10">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-24">
+          <div>
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-bone/55">
+              {brand.parent} · {brand.name}
+            </p>
+            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-cyan">
               {brand.kind} · not a sponsor
             </p>
-            <h1 className="headline text-5xl text-bone md:text-8xl">
+            <h1 className="headline text-5xl text-bone md:text-7xl lg:text-8xl">
               MADE
               <br />
               <span className="text-hazard">ON</span> WHAT?
             </h1>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-bone/80 md:text-base">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-bone/80 md:text-base">
               They asked for the Vancouver story. We finished the sentence.{' '}
               <span className="text-gold">Made on stolen ground. Made on Hogan's
               Alley. Made on $729 million of public money.</span>
             </p>
-            <Link
-              to="/journey"
-              className="pointer-events-auto mt-6 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
-            >
-              Begin the journey →
-            </Link>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                to="/journey"
+                className="inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
+              >
+                Begin the journey →
+              </Link>
+              <Link
+                to="/gallery"
+                className="inline-block border border-bone/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-bone/70 transition hover:border-bone hover:text-bone"
+              >
+                See the gallery →
+              </Link>
+            </div>
+            <p className="mt-7 text-xs uppercase tracking-[0.2em] text-bone/45">
+              ↻ Everyone else made a souvenir. We made the receipt.
+            </p>
           </div>
 
-          <div className="flex items-end justify-between gap-3 text-xs uppercase tracking-[0.2em] text-bone/50">
-            <span className="max-w-[14rem] sm:max-w-none">↻ Everyone else made a souvenir. We made the receipt.</span>
-            <div className="flex shrink-0 items-center gap-3">
-              <span className="hidden md:inline">{brand.author}</span>
-              <button
-                type="button"
-                onClick={toggleHeroFullscreen}
-                className="pointer-events-auto border border-bone/20 px-2 py-1 text-[10px] tracking-[0.2em] text-bone/60 transition hover:border-bone/50 hover:text-bone"
-              >
-                ⤢ Fullscreen
-              </button>
-            </div>
+          <div className="mx-auto w-full max-w-sm md:max-w-md">
+            <HeroShowcase />
           </div>
         </div>
       </section>
