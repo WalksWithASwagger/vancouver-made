@@ -14,15 +14,15 @@
 
 ## 1. Project name  *(field limit 60)*
 
-`VANCOUVER MADE`
+`VANCOUVER MADE: We Made the Receipt`
 
-Alternates: `MADE ON` · `VANCOUVER MADE: Whose Cup Is It Anyway?`
+Alternates: `VANCOUVER MADE` · `MADE ON: One Receipt, Three Ways`
 
 ## 2. Elevator pitch  *(field limit 200)*
 
-> Someone always pays for the spectacle. A long line of people turned the jersey, the podium, and the sponsor board back on power. We joined that line, from Vancouver, for World Cup 2026.
+> An AI pipeline turns one cited Vancouver receipt into three artifacts: a jersey hem, a protest poster, a couture editorial. Same source every time. Everyone made a souvenir. We made the receipt.
 
-*(185 chars)*
+*(194 chars)*
 
 ## 3. Project details
 
@@ -75,17 +75,23 @@ You're not in the stands. You're the bag.
 
 **Links:**
 - Live demo: https://vancouver-made.vercel.app
+- The process, made visible (`/engine`): https://vancouver-made.vercel.app/engine
 - GitHub: https://github.com/WalksWithASwagger/vancouver-made
 - Sister site (civic): https://feefa.ai
 - Sister site (editorial): https://world-cup-fashion-cake.vercel.app
 
 **Bounties to declare:** Best Vancouver Narrative · Show Your Process · Best Use of AI Tools · Best Reflection of Vancouver Grassroots Culture.
 
+**AI tools used:** Midjourney (all imagery: concepts, moodboards, crests, sponsor bars, lookbook renders) · Devin (dev-track scaffolding, the pipeline + three deployed sites) · Claude Code (agentic build across the repo: code-drawn flats, ingest tracker, Receipts Engine) · ChatGPT, Claude, Perplexity (first-pass research, then human-verified).
+
 **AI answer 1 — "Where did you use AI, and where did you deliberately choose not to?"**
-AI did the volume. I kept the taste. Midjourney generated the jersey concepts, moodboards, crests, and sponsor bars, roughly 246 generations for the flagship kit alone. Devin handled dev-track scaffolding. Where I deliberately did not: the voice and the verdict. Every factual claim is a real public-record number I sourced and checked by hand. No AI invented a statistic; the site flags anything unverified until a human confirms it against a primary source. The final cut is mine. The human bookends the machine: voice in, judgment out, provenance in, curation out.
+AI did the volume. I kept the taste. Where I used it: Midjourney generated every image in the collection, the jersey concepts, moodboards, crests and sponsor bars, roughly 246 raw generations rated down to the survivors, most of them killed. Devin scaffolded the dev-track build, the pipeline and the three sites that auto-deploy. Claude Code ran the repo as a roomful of agents on one branch with handoff docs: the code-drawn flats, the ingest tracker, the Receipts Engine. ChatGPT, Claude and Perplexity did first-pass research, then got checked. Where I deliberately did not: the voice and the verdict. Every factual claim is a real public-record number I sourced and checked by hand. No model invented a statistic. The pipeline flags anything unverified and holds it until a human clears it against a primary source. The final cut is mine. The human bookends the machine: voice in, judgment out, provenance in, curation out.
 
 **AI answer 2 — "How did you feel AI impacting your process – for better or for worse?"**
-Both better and worse, and refusing to flatten that is the point. Better: it collapsed the distance between a stance and an artifact; one person made a nine-kit collection in a day. Worse: AI is great at volume and terrible at meaning; left alone it ships the average. So the work moved. The design problem stopped being "can the machine make a jersey" and became "where do you put the human." The tool is foundational, not neutral. It amplifies whatever discipline you bring, or whatever laziness. I tried to bring receipts.
+Both, and refusing to flatten that is the point. Better: it collapsed the distance between a stance and an artifact; one person shipped a nine-kit collection and three live sites in a day. The Nardwuar kit asks who gets to tell Vancouver's story; AI let me answer at the speed of the question. Worse: AI is great at volume and terrible at meaning; left alone it ships the average. A hundred plausible jerseys an hour, and plausible is the enemy. So the work moved. The design problem stopped being "can the machine make a jersey" and became "where do you put the human." The tool is foundational, not neutral. It amplifies whatever you bring, discipline or laziness. I tried to bring receipts.
+
+**AI answer 3 — "How did you use Devin?" (Devin Open Hackathon)**
+Devin handled the dev-track build: scaffolding the AI pipeline and the three sites that render one cited receipt three ways and auto-deploy on Vercel. The plumbing that lets `/engine` take a public-record number and drop it onto a kit hem, a protest poster and a couture editorial at once, source attached, started as Devin scaffolding and got finished under human judgment. _[CONFIRM before final submit: name the specific components Devin scaffolded — Receipts Engine, ingest pipeline, the Vercel deploys — judges weight exactly this.]_
 
 ## 5. Thumbnail (3:2)
 - Original code-drawn flat: `public/process/flat-hero.jpg` (1456×816, IP-clean).
