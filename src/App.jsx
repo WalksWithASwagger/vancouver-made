@@ -18,12 +18,7 @@ import ShareQR from './components/ShareQR.jsx'
 import PresenterControls from './components/PresenterControls.jsx'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
-import nardwuar from './data/directions/nardwuar.js'
-
-// slug → manifest map; extend as new directions land
-const DIRECTION_MANIFESTS = {
-  'nardwuar-fc': nardwuar,
-}
+import { getDirection } from './data/directions/index.js'
 
 // Code-split the secondary routes so the initial pitch view paints fast.
 const DirectionPage = lazy(() => import('./components/DirectionPage.jsx'))
@@ -40,11 +35,12 @@ const Awards = lazy(() => import('./components/Awards.jsx'))
 import ProductStrip from './components/ProductStrip.jsx'
 import HeroShowcase from './components/HeroShowcase.jsx'
 
-// Wraps DirectionPage so the route can pass the manifest from the slug map.
-// Unknown slugs fall back to nardwuar (only one exists for now).
+// Wraps DirectionPage so the route resolves the manifest from the slug registry.
+// Unknown slugs 404 instead of silently showing the wrong direction.
 function KitRoute() {
   const { slug } = useParams()
-  const manifest = DIRECTION_MANIFESTS[slug] ?? nardwuar
+  const manifest = getDirection(slug)
+  if (!manifest) return <NotFound />
   return <DirectionPage data={manifest} />
 }
 
@@ -258,7 +254,10 @@ function PitchLayout() {
   const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    document.title = TITLES[pathname] ?? 'MADE ON — VANCOUVER MADE'
+    const kit = pathname.startsWith('/kit/') ? getDirection(pathname.slice(5)) : null
+    document.title = kit
+      ? `${kit.name} — ${kit.kitName} — MADE ON`
+      : (TITLES[pathname] ?? 'MADE ON — VANCOUVER MADE')
   }, [pathname])
 
   useEffect(() => {
