@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { groups } from '../data/gallery.js'
+import SafeImage from './SafeImage'
 
 // Flat index so the lightbox can move across the whole shown set with arrow keys.
 function flatten(shown) {
@@ -25,6 +26,13 @@ export default function Gallery() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [active, flat.length])
+
+  // Lock body scroll while lightbox is open
+  useEffect(() => {
+    if (active === null) return
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [active])
 
   const cur = active === null ? null : flat[active]
 
@@ -69,15 +77,21 @@ export default function Gallery() {
                 {g.items.map((it, i) => (
                   <figure
                     key={it.src}
-                    onClick={() => setActive(offset + i)}
-                    className="group cursor-pointer overflow-hidden rounded-lg border border-ink/12 bg-ink/[0.04] shadow-sm"
+                    className="group overflow-hidden rounded-lg border border-ink/12 bg-ink/[0.04] shadow-sm"
                   >
-                    <img
-                      src={it.src}
-                      alt={it.caption}
-                      loading="lazy"
-                      className="aspect-square w-full object-cover transition group-hover:scale-[1.03] group-hover:opacity-90"
-                    />
+                    <button
+                      type="button"
+                      onClick={() => setActive(offset + i)}
+                      aria-label={`View ${it.caption}`}
+                      className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+                    >
+                      <SafeImage
+                        src={it.src}
+                        alt={it.caption}
+                        loading="lazy"
+                        className="aspect-square w-full object-cover transition group-hover:scale-[1.03] group-hover:opacity-90"
+                      />
+                    </button>
                     <figcaption className="px-2 py-2 text-[11px] leading-snug text-ink/55">{it.caption}</figcaption>
                   </figure>
                 ))}
@@ -98,6 +112,9 @@ export default function Gallery() {
         <div
           onClick={() => setActive(null)}
           className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 p-4 md:p-10"
+          role="dialog"
+          aria-modal="true"
+          aria-label={cur.caption}
         >
           <button
             onClick={(e) => { e.stopPropagation(); setActive((i) => (i - 1 + flat.length) % flat.length) }}
@@ -105,7 +122,7 @@ export default function Gallery() {
             aria-label="Previous"
           >‹</button>
           <figure onClick={(e) => e.stopPropagation()} className="flex max-h-full max-w-5xl flex-col items-center">
-            <img src={cur.src} alt={cur.caption} className="max-h-[80vh] w-auto rounded-lg object-contain" />
+            <SafeImage src={cur.src} alt={cur.caption} className="max-h-[80vh] w-auto rounded-lg object-contain" />
             <figcaption className="mt-3 text-center text-xs uppercase tracking-[0.15em] text-bone/70">
               {cur.concept} · {cur.caption}
             </figcaption>

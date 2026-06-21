@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { receipts } from '../data/receipts.js'
 import { properties, madeOnHem, feefaPoster, fashionEditorial } from '../data/voices.js'
+import SafeImage from './SafeImage.jsx'
 import './Journey.css'
 
 // Reveal-on-scroll — borrowed from Journey.jsx / DirectionPage.jsx pattern.
@@ -41,7 +42,7 @@ function StatBillboard({ r }) {
       className="border-b border-ink/10 bg-paper px-6 py-10 md:px-10 md:py-14"
       style={{ animation: 'engine-fadein 320ms cubic-bezier(0.2,0.7,0.2,1) both' }}
     >
-      <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.35em] text-ink/35">
+      <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.35em] text-ink/50">
         Active receipt · {r.id}
       </p>
       <p
@@ -128,9 +129,9 @@ function HemCard({ hem, activeId }) {
 
         {/* image — full-width strip, proper height */}
         <div className="mb-8 overflow-hidden border border-bone/10">
-          <img
+          <SafeImage
             src="/engine/voice-madeon.png"
-            alt="redacted public document"
+            alt="Redacted public document, MADE ON the hem"
             className="h-64 w-full object-cover opacity-80 md:h-80"
           />
         </div>
@@ -183,7 +184,7 @@ function PosterCard({ poster, activeId }) {
             href={properties.feefa.url}
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/35 transition hover:text-ink"
+            className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/50 transition hover:text-ink"
           >
             feefa.ai ↗
           </a>
@@ -191,9 +192,9 @@ function PosterCard({ poster, activeId }) {
 
         {/* image */}
         <div className="mb-10 overflow-hidden border border-hazard/15">
-          <img
+          <SafeImage
             src="/engine/voice-feefa.png"
-            alt="dense condo development"
+            alt="Dense Vancouver condo development, FEEFA agitprop poster"
             className="h-64 w-full object-cover md:h-80"
           />
         </div>
@@ -216,7 +217,7 @@ function PosterCard({ poster, activeId }) {
           <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-ink/70 md:text-sm">
             {poster.brand}
           </p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/35">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">
             {poster.stamp} · {poster.source}
           </p>
         </div>
@@ -238,7 +239,7 @@ function EditorialCard({ ed, activeId }) {
         {/* label row */}
         <div className="mb-8 flex items-baseline justify-between">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-rain" style={{ color: '#1c2b33' }}>
+            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-rain">
               Room III
             </p>
             <h3 className="headline mt-1 text-2xl text-ink md:text-3xl">
@@ -249,7 +250,7 @@ function EditorialCard({ ed, activeId }) {
             href={properties.cake.url}
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/35 transition hover:text-ink"
+            className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/50 transition hover:text-ink"
           >
             the editorial ↗
           </a>
@@ -257,9 +258,9 @@ function EditorialCard({ ed, activeId }) {
 
         {/* image */}
         <div className="mb-10 overflow-hidden border border-ink/10">
-          <img
+          <SafeImage
             src="/engine/voice-cake.png"
-            alt="engraved banknote detail"
+            alt="Engraved banknote detail, Fashion Cake editorial"
             className="h-64 w-full object-cover md:h-80"
           />
         </div>
@@ -273,7 +274,7 @@ function EditorialCard({ ed, activeId }) {
 
         {/* source */}
         <div className="mt-8 border-t border-ink/10 pt-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/35">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">
             src: {ed.source}
           </p>
         </div>
@@ -312,11 +313,11 @@ export default function ReceiptsEngine() {
         <header className="border-b border-ink/10 px-6 py-10 md:px-10">
           <Link
             to="/"
-            className="mb-5 inline-block font-mono text-[11px] uppercase tracking-[0.3em] text-ink/35 transition hover:text-ink"
+            className="mb-5 inline-block font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 transition hover:text-ink"
           >
             ← MADE ON
           </Link>
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-cyan" style={{ color: '#0f857a' }}>
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-cyan">
             Vancouver Made · MADE ON · not a sponsor
           </p>
           <h1 className="headline text-5xl leading-none text-ink md:text-7xl">
@@ -342,7 +343,7 @@ export default function ReceiptsEngine() {
 
         {/* ── SOURCE NOTE ─────────────────────────────────────────────────── */}
         <div className="border-b border-ink/10 bg-bone px-6 py-3 md:px-10">
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/35">
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
             Source data: <code className="normal-case">src/data/receipts.js</code> — every figure is public record,
             flagged for primary-source confirmation before publish.
           </p>
@@ -357,7 +358,7 @@ export default function ReceiptsEngine() {
         <footer className="border-t border-ink/10 px-6 py-14 md:px-10">
           <div className="mx-auto max-w-4xl">
             <div className="j-reveal">
-              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.35em]" style={{ color: '#0f857a' }}>
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.35em] text-cyan">
                 Why we made this
               </p>
               <p className="max-w-3xl text-sm leading-relaxed text-ink/75 md:text-base">

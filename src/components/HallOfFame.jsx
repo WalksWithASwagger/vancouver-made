@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { categories as storyCategories, entries as storyEntries } from '../data/hallOfFame.js'
 import { categories as kitCategories, entries as kitEntries } from '../data/kitGallery.js'
+import SafeImage from './SafeImage.jsx'
+import { colors as tokens } from '../brand/tokens.js'
 
 // One accent per thread — mid-tone so each filter stays legible on cream paper
 // AND on the dark reference placeholders / lightbox.
@@ -36,10 +38,10 @@ function FilterButton({ active, color, label, count, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="border px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider transition"
+      className="border px-4 py-2 text-[10px] font-bold uppercase tracking-wider transition focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
       style={
         active
-          ? { background: color, color: '#f4f1ea', borderColor: color }
+          ? { background: color, color: tokens.bone, borderColor: color }
           : { borderColor: `${color}99`, color }
       }
     >
@@ -81,7 +83,7 @@ function Tile({ entry, onOpen }) {
     <button
       type="button"
       onClick={() => onOpen(entry)}
-      className="group block overflow-hidden border border-ink/15 bg-bone text-left transition hover:border-ink/40"
+      className="group block overflow-hidden border border-ink/15 bg-bone text-left transition hover:border-ink/40 focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-rain/30">
         {hasImage ? (
@@ -150,10 +152,12 @@ function Lightbox({ entry, onClose }) {
       >
         <div className="relative flex min-h-[38vh] items-center justify-center bg-rain/30 md:min-h-full">
           {entry.src ? (
-            <img
+            <SafeImage
               src={entry.src}
               alt={entry.title}
+              fallbackText={entry.title}
               className="max-h-[88vh] w-full object-contain"
+              loading="eager"
             />
           ) : (
             <ReferencePlaceholder entry={entry} color={color} large />
@@ -201,7 +205,7 @@ function Lightbox({ entry, onClose }) {
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center border border-ink/20 bg-bone/70 text-ink/70 transition hover:border-ink/50 hover:text-ink"
+          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center border border-ink/20 bg-bone/70 text-ink/70 transition hover:border-ink/50 hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
         >
           ✕
         </button>
@@ -250,12 +254,13 @@ export default function HallOfFame() {
                 key={t.id}
                 type="button"
                 onClick={() => selectTab(t.id)}
-                className="border px-4 py-2 text-xs font-bold uppercase tracking-wider transition"
-                style={
+                className={[
+                  'border px-4 py-2 text-xs font-bold uppercase tracking-wider transition',
+                  'focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone',
                   tabId === t.id
-                    ? { background: '#d11f2a', color: '#f4f1ea', borderColor: '#d11f2a' }
-                    : { borderColor: '#d11f2a66', color: '#1a1410' }
-                }
+                    ? 'bg-hazard text-bone border-hazard'
+                    : 'border-hazard/40 text-ink',
+                ].join(' ')}
               >
                 {t.label} <span className="opacity-50">{t.entries.length}</span>
               </button>
@@ -276,7 +281,7 @@ export default function HallOfFame() {
           <div className="mt-6 flex flex-wrap gap-2">
             <FilterButton
               active={filter === 'all'}
-              color="#f4f1ea"
+              color={tokens.bone}
               label="All"
               count={entries.length}
               onClick={() => setFilter('all')}

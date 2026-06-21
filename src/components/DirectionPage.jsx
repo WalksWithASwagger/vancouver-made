@@ -5,6 +5,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './Journey.css'
+import SafeImage from './SafeImage'
 
 // ── Reveal-on-scroll ─────────────────────────────────────────────────────────
 function useReveal() {
@@ -37,6 +38,13 @@ function Lightbox({ images, active, setActive }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [active, len, setActive])
 
+  // Lock body scroll while lightbox is open
+  useEffect(() => {
+    if (active === null) return
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [active])
+
   if (active === null) return null
   const cur = images[active]
 
@@ -56,7 +64,7 @@ function Lightbox({ images, active, setActive }) {
         ‹
       </button>
       <figure onClick={(e) => e.stopPropagation()} className="flex max-h-full max-w-5xl flex-col items-center">
-        <img
+        <SafeImage
           src={cur.src}
           alt={cur.caption}
           className="max-h-[82vh] w-auto rounded object-contain"
@@ -91,7 +99,7 @@ function Eyebrow({ children, color }) {
   return (
     <p
       className="mb-3 font-mono text-[11px] uppercase tracking-[0.35em]"
-      style={{ color: color ?? 'var(--cyan, #0f857a)' }}
+      style={{ color: color ?? 'var(--cyan)' }}
     >
       {children}
     </p>
@@ -107,10 +115,10 @@ function HeroSection({ data }) {
   return (
     <section className="relative flex min-h-[92svh] w-full flex-col justify-between overflow-hidden">
       {/* full-bleed hero image on dark tartan ground */}
-      <div className="absolute inset-0 tartan-dark">
+      <div className="absolute inset-0 tartan-dark" aria-hidden="true">
         <img
           src={data.hero.image}
-          alt={`${data.name} kit — hero`}
+          alt=""
           className="h-full w-full object-cover object-center opacity-70 transition-opacity duration-700"
           style={{ mixBlendMode: 'luminosity' }}
         />
@@ -233,18 +241,24 @@ function KitSection({ kit, palette }) {
           {kit.flats.map((img, i) => (
             <figure
               key={img.src}
-              onClick={() => setActive(i)}
-              className="group cursor-pointer overflow-hidden border border-ink/12 bg-bone shadow-sm"
+              className="group overflow-hidden border border-ink/12 bg-bone shadow-sm"
               style={{ borderColor: `${palette.base}22` }}
             >
-              <div className="aspect-[3/4] overflow-hidden bg-ink/[0.03]">
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  loading="lazy"
-                  className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.04] group-hover:opacity-90"
-                />
-              </div>
+              <button
+                type="button"
+                onClick={() => setActive(i)}
+                aria-label={`View ${img.caption}`}
+                className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+              >
+                <div className="aspect-[3/4] overflow-hidden bg-ink/[0.03]">
+                  <SafeImage
+                    src={img.src}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.04] group-hover:opacity-90"
+                  />
+                </div>
+              </button>
               <figcaption className="px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.15em] text-ink/50">
                 {img.caption}
               </figcaption>
@@ -257,19 +271,25 @@ function KitSection({ kit, palette }) {
           {kit.details.map((img, i) => (
             <figure
               key={img.src}
-              onClick={() => setActive(kit.flats.length + i)}
-              className="group cursor-pointer overflow-hidden border border-ink/12 bg-bone"
+              className="group overflow-hidden border border-ink/12 bg-bone"
               style={{ borderColor: `${palette.base}18` }}
             >
-              <div className="aspect-square overflow-hidden bg-ink/[0.03]">
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition duration-400 group-hover:scale-[1.05]"
-                />
-              </div>
-              <figcaption className="px-2 py-1.5 font-mono text-[9px] uppercase leading-snug tracking-[0.12em] text-ink/45">
+              <button
+                type="button"
+                onClick={() => setActive(kit.flats.length + i)}
+                aria-label={`View ${img.caption}`}
+                className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+              >
+                <div className="aspect-square overflow-hidden bg-ink/[0.03]">
+                  <SafeImage
+                    src={img.src}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-400 group-hover:scale-[1.05]"
+                  />
+                </div>
+              </button>
+              <figcaption className="px-2 py-1.5 font-mono text-[9px] uppercase leading-snug tracking-[0.12em] text-ink/50">
                 {img.caption}
               </figcaption>
             </figure>
@@ -305,21 +325,27 @@ function LifestyleSection({ lifestyle, palette }) {
             return (
               <figure
                 key={img.src}
-                onClick={() => setActive(i)}
                 className={
-                  'group cursor-pointer overflow-hidden border border-ink/10 bg-ink/[0.03] shadow-sm ' +
+                  'group overflow-hidden border border-ink/10 bg-ink/[0.03] shadow-sm ' +
                   (span === 2 ? 'col-span-2 md:col-span-2' : '')
                 }
               >
-                <div className={span === 2 ? 'aspect-[2/1]' : 'aspect-square'} style={{ overflow: 'hidden' }}>
-                  <img
-                    src={img.src}
-                    alt={img.caption}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04] group-hover:brightness-[0.92]"
-                  />
-                </div>
-                <figcaption className="px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/45">
+                <button
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`View ${img.caption}`}
+                  className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+                >
+                  <div className={span === 2 ? 'aspect-[2/1]' : 'aspect-square'} style={{ overflow: 'hidden' }}>
+                    <SafeImage
+                      src={img.src}
+                      alt={img.caption}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04] group-hover:brightness-[0.92]"
+                    />
+                  </div>
+                </button>
+                <figcaption className="px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/50">
                   {img.caption}
                 </figcaption>
               </figure>
@@ -348,18 +374,24 @@ function CollectionSection({ collection, palette }) {
           {collection.map((img, i) => (
             <figure
               key={img.src}
-              onClick={() => setActive(i)}
-              className="group cursor-pointer overflow-hidden border border-ink/12 bg-bone shadow-sm"
+              className="group overflow-hidden border border-ink/12 bg-bone shadow-sm"
               style={{ borderColor: `${palette.base}1a` }}
             >
-              <div className="aspect-square overflow-hidden bg-ink/[0.03]">
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
-                />
-              </div>
+              <button
+                type="button"
+                onClick={() => setActive(i)}
+                aria-label={`View ${img.caption}`}
+                className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+              >
+                <div className="aspect-square overflow-hidden bg-ink/[0.03]">
+                  <SafeImage
+                    src={img.src}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+              </button>
               <figcaption className="px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/50">
                 {img.caption}
               </figcaption>
@@ -377,7 +409,7 @@ function ProcessSection({ process, palette }) {
     <section className="border-t border-ink/10">
       <div className="mx-auto max-w-4xl px-6 py-20 md:py-28">
         <div className="j-reveal mb-14">
-          <Eyebrow color="#0f857a">The method</Eyebrow>
+          <Eyebrow>The method</Eyebrow>
           <h2 className="headline text-3xl text-ink md:text-5xl">HOW IT GOT MADE</h2>
           <p className="mt-6 max-w-2xl text-sm italic leading-relaxed text-ink/80 md:text-base">
             "{process.line}"
@@ -399,7 +431,7 @@ function ProcessSection({ process, palette }) {
               {/* step number node */}
               <div
                 className="relative z-10 mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center border-2 font-mono text-[10px] font-bold"
-                style={{ borderColor: palette.base, color: palette.base, background: '#f4f1ea' }}
+                style={{ borderColor: palette.base, color: palette.base, background: 'var(--bone)' }}
               >
                 {String(i + 1).padStart(2, '0')}
               </div>
@@ -421,7 +453,7 @@ function ProcessSection({ process, palette }) {
         {/* faux sponsor bank */}
         {process.sponsorBank?.length > 0 && (
           <div className="j-reveal mt-14">
-            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/35">
+            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
               Faux sponsor bank
             </p>
             <div className="flex flex-wrap gap-2">
@@ -485,7 +517,7 @@ function EthicsSection({ ethics }) {
     <section className="border-t border-ink/10 bg-paper">
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
         <div className="j-reveal border border-gold/30 bg-bone p-6 md:p-8">
-          <Eyebrow color="#b8841a">Ethics note</Eyebrow>
+          <Eyebrow color="var(--gold)">Ethics note</Eyebrow>
           <p className="text-sm leading-relaxed text-ink/80 md:text-base">{ethics}</p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import { products } from '../data/products.js'
+import SafeImage from './SafeImage.jsx'
 
 // Compact drop teaser — woven into the pitch site + process page.
 // Cards link through to /store. On hover: image scales, tint bar shifts opacity.
@@ -43,12 +43,10 @@ function StatusBadge({ status }) {
 }
 
 function StripCard({ p }) {
-  const [imgError, setImgError] = useState(false)
-
   return (
     <Link
       to="/store"
-      className="group flex flex-col overflow-hidden border border-ink/12 bg-bone transition-all duration-250 hover:-translate-y-px hover:border-ink/28 hover:shadow-[0_6px_20px_rgba(26,20,16,0.09)]"
+      className="group flex flex-col overflow-hidden border border-ink/12 bg-bone transition-all duration-250 hover:-translate-y-px hover:border-ink/28 hover:shadow-[0_6px_20px_rgba(26,20,16,0.09)] focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
       title={p.title}
     >
       {/* tint bar — consistent with Store cards */}
@@ -61,19 +59,13 @@ function StripCard({ p }) {
 
       {/* product art */}
       <div className="flex aspect-square items-center justify-center overflow-hidden bg-bone p-2.5">
-        {imgError ? (
-          <span className="text-center font-mono text-[9px] uppercase tracking-wider text-ink/30">
-            {p.title}
-          </span>
-        ) : (
-          <img
-            src={p.image}
-            alt={p.title}
-            loading="lazy"
-            onError={() => setImgError(true)}
-            className="max-h-full max-w-full object-contain transition-transform duration-400 group-hover:scale-[1.05]"
-          />
-        )}
+        <SafeImage
+          src={p.image}
+          alt={p.title}
+          fallbackText={p.title}
+          loading="lazy"
+          className="max-h-full max-w-full object-contain transition-transform duration-400 group-hover:scale-[1.05]"
+        />
       </div>
 
       {/* meta row */}
@@ -118,7 +110,7 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
           </div>
           <Link
             to="/store"
-            className="shrink-0 border border-hazard/50 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink transition hover:bg-hazard hover:text-bone"
+            className="shrink-0 border border-hazard/50 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink transition hover:bg-hazard hover:text-bone focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
           >
             Shop all {products.length} →
           </Link>

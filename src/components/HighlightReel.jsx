@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import beats from '../data/highlightReel.js'
 import { heroKits } from '../data/heroKits.js'
 import KitFlat from './KitFlat.jsx'
+import SafeImage from './SafeImage.jsx'
+import { colors as tokens } from '../brand/tokens.js'
 
 const RECORD =
   typeof window !== 'undefined' &&
@@ -142,10 +144,10 @@ export default function HighlightReel() {
             className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-2xl"
           />
           <div className="absolute inset-0 flex items-center justify-center p-4 md:p-10">
-            <img
+            <SafeImage
               key={index}
               src={beat.image}
-              alt={beat.title || beat.eyebrow || 'MADE ON design'}
+              alt={beat.title || beat.eyebrow || 'MADE ON kit'}
               className={`reel-img max-h-full max-w-full object-contain drop-shadow-2xl ${motionClass(beat)}`}
               style={{ animationDuration: `${beat.ms}ms` }}
             />
@@ -190,7 +192,7 @@ export default function HighlightReel() {
                 <p
                   key={`${index}-${i}`}
                   className="headline reel-rise text-xl md:text-4xl"
-                  style={{ animationDelay: `${i * 110}ms`, color: i % 2 ? pal.signal : '#f4f1ea' }}
+                  style={{ animationDelay: `${i * 110}ms`, color: i % 2 ? pal.signal : tokens.bone }}
                 >
                   {s}
                 </p>
@@ -217,7 +219,7 @@ export default function HighlightReel() {
               {beat.receipt && (
                 <p
                   className="mt-6 inline-block border px-4 py-2 font-mono text-[11px] tracking-wide md:text-sm"
-                  style={{ borderColor: `${pal.accent}66`, color: '#f4f1ea', background: '#0a0a0a99' }}
+                  style={{ borderColor: `${pal.accent}66`, color: tokens.bone, background: '#0a0a0a99' }}
                 >
                   {beat.receipt}
                 </p>
@@ -257,7 +259,7 @@ export default function HighlightReel() {
             {beat.receipt && (
               <p
                 className="mt-4 inline-block border px-3 py-1.5 font-mono text-[11px] tracking-wide md:text-sm"
-                style={{ borderColor: `${pal.accent}66`, color: '#f4f1ea', background: '#0a0a0aaa' }}
+                style={{ borderColor: `${pal.accent}66`, color: tokens.bone, background: '#0a0a0aaa' }}
               >
                 {beat.receipt}
               </p>

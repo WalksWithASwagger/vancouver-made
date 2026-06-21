@@ -5,9 +5,13 @@
 :root {
   --ink: #1a1410;
   --bone: #f4f1ea;
-  --hazard: #d11f2a;
+  --paper: #ece4d4;
+  --rain: #1c2b33;
+  --oxblood: #5e1622;
   --cedar: #2f5436;
+  --hazard: #d11f2a;
   --gold: #b8841a;
+  --cyan: #0f857a;
   color-scheme: light;
 }
 

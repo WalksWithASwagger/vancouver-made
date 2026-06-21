@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { lineage, acts } from '../data/journey.js'
 import KitFlat from './KitFlat.jsx'
 import { heroKits } from '../data/heroKits.js'
+import SafeImage from './SafeImage.jsx'
 import './Journey.css'
 
 const heroKit = heroKits.find((k) => k.id === 'pump-and-dump') || heroKits[0]
@@ -91,7 +92,7 @@ export default function Journey() {
               >
                 {b.img ? (
                   <figure className="overflow-hidden rounded-lg border border-ink/15 bg-black/40">
-                    <img src={b.img} alt={b.title} loading="lazy" className="h-full w-full object-cover" />
+                    <SafeImage src={b.img} alt={b.title} loading="lazy" className="h-full w-full object-cover" />
                   </figure>
                 ) : (
                   <figure className="flex aspect-[4/3] items-center justify-center rounded-lg border border-hazard/30 bg-bone">
@@ -112,7 +113,7 @@ export default function Journey() {
           <div className="j-reveal mt-16 text-center">
             <Link
               to="/hall-of-fame"
-              className="inline-block border border-ink/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ink/70 transition hover:border-hazard hover:text-hazard"
+              className="inline-block border border-ink/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ink/70 transition hover:border-hazard hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
             >
               The full Hall of Fame, 1968 to 2026 →
             </Link>
@@ -129,10 +130,10 @@ export default function Journey() {
             {acts.method.body}
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-xs uppercase tracking-[0.2em]">
-            <Link to="/process" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink">
+            <Link to="/process" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">
               See the process →
             </Link>
-            <Link to="/engine" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink">
+            <Link to="/engine" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">
               Run the receipts →
             </Link>
           </div>
@@ -149,13 +150,13 @@ export default function Journey() {
             <p className="headline mt-6 text-xl text-hazard md:text-2xl">{acts.work.punch}</p>
             <Link
               to="/#hero-kits"
-              className="mt-8 inline-block border border-ink/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ink/70 transition hover:border-hazard hover:text-hazard"
+              className="mt-8 inline-block border border-ink/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ink/70 transition hover:border-hazard hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
             >
               See all nine kits →
             </Link>
             <Link
               to="/gallery"
-              className="mt-4 ml-0 inline-block border border-ink/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ink/70 transition hover:border-hazard hover:text-hazard md:ml-3"
+              className="mt-4 ml-0 inline-block border border-ink/25 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ink/70 transition hover:border-hazard hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone md:ml-3"
             >
               The gallery →
             </Link>
@@ -180,9 +181,9 @@ export default function Journey() {
             {acts.close.body}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4 text-xs uppercase tracking-[0.2em]">
-            <a href="https://feefa.ai" target="_blank" rel="noreferrer" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink">feefa.ai ↗</a>
-            <a href="https://world-cup-fashion-cake.vercel.app" target="_blank" rel="noreferrer" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink">fashion cake ↗</a>
-            <Link to="/engine" className="border border-hazard px-4 py-2 font-bold text-hazard transition hover:bg-hazard hover:text-ink">Open the engine →</Link>
+            <a href="https://feefa.ai" target="_blank" rel="noreferrer" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">feefa.ai ↗</a>
+            <a href="https://world-cup-fashion-cake.vercel.app" target="_blank" rel="noreferrer" className="border border-ink/25 px-4 py-2 text-ink/70 transition hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">fashion cake ↗</a>
+            <Link to="/engine" className="border border-hazard px-4 py-2 font-bold text-hazard transition hover:bg-hazard hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone">Open the engine →</Link>
           </div>
         </div>
       </section>
