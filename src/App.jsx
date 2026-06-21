@@ -13,6 +13,7 @@ import Collection from './components/Collection.jsx'
 import HeroKits from './components/HeroKits.jsx'
 import TheMove from './components/TheMove.jsx'
 import WhyItWins from './components/WhyItWins.jsx'
+import Footer from './components/Footer.jsx'
 import Nav from './components/Nav.jsx'
 import ShareQR from './components/ShareQR.jsx'
 import PresenterControls from './components/PresenterControls.jsx'
@@ -172,9 +173,6 @@ function MadeOnSite() {
       {/* DEEP DIVE — the club-card method behind the kits */}
       <Clubs />
 
-      {/* WHY IT WINS — the rubric, with proof links into the site */}
-      <WhyItWins />
-
       {/* AWARDS — double silver */}
       <section id="awards" className="scroll-mt-20 tartan-dark border-t border-ink/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-14 text-center md:py-16">
@@ -206,24 +204,7 @@ function MadeOnSite() {
         </div>
       </section>
 
-      <footer className="border-t border-ink/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
-        <p className="mb-5 text-[11px] font-bold tracking-[0.2em] text-gold">
-          🥈🥈 Double silver · BCIT Tech Collider 2026 — 2nd, Devin Technical Hackathon &amp; 2nd, Formme Design Challenge
-        </p>
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
-          <Link to="/" className="text-ink/60 hover:text-ink transition">Pitch Site</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/engine" className="text-ink/60 hover:text-ink transition">The Receipts</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/hall-of-fame" className="text-ink/60 hover:text-ink transition">Hall of Fame</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/process" className="text-ink/60 hover:text-ink transition">Process</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/tracker" className="text-ink/60 hover:text-ink transition">Asset Tracker</Link>
-        </div>
-        {brand.name} · {brand.parent} · You asked for the Vancouver story — this is the
-        part that doesn't fit on a souvenir.
-      </footer>
+      <Footer />
     </div>
   )
 }
@@ -304,6 +285,7 @@ export default function App() {
           <Route path="/process" element={<Process />} />
           <Route path="/store" element={<Store />} />
           <Route path="/awards" element={<Awards />} />
+          <Route path="/why" element={<WhyItWins />} />
           <Route path="/kit/:slug" element={<KitRoute />} />
         </Route>
         <Route
