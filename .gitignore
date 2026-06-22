@@ -21,3 +21,6 @@ docs/design/prompts/clubs/**/rafiki/images/
 # Consolidated raw-image archives (heavy; sources live in to-ingest/ and rafiki dirs)
 archive/
 .vercel
+
+# Generated standalone pump-prompts review viewer (regenerate via scripts/build-pump-viewer.mjs)
+public/wall/pump-prompts/
