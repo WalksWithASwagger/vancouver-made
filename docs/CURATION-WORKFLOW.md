@@ -1,6 +1,6 @@
 # Curation workflow
 
-The loop for working images from generation to shortlist: generate, ingest, star, read picks.
+The loop for working images from generation to shortlist to publish: generate, ingest, caption & tag, star, read picks, then export to per-project folders and the in-app making-of pages.
 
 ## Generate
 
@@ -42,6 +42,22 @@ node scripts/contact-sheet.js
 
 Reads `docs/design/prompts/ingest-manifest.json`, writes a static `contact-sheet.html` at the repo root grouped by concept, batch, and prompt. Open it in a browser. Re-run as more generations land.
 
+## Caption & tag
+
+Each asset's `metadata` JSON can carry a `caption`, a `tags` array, and the full `prompt`. These render on the cards and in the lightbox at `/tracker`, and feed both the per-project folders and the making-of pages.
+
+`scripts/annotate-assets.mjs` is the single writer — it merges `{id, caption, tags, ...}` records into each row's `metadata`, preserving existing keys (idempotent):
+
+```bash
+node scripts/annotate-assets.mjs annotations.json   # or: ... | node scripts/annotate-assets.mjs -
+```
+
+- **Club captions (free):** `scripts/harvest-runjson-captions.mjs` pulls each Rafiki club image's `name` + `prompt` from its run's `run.json` and pipes them to the annotator:
+  ```bash
+  node scripts/harvest-runjson-captions.mjs | node scripts/annotate-assets.mjs -
+  ```
+- **Vision pass (eyeballs):** for tags + descriptive captions, look at the images and emit `{id, caption, tags}` records (a batch of vision sub-agents over chunked file lists works well at scale), then apply with `annotate-assets.mjs`. Midjourney rows already carry a `promptLabel` that serves as a caption seed.
+
 ## Star
 
 In the tracker UI at `/tracker`, click 1-5 stars on any thumbnail to rate it. Click the heart to mark it as a keeper. Ratings save to `src/db/ratings.db` on click, no modal. Use the "Starred only" toggle and "Sort by score" to converge on winners.
@@ -57,6 +73,27 @@ sqlite3 src/db/ratings.db "SELECT a.concept,a.batch,a.filename,r.score,r.liked \
 ```
 
 Score >= 4 or liked = 1 is the shortlist. Export to CSV with `.mode csv` before the query.
+
+## Export: per-project folders (build-by-project.mjs)
+
+`scripts/build-by-project.mjs` mirrors the captioned assets into a browsable, hard-linked tree (≈0 extra disk) under `archive/<date>/by-project/<concept>/`, renamed `NNN-<caption-slug>.png`, each folder with an `_index.md` (caption · tags · source path). Midjourney concepts sub-group by batch (moodboard / graphic-elements / jersey-flats); club runs stay flat.
+
+```bash
+node scripts/build-by-project.mjs                 # all concepts
+node scripts/build-by-project.mjs china-creek     # just one
+```
+
+`archive/` is gitignored — this is a local Finder-browsable layer, not deployed.
+
+## Export: making-of pages (stage-makingof.mjs)
+
+`scripts/stage-makingof.mjs` stages the best images per concept into `public/making-of/<slug>/` (downscaled JPEGs + per-concept `manifest.json` + an `index.json`) that power the in-app `/making-of` and `/making-of/:slug` pages. Each image is classified into one of four stages — mood → graphics → flats → lifestyle (by batch for Midjourney, by tags for clubs) — liked-first and capped per stage.
+
+```bash
+node scripts/stage-makingof.mjs                   # all configured concepts
+```
+
+Unlike `by-project`, this writes into `public/` (deployed), so it is what makes the captioned process visible on the live site. The concept list (route slug → tracker concept) is configured at the top of the script.
 
 ## Sync to Notion
 

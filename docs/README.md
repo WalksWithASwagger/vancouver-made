@@ -23,7 +23,7 @@ Submission status + punch list (both tracks): **[`SUBMISSION.md`](SUBMISSION.md)
 - [`PROCESS.md`](PROCESS.md) — the /process page: the thesis, the 7 stages, who holds the pen at each.
 - [`RECEIPTS-ENGINE.md`](RECEIPTS-ENGINE.md) — the /engine: one receipt, three voices (hem/poster/editorial), how to add a receipt.
 - [`HALL-OF-FAME.md`](HALL-OF-FAME.md) — the /hall-of-fame: wings, filters, data files, rights policy.
-- [`CURATION-WORKFLOW.md`](CURATION-WORKFLOW.md) — generate, ingest, star, read picks: the full local curation loop.
+- [`CURATION-WORKFLOW.md`](CURATION-WORKFLOW.md) — generate, ingest, caption & tag, star, read picks, then export to per-project folders and the `/making-of` pages: the full local curation loop.
 
 ## presentation/ — the pitch
 - [`presentation-flow.md`](presentation/presentation-flow.md) — **design track**: the 8-slide /
