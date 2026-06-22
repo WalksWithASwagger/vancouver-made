@@ -90,7 +90,7 @@ export default function Clubs() {
         {/* section header */}
         <div className="mb-12 max-w-2xl">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan">
-            Four clubs · four arguments
+            Five clubs · five arguments
           </p>
           <h2 className="headline mt-3 text-3xl text-ink md:text-5xl">
             HOW A KIT BECOMES A RECEIPT

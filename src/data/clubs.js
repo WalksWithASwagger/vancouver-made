@@ -318,6 +318,30 @@ export const clubs = [
       'Punch up at promoters, developers, foreign capital, FIFA and the insiders who take the exit. The bagholders are the public. They are the home team, not the joke.',
   },
 
+  // ────────────────────────────────────────────────────────────────────────
+  // Minimal by design: this entry only feeds the gateway card. The Hogan's Alley
+  // landing page reads from its own self-contained manifest (directions/hogans-alley.js),
+  // NOT from here, and it is deliberately never listed as a store product (the
+  // ethics gate: not for sale before the community's blessing).
+  {
+    id: 'hogans-alley-fc',
+    name: "HOGAN'S ALLEY",
+    number: '71', // the Georgia Viaduct finished the erasure, c.1971
+    heroKit: 'HOME',
+    kitName: 'Renaissance Home Kit',
+    tagline: 'They paved the block. The block is coming home.',
+    palette: {
+      base: '#3b2f73', // cosmic indigo
+      ink: '#120e22',
+      accent: '#b8841a', // memorial gold
+      signal: '#b8841a',
+    },
+    summary:
+      "Vancouver's most prominent Black neighbourhood, razed for the Georgia Viaduct the Cup now drives its fans across. The collection's only kit that ends in the future tense: a 2022 land trust is bringing the block home.",
+    ethics:
+      "A settler artist amplifying, not authoring. Homage, not ownership; attention and any proceeds route to the Hogan's Alley Society and Ethọ́s Lab.",
+  },
+
 ]
 
 export default clubs
