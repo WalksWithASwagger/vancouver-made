@@ -22,6 +22,16 @@ The two Second Place certificates (cleaned up: perspective-corrected, squared, l
 
 ![Second Place, Fashion Design Track — 5 jerseys produced by Formmé, June 20 2026, BCIT Tech Collider](deliverables/awards/formme-design-2nd.jpg)
 
+## On the stage
+
+Accepting both awards at BCIT Tech Collider, June 20 2026.
+
+![Kris Krüg accepting second place, Formmé Fashion Design track](deliverables/awards/ceremony-design.jpg)
+
+![Kris Krüg accepting second place, Devin Open Hackathon track](deliverables/awards/ceremony-develop.jpg)
+
+Wider room shots: `ceremony-design-wide.jpg`, `ceremony-develop-wide.jpg`.
+
 ## The event
 
 **Vancouver Made: a World Cup Designathon and Hackathon** (1st edition). "Design the city. Wear the game."

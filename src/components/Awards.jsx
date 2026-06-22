@@ -46,6 +46,28 @@ export default function Awards() {
         </div>
       </section>
 
+      {/* ON THE STAGE — receiving the awards */}
+      <section className="border-t border-ink/10 px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <Eyebrow>On the stage · BCIT Tech Collider · June 20 2026</Eyebrow>
+          <h2 className="headline text-3xl text-ink md:text-4xl">RECEIVING THE AWARDS</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <figure className="overflow-hidden rounded-lg border border-ink/15 bg-ink/[0.04]">
+              <SafeImage src="/awards/ceremony-design.jpg" alt="Kris Krüg accepting second place on stage in the Formmé Fashion Design track" loading="lazy" className="w-full object-cover" />
+              <figcaption className="px-3 py-2 text-[11px] leading-snug text-ink/55">
+                Formmé Fashion Design track, second place. The winning kit goes into production.
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-lg border border-ink/15 bg-ink/[0.04]">
+              <SafeImage src="/awards/ceremony-develop.jpg" alt="Kris Krüg accepting second place on stage in the Devin Open Hackathon track" loading="lazy" className="w-full object-cover" />
+              <figcaption className="px-3 py-2 text-[11px] leading-snug text-ink/55">
+                Devin Open Hackathon track, second place. Best build with Devin.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* RESULTS + CERTIFICATES */}
       <section className="px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-10">
