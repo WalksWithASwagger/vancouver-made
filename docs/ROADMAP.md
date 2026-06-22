@@ -7,51 +7,42 @@
 The full task backlog lives in GitHub Issues; the redesign is tracked by **epic
 [#56](https://github.com/WalksWithASwagger/vancouver-made/issues/56)**. This doc is the map.
 
-## The finish line
+## ✅ Done — the redesign + cleanup shipped
 
-1. **Every design direction is its own "world"** — an immersive landing page (the Nardwuar flagship
-   `/kit/nardwuar-fc` is the template; the rest follow).
-2. **One cohesive brand** — the red/green Vancouver tartan as an iconic thread, site-wide.
-3. **Premium surfaces** — the store and the Receipts Engine feel high-end, not limp.
-4. **Production handoff** — the final Nardwuar design locked and Formme-ready; Nardwuar's blessing secured.
+The whole redesign and tech-debt backlog is **merged and live in prod**:
 
-## Phases
+- **Brand & foundations** — locked the red/green tartan (#67); generalized the `DirectionPage`
+  scaffold + `getDirection` registry (#57); Clubs gateway grid (#63); visual QA (#53).
+- **The direction worlds (epic #56)** — 4 immersive `/kit/:slug` pages live: Nardwuar (flagship),
+  Pump & Dump (#58), China Creek + Number Five Orange (#59); Hero Kits gateway (#62). **Hogan's Alley
+  FC (#60) back-burnered** — the club concept needs more development (the place/thesis stays).
+- **Surface polish** — Store + QuickLook (#64), Receipts Engine overhaul (#65), "Why It Wins" → the
+  `/why` page + a real shared `Footer` (#66).
+- **Tech-debt** — retired the 3D portal + R3F (#39); `SafeImage` fallback (#44) + a11y pass (#46);
+  hex→tokens (#43); stale comments/tokens (#45); em-dash sweep (#28); docs reconcile (#40).
+- **The bold Nardwuar Tartan Canvas (#75)** — red tartan ground, content on cream sheets, site-wide.
+- The public **`/wall`** refreshed (#41 content); the **Making Of** per-concept pages added.
 
-### ✅ Now / stabilize (this consolidation pass)
-- Flagship `/kit/nardwuar-fc` + the Clubs dark-on-dark fix live in prod.
-- "Why It Wins" out of the main nav.
-- Docs perfected (routes, status, architecture) — closes #40.
-- Awards page + og:image / social cards shipped (#42).
+## The finish line — launch: polish + announce
 
-### Phase 1 — Brand & foundations
-The groundwork the rest builds on.
-- **#67** Lock the final red/green tartan + apply it site-wide (behind the cream, as accent bands).
-- **#57** Generalize the `DirectionPage` scaffold from the Nardwuar flagship (manifest model + staging script).
-- **#63** Clubs "HOW A KIT BECOMES A RECEIPT" — full redesign into the gateway grid into the direction pages.
-- **#53** Visual QA sweep of the Tartan Paper redesign (all surfaces + mobile).
+The site is live on Vercel; the remaining goal is to get it **out into the world**:
 
-### Phase 2 — The direction worlds (epic #56)
-One immersive page per direction, off the template.
-- **#58** Pump & Dump FC · **#59** China Creek + Number Five Orange · **#60** Hogan's Alley.
-- **#62** Hero Kits "THE RECEIPTS, WORN" → rethink as a gateway into the kit pages.
+1. **Polish pass** — full desktop+mobile QA now that the canvas landed → punch list → fix. Resolve the
+   **#75 sign-off knobs** (canvas red heat `#a82828` · ink-veil `0.12` · keep/retire the faint
+   `body::after`). Proofread the copy + receipts.
+2. **Share-ready** — verify the OG/social cards; decide a **custom domain** (vs `vancouver-made.vercel.app`);
+   a quick perf pass (the 53 MB `/wall` lazy-loads).
+3. **Press / social announcement** — the launch story (the double-silver win + the protest thesis),
+   drafted in KK's voice. **Draft-only; KK approves before anything is published.**
 
-### Phase 3 — Surface polish
-- **#64** Store + "THE DROP" strip — high-end grid/product/UX, interactions, motion.
-- **#65** /engine (Receipts Engine) — UI/UX overhaul.
-- **#66** "Why It Wins" → footer + redesign with graphics/moodboards.
-
-### Phase 4 — Production (the prize)
-The 5-jersey Formme run.
-- **#26** Lock the final Nardwuar "Deep Cut" design — polished final flats, 3D hero, tech pack.
-- **Nardwuar's blessing** before the production run (homage ethics gate, `design/kits/NW-01-nardwuar-vancouver.md`).
-- Consolidate the tech-pack `[confirm]`s (strike-off, fibre, ink channels, metallic/gloss, raglan POMs) — `research/tech-pack-spec.md`.
-
-### Tech-debt lane (parallel, any time)
-- **#43** inline hexes → Tailwind tokens · **#46** a11y/responsive nits · **#45** stale comments / unused tokens.
-- **#39** retire the 3D portal (`src/scene/`) + R3F deps · **#41** decide how `public/wall` (53M) ships · **#44** shared broken-image fallback.
-- **#28** em-dash sweep of page copy · **#40** docs reconcile (✅ this pass).
+## Parked (KK-led, not this launch)
+- **#26 — the 5-jersey Formmé production run**: lock the final Nardwuar "Deep Cut" flats + tech pack,
+  consolidate the tech-pack `[confirm]`s, and secure **Nardwuar's blessing** (the homage ethics gate)
+  before manufacturing. See `design/kits/NW-01-nardwuar-vancouver.md`, `research/tech-pack-spec.md`.
+- **Store commerce** — wiring real Shopify checkout (the data is Shopify-ready).
+- **Hogan's Alley FC (#60)** — revisit if the club concept gets developed.
 
 ## How to pick up work
 See [`HANDOFF.md`](HANDOFF.md) for the live pickup state and [`ARCHITECTURE.md`](ARCHITECTURE.md) for
-the site map + data flow. Issues labelled `design`/`epic` are the redesign; `cleanup`/`bug` are the
-tech-debt lane.
+the site map + data flow. Open issues are down to **#26** (production) and **#56** (the worlds epic,
+effectively done).

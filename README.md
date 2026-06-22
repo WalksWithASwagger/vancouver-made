@@ -36,9 +36,10 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 | `src/` | The pitch site. React + Vite, mirrors the deck top-to-bottom |
 | `src/data/collection.js` | The MADE ON brand + the 9-kit / two-rack lineup |
 | `src/data/receipts.js` | The public-record receipts (the spine), `[confirm]`-tagged |
-| `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump · NW-01 Nardwuar "Deep Cut" (the Designathon winner)) |
-| `src/data/clubs.js` | Deep-dive method cards: ALLEY LEAGUE (No.5 · Nardwuar · Pump & Dump + China Creek expansion) |
-| `src/components/` | `Collection`, `HeroKits`, `KitFlat` (code-drawn jersey flats), `Clubs`, `Crest` |
+| `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump). Nardwuar "Deep Cut" (the Designathon winner) lives in `clubs.js` + `data/directions/nardwuar.js`, served at `/kit/nardwuar-fc` |
+| `src/data/clubs.js` | The 4 ALLEY LEAGUE clubs: Nardwuar · Number Five Orange · Pump & Dump · China Creek (Hogan's Alley FC back-burnered) |
+| `src/data/directions/` | Per-direction "world" manifests + registry (`getDirection`) — the 4 immersive `/kit/:slug` landing pages |
+| `src/components/` | `Collection`, `HeroKits`, `KitFlat` (code-drawn flats), `Clubs`, `Crest`, `DirectionPage` (the kit-world template), `SafeImage`, `Footer` |
 | `src/brand/tokens.js` | Shared site tokens (the palette feeding Tailwind + the MADE ON slogan/marquee bank) |
 | `docs/research/` | Knowledge base: all source docs + analyses + the synthesis |
 | `docs/design/kits/` | Filled tech-pack briefs (MO-01, MO-03, MO-09) |
