@@ -37,33 +37,33 @@ const nardwuar = {
       { src: `${K}/3d-render.png`, caption: '3D hero render' },
     ],
     details: [
-      { src: '/gallery/nw-front.jpg', caption: 'WHO BENEFITS? WHO PAYS? — chest bar' },
-      { src: '/highlight-reel/nardwuar-03-crest.png', caption: 'Collage crest — records, flyers, the tam' },
-      { src: '/gallery/nw-badge.jpg', caption: 'DEEP RESEARCH — Fair-Play badge spoof' },
-      { src: '/gallery/nw-nameplate.jpg', caption: 'NARDWUAR!! — ransom-note nameplate' },
-      { src: '/gallery/nw-sponsor.jpg', caption: 'HUMAN SERVIETTE REPORTING CLUB — sponsor bar' },
-      { src: '/gallery/nw-allover.jpg', caption: 'All-over — 7-inches, zines, cassette spines' },
+      { src: '/gallery/nw-front.jpg', caption: 'WHO BENEFITS? WHO PAYS?: chest bar' },
+      { src: '/highlight-reel/nardwuar-03-crest.png', caption: 'Collage crest: records, flyers, the tam' },
+      { src: '/gallery/nw-badge.jpg', caption: 'DEEP RESEARCH: Fair-Play badge spoof' },
+      { src: '/gallery/nw-nameplate.jpg', caption: 'NARDWUAR!!: ransom-note nameplate' },
+      { src: '/gallery/nw-sponsor.jpg', caption: 'HUMAN SERVIETTE REPORTING CLUB: sponsor bar' },
+      { src: '/gallery/nw-allover.jpg', caption: 'All-over: 7-inches, zines, cassette spines' },
     ],
   },
 
   // On the body — the lookbook gold (lifestyle + matchday).
   lifestyle: [
     { src: `${K}/lifestyle-gastown.png`, caption: 'Gastown alley, rainy neon' },
-    { src: `${K}/lifestyle-terrace.png`, caption: 'Terrace — NARDWUAR!! scarf up' },
-    { src: `${K}/team-red-action.png`, caption: 'Matchday — the ball strike' },
+    { src: `${K}/lifestyle-terrace.png`, caption: 'Terrace: NARDWUAR!! scarf up' },
+    { src: `${K}/team-red-action.png`, caption: 'Matchday: the ball strike' },
     { src: `${K}/team-red-goal.png`, caption: 'The celebration' },
     { src: `${K}/team-red-trophy.png`, caption: 'The lift' },
-    { src: `${K}/team-red-lineup.png`, caption: 'Home — the lineup' },
-    { src: `${K}/team-black-lineup.png`, caption: 'Away black — the lineup' },
-    { src: `${K}/lifestyle-white-premium.png`, caption: 'Limited white — studio' },
+    { src: `${K}/team-red-lineup.png`, caption: 'Home: the lineup' },
+    { src: `${K}/team-black-lineup.png`, caption: 'Away black: the lineup' },
+    { src: `${K}/lifestyle-white-premium.png`, caption: 'Limited white: studio' },
   ],
 
   // The system — collection family + derivatives (it’s a real range).
   collection: [
-    { src: `${K}/collection-family.png`, caption: 'Three colorways — Home / Away / Limited' },
-    { src: `${K}/hero-flatlay.png`, caption: 'Styled flat-lay — press pass, 7-inches, mic' },
-    { src: `${K}/derivative-tracksuit.png`, caption: 'Derivative — tracksuit' },
-    { src: `${K}/derivative-jacket-scarf.png`, caption: 'Derivative — jacket + scarf' },
+    { src: `${K}/collection-family.png`, caption: 'Three colorways: Home / Away / Limited' },
+    { src: `${K}/hero-flatlay.png`, caption: 'Styled flat-lay: press pass, 7-inches, mic' },
+    { src: `${K}/derivative-tracksuit.png`, caption: 'Derivative: tracksuit' },
+    { src: `${K}/derivative-jacket-scarf.png`, caption: 'Derivative: jacket + scarf' },
     { src: `${K}/gallery-wall.png`, caption: 'Gallery wall' },
     { src: `${K}/display-plinth.png`, caption: 'Launch plinth' },
   ],
@@ -74,7 +74,7 @@ const nardwuar = {
     steps: [
       {
         label: '01 · The brief',
-        body: 'Homage to Nardwuar the Human Serviette — hyper-researched guerrilla interviewer, frontman of The Evaporators, rooted at CiTR/UBC. Homage carried through objects (the tam, the mic, the records, the press pass) — never his likeness or name-as-merch.',
+        body: 'Homage to Nardwuar the Human Serviette, hyper-researched guerrilla interviewer, frontman of The Evaporators, rooted at CiTR/UBC. Homage carried through objects (the tam, the mic, the records, the press pass). Never his likeness or name-as-merch.',
       },
       {
         label: '02 · The moodboard',

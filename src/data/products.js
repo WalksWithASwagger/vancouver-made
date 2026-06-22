@@ -33,7 +33,7 @@ export const products = [
   // ── PATCHES ──────────────────────────────────────────────────────────────
   {
     id: 'patch-deep-research',
-    title: 'DEEP RESEARCH — sleeve badge',
+    title: 'DEEP RESEARCH: sleeve badge',
     category: 'patches',
     club: 'nardwuar-fc',
     price: 14,
@@ -41,14 +41,14 @@ export const products = [
     image: '/store/patch-deep-research.png',
     blurb: 'The Fair-Play badge, recoded into a reporting credential.',
     description:
-      'A woven sleeve badge in tartan green: DEEP RESEARCH arched over HUMAN SERVIETTE REPORTING CLUB, a tam-topped mic where the trophy should be. It takes the FIFA "Fair Play" patch and turns it into a press pass — research as the protest, the receipt as the weapon.',
+      'A woven sleeve badge in tartan green: DEEP RESEARCH arched over HUMAN SERVIETTE REPORTING CLUB, a tam-topped mic where the trophy should be. It takes the FIFA "Fair Play" patch and turns it into a press pass. Research as the protest, the receipt as the weapon.',
     status: 'blessing-pending',
     ethicsNote: 'Homage to a living Vancouverite. Not for sale until Nardwuar gives his blessing.',
     tint: TINT['nardwuar-fc'],
   },
   {
     id: 'patch-collage-crest',
-    title: 'VANCOUVER 26 — collage crest',
+    title: 'VANCOUVER 26: collage crest',
     category: 'patches',
     club: 'nardwuar-fc',
     price: 14,
@@ -56,13 +56,13 @@ export const products = [
     image: '/store/patch-collage-crest.png',
     blurb: 'The host-city crest, built from 7-inches and show flyers.',
     description:
-      'The official host-city shield, rebuilt as a cut-and-paste collage of punk records, photocopied flyers and a tartan tam — VANCOUVER 26 on the ribbon. It mimics the polish of a tournament crest; the inner art is the underground canon that never makes the broadcast.',
+      'The official host-city shield, rebuilt as a cut-and-paste collage of punk records, photocopied flyers and a tartan tam. VANCOUVER 26 on the ribbon. It mimics the polish of a tournament crest; the inner art is the underground canon that never makes the broadcast.',
     status: 'preorder',
     tint: TINT['nardwuar-fc'],
   },
   {
     id: 'patch-trophy-mark',
-    title: 'Trophy mark — mic & spindle',
+    title: 'Trophy mark: mic & spindle',
     category: 'patches',
     club: 'nardwuar-fc',
     price: 12,
@@ -77,7 +77,7 @@ export const products = [
   },
   {
     id: 'patch-pump-and-dump-crest',
-    title: 'PUMP & DUMP — crest patch',
+    title: 'PUMP & DUMP: crest patch',
     category: 'patches',
     club: 'pump-and-dump-fc',
     price: 14,
@@ -85,13 +85,13 @@ export const products = [
     image: '/store/patch-pump-and-dump-crest.png',
     blurb: 'Half the beautiful game, half the candlestick chart.',
     description:
-      'The club crest, gold engraving on midnight navy: a heraldic shield split down the middle — one half a soccer ball, the other a candlestick chart climbing into a condo tower. Motto ribbon: INFLATE. EXTRACT. ABANDON. Worn like a banknote engraving, because that is the joke.',
+      'The club crest, gold engraving on midnight navy: a heraldic shield split down the middle: one half a soccer ball, the other a candlestick chart climbing into a condo tower. Motto ribbon: INFLATE. EXTRACT. ABANDON. Worn like a banknote engraving, because that is the joke.',
     status: 'preorder',
     tint: TINT['pump-and-dump-fc'],
   },
   {
     id: 'patch-china-creek-crest',
-    title: 'CHINA CREEK — crest patch',
+    title: 'CHINA CREEK: crest patch',
     category: 'patches',
     club: 'china-creek',
     price: 14,
@@ -99,7 +99,7 @@ export const products = [
     image: '/store/patch-china-creek-crest.png',
     blurb: 'The bowl, as a coat of arms.',
     description:
-      'The club crest: a host-city shield with the skatepark bowl cross-section and coping line drawn in creek-teal and caution-yellow on raw concrete grey. Public space, held by its users — built 1979, defended ever since.',
+      'The club crest: a host-city shield with the skatepark bowl cross-section and coping line drawn in creek-teal and caution-yellow on raw concrete grey. Public space, held by its users. Built 1979, defended ever since.',
     status: 'preorder',
     tint: TINT['china-creek'],
   },
@@ -107,7 +107,7 @@ export const products = [
   // ── STICKERS ─────────────────────────────────────────────────────────────
   {
     id: 'sticker-interview-your-city',
-    title: 'INTERVIEW YOUR CITY — sticker',
+    title: 'INTERVIEW YOUR CITY: sticker',
     category: 'stickers',
     club: 'nardwuar-fc',
     price: 4,
@@ -115,14 +115,14 @@ export const products = [
     image: '/store/sticker-interview-your-city.png',
     blurb: 'A bumper-sticker-sized dare, in broadcast caps.',
     description:
-      'Cut-and-paste caps on a banner: interview your city like it owes you an answer. Stick it wherever a follow-up question is overdue — the laptop, the lamp post, the bus shelter outside city hall.',
+      'Cut-and-paste caps on a banner: interview your city like it owes you an answer. Stick it wherever a follow-up question is overdue: the laptop, the lamp post, the bus shelter outside city hall.',
     status: 'blessing-pending',
     ethicsNote: 'Carries the Nardwuar line. Not for sale until blessing is given.',
     tint: TINT['nardwuar-fc'],
   },
   {
     id: 'sticker-ransom-nameplate',
-    title: 'Ransom-note nameplate — sticker',
+    title: 'Ransom-note nameplate: sticker',
     category: 'stickers',
     club: 'nardwuar-fc',
     price: 4,
@@ -130,14 +130,14 @@ export const products = [
     image: '/store/sticker-ransom-nameplate.png',
     blurb: 'The back-of-shirt nameplate, in cut-and-paste type.',
     description:
-      'Chaotic ransom-note lettering pulled straight off the jersey back. A die-cut sticker for the collage-pile aesthetic — looks like it was assembled at 2am from a stack of zines, because spiritually it was.',
+      'Chaotic ransom-note lettering pulled straight off the jersey back. A die-cut sticker for the collage-pile aesthetic. Looks like it was assembled at 2am from a stack of zines, because spiritually it was.',
     status: 'blessing-pending',
     ethicsNote: 'Tied to the Nardwuar homage. Not for sale until blessing is given.',
     tint: TINT['nardwuar-fc'],
   },
   {
     id: 'sticker-no-skateboarding',
-    title: 'NO SKATEBOARDING — sticker',
+    title: 'NO SKATEBOARDING: sticker',
     category: 'stickers',
     club: 'china-creek',
     price: 4,
@@ -153,7 +153,7 @@ export const products = [
   // ── PRINTS ───────────────────────────────────────────────────────────────
   {
     id: 'print-who-benefits',
-    title: 'WHO BENEFITS? WHO PAYS? — print',
+    title: 'WHO BENEFITS? WHO PAYS?: print',
     category: 'prints',
     club: 'thesis',
     price: 28,
@@ -167,7 +167,7 @@ export const products = [
   },
   {
     id: 'print-work-is-work',
-    title: 'WORK IS WORK — print',
+    title: 'WORK IS WORK: print',
     category: 'prints',
     club: 'number-five-orange',
     price: 28,
@@ -181,7 +181,7 @@ export const products = [
   },
   {
     id: 'print-bowl-stencil',
-    title: 'China Creek bowl — stencil print',
+    title: 'China Creek bowl: stencil print',
     category: 'prints',
     club: 'china-creek',
     price: 28,
@@ -189,7 +189,7 @@ export const products = [
     image: '/store/print-bowl-stencil.png',
     blurb: 'Spray stencil on raw concrete.',
     description:
-      'Griptape grit and stencil spray pulled off the transition at China Creek. A print for the part of the city that was built by use, not permission — concrete that became a commons one session at a time.',
+      'Griptape grit and stencil spray pulled off the transition at China Creek. A print for the part of the city that was built by use, not permission. Concrete that became a commons one session at a time.',
     status: 'preorder',
     tint: TINT['china-creek'],
   },
@@ -197,7 +197,7 @@ export const products = [
   // ── JERSEYS ──────────────────────────────────────────────────────────────
   {
     id: 'jersey-nardwuar-home',
-    title: 'NARDWUAR FC — Deep Cut home kit',
+    title: 'NARDWUAR FC: Deep Cut home kit',
     category: 'jerseys',
     club: 'nardwuar-fc',
     price: 95,
@@ -206,14 +206,14 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
     blurb: 'A walking archive in tartan.',
     description:
-      'Reads as a host-nation home jersey — bold tartan reds and greens ghosted into the fabric, the DEEP RESEARCH badge on the chest, WHO BENEFITS? WHO PAYS? across the front. Inside the collar: DOOT DOOLA DOOT DOO. A World Cup kit turned into a Vancouver underground reading list.',
+      'Reads as a host-nation home jersey: bold tartan reds and greens ghosted into the fabric, the DEEP RESEARCH badge on the chest, WHO BENEFITS? WHO PAYS? across the front. Inside the collar: DOOT DOOLA DOOT DOO. A World Cup kit turned into a Vancouver underground reading list.',
     status: 'blessing-pending',
     ethicsNote: 'Homage to Nardwuar the Human Serviette. Not for sale until he gives his blessing.',
     tint: TINT['nardwuar-fc'],
   },
   {
     id: 'jersey-five-orange-home',
-    title: 'NUMBER FIVE ORANGE — home kit',
+    title: 'NUMBER FIVE ORANGE: home kit',
     category: 'jerseys',
     club: 'number-five-orange',
     price: 95,
@@ -222,13 +222,13 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
     blurb: 'The bill for a night out you never agreed to.',
     description:
-      'Vinyl black and safety-cone orange — the home strip for No.5 Orange, one of the last of old Gastown (opened as the Melbourne Hotel, 1904). Surcharge lines and service-fee marks run the body: the cover charge at the door of your own city.',
+      'Vinyl black and safety-cone orange: the home strip for No.5 Orange, one of the last of old Gastown (opened as the Melbourne Hotel, 1904). Surcharge lines and service-fee marks run the body: the cover charge at the door of your own city.',
     status: 'preorder',
     tint: TINT['number-five-orange'],
   },
   {
     id: 'jersey-five-orange-away',
-    title: 'NUMBER FIVE ORANGE — Work Is Work away kit',
+    title: 'NUMBER FIVE ORANGE: Work Is Work away kit',
     category: 'jerseys',
     club: 'number-five-orange',
     price: 95,
@@ -237,13 +237,13 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
     blurb: 'The hero away strip. The whole city becomes a VIP room.',
     description:
-      'Saturated safety-cone orange, white sleeves, metallic-gold trim, a "pole" stripe down the torso — a glam World Cup away strip on TV, WORK IS WORK where the sponsor goes. The Cup turns public land into a private champagne room; this is the kit for everyone charged admission to their own night.',
+      'Saturated safety-cone orange, white sleeves, metallic-gold trim, a "pole" stripe down the torso, a glam World Cup away strip on TV, WORK IS WORK where the sponsor goes. The Cup turns public land into a private champagne room; this is the kit for everyone charged admission to their own night.',
     status: 'preorder',
     tint: TINT['number-five-orange'],
   },
   {
     id: 'jersey-pump-and-dump',
-    title: 'PUMP & DUMP FC — Speculation City kit',
+    title: 'PUMP & DUMP FC: Speculation City kit',
     category: 'jerseys',
     club: 'pump-and-dump-fc',
     price: 95,
@@ -252,13 +252,13 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
     blurb: 'The whole grift, worn as the prospectus.',
     description:
-      'The flagship blackout third kit: midnight navy and crash-red, a candlestick-chart skyline of stacked-coin condo towers climbing the body, toxic teal and magenta gradients straight out of the hype deck. Vancouver as the asset, the public as the exit liquidity. You are the bagholder — wear it like a prospectus nobody read.',
+      'The flagship blackout third kit: midnight navy and crash-red, a candlestick-chart skyline of stacked-coin condo towers climbing the body, toxic teal and magenta gradients straight out of the hype deck. Vancouver as the asset, the public as the exit liquidity. You are the bagholder. Wear it like a prospectus nobody read.',
     status: 'preorder',
     tint: TINT['pump-and-dump-fc'],
   },
   {
     id: 'jersey-china-creek',
-    title: 'CHINA CREEK — Public Land home kit',
+    title: 'CHINA CREEK: Public Land home kit',
     category: 'jerseys',
     club: 'china-creek',
     price: 95,
@@ -267,13 +267,13 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
     blurb: 'They banned the board, then sold the bowl.',
     description:
-      'Raw-concrete grey with the China Creek bowl contours mapped all over the body in creek-teal and caution-yellow, the bowl-crest on the chest. Reads as a clean city-pride home kit on TV; a defended-public-space manifesto up close. The home ground was never the gift — it was the fight.',
+      'Raw-concrete grey with the China Creek bowl contours mapped all over the body in creek-teal and caution-yellow, the bowl-crest on the chest. Reads as a clean city-pride home kit on TV; a defended-public-space manifesto up close. The home ground was never the gift. It was the fight.',
     status: 'preorder',
     tint: TINT['china-creek'],
   },
   {
     id: 'jersey-five-orange-cover-charge',
-    title: 'NUMBER FIVE ORANGE — Cover Charge strip',
+    title: 'NUMBER FIVE ORANGE: Cover Charge strip',
     category: 'jerseys',
     club: 'number-five-orange',
     price: 95,
@@ -282,20 +282,20 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
     blurb: 'Cover charge $25. Drink minimum 2. Total due: priceless.',
     description:
-      'Safety-cone orange with the No.5 Orange neon crest and the whole night-out itemized down the chest — COVER CHARGE, DRINK MINIMUM, SERVICE FEE, TOTAL DUE [Priceless] — COVER CHARGE tape running the sleeves. The spectacle economy, printed like a receipt you never agreed to.',
+      'Safety-cone orange with the No.5 Orange neon crest and the whole night-out itemized down the chest: COVER CHARGE, DRINK MINIMUM, SERVICE FEE, TOTAL DUE [Priceless], with COVER CHARGE tape running the sleeves. The spectacle economy, printed like a receipt you never agreed to.',
     status: 'preorder',
     tint: TINT['number-five-orange'],
   },
   {
     id: 'jersey-pump-and-dump-home',
-    title: 'PUMP & DUMP FC — Pump home kit',
+    title: 'PUMP & DUMP FC: Pump home kit',
     category: 'jerseys',
     club: 'pump-and-dump-fc',
     price: 95,
     currency: 'CAD',
     image: '/store/jersey-pump-and-dump-home.png',
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
-    blurb: 'Ascending candlesticks — right up until they aren’t.',
+    blurb: "Ascending candlesticks. Right up until they aren’t.",
     description:
       'Midnight navy with a candlestick-chart skyline of stacked-coin condo towers climbing the torso, gold and neon ticking up toward the peak. The home strip for the run-up: 2021 PEAK on the hem, the bagholders in the stands.',
     status: 'preorder',
@@ -303,7 +303,7 @@ export const products = [
   },
   {
     id: 'jersey-pump-and-dump-away',
-    title: 'PUMP & DUMP FC — Dump away kit',
+    title: 'PUMP & DUMP FC: Dump away kit',
     category: 'jerseys',
     club: 'pump-and-dump-fc',
     price: 95,
@@ -318,7 +318,7 @@ export const products = [
   },
   {
     id: 'jersey-china-creek-away',
-    title: 'CHINA CREEK — Caution away kit',
+    title: 'CHINA CREEK: Caution away kit',
     category: 'jerseys',
     club: 'china-creek',
     price: 95,
@@ -333,14 +333,14 @@ export const products = [
   },
   {
     id: 'jersey-five-orange-complete',
-    title: 'NUMBER FIVE ORANGE — complete kit',
+    title: 'NUMBER FIVE ORANGE: complete kit',
     category: 'jerseys',
     club: 'number-five-orange',
     price: 120,
     currency: 'CAD',
     image: '/store/jersey-five-orange-complete.png',
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
-    blurb: 'Jersey, shorts, socks — the whole door fee.',
+    blurb: 'Jersey, shorts, socks. The whole door fee.',
     description:
       'The full No.5 Orange strip laid out: safety-cone jersey, shorts and socks, metallic-gold trim and the marquee-pink signal throughout. One night out, itemized head to toe.',
     status: 'preorder',
@@ -348,14 +348,14 @@ export const products = [
   },
   {
     id: 'jersey-nardwuar-complete',
-    title: 'NARDWUAR FC — complete kit',
+    title: 'NARDWUAR FC: complete kit',
     category: 'jerseys',
     club: 'nardwuar-fc',
     price: 120,
     currency: 'CAD',
     image: '/store/jersey-nardwuar-complete.png',
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
-    blurb: 'The whole archive — jersey, shorts, socks.',
+    blurb: 'The whole archive: jersey, shorts, socks.',
     description:
       'The full Deep Cut kit in tartan reds and greens: jersey, shorts and socks, the record-collage all-over print ghosted across all three. A walking Vancouver underground canon from collar to calf.',
     status: 'blessing-pending',
@@ -366,13 +366,13 @@ export const products = [
   // ── LOOKBOOK ─────────────────────────────────────────────────────────────
   {
     id: 'lookbook-nardwuar',
-    title: 'NARDWUAR FC — on body',
+    title: 'NARDWUAR FC: on body',
     category: 'lookbook',
     club: 'nardwuar-fc',
     price: null,
     currency: 'CAD',
     image: '/store/lookbook-nardwuar.png',
-    blurb: 'WHO BENEFITS? WHO PAYS? — worn, not framed.',
+    blurb: 'WHO BENEFITS? WHO PAYS? Worn, not framed.',
     description:
       'The away tartan on the body: VANCOUVER ghosted over the record-collage print, the WHO BENEFITS? WHO PAYS? bar across the chest, mic crest and sleeve badge. A walking archive, exactly as intended.',
     status: 'lookbook',
@@ -380,13 +380,13 @@ export const products = [
   },
   {
     id: 'lookbook-china-creek',
-    title: 'CHINA CREEK — at the bowl',
+    title: 'CHINA CREEK: at the bowl',
     category: 'lookbook',
     club: 'china-creek',
     price: null,
     currency: 'CAD',
     image: '/store/lookbook-china-creek.png',
-    blurb: 'The kit where it was won — the concrete.',
+    blurb: 'The kit where it was won. The concrete.',
     description:
       'The Public Land kit shot at China Creek: concrete-grey and creek-teal against the coping and transition it takes its lines from. Public space, worn back to the place it was defended.',
     status: 'lookbook',
@@ -394,7 +394,7 @@ export const products = [
   },
   {
     id: 'lookbook-china-creek-action',
-    title: 'CHINA CREEK — mid-line',
+    title: 'CHINA CREEK: mid-line',
     category: 'lookbook',
     club: 'china-creek',
     price: null,
@@ -402,7 +402,7 @@ export const products = [
     image: '/store/lookbook-china-creek-action.png',
     blurb: 'Use, not permission.',
     description:
-      'Mid-action in the bowl — the kit doing the one thing the bylaw said you couldn’t. The home ground was never the gift; it was the fight.',
+      "Mid-action in the bowl. The kit doing the one thing the bylaw said you couldn’t. The home ground was never the gift; it was the fight.",
     status: 'lookbook',
     tint: TINT['china-creek'],
   },

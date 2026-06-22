@@ -33,7 +33,7 @@ export default function Collection() {
           WE MADE THE <span className="text-hazard">RECEIPT.</span>
         </h2>
         <p className="mt-4 max-w-2xl text-sm text-ink/70">
-          One collection. Two racks. One argument. We borrowed no sacred imagery — we
+          One collection. Two racks. One argument. We borrowed no sacred imagery. We
           used the coloniser's own paperwork instead: the receipt, the redaction, the banknote.
         </p>
 
@@ -59,7 +59,7 @@ export default function Collection() {
         {/* the receipts wall */}
         <div className="mt-16 border border-ink/15 p-6">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">
-            The receipts — all public record
+            The receipts: all public record
           </p>
           <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {receipts.map((r) => (
@@ -74,7 +74,7 @@ export default function Collection() {
             ))}
           </div>
           <p className="mt-5 text-[11px] uppercase tracking-[0.2em] text-ink/40">
-            Process — {brand.process.join('  →  ')}
+            Process: {brand.process.join('  →  ')}
           </p>
         </div>
       </div>

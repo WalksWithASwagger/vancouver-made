@@ -14,7 +14,7 @@ const pumpAndDump = {
   palette: club.palette, // base #0b1437 navy · accent #ff2bd6 magenta · signal #21f0d0 teal
 
   hero: {
-    eyebrow: 'The flagship — the mega-event as a pump & dump',
+    eyebrow: 'The flagship: the mega-event as a pump & dump',
     image: '/gallery/pd-kit.jpg',
     line: 'A blackout “city pride” third kit that resolves into a prospectus. Hype the asset, bill the public, take the exit. You are the bagholder.',
   },
@@ -29,14 +29,14 @@ const pumpAndDump = {
   // The kit, up close — the strips + the craft close-ups (lightbox).
   kit: {
     flats: [
-      { src: '/store/jersey-pump-and-dump.png', caption: 'Speculation City — the blackout third kit' },
-      { src: '/store/jersey-pump-and-dump-home.png', caption: 'Pump — the home strip (the run-up)' },
-      { src: '/store/jersey-pump-and-dump-away.png', caption: 'Dump — the away strip (the crash)' },
+      { src: '/store/jersey-pump-and-dump.png', caption: 'Speculation City: the blackout third kit' },
+      { src: '/store/jersey-pump-and-dump-home.png', caption: 'Pump: the home strip (the run-up)' },
+      { src: '/store/jersey-pump-and-dump-away.png', caption: 'Dump: the away strip (the crash)' },
     ],
     details: [
-      { src: '/gallery/pd-front.jpg', caption: 'Front — the candlestick skyline' },
-      { src: '/gallery/pd-back.jpg', caption: 'Back — BAGHOLDER, № ▲▼' },
-      { src: '/gallery/pd-crest.jpg', caption: 'Crest — soccer ball / candlestick split shield' },
+      { src: '/gallery/pd-front.jpg', caption: 'Front: the candlestick skyline' },
+      { src: '/gallery/pd-back.jpg', caption: 'Back: BAGHOLDER, № ▲▼' },
+      { src: '/gallery/pd-crest.jpg', caption: 'Crest: soccer ball / candlestick split shield' },
       { src: '/gallery/pd-banknote.jpg', caption: 'Banknote engraving detail' },
       { src: '/gallery/pd-guilloche.jpg', caption: 'Guilloché fine-line security pattern' },
       { src: '/gallery/pd-holo.jpg', caption: 'Holographic “limited drop” foil' },
@@ -50,7 +50,7 @@ const pumpAndDump = {
     steps: [
       {
         label: '01 · The brief',
-        body: 'Vancouver’s speculative DNA — Howe Street, the VSE branded “Scam Capital of the World” (Forbes 1989), a housing market decoupled from local incomes. The World Cup as the ultimate pump: hype the city as the asset, bill the public, let insiders take the exit liquidity.',
+        body: "Vancouver’s speculative DNA: Howe Street, the VSE branded \"Scam Capital of the World\" (Forbes 1989), a housing market decoupled from local incomes. The World Cup as the ultimate pump: hype the city as the asset, bill the public, let insiders take the exit liquidity.",
       },
       {
         label: '02 · The moodboard',
@@ -62,7 +62,7 @@ const pumpAndDump = {
       },
       {
         label: '04 · The receipt',
-        body: 'Sponsor bar: PUMP & DUMP CAPITAL · WE WIN IF YOU LIVE HERE OR NOT. Nameplate roles, not names — DEVELOPER, FLIPPER, LANDLORD, RENOVICTOR. Socks: price-to-income multiples. Shorts: a VACANT stamp where the ad would sit.',
+        body: 'Sponsor bar: PUMP & DUMP CAPITAL · WE WIN IF YOU LIVE HERE OR NOT. Nameplate roles, not names: DEVELOPER, FLIPPER, LANDLORD, RENOVICTOR. Socks: price-to-income multiples. Shorts: a VACANT stamp where the ad would sit.',
       },
     ],
     sponsorBank: club.sponsorBank,

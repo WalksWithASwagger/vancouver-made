@@ -483,7 +483,7 @@ function CitationsSection({ citations, palette }) {
           <Eyebrow color="#e8c531">The receipts</Eyebrow>
           <h2 className="headline text-3xl text-bone md:text-5xl">CITED.</h2>
           <p className="mt-3 font-mono text-[11px] text-bone/40">
-            Every claim sourced. The kit is the receipt — here's the paper trail.
+            Every claim sourced. The kit is the receipt. Here's the paper trail.
           </p>
         </div>
 

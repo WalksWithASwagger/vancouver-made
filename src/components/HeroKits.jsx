@@ -120,7 +120,7 @@ export default function HeroKits() {
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">Built today · hero kits</p>
           <h2 className="headline mt-2 text-3xl text-ink md:text-5xl">THE RECEIPTS, WORN</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-ink/70">
-            Three kits resolved to spec — front + back flats drawn from the same data
+            Three kits resolved to spec. Front + back flats drawn from the same data
             that fills the tech pack. Mimic the polish, invert the payload, bake in the receipt.
           </p>
         </div>

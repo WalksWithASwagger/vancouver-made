@@ -269,8 +269,8 @@ export default function HallOfFame() {
 
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink/70">
             {tabId === 'story'
-              ? `The loudest podiums, the cleanest brand hijacks, the kits that refused to stay quiet — the lineage MADE ON draws from. ${entries.length} works across ${categories.length} threads, weighted toward protest.`
-              : `The greatest jersey designs ever cut — protest and otherwise. ${entries.length} kits across ${categories.length} threads, from the Aztec calendar to the carbon-neutral terrace.`}
+              ? `The loudest podiums, the cleanest brand hijacks, the kits that refused to stay quiet. The lineage MADE ON draws from. ${entries.length} works across ${categories.length} threads, weighted toward protest.`
+              : `The greatest jersey designs ever cut: protest and otherwise. ${entries.length} kits across ${categories.length} threads, from the Aztec calendar to the carbon-neutral terrace.`}
           </p>
           <p className="mt-3 max-w-2xl font-mono text-[11px] leading-relaxed text-ink/45">
             Rights-honest: {localCount} freely-licensed works archived here ·{' '}

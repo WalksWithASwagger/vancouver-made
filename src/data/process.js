@@ -7,11 +7,11 @@
 const IMG = '/process'
 
 export const thesis = {
-  line: 'The human bookends the machine — and holds the pen at every gate between.',
+  line: 'The human bookends the machine. Holds the pen at every gate between.',
   body:
     'Voice in, judgment out, and a human hand on every gate in between. What looks like a ' +
     'tidy assembly line is really a loop with a research spine, tooling built for the job, and ' +
-    'five or six places where a person — not the model — decides. Watch one kit, Pump & Dump ' +
+    'five or six places where a person, not the model, decides. Watch one kit, Pump & Dump ' +
     'FC, move through it.',
 }
 
@@ -36,7 +36,7 @@ export const phases = [
 export const stages = [
   {
     no: '00', key: 'research', phase: 'ground', title: 'Receipts & research', hand: 'gate', gate: true,
-    lede: 'Before any design — the public-record spine.',
+    lede: 'Before any design: the public-record spine.',
     body:
       'Every claim on the garment starts as a cited fact, gathered and then verified. A fact-check ' +
       'pass caught two wrong numbers (price-to-income 20–30× → ~12×; homelessness 373% → +134%). ' +
@@ -50,7 +50,7 @@ export const stages = [
     lede: 'A stance, not a prompt.',
     body:
       'A point of view a machine cannot have: a settler artist refusing to make the celebration ' +
-      'jersey. Deadpan official-speak fractured by protest truth — the city as a market being played.',
+      'jersey. Deadpan official-speak fractured by protest truth. The city as a market being played.',
     parts: [
       "Hype the asset. Socialize the cost. Privatize the exit. You're not in the stands. You're the bag.",
     ],
@@ -62,8 +62,8 @@ export const stages = [
     lede: 'The voice fans into a collection.',
     body:
       'One stance becomes nine-plus wounds, one FC each. Pump & Dump FC: the World Cup as a pump ' +
-      'and dump — a blackout "city-pride" kit on TV, a wearable indictment up close.',
-    parts: ['Punch up at the insiders. The bagholders are the public — the home team, not the joke.'],
+      'and dump: a blackout "city-pride" kit on TV, a wearable indictment up close.',
+    parts: ['Punch up at the insiders. The bagholders are the public. The home team, not the joke.'],
     images: [],
     source: 'docs/design/clubs/pump-and-dump-fc.md',
   },
@@ -71,7 +71,7 @@ export const stages = [
     no: '03', key: 'prompts', phase: 'make', title: 'Prompts', hand: 'handoff',
     lede: 'The stance, encoded. Where the human hands off.',
     body:
-      'Three prompt sets per kit — moodboard, graphic elements, jersey flats — translate the idea ' +
+      'Three prompt sets per kit: moodboard, graphic elements, jersey flats. Each translates the idea ' +
       'into parameters a model can run. The point of view becomes instructions.',
     parts: [
       'seamless repeating pattern, candlestick charts, soaring then cliff-diving, deep navy … --style raw',
@@ -81,11 +81,11 @@ export const stages = [
   },
   {
     no: '04', key: 'generate', phase: 'make', title: 'Generate', hand: 'machine', loop: true,
-    lede: 'The machine produces — at scale. 246 and counting.',
+    lede: 'The machine produces: at scale. 246 and counting.',
     body:
       'Every prompt runs in Midjourney; moodboards, graphic elements and flats come back by the ' +
       'hundred. The arrow loops: a weak roll sends craft notes back to the prompt and regenerates. ' +
-      'Only 2 of 9 kits are fully generated — the loop is the engine, not a one-pass line.',
+      'Only 2 of 9 kits are fully generated. The loop is the engine, not a one-pass line.',
     parts: ['↺ re-roll: rate → craft notes → sharpen the prompt → regenerate'],
     images: [
       { src: `${IMG}/moodboard-banknote.jpg`, alt: 'Engraved banknote guilloché macro', caption: 'Moodboard · banknote DNA' },
@@ -112,7 +112,7 @@ export const stages = [
   },
   {
     no: '06', key: 'curate', phase: 'curate', title: 'Curate at scale', hand: 'gate', gate: true,
-    lede: 'Not one decision — 246.',
+    lede: 'Not one decision: 246.',
     body:
       'In the tracker, every generation gets rated, killed or kept, notes attached, synced to ' +
       'Notion. The judgment is granular and human. This is where taste does the filtering a model ' +
@@ -126,7 +126,7 @@ export const stages = [
     no: '07', key: 'code-flats', phase: 'real', title: 'Code-drawn flats', hand: 'handoff',
     lede: 'AI hands off to code.',
     body:
-      "The hero flats on the site aren't Midjourney — they're deterministic SVG drawn from the kit " +
+      "The hero flats on the site aren't Midjourney. They're deterministic SVG drawn from the kit " +
       'spec. Change a colour in the data and the jersey redraws. The design is the data; the render ' +
       'is exact.',
     parts: ['src/components/KitFlat.jsx ← src/data/heroKits.js'],
@@ -138,8 +138,8 @@ export const stages = [
     no: '08', key: 'multi', phase: 'real', title: 'Multi-surface', hand: 'machine',
     lede: 'One receipt, many surfaces.',
     body:
-      'The Receipts Engine takes one cited fact and renders it three ways — a hem, a protest ' +
-      'poster, a fashion editorial — each in its own house voice. One pipeline pointed at three ' +
+      'The Receipts Engine takes one cited fact and renders it three ways: a hem, a protest ' +
+      'poster, a fashion editorial. Each in its own house voice. One pipeline pointed at three ' +
       'surfaces, not three projects.',
     parts: ['one fact → hem · poster · editorial'],
     images: [],
@@ -151,7 +151,7 @@ export const stages = [
     lede: 'Make it manufacturable.',
     body:
       'Silhouette, fabric (ocean-bound recycled PET, ECONYL ghost-net), sizing XS–3XL, BOM, ' +
-      'sublimation method — the spec a factory can actually run. Sourced and [confirm]-flagged like ' +
+      'sublimation method: the spec a factory can actually run. Sourced and [confirm]-flagged like ' +
       'the receipts.',
     parts: ['docs/research/tech-pack-spec.md · docs/design/kits/MO-*.md'],
     images: [],
@@ -173,7 +173,7 @@ export const stages = [
     body:
       "This wasn't one model or one session. Research came from several models in parallel; the " +
       'build came from several agents working the same branch, each leaving a handoff doc for the ' +
-      "next. The novel part isn't using AI — it's conducting a roomful of it.",
+      "next. The novel part isn't using AI. It's conducting a roomful of it.",
     parts: ['docs/HANDOFF.md · parallel agents · one branch'],
     images: [],
     source: 'docs/HANDOFF.md · git log',

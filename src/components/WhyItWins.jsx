@@ -25,7 +25,7 @@ export default function WhyItWins() {
             WHY IT <span className="text-hazard">WON</span>
           </h1>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-bone/80 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">
-            They asked for the Vancouver story. We finished the sentence — and
+            They asked for the Vancouver story. We finished the sentence. We
             took silver in both tracks.
           </p>
 
@@ -70,7 +70,7 @@ export default function WhyItWins() {
           <p className="mt-5 text-sm leading-relaxed text-ink/75 max-w-2xl">
             The judging rubric asked for novelty of process, the best Vancouver
             narrative, visible method, and strong use of AI tools. Here's how the
-            work answered each — and the proof is still live on the site, not
+            work answered each. The proof is still live on the site, not
             just claimed on a slide.
           </p>
         </div>
@@ -113,8 +113,8 @@ export default function WhyItWins() {
           </p>
           <p className="text-sm leading-relaxed text-ink/70">
             This was a settler artist's refusal to make the celebration jersey.
-            No sacred imagery borrowed. The coloniser's own paperwork — the
-            receipt, the redaction, the banknote — turned into the kit. The land
+            No sacred imagery borrowed. The coloniser's own paperwork, the
+            receipt, the redaction, the banknote, turned into the kit. The land
             the stadium sits on named in the hem text. That framing wasn't
             incidental; it was the brief.
           </p>

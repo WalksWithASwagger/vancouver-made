@@ -13,16 +13,16 @@ export const receipts = [
   {
     id: 'R-PRIVATE',
     stat: 'public vs private',
-    claim: 'California host cities funded most of their hosting budget privately — BC went nearly 100% public',
+    claim: 'California host cities funded most of their hosting budget privately. BC went nearly 100% public',
     detail: 'SF Bay Area: ~US$45M operating cost, mostly private sponsors + a ticket surcharge (federal money still covers security/transit)',
     source: 'Globe and Mail, June 2026',
   },
   {
     id: 'R-FORSAKEN',
     stat: '“forsaken twice”',
-    claim: 'the Oppal inquiry found the women were forsaken twice — by society and by the police',
+    claim: 'the Oppal inquiry found the women were forsaken twice: by society and by the police',
     detail: 'a “blatant failure”; the VPD “utterly failed” to warn women in the DTES',
-    source: 'Forsaken — Missing Women Commission of Inquiry (Oppal), 2012',
+    source: 'Forsaken: Missing Women Commission of Inquiry (Oppal), 2012',
   },
   {
     id: 'R-2010',

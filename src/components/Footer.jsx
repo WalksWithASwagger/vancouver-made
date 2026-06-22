@@ -89,7 +89,7 @@ export default function Footer() {
               Land Acknowledgement
             </p>
             <p className="text-xs leading-relaxed text-bone/70 [text-shadow:0_1px_2px_rgba(0,0,0,0.4)]">
-              {brand.author} — this work was made on the unceded, ancestral, and
+              {brand.author}: this work was made on the unceded, ancestral, and
               traditional territories of the{' '}
               <span className="text-bone/90">xʷməθkʷəy̓əm (Musqueam)</span>,{' '}
               <span className="text-bone/90">Sḵwx̱wú7mesh (Squamish)</span>, and{' '}
@@ -98,8 +98,8 @@ export default function Footer() {
             </p>
             <p className="mt-3 text-xs leading-relaxed text-bone/55">
               The stadium that hosted these games sits on this same ground. The
-              viaduct built over Hogan's Alley — the Black neighbourhood demolished
-              for it — runs through it. That context is the work, not the
+              viaduct built over Hogan's Alley, the Black neighbourhood demolished
+              for it, runs through it. That context is the work, not the
               disclaimer.
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function Footer() {
             <p className="mt-3 text-xs leading-relaxed text-bone/55">
               Everyone else made a souvenir. We made the receipt. A protest
               collection that cites its sources, shows its process, and names the
-              numbers — stitched into the hem, not printed on a poster.
+              numbers. Stitched into the hem, not printed on a poster.
             </p>
             <p className="mt-4 text-xs leading-relaxed text-bone/55">
               {brand.move}

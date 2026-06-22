@@ -54,16 +54,16 @@ function RouteFallback() {
 }
 
 const TITLES = {
-  '/': 'MADE ON — Whose Cup Is It Anyway?',
-  '/journey': 'The Journey — MADE ON',
-  '/gallery': 'The Gallery — MADE ON',
-  '/awards': 'Awards — Double Silver — MADE ON',
-  '/engine': 'We Made the Receipt — MADE ON',
-  '/hall-of-fame': 'Hall of Fame — MADE ON',
-  '/process': 'Our Process — MADE ON',
-  '/store': 'The Store — MADE ON',
-  '/tracker': 'Asset Tracker — MADE ON',
-  '/kit/nardwuar-fc': 'Nardwuar FC — Deep Cut — MADE ON',
+  '/': 'MADE ON: Whose Cup Is It Anyway?',
+  '/journey': 'The Journey · MADE ON',
+  '/gallery': 'The Gallery · MADE ON',
+  '/awards': 'Awards · Double Silver · MADE ON',
+  '/engine': 'We Made the Receipt · MADE ON',
+  '/hall-of-fame': 'Hall of Fame · MADE ON',
+  '/process': 'Our Process · MADE ON',
+  '/store': 'The Store · MADE ON',
+  '/tracker': 'Asset Tracker · MADE ON',
+  '/kit/nardwuar-fc': 'Nardwuar FC · Deep Cut · MADE ON',
 }
 
 function Marquee() {
@@ -143,7 +143,7 @@ function MadeOnSite() {
           <p>
             The unceded Musqueam, Squamish and Tsleil-Waututh land the stadium sits
             on. The Black neighbourhood paved for the viaduct this World Cup drives
-            its fans across. A public bill of up to $729M — $242M of it security —
+            its fans across. A public bill of up to $729M, $242M of it security,
             while California cities ran the same tournament on private money.
           </p>
           <p>
@@ -237,8 +237,8 @@ function PitchLayout() {
   useEffect(() => {
     const kit = pathname.startsWith('/kit/') ? getDirection(pathname.slice(5)) : null
     document.title = kit
-      ? `${kit.name} — ${kit.kitName} — MADE ON`
-      : (TITLES[pathname] ?? 'MADE ON — VANCOUVER MADE')
+      ? `${kit.name} · ${kit.kitName} · MADE ON`
+      : (TITLES[pathname] ?? 'MADE ON · VANCOUVER MADE')
   }, [pathname])
 
   useEffect(() => {
