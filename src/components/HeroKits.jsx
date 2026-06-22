@@ -114,8 +114,8 @@ function Row({ label, v }) {
 
 export default function HeroKits() {
   return (
-    <section id="hero-kits" className="scroll-mt-20 border-t border-ink/10 bg-rain/20">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <section id="hero-kits" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <div className="mb-10 text-center">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">Built today · hero kits</p>
           <h2 className="headline mt-2 text-3xl text-ink md:text-5xl">THE RECEIPTS, WORN</h2>

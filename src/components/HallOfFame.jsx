@@ -236,10 +236,10 @@ export default function HallOfFame() {
   }
 
   return (
-    <div className="grain min-h-screen bg-bone text-ink">
+    <div className="grain min-h-screen tartan-canvas text-ink">
       {/* HEADER */}
-      <section className="border-b border-ink/10">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet mx-auto max-w-6xl px-6 py-16 md:py-20">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cyan">
             Reference library · MADE ON
           </p>
@@ -310,8 +310,8 @@ export default function HallOfFame() {
       </section>
 
       {/* GRID */}
-      <section>
-        <div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet mx-auto max-w-6xl px-6 py-10 md:py-14">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {shown.map((e) => (
               <Tile key={e.id} entry={e} onOpen={setActive} />
@@ -320,21 +320,23 @@ export default function HallOfFame() {
         </div>
       </section>
 
-      <footer className="border-t border-ink/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
-        <div className="mb-4 flex flex-wrap justify-center gap-6">
-          <Link to="/" className="text-ink/60 transition hover:text-ink">
-            Pitch Site
-          </Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/tracker" className="text-ink/60 transition hover:text-ink">
-            Asset Tracker
-          </Link>
-          <span className="text-ink/20">·</span>
-          <span className="text-ink">Hall of Fame</span>
-        </div>
-        All works © their respective holders · archived items under the noted licence ·
-        shown for study and commentary.
-      </footer>
+      <section className="px-4 py-4 md:px-6">
+        <footer className="sheet mx-auto max-w-6xl px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
+          <div className="mb-4 flex flex-wrap justify-center gap-6">
+            <Link to="/" className="text-ink/60 transition hover:text-ink">
+              Pitch Site
+            </Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/tracker" className="text-ink/60 transition hover:text-ink">
+              Asset Tracker
+            </Link>
+            <span className="text-ink/20">·</span>
+            <span className="text-ink">Hall of Fame</span>
+          </div>
+          All works © their respective holders · archived items under the noted licence ·
+          shown for study and commentary.
+        </footer>
+      </section>
 
       <Lightbox entry={active} onClose={() => setActive(null)} />
     </div>

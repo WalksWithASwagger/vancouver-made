@@ -29,12 +29,12 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-bone/85 backdrop-blur supports-[backdrop-filter]:bg-bone/70">
+    <header className="nav-tartan sticky top-0 z-50 border-b-2 border-ink">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-6">
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          className="headline text-sm tracking-tight text-ink transition hover:text-hazard focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+          className="headline text-sm tracking-tight text-bone transition hover:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         >
           MADE <span className="text-hazard">ON</span>
         </Link>
@@ -47,8 +47,8 @@ export default function Nav() {
                 to={l.to}
                 aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
-                  'transition hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone ' +
-                  (isActive(pathname, l.to) ? 'text-hazard' : 'text-ink/60')
+                  'transition hover:text-bone focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink ' +
+                  (isActive(pathname, l.to) ? 'text-gold' : 'text-bone/70')
                 }
               >
                 {l.label}
@@ -63,7 +63,7 @@ export default function Nav() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="text-xs uppercase tracking-[0.2em] text-ink/70 focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone md:hidden"
+          className="text-xs uppercase tracking-[0.2em] text-bone/80 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink md:hidden"
         >
           {open ? '✕ Close' : 'Menu ☰'}
         </button>
@@ -71,16 +71,16 @@ export default function Nav() {
 
       {/* mobile drawer */}
       {open && (
-        <ul className="border-t border-ink/10 px-5 pb-4 pt-1 text-xs uppercase tracking-[0.2em] md:hidden">
+        <ul className="nav-tartan border-t border-bone/15 px-5 pb-4 pt-1 text-xs uppercase tracking-[0.2em] md:hidden">
           {LINKS.map((l) => (
-            <li key={l.to} className="border-b border-ink/5">
+            <li key={l.to} className="border-b border-bone/10">
               <Link
                 to={l.to}
                 onClick={() => setOpen(false)}
                 aria-current={isActive(pathname, l.to) ? 'page' : undefined}
                 className={
-                  'block py-3 transition hover:text-ink focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone ' +
-                  (isActive(pathname, l.to) ? 'text-hazard' : 'text-ink/70')
+                  'block py-3 transition hover:text-bone focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink ' +
+                  (isActive(pathname, l.to) ? 'text-gold' : 'text-bone/75')
                 }
               >
                 {l.label}

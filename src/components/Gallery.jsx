@@ -37,75 +37,79 @@ export default function Gallery() {
   const cur = active === null ? null : flat[active]
 
   return (
-    <div className="grain min-h-screen bg-bone text-ink">
-      <header className="border-b border-ink/10 px-6 py-10 md:px-10">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">Vancouver Made · MADE ON</p>
-        <h1 className="headline text-4xl text-ink md:text-6xl">THE <span className="text-hazard">GALLERY</span></h1>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/80 md:text-base">
-          The strongest of the generations, rated down from hundreds to these. The kits, the
-          crests, the sponsor boards, the textures. Click any frame to enlarge.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em]">
-          <button
-            onClick={() => setFilter('all')}
-            className={'rounded border px-3 py-1 transition ' + (filter === 'all' ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
-          >
-            All · {total}
-          </button>
-          {groups.map((g) => (
+    <div className="grain min-h-screen tartan-canvas text-ink">
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <header className="sheet mx-auto max-w-6xl px-6 py-10 md:px-10">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">Vancouver Made · MADE ON</p>
+          <h1 className="headline text-4xl text-ink md:text-6xl">THE <span className="text-hazard">GALLERY</span></h1>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/80 md:text-base">
+            The strongest of the generations, rated down from hundreds to these. The kits, the
+            crests, the sponsor boards, the textures. Click any frame to enlarge.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em]">
             <button
-              key={g.concept}
-              onClick={() => setFilter(g.concept)}
-              className={'rounded border px-3 py-1 transition ' + (filter === g.concept ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
+              onClick={() => setFilter('all')}
+              className={'rounded border px-3 py-1 transition ' + (filter === 'all' ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
             >
-              {g.concept}
+              All · {total}
             </button>
-          ))}
-        </div>
-      </header>
+            {groups.map((g) => (
+              <button
+                key={g.concept}
+                onClick={() => setFilter(g.concept)}
+                className={'rounded border px-3 py-1 transition ' + (filter === g.concept ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
+              >
+                {g.concept}
+              </button>
+            ))}
+          </div>
+        </header>
+      </section>
 
-      <main className="px-6 py-10 md:px-10">
-        {shown.map((g) => {
-          const offset = flat.findIndex((f) => f.concept === g.concept)
-          return (
-            <section key={g.concept} className="mb-16">
-              <div className="mb-5 max-w-2xl">
-                <h2 className="headline text-2xl text-gold md:text-3xl">{g.concept}</h2>
-                <p className="mt-1 text-sm text-ink/70">{g.blurb}</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-                {g.items.map((it, i) => (
-                  <figure
-                    key={it.src}
-                    className="group overflow-hidden rounded-lg border border-ink/12 bg-ink/[0.04] shadow-sm"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setActive(offset + i)}
-                      aria-label={`View ${it.caption}`}
-                      className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+      <section className="px-4 pb-8 md:px-6">
+        <div className="sheet mx-auto max-w-6xl px-6 py-10 md:px-10">
+          {shown.map((g) => {
+            const offset = flat.findIndex((f) => f.concept === g.concept)
+            return (
+              <div key={g.concept} className="mb-16">
+                <div className="mb-5 max-w-2xl">
+                  <h2 className="headline text-2xl text-gold md:text-3xl">{g.concept}</h2>
+                  <p className="mt-1 text-sm text-ink/70">{g.blurb}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+                  {g.items.map((it, i) => (
+                    <figure
+                      key={it.src}
+                      className="group overflow-hidden rounded-lg border border-ink/12 bg-ink/[0.04] shadow-sm"
                     >
-                      <SafeImage
-                        src={it.src}
-                        alt={it.caption}
-                        loading="lazy"
-                        className="aspect-square w-full object-cover transition group-hover:scale-[1.03] group-hover:opacity-90"
-                      />
-                    </button>
-                    <figcaption className="px-2 py-2 text-[11px] leading-snug text-ink/55">{it.caption}</figcaption>
-                  </figure>
-                ))}
+                      <button
+                        type="button"
+                        onClick={() => setActive(offset + i)}
+                        aria-label={`View ${it.caption}`}
+                        className="w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+                      >
+                        <SafeImage
+                          src={it.src}
+                          alt={it.caption}
+                          loading="lazy"
+                          className="aspect-square w-full object-cover transition group-hover:scale-[1.03] group-hover:opacity-90"
+                        />
+                      </button>
+                      <figcaption className="px-2 py-2 text-[11px] leading-snug text-ink/55">{it.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
               </div>
-            </section>
-          )
-        })}
+            )
+          })}
 
-        <div className="border-t border-ink/10 pt-10 text-center">
-          <Link to="/journey" className="text-xs uppercase tracking-[0.2em] text-ink/60 transition hover:text-hazard">
-            ← back to the journey
-          </Link>
+          <div className="border-t border-ink/10 pt-10 text-center">
+            <Link to="/journey" className="text-xs uppercase tracking-[0.2em] text-ink/60 transition hover:text-hazard">
+              ← back to the journey
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
 
       {/* LIGHTBOX */}
       {cur && (

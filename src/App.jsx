@@ -47,7 +47,7 @@ function KitRoute() {
 
 function RouteFallback() {
   return (
-    <div className="grain flex min-h-screen items-center justify-center bg-bone text-[11px] uppercase tracking-[0.3em] text-ink/40">
+    <div className="grain flex min-h-screen items-center justify-center tartan-canvas text-[11px] uppercase tracking-[0.3em] text-bone/70">
       Loading…
     </div>
   )
@@ -69,7 +69,7 @@ const TITLES = {
 function Marquee() {
   const line = slogans.join('   ✦   ') + '   ✦   '
   return (
-    <div className="tartan-dark overflow-hidden border-y-2 border-ink py-3">
+    <div className="nav-tartan overflow-hidden border-y-2 border-ink py-3">
       <div className="marquee text-bone text-sm font-bold tracking-widest [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
         <span>{line}</span>
         <span aria-hidden="true">{line}</span>
@@ -80,12 +80,12 @@ function Marquee() {
 
 function MadeOnSite() {
   return (
-    <div className="grain min-h-screen bg-bone text-ink">
+    <div className="grain min-h-screen tartan-canvas text-ink">
       <PresenterControls />
 
       {/* HERO — the MADE ON statement + a lookbook of the actual kits */}
-      <section id="hero" className="relative w-full overflow-hidden border-b border-ink/10">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-24">
+      <section id="hero" className="relative w-full px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet mx-auto grid max-w-6xl items-center gap-10 overflow-hidden px-6 py-14 md:grid-cols-2 md:gap-14 md:py-24">
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-ink/55">
               {brand.parent} · {brand.name}
@@ -131,7 +131,8 @@ function MadeOnSite() {
       <Marquee />
 
       {/* TERRITORIAL STATEMENT */}
-      <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet mx-auto max-w-4xl px-6 py-16 md:px-12 md:py-20">
         <h2 className="headline mb-8 text-3xl text-gold md:text-5xl">
           THE TERRITORIAL STATEMENT
         </h2>
@@ -155,6 +156,7 @@ function MadeOnSite() {
             {brand.author} · {brand.land}
           </p>
         </div>
+        </div>
       </section>
 
       {/* THE MOVE — souvenir vs. receipt, the thesis as one image */}
@@ -173,9 +175,9 @@ function MadeOnSite() {
       {/* DEEP DIVE — the club-card method behind the kits */}
       <Clubs />
 
-      {/* AWARDS — double silver */}
-      <section id="awards" className="scroll-mt-20 tartan-dark border-t border-ink/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-14 text-center md:py-16">
+      {/* AWARDS — double silver (ink chip floating on the tartan canvas) */}
+      <section id="awards" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-2xl bg-ink/85 px-6 py-14 text-center shadow-[0_18px_44px_-26px_rgba(20,12,10,0.7)] md:py-16">
           <p className="text-xs uppercase tracking-[0.3em] text-bone/70">Vancouver Made · BCIT Tech Collider · 2026</p>
           <h2 className="headline text-3xl text-bone md:text-5xl [text-shadow:0_2px_6px_rgba(0,0,0,0.6)]">
             DOUBLE <span className="text-hazard">SILVER</span>
@@ -194,8 +196,8 @@ function MadeOnSite() {
       </section>
 
       {/* THE CLOSER — scan to open the live site */}
-      <section className="border-t border-ink/10 bg-rain/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-6 py-16 text-center">
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet-paper mx-auto flex max-w-6xl flex-col items-center gap-5 px-6 py-16 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-cyan">Take it with you</p>
           <h2 className="headline max-w-2xl text-2xl text-ink md:text-4xl">
             THE PART THAT DOESN'T FIT ON A <span className="text-hazard">SOUVENIR.</span>
@@ -211,20 +213,22 @@ function MadeOnSite() {
 
 function NotFound() {
   return (
-    <div className="grain flex min-h-screen flex-col items-center justify-center bg-bone px-6 text-center text-ink">
-      <p className="text-xs uppercase tracking-[0.3em] text-cyan">404 · off the record</p>
-      <h1 className="headline mt-3 text-5xl text-ink md:text-7xl">
-        NO <span className="text-hazard">RECEIPT</span> FOUND
-      </h1>
-      <p className="mt-4 max-w-md text-sm text-ink/70">
-        This page isn't in the public record. Everything that is starts at the top.
-      </p>
-      <Link
-        to="/"
-        className="mt-8 border border-hazard px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
-      >
-        Back to the pitch
-      </Link>
+    <div className="grain flex min-h-screen flex-col items-center justify-center tartan-canvas px-6 text-center text-ink">
+      <div className="sheet max-w-md px-8 py-14">
+        <p className="text-xs uppercase tracking-[0.3em] text-cyan">404 · off the record</p>
+        <h1 className="headline mt-3 text-5xl text-ink md:text-7xl">
+          NO <span className="text-hazard">RECEIPT</span> FOUND
+        </h1>
+        <p className="mt-4 text-sm text-ink/70">
+          This page isn't in the public record. Everything that is starts at the top.
+        </p>
+        <Link
+          to="/"
+          className="mt-8 inline-block border border-hazard px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
+        >
+          Back to the pitch
+        </Link>
+      </div>
     </div>
   )
 }

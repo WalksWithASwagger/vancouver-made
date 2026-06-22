@@ -16,7 +16,7 @@ const NAV_LINKS = [
 // includes it explicitly. tartan-dark ground, cream type, grain.
 export default function Footer() {
   return (
-    <footer className="grain tartan-dark border-t-2 border-ink/30">
+    <footer className="grain nav-tartan border-t-2 border-ink/30">
       <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 
         {/* Top row — wordmark + tagline + double-silver badge */}

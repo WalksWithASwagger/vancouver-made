@@ -166,56 +166,58 @@ function HeroSection({ data }) {
 // ── Section: THE PROVOCATION ──────────────────────────────────────────────────
 function ProvocationSection({ concept, palette }) {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-24 md:py-32">
-      <div className="j-reveal">
-        <Eyebrow>The provocation</Eyebrow>
-        <h2 className="headline text-3xl text-ink md:text-5xl" style={{ color: palette.base }}>
-          THE TARGET
-        </h2>
-        <p className="mt-2 max-w-lg font-mono text-xs uppercase tracking-[0.2em] text-ink/50">
-          {concept.target}
-        </p>
-        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink/85 md:text-base">
-          {concept.summary}
-        </p>
-      </div>
-
-      {/* WHO BENEFITS / WHO PAYS — mirrors Clubs.jsx layout */}
-      <div
-        className="j-reveal mt-10 grid grid-cols-2 gap-px border border-ink/10 bg-ink/10 text-sm"
-        style={{ borderColor: `${palette.base}30` }}
-      >
-        <div className="bg-bone p-5 md:p-7">
-          <p
-            className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.25em]"
-            style={{ color: palette.signal ?? '#b8841a' }}
-          >
-            Who benefits ↑
+    <section className="px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet mx-auto max-w-4xl px-6 py-12 md:px-10 md:py-16">
+        <div className="j-reveal">
+          <Eyebrow>The provocation</Eyebrow>
+          <h2 className="headline text-3xl text-ink md:text-5xl" style={{ color: palette.base }}>
+            THE TARGET
+          </h2>
+          <p className="mt-2 max-w-lg font-mono text-xs uppercase tracking-[0.2em] text-ink/50">
+            {concept.target}
           </p>
-          <ul className="space-y-2 text-xs text-ink/75 md:text-sm">
-            {concept.whoBenefits.map((x) => (
-              <li key={x} className="flex items-start gap-2">
-                <span className="mt-0.5 text-[10px]" style={{ color: palette.signal ?? '#b8841a' }}>↑</span>
-                {x}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink/85 md:text-base">
+            {concept.summary}
+          </p>
         </div>
-        <div className="bg-paper p-5 md:p-7">
-          <p
-            className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.25em]"
-            style={{ color: palette.accent ?? '#d11f2a' }}
-          >
-            Who pays ↓
-          </p>
-          <ul className="space-y-2 text-xs text-ink/75 md:text-sm">
-            {concept.whoPays.map((x) => (
-              <li key={x} className="flex items-start gap-2">
-                <span className="mt-0.5 text-[10px]" style={{ color: palette.accent ?? '#d11f2a' }}>↓</span>
-                {x}
-              </li>
-            ))}
-          </ul>
+
+        {/* WHO BENEFITS / WHO PAYS — mirrors Clubs.jsx layout */}
+        <div
+          className="j-reveal mt-10 grid grid-cols-2 gap-px border border-ink/10 bg-ink/10 text-sm"
+          style={{ borderColor: `${palette.base}30` }}
+        >
+          <div className="bg-bone p-5 md:p-7">
+            <p
+              className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.25em]"
+              style={{ color: palette.signal ?? '#b8841a' }}
+            >
+              Who benefits ↑
+            </p>
+            <ul className="space-y-2 text-xs text-ink/75 md:text-sm">
+              {concept.whoBenefits.map((x) => (
+                <li key={x} className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[10px]" style={{ color: palette.signal ?? '#b8841a' }}>↑</span>
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-paper p-5 md:p-7">
+            <p
+              className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.25em]"
+              style={{ color: palette.accent ?? '#d11f2a' }}
+            >
+              Who pays ↓
+            </p>
+            <ul className="space-y-2 text-xs text-ink/75 md:text-sm">
+              {concept.whoPays.map((x) => (
+                <li key={x} className="flex items-start gap-2">
+                  <span className="mt-0.5 text-[10px]" style={{ color: palette.accent ?? '#d11f2a' }}>↓</span>
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -228,9 +230,9 @@ function KitSection({ kit, palette }) {
   const [active, setActive] = useState(null)
 
   return (
-    <section className="border-t border-ink/10 bg-paper">
+    <section className="px-4 py-6 md:px-6 md:py-8">
       <Lightbox images={allImages} active={active} setActive={setActive} />
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="sheet-paper mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
         <div className="j-reveal mb-12">
           <Eyebrow>The kit, up close</Eyebrow>
           <h2 className="headline text-3xl text-ink md:text-5xl">THE WORK</h2>
@@ -308,9 +310,9 @@ function LifestyleSection({ lifestyle, palette }) {
   const spanMap = [2, 1, 1, 2, 1, 2, 1, 1]
 
   return (
-    <section className="border-t border-ink/10">
+    <section className="px-4 py-6 md:px-6 md:py-8">
       <Lightbox images={lifestyle} active={active} setActive={setActive} />
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="sheet mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
         <div className="j-reveal mb-12">
           <Eyebrow color={palette.signal ?? '#b8841a'}>On the body</Eyebrow>
           <h2 className="headline text-3xl text-ink md:text-5xl">THE LOOKBOOK</h2>
@@ -362,9 +364,9 @@ function CollectionSection({ collection, palette }) {
   const [active, setActive] = useState(null)
 
   return (
-    <section className="border-t border-ink/10 bg-paper">
+    <section className="px-4 py-6 md:px-6 md:py-8">
       <Lightbox images={collection} active={active} setActive={setActive} />
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="sheet-paper mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
         <div className="j-reveal mb-10">
           <Eyebrow color={palette.base}>The system</Eyebrow>
           <h2 className="headline text-3xl text-ink md:text-5xl">THE COLLECTION</h2>
@@ -406,8 +408,8 @@ function CollectionSection({ collection, palette }) {
 // ── Section: THE METHOD ────────────────────────────────────────────────────────
 function ProcessSection({ process, palette }) {
   return (
-    <section className="border-t border-ink/10">
-      <div className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+    <section className="px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet mx-auto max-w-4xl px-6 py-12 md:px-10 md:py-16">
         <div className="j-reveal mb-14">
           <Eyebrow>The method</Eyebrow>
           <h2 className="headline text-3xl text-ink md:text-5xl">HOW IT GOT MADE</h2>
@@ -514,8 +516,8 @@ function CitationsSection({ citations, palette }) {
 // ── Section: ETHICS ────────────────────────────────────────────────────────────
 function EthicsSection({ ethics }) {
   return (
-    <section className="border-t border-ink/10 bg-paper">
-      <div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
+    <section className="px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet-paper mx-auto max-w-3xl px-6 py-12 md:px-10 md:py-16">
         <div className="j-reveal border border-gold/30 bg-bone p-6 md:p-8">
           <Eyebrow color="var(--gold)">Ethics note</Eyebrow>
           <p className="text-sm leading-relaxed text-ink/80 md:text-base">{ethics}</p>
@@ -528,26 +530,28 @@ function EthicsSection({ ethics }) {
 // ── Section: FOOTER ────────────────────────────────────────────────────────────
 function DirectionFooter({ name }) {
   return (
-    <footer className="border-t border-ink/10 bg-bone px-6 py-12 text-center">
-      <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/30">
-        {name} · Vancouver Made · MADE ON
-      </p>
-      <div className="mt-5 flex flex-wrap justify-center gap-6 font-mono text-xs uppercase tracking-[0.2em]">
-        <Link to="/" className="text-ink/55 transition hover:text-hazard">
-          ← Pitch site
-        </Link>
-        <span className="text-ink/20">·</span>
-        <Link to="/store" className="text-ink/55 transition hover:text-ink">
-          The store →
-        </Link>
-        <span className="text-ink/20">·</span>
-        <Link to="/gallery" className="text-ink/55 transition hover:text-ink">
-          Gallery →
-        </Link>
+    <footer className="px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet mx-auto max-w-4xl px-6 py-12 text-center md:px-10 md:py-16">
+        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/30">
+          {name} · Vancouver Made · MADE ON
+        </p>
+        <div className="mt-5 flex flex-wrap justify-center gap-6 font-mono text-xs uppercase tracking-[0.2em]">
+          <Link to="/" className="text-ink/55 transition hover:text-hazard">
+            ← Pitch site
+          </Link>
+          <span className="text-ink/20">·</span>
+          <Link to="/store" className="text-ink/55 transition hover:text-ink">
+            The store →
+          </Link>
+          <span className="text-ink/20">·</span>
+          <Link to="/gallery" className="text-ink/55 transition hover:text-ink">
+            Gallery →
+          </Link>
+        </div>
+        <p className="mt-8 font-mono text-[9px] uppercase tracking-[0.25em] text-ink/25">
+          Everyone else made a souvenir. We made the receipt.
+        </p>
       </div>
-      <p className="mt-8 font-mono text-[9px] uppercase tracking-[0.25em] text-ink/25">
-        Everyone else made a souvenir. We made the receipt.
-      </p>
     </footer>
   )
 }
@@ -557,7 +561,7 @@ export default function DirectionPage({ data }) {
   const root = useReveal()
 
   return (
-    <div ref={root} className="grain min-h-screen bg-bone text-ink">
+    <div ref={root} className="grain min-h-screen tartan-canvas text-ink">
       <HeroSection data={data} />
 
       <SectionDivider />
