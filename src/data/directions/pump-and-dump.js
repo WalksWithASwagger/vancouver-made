@@ -44,6 +44,19 @@ const pumpAndDump = {
     ],
   },
 
+  // On-body — the kit in Vancouver's speculation landscape. Punch up at speculators,
+  // never at residents. Generic anonymous models; no real people, no real marks.
+  lifestyle: [
+    { src: '/gallery/pd-life-06.jpg', caption: 'The full kit. Navy and gold, prospectus polish.' },
+    { src: '/gallery/pd-life-03.jpg', caption: "A skyline measured in cranes. The city is the asset; you're the bill." },
+    { src: '/gallery/pd-life-01.jpg', caption: 'Owning the lobby they priced you out of.' },
+    { src: '/gallery/pd-life-04.jpg', caption: 'Green candle, red candle. Your home, as a line going up.' },
+    { src: '/gallery/pd-life-02.jpg', caption: "Scale models of towers that don't exist yet. Pre-sold, offshore." },
+    { src: '/gallery/pd-life-07.jpg', caption: 'Howe Street after close. Last one out hits the lights.' },
+    { src: '/gallery/pd-life-05.jpg', caption: 'The syndicate. Sold before it listed.' },
+    { src: '/gallery/pd-life-08.jpg', caption: 'Bagholders, united. Match day for the pump.' },
+  ],
+
   // The method — prompt → flat → mark, the craft of the counterfeit-official.
   process: {
     line: 'Mimic the official polish, invert the payload, bake in the receipt. The hype deck, weaponized.',
