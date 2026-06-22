@@ -98,9 +98,15 @@ export default function Footer() {
             </p>
             <p className="mt-3 text-xs leading-relaxed text-bone/55">
               The stadium that hosted these games sits on this same ground. The
-              viaduct built over Hogan's Alley, the Black neighbourhood demolished
-              for it, runs through it. That context is the work, not the
-              disclaimer.
+              viaduct built over{' '}
+              <Link
+                to="/kit/hogans-alley-fc"
+                className="text-bone/90 underline decoration-bone/30 underline-offset-2 transition-colors hover:text-gold"
+              >
+                Hogan's Alley
+              </Link>
+              , the Black neighbourhood demolished for it, runs through it. That
+              context is the work, not the disclaimer.
             </p>
           </div>
 

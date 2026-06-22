@@ -7,12 +7,14 @@ import nardwuar from './nardwuar.js'
 import pumpAndDump from './pump-and-dump.js'
 import numberFiveOrange from './number-five-orange.js'
 import chinaCreek from './china-creek.js'
+import hogansAlley from './hogans-alley.js'
 
 export const directions = {
   'nardwuar-fc': nardwuar,
   'pump-and-dump-fc': pumpAndDump,
   'number-five-orange': numberFiveOrange,
   'china-creek': chinaCreek,
+  'hogans-alley-fc': hogansAlley,
 }
 
 export function getDirection(slug) {
