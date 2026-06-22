@@ -34,8 +34,8 @@ function SouvenirTile() {
 
 export default function TheMove() {
   return (
-    <section id="the-move" className="scroll-mt-20 border-t border-ink/10 bg-rain/10">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <section id="the-move" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-cyan">The move</p>
         <h2 className="headline mt-2 max-w-3xl text-3xl text-ink md:text-5xl">
           THEY ASKED FOR A SOUVENIR.

@@ -6,7 +6,7 @@ import { rubric } from '../data/rubric.js'
 // proof deep-links as before, but framed past-tense. Reachable via footer only.
 export default function WhyItWins() {
   return (
-    <div className="grain min-h-screen bg-bone text-ink">
+    <div className="grain min-h-screen tartan-canvas text-ink">
 
       {/* Header band */}
       <div className="tartan-dark border-b-2 border-ink/30">
@@ -57,83 +57,85 @@ export default function WhyItWins() {
         </div>
       </div>
 
-      {/* Intro */}
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-        <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan mb-3">
-            The rubric, reviewed
-          </p>
-          <h2 className="headline text-2xl text-ink md:text-4xl">
-            FOUR CRITERIA.{' '}
-            <span className="text-hazard">ONE METHOD THAT HIT ALL OF THEM.</span>
-          </h2>
-          <p className="mt-5 text-sm leading-relaxed text-ink/75 max-w-2xl">
-            The judging rubric asked for novelty of process, the best Vancouver
-            narrative, visible method, and strong use of AI tools. Here's how the
-            work answered each. The proof is still live on the site, not
-            just claimed on a slide.
-          </p>
-        </div>
+      {/* Intro + Rubric */}
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-cyan mb-3">
+              The rubric, reviewed
+            </p>
+            <h2 className="headline text-2xl text-ink md:text-4xl">
+              FOUR CRITERIA.{' '}
+              <span className="text-hazard">ONE METHOD THAT HIT ALL OF THEM.</span>
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-ink/75 max-w-2xl">
+              The judging rubric asked for novelty of process, the best Vancouver
+              narrative, visible method, and strong use of AI tools. Here's how the
+              work answered each. The proof is still live on the site, not
+              just claimed on a slide.
+            </p>
+          </div>
 
-        {/* Rubric cards */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {rubric.map((r, i) => (
-            <article
-              key={r.id}
-              className="flex flex-col border border-ink/15 p-7 transition hover:border-ink/35 hover:bg-paper/50"
-            >
-              <div className="flex items-start justify-between gap-4 mb-1">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-                  {r.ask}
-                </p>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-ink/25 shrink-0">
-                  0{i + 1}
-                </span>
-              </div>
-              <h3 className="headline mt-2 text-xl text-ink md:text-2xl">
-                {r.crit}
-              </h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/80">
-                {r.delivery}
-              </p>
-              <Link
-                to={r.proof.to}
-                className="mt-5 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:text-ink"
+          {/* Rubric cards */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {rubric.map((r, i) => (
+              <article
+                key={r.id}
+                className="flex flex-col border border-ink/15 p-7 transition hover:border-ink/35 hover:bg-paper/50"
               >
-                {r.proof.label} →
-              </Link>
-            </article>
-          ))}
-        </div>
+                <div className="flex items-start justify-between gap-4 mb-1">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
+                    {r.ask}
+                  </p>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-ink/25 shrink-0">
+                    0{i + 1}
+                  </span>
+                </div>
+                <h3 className="headline mt-2 text-xl text-ink md:text-2xl">
+                  {r.crit}
+                </h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/80">
+                  {r.delivery}
+                </p>
+                <Link
+                  to={r.proof.to}
+                  className="mt-5 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:text-ink"
+                >
+                  {r.proof.label} →
+                </Link>
+              </article>
+            ))}
+          </div>
 
-        {/* Closing note */}
-        <div className="mt-16 border-t border-ink/10 pt-12 max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-ink/40 mb-4">
-            The settler's position
-          </p>
-          <p className="text-sm leading-relaxed text-ink/70">
-            This was a settler artist's refusal to make the celebration jersey.
-            No sacred imagery borrowed. The coloniser's own paperwork, the
-            receipt, the redaction, the banknote, turned into the kit. The land
-            the stadium sits on named in the hem text. That framing wasn't
-            incidental; it was the brief.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              to="/awards"
-              className="inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-bone"
-            >
-              See the awards page →
-            </Link>
-            <Link
-              to="/process"
-              className="inline-block border border-ink/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink/70 transition hover:border-ink hover:text-ink"
-            >
-              See the process →
-            </Link>
+          {/* Closing note */}
+          <div className="mt-16 border-t border-ink/10 pt-12 max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-ink/40 mb-4">
+              The settler's position
+            </p>
+            <p className="text-sm leading-relaxed text-ink/70">
+              This was a settler artist's refusal to make the celebration jersey.
+              No sacred imagery borrowed. The coloniser's own paperwork, the
+              receipt, the redaction, the banknote, turned into the kit. The land
+              the stadium sits on named in the hem text. That framing wasn't
+              incidental; it was the brief.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/awards"
+                className="inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-bone"
+              >
+                See the awards page →
+              </Link>
+              <Link
+                to="/process"
+                className="inline-block border border-ink/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink/70 transition hover:border-ink hover:text-ink"
+              >
+                See the process →
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
     </div>
   )

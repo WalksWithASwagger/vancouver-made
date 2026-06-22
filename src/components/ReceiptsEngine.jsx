@@ -166,10 +166,10 @@ function PosterCard({ poster, activeId }) {
   return (
     <article
       key={activeId}
-      className="j-reveal border-t border-b border-ink/10 bg-bone"
+      className="j-reveal px-4 py-6 md:px-6 md:py-8"
       style={{ animation: 'engine-fadein 380ms cubic-bezier(0.2,0.7,0.2,1) both 60ms' }}
     >
-      <div className="mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
+      <div className="sheet mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
         {/* label row */}
         <div className="mb-8 flex items-baseline justify-between">
           <div>
@@ -232,10 +232,10 @@ function EditorialCard({ ed, activeId }) {
   return (
     <article
       key={activeId}
-      className="j-reveal bg-paper"
+      className="j-reveal px-4 py-6 md:px-6 md:py-8"
       style={{ animation: 'engine-fadein 380ms cubic-bezier(0.2,0.7,0.2,1) both 120ms' }}
     >
-      <div className="mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
+      <div className="sheet-paper mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
         {/* label row */}
         <div className="mb-8 flex items-baseline justify-between">
           <div>
@@ -307,47 +307,49 @@ export default function ReceiptsEngine() {
         }
       `}</style>
 
-      <div ref={root} className="grain min-h-screen bg-bone text-ink">
+      <div ref={root} className="grain min-h-screen tartan-canvas text-ink">
 
         {/* ── HEADER ──────────────────────────────────────────────────────── */}
-        <header className="border-b border-ink/10 px-6 py-10 md:px-10">
-          <Link
-            to="/"
-            className="mb-5 inline-block font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 transition hover:text-ink"
-          >
-            ← MADE ON
-          </Link>
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-cyan">
-            Vancouver Made · MADE ON · not a sponsor
-          </p>
-          <h1 className="headline text-5xl leading-none text-ink md:text-7xl">
-            WE MADE THE <span className="text-hazard">RECEIPT.</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink/75 md:text-base">
-            Pick a number this World Cup would rather keep off the jumbotron. Watch the same
-            truth land three ways: stitched on a kit's hem, pasted up as a poster, shot like
-            couture. Same receipt. Three rooms. Harder to look away.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em]">
-            {Object.values(properties).map((p) => (
-              <PropTag key={p.key} p={p} />
-            ))}
+        <header className="px-4 py-6 md:px-6 md:py-8">
+          <div className="sheet mx-auto max-w-4xl px-6 py-12 md:px-10 md:py-16">
+            <Link
+              to="/"
+              className="mb-5 inline-block font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50 transition hover:text-ink"
+            >
+              ← MADE ON
+            </Link>
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-cyan">
+              Vancouver Made · MADE ON · not a sponsor
+            </p>
+            <h1 className="headline text-5xl leading-none text-ink md:text-7xl">
+              WE MADE THE <span className="text-hazard">RECEIPT.</span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink/75 md:text-base">
+              Pick a number this World Cup would rather keep off the jumbotron. Watch the same
+              truth land three ways: stitched on a kit's hem, pasted up as a poster, shot like
+              couture. Same receipt. Three rooms. Harder to look away.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em]">
+              {Object.values(properties).map((p) => (
+                <PropTag key={p.key} p={p} />
+              ))}
+            </div>
           </div>
         </header>
 
-        {/* ── RECEIPT RAIL ────────────────────────────────────────────────── */}
-        <ReceiptRail receipts={receipts} active={active} setActive={setActive} />
-
-        {/* ── ACTIVE STAT BILLBOARD ───────────────────────────────────────── */}
-        <StatBillboard r={active} key={active.id + '-billboard'} />
-
-        {/* ── SOURCE NOTE ─────────────────────────────────────────────────── */}
-        <div className="border-b border-ink/10 bg-bone px-6 py-3 md:px-10">
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
-            Source data: <code className="normal-case">src/data/receipts.js</code>. Every figure is public record,
-            flagged for primary-source confirmation before publish.
-          </p>
-        </div>
+        {/* ── RECEIPT RAIL + BILLBOARD + SOURCE NOTE ──────────────────────── */}
+        <section className="px-4 py-6 md:px-6 md:py-8">
+          <div className="sheet mx-auto max-w-6xl">
+            <ReceiptRail receipts={receipts} active={active} setActive={setActive} />
+            <StatBillboard r={active} key={active.id + '-billboard'} />
+            <div className="border-b border-ink/10 px-6 py-3 md:px-10">
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
+                Source data: <code className="normal-case">src/data/receipts.js</code>. Every figure is public record,
+                flagged for primary-source confirmation before publish.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* ── THREE ROOMS ─────────────────────────────────────────────────── */}
         <HemCard hem={hem} activeId={active.id + '-hem'} />
@@ -355,8 +357,8 @@ export default function ReceiptsEngine() {
         <EditorialCard ed={ed} activeId={active.id + '-cake'} />
 
         {/* ── FOOTER / MANIFESTO ──────────────────────────────────────────── */}
-        <footer className="border-t border-ink/10 px-6 py-14 md:px-10">
-          <div className="mx-auto max-w-4xl">
+        <footer className="px-4 py-6 md:px-6 md:py-8">
+          <div className="sheet mx-auto max-w-4xl px-6 py-14 md:px-10">
             <div className="j-reveal">
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.35em] text-cyan">
                 Why we made this

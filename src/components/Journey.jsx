@@ -31,7 +31,7 @@ export default function Journey() {
   const root = useReveal()
 
   return (
-    <div ref={root} className="grain bg-bone text-ink">
+    <div ref={root} className="grain tartan-canvas text-ink">
       {/* 0 — OPENER */}
       <section className="relative flex h-[92svh] min-h-[34rem] w-full flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
@@ -57,7 +57,8 @@ export default function Journey() {
       </section>
 
       {/* 1 — THE PROVOCATION */}
-      <section className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+      <section className="px-4 py-8 md:px-6 md:py-12">
+        <div className="sheet mx-auto max-w-4xl px-6 py-16 md:px-12 md:py-20">
         <div className="j-reveal">
           <Kicker>{acts.provocation.kicker}</Kicker>
           <h2 className="headline text-3xl text-gold md:text-5xl">{acts.provocation.title}</h2>
@@ -70,11 +71,12 @@ export default function Journey() {
             ))}
           </ul>
         </div>
+        </div>
       </section>
 
       {/* 2 — THE LINEAGE */}
-      <section className="border-t border-ink/10 bg-rain/10 px-6 py-24 md:py-32">
-        <div className="mx-auto max-w-5xl">
+      <section className="px-4 py-8 md:px-6 md:py-12">
+        <div className="sheet-paper mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
           <div className="j-reveal mb-16 max-w-2xl">
             <Kicker>{acts.lineage.kicker}</Kicker>
             <h2 className="headline text-3xl text-ink md:text-5xl">{acts.lineage.title}</h2>
@@ -122,7 +124,8 @@ export default function Journey() {
       </section>
 
       {/* 3 — THE METHOD */}
-      <section className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+      <section className="px-4 py-8 md:px-6 md:py-12">
+        <div className="sheet mx-auto max-w-4xl px-6 py-16 md:px-12 md:py-20">
         <div className="j-reveal">
           <Kicker>{acts.method.kicker}</Kicker>
           <h2 className="headline text-3xl text-cyan md:text-5xl">{acts.method.title}</h2>
@@ -138,11 +141,12 @@ export default function Journey() {
             </Link>
           </div>
         </div>
+        </div>
       </section>
 
       {/* 4 — THE WORK */}
-      <section className="border-t border-ink/10 bg-rain/10 px-6 py-24 md:py-32">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-16">
+      <section className="px-4 py-8 md:px-6 md:py-12">
+        <div className="sheet-paper mx-auto grid max-w-5xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:px-12 md:py-20">
           <div className="j-reveal">
             <Kicker>{acts.work.kicker}</Kicker>
             <h2 className="headline text-3xl text-ink md:text-5xl">{acts.work.title}</h2>
@@ -171,8 +175,8 @@ export default function Journey() {
       </section>
 
       {/* 5 — CLOSE */}
-      <section className="border-t border-ink/10 px-6 py-24 text-center md:py-32">
-        <div className="j-reveal mx-auto max-w-3xl">
+      <section className="px-4 py-8 md:px-6 md:py-12">
+        <div className="sheet j-reveal mx-auto max-w-3xl px-6 py-16 text-center md:px-12 md:py-20">
           <Kicker>{acts.close.kicker}</Kicker>
           <h2 className="headline text-4xl text-ink md:text-6xl">
             WE MADE THE <span className="text-hazard">RECEIPT.</span>

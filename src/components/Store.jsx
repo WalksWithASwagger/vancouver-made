@@ -251,15 +251,15 @@ export default function Store() {
   )
 
   return (
-    <div className="grain min-h-screen bg-bone text-ink">
+    <div className="grain min-h-screen tartan-canvas text-ink">
       {quickLook && <QuickLook product={quickLook} onClose={closeQuickLook} />}
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-ink/10">
-        {/* tartan accent band — left edge rule */}
-        <div className="tartan absolute bottom-0 left-0 top-0 w-[6px]" aria-hidden="true" />
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet relative mx-auto max-w-6xl px-8 py-12 md:py-16 md:pl-14">
+          {/* tartan accent band — left edge rule */}
+          <div className="tartan absolute bottom-0 left-0 top-0 w-[6px]" aria-hidden="true" />
 
-        <div className="mx-auto max-w-6xl px-8 py-12 md:py-16 md:pl-14">
           <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan">
             The store · MADE ON
           </p>
@@ -336,8 +336,8 @@ export default function Store() {
         const items = products.filter((p) => p.category === cat.key)
         if (items.length === 0) return null
         return (
-          <section key={cat.key} className="border-b border-ink/8">
-            <div className="mx-auto max-w-6xl px-6 py-10">
+          <section key={cat.key} className="px-4 py-4 md:px-6 md:py-5">
+            <div className="sheet mx-auto max-w-6xl px-6 py-10">
               <div className="mb-6 flex items-baseline justify-between gap-4">
                 <div>
                   <h2 className="headline text-2xl text-ink md:text-3xl">{cat.label}</h2>
@@ -362,28 +362,30 @@ export default function Store() {
       })}
 
       {/* ── FOOTER ───────────────────────────────────────────────────────────── */}
-      <footer className="border-t border-ink/10 px-6 py-12 text-center">
-        <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ink/30">
-          Vancouver Made · MADE ON · The Store
-        </p>
-        <div className="mt-5 flex flex-wrap justify-center gap-6 font-mono text-[10px] uppercase tracking-[0.2em]">
-          <Link to="/" className="text-ink/50 transition hover:text-hazard">
-            ← Pitch site
-          </Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/hall-of-fame" className="text-ink/50 transition hover:text-ink">
-            Hall of Fame
-          </Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/process" className="text-ink/50 transition hover:text-ink">
-            Process
-          </Link>
-          <span className="text-ink/20">·</span>
-          <span className="text-ink">Store</span>
+      <footer className="px-4 py-6 md:px-6 md:py-8">
+        <div className="sheet-paper mx-auto max-w-6xl px-6 py-12 text-center">
+          <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ink/30">
+            Vancouver Made · MADE ON · The Store
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-6 font-mono text-[10px] uppercase tracking-[0.2em]">
+            <Link to="/" className="text-ink/50 transition hover:text-hazard">
+              ← Pitch site
+            </Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/hall-of-fame" className="text-ink/50 transition hover:text-ink">
+              Hall of Fame
+            </Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/process" className="text-ink/50 transition hover:text-ink">
+              Process
+            </Link>
+            <span className="text-ink/20">·</span>
+            <span className="text-ink">Store</span>
+          </div>
+          <p className="mt-8 font-mono text-[9px] uppercase tracking-[0.25em] text-ink/25">
+            Everyone else made a souvenir. We made the receipt. This is the part you can wear.
+          </p>
         </div>
-        <p className="mt-8 font-mono text-[9px] uppercase tracking-[0.25em] text-ink/25">
-          Everyone else made a souvenir. We made the receipt. This is the part you can wear.
-        </p>
       </footer>
     </div>
   )

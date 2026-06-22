@@ -85,8 +85,8 @@ function ClubCard({ club }) {
 
 export default function Clubs() {
   return (
-    <section id="clubs" className="scroll-mt-20 border-t border-ink/10 bg-bone">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <section id="clubs" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
         {/* section header */}
         <div className="mb-12 max-w-2xl">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan">

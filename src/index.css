@@ -20,10 +20,58 @@ body,
 #root {
   margin: 0;
   height: 100%;
-  background: var(--bone);
+  background: #7a2018; /* overscroll fallback behind the tartan canvas */
   color: var(--ink);
   font-family: 'Space Mono', ui-monospace, monospace;
   -webkit-font-smoothing: antialiased;
+}
+
+/* TARTAN CANVAS (#75) — bold Nardwuar-matched plaid as the whole-page ground.
+   Content rides on .sheet / .sheet-paper cards above it; readable text never sits
+   on raw tartan. Colours sampled from the Nardwuar kit (public/gallery/nw-allover.jpg). */
+.tartan-canvas {
+  background-color: #a82828;
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(rgba(26, 16, 12, 0.12), rgba(26, 16, 12, 0.12)),
+    repeating-linear-gradient(90deg, rgba(26, 15, 12, 0.5) 0 2px, transparent 2px 80px),
+    repeating-linear-gradient(0deg, rgba(26, 15, 12, 0.5) 0 2px, transparent 2px 80px),
+    repeating-linear-gradient(90deg, rgba(35, 107, 58, 0.5) 26px 50px, transparent 50px 80px),
+    repeating-linear-gradient(0deg, rgba(35, 107, 58, 0.5) 26px 50px, transparent 50px 80px),
+    repeating-linear-gradient(90deg, rgba(217, 165, 33, 0.9) 13px 16px, transparent 16px 80px),
+    repeating-linear-gradient(0deg, rgba(217, 165, 33, 0.9) 13px 16px, transparent 16px 80px),
+    repeating-linear-gradient(90deg, rgba(244, 241, 234, 0.55) 60px 62px, transparent 62px 80px),
+    repeating-linear-gradient(0deg, rgba(244, 241, 234, 0.55) 60px 62px, transparent 62px 80px);
+}
+@media (max-width: 768px) {
+  .tartan-canvas { background-attachment: scroll; }
+}
+
+/* Floating content sheets — the cream "paper" the readable content sits on. */
+.sheet {
+  background: #f4f1ea;
+  border: 1px solid rgba(26, 20, 16, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px -26px rgba(20, 12, 10, 0.6);
+}
+.sheet-paper {
+  background: #ece4d4;
+  border: 1px solid rgba(26, 20, 16, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px -26px rgba(20, 12, 10, 0.6);
+}
+
+/* Nav / footer / marquee — dark tartan under an ink scrim so bone text reads on it. */
+.nav-tartan {
+  background-color: #5e1622;
+  background-image:
+    linear-gradient(rgba(26, 20, 16, 0.62), rgba(26, 20, 16, 0.62)),
+    repeating-linear-gradient(90deg, rgba(209, 31, 42, 0.55) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(0deg, rgba(209, 31, 42, 0.55) 0 10px, transparent 10px 46px),
+    repeating-linear-gradient(90deg, rgba(47, 84, 54, 0.5) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(0deg, rgba(47, 84, 54, 0.5) 18px 26px, transparent 26px 46px),
+    repeating-linear-gradient(90deg, rgba(184, 132, 26, 0.5) 34px 37px, transparent 37px 46px),
+    repeating-linear-gradient(0deg, rgba(184, 132, 26, 0.5) 34px 37px, transparent 37px 46px);
 }
 
 /* Halftone / risograph protest-poster grain overlay — dark dots on cream paper */
@@ -32,7 +80,7 @@ body,
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.035;
   z-index: 50;
   background-image: radial-gradient(rgba(26, 20, 16, 0.55) 1px, transparent 1px);
   background-size: 4px 4px;

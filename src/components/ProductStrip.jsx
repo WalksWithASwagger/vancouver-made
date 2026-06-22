@@ -90,11 +90,12 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
   const items = (picked.length ? picked : products).slice(0, count)
 
   return (
-    <section className="relative border-y border-ink/10 bg-bone py-14 md:py-20">
+    <section className="px-4 py-6 md:px-6 md:py-8">
+      <div className="sheet relative mx-auto max-w-6xl py-14 md:py-20">
       {/* left tartan rule — mirrors Store hero accent */}
       <div className="tartan absolute bottom-0 left-0 top-0 w-[5px]" aria-hidden="true" />
 
-      <div className="mx-auto max-w-6xl px-8 md:pl-14">
+      <div className="px-8 md:pl-14">
         {/* header row */}
         <div className="mb-7 flex items-end justify-between gap-4">
           <div>
@@ -122,6 +123,7 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
             <StripCard key={p.id} p={p} />
           ))}
         </div>
+      </div>
       </div>
     </section>
   )

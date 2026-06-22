@@ -82,7 +82,7 @@ function Station({ s }) {
           {s.images?.length > 0 && (
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {s.images.map((img) => (
-                <figure key={img.src} className="border border-ink/15 bg-rain/20">
+                <figure key={img.src} className="border border-ink/15 sheet-paper">
                   <div className="flex aspect-[4/3] items-center justify-center p-2">
                     <SafeImage
                       src={img.src}
@@ -156,55 +156,61 @@ function ClosingBand() {
 
 export default function Process() {
   return (
-    <div className="grain min-h-screen bg-bone text-ink">
+    <div className="grain min-h-screen tartan-canvas text-ink">
       {/* HEADER */}
-      <header className="border-b border-ink/10 px-6 py-12 md:px-10 md:py-16">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">
-          Vancouver Made · the making-of
-        </p>
-        <h1 className="headline text-4xl text-ink md:text-6xl">
-          THE <span className="text-hazard">PROCESS</span> · VOICE → RECEIPT
-        </h1>
-        <p className="headline mt-4 text-xl text-gold md:text-2xl">{thesis.line}</p>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/80 md:text-base">
-          {thesis.body}
-        </p>
-        <Rail />
-      </header>
+      <section className="px-4 py-6 md:px-6 md:py-8">
+        <header className="sheet mx-auto max-w-5xl px-6 py-12 md:px-10 md:py-16">
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-cyan">
+            Vancouver Made · the making-of
+          </p>
+          <h1 className="headline text-4xl text-ink md:text-6xl">
+            THE <span className="text-hazard">PROCESS</span> · VOICE → RECEIPT
+          </h1>
+          <p className="headline mt-4 text-xl text-gold md:text-2xl">{thesis.line}</p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/80 md:text-base">
+            {thesis.body}
+          </p>
+          <Rail />
+        </header>
+      </section>
 
-      <main className="mx-auto max-w-5xl px-6 md:px-10">
-        {phases.map((ph) => (
-          <section key={ph.id}>
-            <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.3em] text-cyan">
-              {ph.label}
-            </p>
-            {stages
-              .filter((s) => s.phase === ph.id)
-              .map((s) => (
-                <Station key={s.key} s={s} />
-              ))}
-          </section>
-        ))}
-        <ClosingBand />
-      </main>
+      <section className="px-4 pb-6 md:px-6 md:pb-8">
+        <div className="sheet mx-auto max-w-5xl px-6 py-12 md:px-10 md:py-16">
+          {phases.map((ph) => (
+            <div key={ph.id}>
+              <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.3em] text-cyan">
+                {ph.label}
+              </p>
+              {stages
+                .filter((s) => s.phase === ph.id)
+                .map((s) => (
+                  <Station key={s.key} s={s} />
+                ))}
+            </div>
+          ))}
+          <ClosingBand />
+        </div>
+      </section>
 
       {/* THE STORE — the receipt, now wearable */}
       <ProductStrip heading="THE DROP" />
 
-      <footer className="border-t border-ink/10 px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
-        <div className="mb-4 flex flex-wrap justify-center gap-6">
-          <Link to="/" className="text-ink/60 transition hover:text-ink">Pitch Site</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/hall-of-fame" className="text-ink/60 transition hover:text-ink">Hall of Fame</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/tracker" className="text-ink/60 transition hover:text-ink">Asset Tracker</Link>
-          <span className="text-ink/20">·</span>
-          <Link to="/engine" className="text-ink/60 transition hover:text-ink">The Receipts</Link>
-          <span className="text-ink/20">·</span>
-          <span className="text-ink">Process</span>
-        </div>
-        Voice in, judgment out. A human hand on every gate between.
-      </footer>
+      <section className="px-4 py-4 md:px-6">
+        <footer className="sheet mx-auto max-w-5xl px-6 py-10 text-center text-xs uppercase tracking-[0.3em] text-ink/40">
+          <div className="mb-4 flex flex-wrap justify-center gap-6">
+            <Link to="/" className="text-ink/60 transition hover:text-ink">Pitch Site</Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/hall-of-fame" className="text-ink/60 transition hover:text-ink">Hall of Fame</Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/tracker" className="text-ink/60 transition hover:text-ink">Asset Tracker</Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/engine" className="text-ink/60 transition hover:text-ink">The Receipts</Link>
+            <span className="text-ink/20">·</span>
+            <span className="text-ink">Process</span>
+          </div>
+          Voice in, judgment out. A human hand on every gate between.
+        </footer>
+      </section>
     </div>
   )
 }
