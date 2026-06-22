@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react'
 // All four load eagerly: they're small and above the fold, and a lazy frame that
 // isn't ready yet would let the outgoing kit linger under the new caption.
 const SHOTS = [
-  { src: '/gallery/pd-front.jpg', label: 'Pump & Dump FC' },
   { src: '/gallery/nw-front.jpg', label: 'Nardwuar FC' },
+  { src: '/gallery/cc-front.jpg', label: 'China Creek' },
+  { src: '/gallery/pd-front.jpg', label: 'Pump & Dump FC' },
   { src: '/gallery/n5-away.jpg', label: 'Number Five Orange' },
   { src: '/gallery/pd-crest.jpg', label: 'The crest' },
 ]

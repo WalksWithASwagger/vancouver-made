@@ -29,6 +29,147 @@ export const league = {
 export const clubs = [
   // ────────────────────────────────────────────────────────────────────────
   {
+    id: 'nardwuar-fc',
+    name: 'NARDWUAR FC',
+    number: '97', // APEC, Vancouver, 1997
+    heroKit: 'HOME',
+    kitName: 'Deep Cut Home Kit',
+    tagline: "Do the research. Then ask power the question it's dodging.",
+    target: 'Unaccountable power · the unasked question · sanitized civic PR',
+    summary:
+      'Homage to Nardwuar the Human Serviette, hyper-researched guerrilla interviewer and frontman of The Evaporators, rooted at CiTR/UBC, who has ambushed everyone from Nirvana to prime ministers with deep local history and receipts. He IS the project\'s thesis: research is the protest; the receipt is the weapon. A World Cup jersey turned into a walking archive that asks who gets to tell Vancouver\'s story. And who actually does the digging.',
+    palette: {
+      base: '#c8102e', // tartan red (the tam)
+      ink: '#0a0a0a',
+      accent: '#1d7a46', // tartan green
+      signal: '#e8c531', // tartan yellow
+    },
+    type: 'riso-plaid microtext + cut-and-paste broadcast caps',
+    whoBenefits: [
+      'Politicians with a controlled message',
+      'Sponsors who buy the friendly interview',
+      'Anyone who profits when nobody does the homework',
+    ],
+    whoPays: [
+      'The public, kept uninformed',
+      "Vancouver's underground canon, left out of the broadcast",
+      'The truth, when no one asks the follow-up',
+    ],
+    sponsorBank: [
+      'DEEP RESEARCH', // sleeve patch
+      'HUMAN SERVIETTE REPORTING CLUB', // sleeve patch
+      'INTERVIEW YOUR CITY LIKE NARDWUAR', // hem tag
+      'WHO BENEFITS? WHO PAYS?',
+      "KEEP ON ROCKIN' IN THE FREE WORLD",
+      'DOOT DOOLA DOOT DOO',
+    ],
+    crest:
+      'Host-city shield silhouette; inner art = collage of 7" records, photocopied show flyers, and a tartan-hat silhouette in place of a lion or maple leaf.',
+    kits: {
+      home: 'HERO. Reads as a host-nation home kit: bold primaries, classic striping, crest, World Cup patch, in a tartan-inspired palette (reds/greens/yellows) ghosted into the fabric like a clean check.',
+      away: 'Bone newsprint with red/green tartan trim. Back: "WHO ARE YOU?" / "DOOT DOOLA DOOT DOO."',
+      third:
+        '"Unsanctioned Press": a press-accreditation kit whose credential reads PRESS THEY DIDN\'T VET; sleeve mic recoded as a torch.',
+    },
+    numberTreatment:
+      'Number formed from tiny rectangles: record sleeves and zine panels. Nameplate NARDWUAR!! in chaotic cut-and-paste type.',
+    patchSpoof: 'FIFA "Fair Play" badge → DEEP RESEARCH / HUMAN SERVIETTE REPORTING CLUB.',
+    trophyMisuse: 'Trophy silhouette becomes a mic stand / vinyl spindle.',
+    fifaSubversion:
+      'Dressed as a host-nation home kit and OFFICIAL BROADCAST accreditation. Then flipped. The all-over print is an ultra-faint collage of VHS labels, cassette spines, 7" labels and microtype interview quotes; inside-collar reads DOOT DOOLA DOOT DOO… It turns the global broadcast into an Easter-egg hunt for Vancouver\'s underground instead of civic PR.',
+    sourceCards: [
+      {
+        id: 'AL-NW-001',
+        claim:
+          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate," ahead of the Hughes/APEC inquiry into RCMP conduct.',
+        source: 'Nardwuar footage; The Canadian Encyclopedia; CBC archives',
+        rights: 'Reference / quote with citation; do not reproduce footage stills.',
+      },
+      {
+        id: 'AL-NW-002',
+        claim:
+          'Nardwuar (frontman of The Evaporators, based at CiTR/UBC) models accountability through exhaustive research, then the uncomfortable question.',
+        source: 'Wikipedia; UBC alumni magazine; nardwuar.com',
+        rights: 'HOMAGE, not likeness. See ethics note.',
+      },
+    ],
+    ethics:
+      'Affectionate tribute to a living, beloved Vancouverite. He is the hero, power is the target. Channel the ethos (research → truth to power); do NOT impersonate his likeness or commercialize his name. If this moves past exhibition toward merch, get Nardwuar\'s blessing first.',
+  },
+
+  // ────────────────────────────────────────────────────────────────────────
+  {
+    id: 'china-creek',
+    name: 'CHINA CREEK',
+    number: '79', // the China Creek bowls, built 1979
+    heroKit: 'HOME',
+    kitName: 'Public Land Home Kit',
+    tagline: 'They banned the board, then sold the bowl.',
+    target: 'Public space and who it is for · the criminalize-then-monetize playbook · skate and DIY culture',
+    summary:
+      'China Creek, the East Vancouver bowls built in 1979 and defended by skaters ever since, is the city\'s living monument to public space won the hard way. For decades the city treated street skating as a nuisance to ban and police; then it built the parks, branded Vancouver a skate-tourism destination, and cheered skateboarding into the Olympics. The Cup runs the same play on a bigger field: criminalize a subculture, then sell it back as flavour. The home ground was never the gift; it was the fight.',
+    palette: {
+      base: '#9aa0a3', // raw concrete
+      ink: '#0a0a0a', // marker black
+      accent: '#f4c20d', // caution yellow (city signage)
+      signal: '#1f9e8a', // creek teal
+    },
+    type: 'spray-stencil display + skate-zine cut-and-paste',
+    whoBenefits: [
+      'The "skate tourism" city brand',
+      'Developers eyeing public land',
+      'Event & Olympic sponsors',
+      'Parks-as-amenity property uplift',
+    ],
+    whoPays: [
+      'Local skaters & DIY builders',
+      'East Van youth, policed then priced out',
+      'The next generation locked out of the ground',
+      'Anyone whose public space becomes a brochure',
+    ],
+    sponsorBank: [
+      'NO SKATEBOARDING', // the bylaw sign, flipped into the front mark
+      'CRIMINALIZED THEN MONETIZED',
+      'BUILT 1979 / DEFENDED EVER SINCE',
+      'PUBLIC LAND / PRIVATE PROFIT',
+      'DIY OR DIE',
+      'SKATE TOURISM DESTINATION (NOW)',
+    ],
+    crest: 'Host-city shield; inner art = a skatepark bowl cross-section and coping line with a skateboard silhouette.',
+    kits: {
+      home: 'HERO. Raw-concrete grey body, caution-yellow city-signage trim, marker-black detailing, a creek-teal coping line sweeping the torso like a bowl wall. Reads as a clean city-pride home kit on TV; a defended-public-space manifesto up close.',
+      away: 'Marker-black body, griptape texture, a "NO SKATEBOARDING" pictogram repeated and crossed out down the sleeve.',
+      third:
+        '"Skate Tourism" kit, glossy brochure cream and gold, intentionally too-polished: the city selling the thing it policed.',
+    },
+    numberTreatment:
+      'Numbers built from bowl-contour and coping curves over a griptape grid: a transition map where the digits should be.',
+    patchSpoof: 'Where "FIFA Quality Pro" sits: NUISANCE BYLAW APPROVED.',
+    trophyMisuse: 'Trophy silhouette becomes a skateboard deck (or a spray can, or a bowl coping curve).',
+    fifaSubversion:
+      'A host-city "city pride" home kit on the official template, host-city sleeve patch and trophy watermark, but the crest reads VANCOUVER 2026 · UNOFFICIAL and the sponsor block is the bylaw sign NO SKATEBOARDING set like a kit-maker mark.',
+    sourceCards: [
+      {
+        id: 'AL-CC-001',
+        claim:
+          'The China Creek bowls in East Vancouver were built in 1979 and have been defended by the local skate community against neglect and redevelopment ever since, making the site a landmark of public space held by its users.',
+        source: 'Vancouver skate-history record; community accounts',
+        rights: 'Reference only: illustrate, do not reproduce photos. Verify specific redevelopment dates before public.',
+      },
+      {
+        id: 'AL-CC-002',
+        claim:
+          'Vancouver historically policed street skateboarding as a nuisance before shifting toward acceptance, building skateparks and promoting the city as a skate destination; skateboarding was later added to the Olympic program at Tokyo 2020.',
+        source: 'Vancouver bylaw/parks record; IOC (skateboarding added Tokyo 2020)',
+        rights: 'Cite sources; verify exact bylaw wording and dates before public.',
+      },
+    ],
+    ethics:
+      'Punch up at the bylaw, redevelopment pressure, and the tourism/Olympic monetization of a policed subculture. The skaters, the DIY builders and East Van youth are the home team, never the joke.',
+  },
+
+  // ────────────────────────────────────────────────────────────────────────
+  {
     id: 'number-five-orange',
     name: 'NUMBER FIVE ORANGE',
     number: '5',
@@ -96,76 +237,6 @@ export const clubs = [
     ],
     ethics:
       'Critique extraction, VIP culture, nightlife capitalism and event spectacle. Never caricature the workers. Sex work = labour, risk, criminalization. Punch up at the buyers and the bylaw, not down at the strip.',
-  },
-
-  // ────────────────────────────────────────────────────────────────────────
-  {
-    id: 'nardwuar-fc',
-    name: 'NARDWUAR FC',
-    number: '97', // APEC, Vancouver, 1997
-    heroKit: 'HOME',
-    kitName: 'Deep Cut Home Kit',
-    tagline: "Do the research. Then ask power the question it's dodging.",
-    target: 'Unaccountable power · the unasked question · sanitized civic PR',
-    summary:
-      'Homage to Nardwuar the Human Serviette, hyper-researched guerrilla interviewer and frontman of The Evaporators, rooted at CiTR/UBC, who has ambushed everyone from Nirvana to prime ministers with deep local history and receipts. He IS the project\'s thesis: research is the protest; the receipt is the weapon. A World Cup jersey turned into a walking archive that asks who gets to tell Vancouver\'s story. And who actually does the digging.',
-    palette: {
-      base: '#c8102e', // tartan red (the tam)
-      ink: '#0a0a0a',
-      accent: '#1d7a46', // tartan green
-      signal: '#e8c531', // tartan yellow
-    },
-    type: 'riso-plaid microtext + cut-and-paste broadcast caps',
-    whoBenefits: [
-      'Politicians with a controlled message',
-      'Sponsors who buy the friendly interview',
-      'Anyone who profits when nobody does the homework',
-    ],
-    whoPays: [
-      'The public, kept uninformed',
-      "Vancouver's underground canon, left out of the broadcast",
-      'The truth, when no one asks the follow-up',
-    ],
-    sponsorBank: [
-      'DEEP RESEARCH', // sleeve patch
-      'HUMAN SERVIETTE REPORTING CLUB', // sleeve patch
-      'INTERVIEW YOUR CITY LIKE NARDWUAR', // hem tag
-      'WHO BENEFITS? WHO PAYS?',
-      "KEEP ON ROCKIN' IN THE FREE WORLD",
-      'DOOT DOOLA DOOT DOO',
-    ],
-    crest:
-      'Host-city shield silhouette; inner art = collage of 7" records, photocopied show flyers, and a tartan-hat silhouette in place of a lion or maple leaf.',
-    kits: {
-      home: 'HERO. Reads as a host-nation home kit: bold primaries, classic striping, crest, World Cup patch, in a tartan-inspired palette (reds/greens/yellows) ghosted into the fabric like a clean check.',
-      away: 'Bone newsprint with red/green tartan trim. Back: "WHO ARE YOU?" / "DOOT DOOLA DOOT DOO."',
-      third:
-        '"Unsanctioned Press": a press-accreditation kit whose credential reads PRESS THEY DIDN\'T VET; sleeve mic recoded as a torch.',
-    },
-    numberTreatment:
-      'Number formed from tiny rectangles: record sleeves and zine panels. Nameplate NARDWUAR!! in chaotic cut-and-paste type.',
-    patchSpoof: 'FIFA "Fair Play" badge → DEEP RESEARCH / HUMAN SERVIETTE REPORTING CLUB.',
-    trophyMisuse: 'Trophy silhouette becomes a mic stand / vinyl spindle.',
-    fifaSubversion:
-      'Dressed as a host-nation home kit and OFFICIAL BROADCAST accreditation. Then flipped. The all-over print is an ultra-faint collage of VHS labels, cassette spines, 7" labels and microtype interview quotes; inside-collar reads DOOT DOOLA DOOT DOO… It turns the global broadcast into an Easter-egg hunt for Vancouver\'s underground instead of civic PR.',
-    sourceCards: [
-      {
-        id: 'AL-NW-001',
-        claim:
-          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate," ahead of the Hughes/APEC inquiry into RCMP conduct.',
-        source: 'Nardwuar footage; The Canadian Encyclopedia; CBC archives',
-        rights: 'Reference / quote with citation; do not reproduce footage stills.',
-      },
-      {
-        id: 'AL-NW-002',
-        claim:
-          'Nardwuar (frontman of The Evaporators, based at CiTR/UBC) models accountability through exhaustive research, then the uncomfortable question.',
-        source: 'Wikipedia; UBC alumni magazine; nardwuar.com',
-        rights: 'HOMAGE, not likeness. See ethics note.',
-      },
-    ],
-    ethics:
-      'Affectionate tribute to a living, beloved Vancouverite. He is the hero, power is the target. Channel the ethos (research → truth to power); do NOT impersonate his likeness or commercialize his name. If this moves past exhibition toward merch, get Nardwuar\'s blessing first.',
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -248,76 +319,6 @@ export const clubs = [
   },
 
   // ────────────────────────────────────────────────────────────────────────
-  // First expansion club (beyond the flagship trio).
-  {
-    id: 'china-creek',
-    name: 'CHINA CREEK',
-    number: '79', // the China Creek bowls, built 1979
-    heroKit: 'HOME',
-    kitName: 'Public Land Home Kit',
-    tagline: 'They banned the board, then sold the bowl.',
-    target: 'Public space and who it is for · the criminalize-then-monetize playbook · skate and DIY culture',
-    summary:
-      'China Creek, the East Vancouver bowls built in 1979 and defended by skaters ever since, is the city\'s living monument to public space won the hard way. For decades the city treated street skating as a nuisance to ban and police; then it built the parks, branded Vancouver a skate-tourism destination, and cheered skateboarding into the Olympics. The Cup runs the same play on a bigger field: criminalize a subculture, then sell it back as flavour. The home ground was never the gift; it was the fight.',
-    palette: {
-      base: '#9aa0a3', // raw concrete
-      ink: '#0a0a0a', // marker black
-      accent: '#f4c20d', // caution yellow (city signage)
-      signal: '#1f9e8a', // creek teal
-    },
-    type: 'spray-stencil display + skate-zine cut-and-paste',
-    whoBenefits: [
-      'The "skate tourism" city brand',
-      'Developers eyeing public land',
-      'Event & Olympic sponsors',
-      'Parks-as-amenity property uplift',
-    ],
-    whoPays: [
-      'Local skaters & DIY builders',
-      'East Van youth, policed then priced out',
-      'The next generation locked out of the ground',
-      'Anyone whose public space becomes a brochure',
-    ],
-    sponsorBank: [
-      'NO SKATEBOARDING', // the bylaw sign, flipped into the front mark
-      'CRIMINALIZED THEN MONETIZED',
-      'BUILT 1979 / DEFENDED EVER SINCE',
-      'PUBLIC LAND / PRIVATE PROFIT',
-      'DIY OR DIE',
-      'SKATE TOURISM DESTINATION (NOW)',
-    ],
-    crest: 'Host-city shield; inner art = a skatepark bowl cross-section and coping line with a skateboard silhouette.',
-    kits: {
-      home: 'HERO. Raw-concrete grey body, caution-yellow city-signage trim, marker-black detailing, a creek-teal coping line sweeping the torso like a bowl wall. Reads as a clean city-pride home kit on TV; a defended-public-space manifesto up close.',
-      away: 'Marker-black body, griptape texture, a "NO SKATEBOARDING" pictogram repeated and crossed out down the sleeve.',
-      third:
-        '"Skate Tourism" kit, glossy brochure cream and gold, intentionally too-polished: the city selling the thing it policed.',
-    },
-    numberTreatment:
-      'Numbers built from bowl-contour and coping curves over a griptape grid: a transition map where the digits should be.',
-    patchSpoof: 'Where "FIFA Quality Pro" sits: NUISANCE BYLAW APPROVED.',
-    trophyMisuse: 'Trophy silhouette becomes a skateboard deck (or a spray can, or a bowl coping curve).',
-    fifaSubversion:
-      'A host-city "city pride" home kit on the official template, host-city sleeve patch and trophy watermark, but the crest reads VANCOUVER 2026 · UNOFFICIAL and the sponsor block is the bylaw sign NO SKATEBOARDING set like a kit-maker mark.',
-    sourceCards: [
-      {
-        id: 'AL-CC-001',
-        claim:
-          'The China Creek bowls in East Vancouver were built in 1979 and have been defended by the local skate community against neglect and redevelopment ever since, making the site a landmark of public space held by its users.',
-        source: 'Vancouver skate-history record; community accounts',
-        rights: 'Reference only: illustrate, do not reproduce photos. Verify specific redevelopment dates before public.',
-      },
-      {
-        id: 'AL-CC-002',
-        claim:
-          'Vancouver historically policed street skateboarding as a nuisance before shifting toward acceptance, building skateparks and promoting the city as a skate destination; skateboarding was later added to the Olympic program at Tokyo 2020.',
-        source: 'Vancouver bylaw/parks record; IOC (skateboarding added Tokyo 2020)',
-        rights: 'Cite sources; verify exact bylaw wording and dates before public.',
-      },
-    ],
-    ethics:
-      'Punch up at the bylaw, redevelopment pressure, and the tourism/Olympic monetization of a policed subculture. The skaters, the DIY builders and East Van youth are the home team, never the joke.',
-  },
   {
     id: 'hogans-alley-fc',
     name: "HOGAN'S ALLEY FC",
@@ -395,6 +396,7 @@ export const clubs = [
     ethics:
       "A settler artist amplifying, not authoring. This kit is a tribute to Hogan's Alley and a signal-boost for the people rebuilding it. Not a claim on a story that isn't mine to tell. Credit and link Hogan's Alley Society and Ethọ́s Lab; route attention and any proceeds to them; reference the culture, never appropriate sacred or specific motifs. Before this moves past exhibition toward anything public or sold, it should be shown to, and shaped by, the community, with their blessing first.",
   },
+
 ]
 
 export default clubs
