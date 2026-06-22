@@ -97,4 +97,16 @@ Unlike `by-project`, this writes into `public/` (deployed), so it is what makes 
 
 ## Sync to Notion
 
-The tracker header shows how many ratings are unsynced. Click sync and they push to the Ratings database in Notion (one-way: local is the source of truth). Requires `VITE_NOTION_API_KEY` and `VITE_NOTION_RATINGS_DB_ID` in `.env.local`. See `DEVELOPMENT.md` for the full Notion setup.
+The tracker header shows how many ratings are unsynced. Click sync and they push to the Ratings database in Notion (one-way: local is the source of truth).
+
+**Runbook** (the sync needs Notion credentials, which live only on your machine):
+
+1. `cp .env.example .env.local` and fill in `VITE_NOTION_API_KEY` + `VITE_NOTION_RATINGS_DB_ID` (see `DEVELOPMENT.md` for where to get them).
+2. Restart the API: `npm run server` (or `npm run dev:all`).
+3. Open `/tracker` and click **Sync to Notion** in the header. New ratings are created in Notion; existing ones updated; each is then marked `synced=1` locally.
+
+Check what's pending without the UI:
+
+```bash
+sqlite3 src/db/ratings.db "SELECT COUNT(*) FROM ratings WHERE synced=0"
+```

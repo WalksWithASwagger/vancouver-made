@@ -24,6 +24,9 @@ const CONCEPTS = {
   'nardwuar-fc':      { concept: 'nardwuar-fc',     name: 'Nardwuar FC',     blurb: 'Research as protest, the receipt as weapon — a punk-zine archive worn as a host-nation home kit.' },
   'china-creek':      { concept: 'china-creek',      name: 'China Creek',     blurb: 'They banned the board, then sold the bowl. A defended-public-space manifesto in concrete grey and caution yellow.' },
   'pump-and-dump-fc': { concept: '09-pump-and-dump', name: 'Pump & Dump FC', blurb: 'Hype the asset, socialize the cost, privatize the exit — speculation city as a blackout third kit.' },
+  'number-five-orange': { concept: 'number-five-orange', name: 'Number Five Orange', blurb: 'The whole city becomes a VIP room — nightlife capitalism and the cover-charge economy in safety-cone orange and gold.' },
+  'public-dime':       { concept: '03-public-dime',    name: 'Public Dime',       blurb: 'Public money funding private spectacle — a green-and-gold "BANK OF FIFA / LEGAL TENDER" currency kit. You are the bagholder.' },
+  'made-on-silence':   { concept: '01-made-on-silence', name: 'Made On Silence',   blurb: 'The silenced public record — black redaction bars and FOI dossiers. What they won’t release, we wear.' },
 }
 
 const STAGES = [
@@ -62,6 +65,7 @@ for (const slug of slugs) {
   const buckets = { mood: [], graphics: [], flats: [], lifestyle: [] }
   for (const r of rows) {
     let m = {}; try { m = r.metadata ? JSON.parse(r.metadata) : {} } catch { m = {} }
+    if (m.excluded) continue // QA-flagged artifacts (trademark/misspelling/likeness)
     const tags = Array.isArray(m.tags) ? m.tags : []
     buckets[stageOf(r.batch, tags)].push({ path: r.path, caption: m.caption || m.promptLabel || '', tags, prompt: m.prompt || '' })
   }

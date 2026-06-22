@@ -51,6 +51,7 @@ for (const concept of concepts) {
   for (const r of rows) {
     if (!fs.existsSync(r.path)) { missing++; continue }
     let meta = {}; try { meta = r.metadata ? JSON.parse(r.metadata) : {} } catch { meta = {} }
+    if (meta.excluded) continue // QA-flagged artifacts (trademark/misspelling/likeness)
     const caption = meta.caption || meta.promptLabel || r.filename
     const tags = Array.isArray(meta.tags) ? meta.tags : []
     const ext = path.extname(r.path) || '.png'
