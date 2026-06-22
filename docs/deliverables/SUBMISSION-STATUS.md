@@ -2,6 +2,14 @@
 
 Handoff snapshot of the MADE ON / Nardwuar submission and where everything lives.
 
+## Outcome (won)
+
+**Double silver at Vancouver Made — BCIT Tech Collider, June 20 2026.** Second place in both
+tracks: the Devin Open Hackathon (2nd of ~100, $300) and the Formmé Fashion Design challenge
+(2nd of ~50, five kits manufactured). The winning kit is this Nardwuar FC "Deep Cut." Full
+write-up, certificates, ceremony photos, and share assets: `AWARDS.md` and
+`deliverables/awards/PRESS-KIT.md`. Production of the five jerseys is now with Kris + Formmé.
+
 ## The submission
 
 **Nardwuar FC — "Deep Cut" Vancouver-tartan kit** (the Designathon hero), in three colorways:
