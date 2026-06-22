@@ -23,17 +23,23 @@ The whole redesign and tech-debt backlog is **merged and live in prod**:
 - **The bold Nardwuar Tartan Canvas (#75)** — red tartan ground, content on cream sheets, site-wide.
 - The public **`/wall`** refreshed (#41 content); the **Making Of** per-concept pages added.
 
-## The finish line — launch: polish + announce
+## The finish line — launch (✅ polished; awaiting KK's "post")
 
-The site is live on Vercel; the remaining goal is to get it **out into the world**:
+The site is **launch-ready** on `vancouver-made.vercel.app`. The polish + announce pass is done:
 
-1. **Polish pass** — full desktop+mobile QA now that the canvas landed → punch list → fix. Resolve the
-   **#75 sign-off knobs** (canvas red heat `#a82828` · ink-veil `0.12` · keep/retire the faint
-   `body::after`). Proofread the copy + receipts.
-2. **Share-ready** — verify the OG/social cards; decide a **custom domain** (vs `vancouver-made.vercel.app`);
-   a quick perf pass (the 53 MB `/wall` lazy-loads).
-3. **Press / social announcement** — the launch story (the double-silver win + the protest thesis),
-   drafted in KK's voice. **Draft-only; KK approves before anything is published.**
+1. ✅ **Polish pass** — full QA of the canvas across every route; `/making-of` brought onto the canvas;
+   filter-pill tap targets; copy proofread. The **#75 knobs** were signed off at their defaults (red
+   `#a82828` · ink-veil `0.12` · faint `body::after` kept).
+2. ✅ **Share-ready** — the OG / social card is on-brand and the meta is clean; perf is solid (every
+   heavy route is `React.lazy`). Staying on `vancouver-made.vercel.app` (no custom domain). Optional
+   future win: recompress the ~1.4 MB hero carousel JPGs.
+3. ✅ **Announcement drafts** — in KK's voice, draft-only: LinkedIn + Instagram + Threads
+   (`social/captions.md`, staged in Buffer) and X/Twitter + Bluesky + a long-form newsletter/blog
+   (`social/launch-drafts.md`).
+
+**The one remaining step is human: KK publishes.** Nothing posts without his go-ahead. Known follow-up
+for the social/MakingOf lane: the `/making-of` concept-card cover images render blank (an `index.json`
+content/staging matter, not styling).
 
 ## Parked (KK-led, not this launch)
 - **#26 — the 5-jersey Formmé production run**: lock the final Nardwuar "Deep Cut" flats + tech pack,
