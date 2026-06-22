@@ -27,6 +27,7 @@ const ReceiptsEngine = lazy(() => import('./components/ReceiptsEngine.jsx'))
 const HallOfFame = lazy(() => import('./components/HallOfFame.jsx'))
 const AssetTracker = lazy(() => import('./components/AssetTracker.jsx'))
 const Process = lazy(() => import('./components/Process.jsx'))
+const MakingOf = lazy(() => import('./components/MakingOf.jsx'))
 const Store = lazy(() => import('./components/Store.jsx'))
 const HighlightReel = lazy(() => import('./components/HighlightReel.jsx'))
 const GenerativeWall = lazy(() => import('./components/GenerativeWall.jsx'))
@@ -61,6 +62,7 @@ const TITLES = {
   '/engine': 'We Made the Receipt · MADE ON',
   '/hall-of-fame': 'Hall of Fame · MADE ON',
   '/process': 'Our Process · MADE ON',
+  '/making-of': 'The Making-Of · MADE ON',
   '/store': 'The Store · MADE ON',
   '/tracker': 'Asset Tracker · MADE ON',
   '/kit/nardwuar-fc': 'Nardwuar FC · Deep Cut · MADE ON',
@@ -175,6 +177,25 @@ function MadeOnSite() {
       {/* DEEP DIVE — the club-card method behind the kits */}
       <Clubs />
 
+      {/* MAKING-OF — the prompt-to-kit process, image by image */}
+      <section className="border-t border-ink/10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-14 text-center md:py-16">
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan">Show your work</p>
+          <h2 className="headline max-w-2xl text-2xl text-ink md:text-4xl">
+            HOW THESE WERE <span className="text-hazard">MADE.</span>
+          </h2>
+          <p className="max-w-xl text-sm leading-relaxed text-ink/75">
+            Mood, marks, flats, then the kit on the body — the captioned process behind each concept.
+          </p>
+          <Link
+            to="/making-of"
+            className="mt-2 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
+          >
+            See the making-of →
+          </Link>
+        </div>
+      </section>
+
       {/* AWARDS — double silver (ink chip floating on the tartan canvas) */}
       <section id="awards" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-2xl bg-ink/85 px-6 py-14 text-center shadow-[0_18px_44px_-26px_rgba(20,12,10,0.7)] md:py-16">
@@ -287,6 +308,8 @@ export default function App() {
           <Route path="/engine" element={<ReceiptsEngine />} />
           <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/process" element={<Process />} />
+          <Route path="/making-of" element={<MakingOf />} />
+          <Route path="/making-of/:slug" element={<MakingOf />} />
           <Route path="/store" element={<Store />} />
           <Route path="/awards" element={<Awards />} />
           <Route path="/why" element={<WhyItWins />} />
