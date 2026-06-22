@@ -33,7 +33,7 @@ export const racks = [
       { no: '01', name: 'MADE ON SILENCE', line: 'Black bloc. The redacted document, worn.' },
       { no: '02', name: 'MADE ON STOLEN GROUND', line: 'The land receipt. Rent never paid.' },
       { no: '03', name: 'MADE ON THE PUBLIC DIME', line: 'The banknote. $729M as couture.', worked: true },
-      { no: '10', name: "MADE ON HOGAN'S ALLEY", line: 'Afrofuturist memorial. The block comes home.', club: 'hogans-alley-fc' },
+      { no: '10', name: "MADE ON HOGAN'S ALLEY", line: 'Afrofuturist memorial. The block comes home.' },
     ],
   },
   {
