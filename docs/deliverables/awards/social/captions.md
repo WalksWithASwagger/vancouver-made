@@ -4,6 +4,11 @@ Draft only. Nothing posts without Kris's go-ahead. Voice: human, no emoji, no hy
 Facts: 2nd in both tracks at Vancouver Made (World Cup Designathon + Hackathon), BCIT Tech Collider, June 20 2026.
 Devin Open Hackathon track 2nd ($300). Formmé Fashion Design track 2nd (five jerseys manufactured).
 
+**Status (2026-06-22):** the LinkedIn + Threads versions are staged as DRAFTS in Buffer (org
+"KK Dot Com", Kris's personal channels) with the og card attached — review and publish from
+Buffer. Instagram is not connected to Buffer, so post the IG caption below manually. The share
+cards are served at `/awards/social/{square-1080,story-1080x1920,link-1200x630}.jpg`.
+
 ---
 
 ## LinkedIn
