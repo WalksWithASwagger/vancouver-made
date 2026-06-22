@@ -4,7 +4,15 @@
 > (~100, $300) and 2nd in the Formme Design Challenge (~50; prize: 5 jerseys produced). The
 > competition is over; submission/rehearsal items below are historical. See [`AWARDS.md`](AWARDS.md).
 
-Last updated 2026-06-21. Where the work stands, so it's easy to pick up later. For the forward plan see [`ROADMAP.md`](ROADMAP.md).
+Last updated 2026-06-22. Where the work stands, so it's easy to pick up later. For the forward plan see [`ROADMAP.md`](ROADMAP.md).
+
+> **Current state (2026-06-22): launch-ready.** Since this doc's "store + submission" notes below, the
+> site was fully redesigned — 4 immersive per-direction kit worlds (`/kit/:slug`), the bold **Nardwuar
+> Tartan Canvas**, the Store / Receipts Engine / Hall of Fame / Awards / Why-It-Won surfaces, a
+> Making-Of section, and a cleanup pass (3D portal removed, `SafeImage`, a11y, em-dash sweep). Hogan's
+> Alley FC was back-burnered (4 clubs). The launch polish + announcement drafts are done; the only
+> open step is **KK publishing** the social posts. See [`ROADMAP.md`](ROADMAP.md) + [`ARCHITECTURE.md`](ARCHITECTURE.md).
+> The sections below are the earlier store/tech-pack thread, kept as history.
 
 > **Trunk is `main`, and it's live.** The submission is consolidated on `main` and auto-deploys
 > to https://vancouver-made.vercel.app on every merge (PRs get preview deploys). Feature branches
