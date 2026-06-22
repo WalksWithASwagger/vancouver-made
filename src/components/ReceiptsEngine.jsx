@@ -344,7 +344,7 @@ export default function ReceiptsEngine() {
         {/* ── SOURCE NOTE ─────────────────────────────────────────────────── */}
         <div className="border-b border-ink/10 bg-bone px-6 py-3 md:px-10">
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
-            Source data: <code className="normal-case">src/data/receipts.js</code> — every figure is public record,
+            Source data: <code className="normal-case">src/data/receipts.js</code>. Every figure is public record,
             flagged for primary-source confirmation before publish.
           </p>
         </div>

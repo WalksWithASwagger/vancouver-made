@@ -129,7 +129,7 @@ function ClosingBand() {
             {tracks.map((t) => (
               <li key={t.label} className="text-sm text-ink/80">
                 <span className="text-gold">{t.label}</span>
-                <span className="text-ink/50"> — {t.note}</span>
+                <span className="text-ink/50">: {t.note}</span>
               </li>
             ))}
           </ul>
@@ -147,8 +147,8 @@ function ClosingBand() {
         </div>
       </div>
       <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink/70">
-        It isn't "using AI." It's conducting a roomful of it — many models, many agents, one
-        branch — with a human holding the pen at every gate.
+        It isn't "using AI." It's conducting a roomful of it: many models, many agents, one
+        branch, with a human holding the pen at every gate.
       </p>
     </section>
   )
@@ -176,7 +176,7 @@ export default function Process() {
         {phases.map((ph) => (
           <section key={ph.id}>
             <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.3em] text-cyan">
-              — {ph.label} —
+              {ph.label}
             </p>
             {stages
               .filter((s) => s.phase === ph.id)
@@ -203,7 +203,7 @@ export default function Process() {
           <span className="text-ink/20">·</span>
           <span className="text-ink">Process</span>
         </div>
-        Voice in, judgment out — a human hand on every gate between.
+        Voice in, judgment out. A human hand on every gate between.
       </footer>
     </div>
   )

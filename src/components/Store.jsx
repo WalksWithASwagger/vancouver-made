@@ -138,7 +138,7 @@ function QuickLookCta({ status }) {
     <button
       type="button"
       className="bg-hazard px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-bone transition hover:opacity-85"
-      title="Pre-orders open with the drop — checkout isn't live yet"
+      title="Pre-orders open with the drop. Checkout isn't live yet."
     >
       Pre-order →
     </button>
@@ -275,7 +275,7 @@ export default function Store() {
                 polish, invert the payload, bake in the receipt.
               </p>
               <p className="max-w-xl font-mono text-[10px] leading-relaxed text-ink/45">
-                Preview drop — checkout isn't live yet. Pre-orders open with the release. Pieces
+                Preview drop. Checkout isn't live yet. Pre-orders open with the release. Pieces
                 marked{' '}
                 <span className="text-gold">blessing pending</span> are homages to living people
                 and won't be sold until that blessing is given.
@@ -382,7 +382,7 @@ export default function Store() {
           <span className="text-ink">Store</span>
         </div>
         <p className="mt-8 font-mono text-[9px] uppercase tracking-[0.25em] text-ink/25">
-          Everyone else made a souvenir. We made the receipt — this is the part you can wear.
+          Everyone else made a souvenir. We made the receipt. This is the part you can wear.
         </p>
       </footer>
     </div>

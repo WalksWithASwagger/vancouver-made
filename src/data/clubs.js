@@ -15,12 +15,12 @@ export const league = {
   edition: 'UNOFFICIAL KIT DROP · 26',
   campaign: 'NO GAME WITHOUT THE GROUND',
   thesis:
-    'Most kits turn a city into a logo. These turn it into evidence. Not anti-football — anti-amnesia.',
+    'Most kits turn a city into a logo. These turn it into evidence. Not anti-football. Anti-amnesia.',
   // The spoof system that makes all three read as one "World Cup, evil twin" drop.
   sharedSpoof: {
     crestFrame: 'One host-city shield outline on all three; different inner art per club.',
     fauxPatch: ['UNOFFICIAL HOST CITY DROP', 'THIS KIT IS NOT LICENSED BY ANYONE'],
-    hostCityLockup: 'VANCOUVER 2026 — UNOFFICIAL',
+    hostCityLockup: 'VANCOUVER 2026: UNOFFICIAL',
     trophyMisuse: 'The trophy silhouette is reused per club (marquee / mic-stand / condo tower).',
     backNeckBadge: 'NO GAME WITHOUT THE GROUND',
   },
@@ -37,7 +37,7 @@ export const clubs = [
     tagline: 'The whole city becomes a VIP room.',
     target: 'Nightlife capitalism · the spectacle economy · sex-work stigma',
     summary:
-      'No.5 Orange — rooted in the old Melbourne Hotel (1904), turned No.5 Orange in 1971 — is one of the last of old Gastown, a landmark that has hosted everyone from Gretzky to Bon Jovi. The event city sells "edgy nightlife" to tourists and stag parties while criminalizing and policing the people who do the work. The Cup turns public land into a private champagne room: cover charge at the door of your own city.',
+      'No.5 Orange, rooted in the old Melbourne Hotel (1904), turned No.5 Orange in 1971, is one of the last of old Gastown, a landmark that has hosted everyone from Gretzky to Bon Jovi. The event city sells "edgy nightlife" to tourists and stag parties while criminalizing and policing the people who do the work. The Cup turns public land into a private champagne room: cover charge at the door of your own city.',
     palette: {
       base: '#ff6a00', // safety-cone orange (the façade)
       ink: '#0a0a0a', // vinyl black
@@ -52,7 +52,7 @@ export const clubs = [
       'Liquor & event promoters',
     ],
     whoPays: [
-      'Sex workers — labour, risk, criminalization',
+      'Sex workers: labour, risk, criminalization',
       'Service & door staff (the "service fee")',
       'Residents priced out of their own night',
       'Anyone swept off the strip for the broadcast',
@@ -67,35 +67,35 @@ export const clubs = [
     ],
     crest: 'Host-city shield; inner art = an orange marquee / stage silhouette.',
     kits: {
-      away: 'HERO. Saturated safety-cone orange body, white sleeves, metallic-gold trim — reads as a glam World Cup away strip on TV. A vertical "pole" stripe runs the torso as a sleek metallic gradient.',
-      home: 'Vinyl black with orange surcharge lines and service-fee symbols — the bill for a night out you never agreed to.',
+      away: 'HERO. Saturated safety-cone orange body, white sleeves, metallic-gold trim. Reads as a glam World Cup away strip on TV. A vertical "pole" stripe runs the torso as a sleek metallic gradient.',
+      home: 'Vinyl black with orange surcharge lines and service-fee symbols. The bill for a night out you never agreed to.',
       third:
-        '"Champagne Room Economy" — dirty gold on orange, intentionally tacky, cover-charge stamps repeating down the sleeve.',
+        '"Champagne Room Economy": dirty gold on orange, intentionally tacky, cover-charge stamps repeating down the sleeve.',
     },
     numberTreatment:
-      'Numbers built from tiny human silhouettes — tourists queueing on one side, staff and dancers exiting a back door on the other. Zoom in and you read the hierarchy.',
+      'Numbers built from tiny human silhouettes: tourists queueing on one side, staff and dancers exiting a back door on the other. Zoom in and you read the hierarchy.',
     patchSpoof: 'Where "FIFA Quality Pro" sits: UNLICENSED / UNPAID / UNAPOLOGETIC.',
     trophyMisuse: 'Trophy silhouette becomes the buzzing neon marquee over the door.',
     fifaSubversion:
-      'Classic World Cup away-kit template — clean paneling, host-city sleeve patch, trophy watermark — but the host-city crest reads VANCOUVER 2026 — UNOFFICIAL and the big sponsor is WORK IS WORK styled like a telecom mark.',
+      'Classic World Cup away-kit template: clean paneling, host-city sleeve patch, trophy watermark. The host-city crest reads VANCOUVER 2026: UNOFFICIAL and the big sponsor is WORK IS WORK styled like a telecom mark.',
     sourceCards: [
       {
         id: 'AL-N5-001',
         claim:
-          'No.5 Orange (205 Main St, at Main & Powell) opened as the Melbourne Hotel in August 1904 and became No.5 Orange in 1971 — one of the last of old Gastown.',
+          'No.5 Orange (205 Main St, at Main & Powell) opened as the Melbourne Hotel in August 1904 and became No.5 Orange in 1971. One of the last of old Gastown.',
         source: 'Eve Lazarus, "How the Melbourne Hotel became No5 Orange" (2022); no5orange.ca',
-        rights: 'Reference only — recreate/illustrate, do not reproduce photos.',
+        rights: 'Reference only: recreate/illustrate, do not reproduce photos.',
       },
       {
         id: 'AL-N5-002',
         claim:
           "Vancouver's Host City Human Rights Action Plan (HRAP, final released May 25, 2026) explicitly names sex-worker safety, gender-based violence and MMIWG2S+ response among its World Cup priority areas.",
         source: 'FIFA World Cup 2026 Vancouver Host Committee / City of Vancouver HRAP; CBC & Global News, May 2026',
-        rights: 'Public document — quote with citation.',
+        rights: 'Public document: quote with citation.',
       },
     ],
     ethics:
-      'Critique extraction, VIP culture, nightlife capitalism and event spectacle — never caricature the workers. Sex work = labour, risk, criminalization. Punch up at the buyers and the bylaw, not down at the strip.',
+      'Critique extraction, VIP culture, nightlife capitalism and event spectacle. Never caricature the workers. Sex work = labour, risk, criminalization. Punch up at the buyers and the bylaw, not down at the strip.',
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -108,7 +108,7 @@ export const clubs = [
     tagline: "Do the research. Then ask power the question it's dodging.",
     target: 'Unaccountable power · the unasked question · sanitized civic PR',
     summary:
-      'Homage to Nardwuar the Human Serviette — hyper-researched guerrilla interviewer and frontman of The Evaporators, rooted at CiTR/UBC, who has ambushed everyone from Nirvana to prime ministers with deep local history and receipts. He IS the project\'s thesis: research is the protest; the receipt is the weapon. A World Cup jersey turned into a walking archive that asks who gets to tell Vancouver\'s story — and who actually does the digging.',
+      'Homage to Nardwuar the Human Serviette, hyper-researched guerrilla interviewer and frontman of The Evaporators, rooted at CiTR/UBC, who has ambushed everyone from Nirvana to prime ministers with deep local history and receipts. He IS the project\'s thesis: research is the protest; the receipt is the weapon. A World Cup jersey turned into a walking archive that asks who gets to tell Vancouver\'s story. And who actually does the digging.',
     palette: {
       base: '#c8102e', // tartan red (the tam)
       ink: '#0a0a0a',
@@ -137,22 +137,22 @@ export const clubs = [
     crest:
       'Host-city shield silhouette; inner art = collage of 7" records, photocopied show flyers, and a tartan-hat silhouette in place of a lion or maple leaf.',
     kits: {
-      home: 'HERO. Reads as a host-nation home kit — bold primaries, classic striping, crest, World Cup patch — in a tartan-inspired palette (reds/greens/yellows) ghosted into the fabric like a clean check.',
+      home: 'HERO. Reads as a host-nation home kit: bold primaries, classic striping, crest, World Cup patch, in a tartan-inspired palette (reds/greens/yellows) ghosted into the fabric like a clean check.',
       away: 'Bone newsprint with red/green tartan trim. Back: "WHO ARE YOU?" / "DOOT DOOLA DOOT DOO."',
       third:
-        '"Unsanctioned Press" — a press-accreditation kit whose credential reads PRESS THEY DIDN\'T VET; sleeve mic recoded as a torch.',
+        '"Unsanctioned Press": a press-accreditation kit whose credential reads PRESS THEY DIDN\'T VET; sleeve mic recoded as a torch.',
     },
     numberTreatment:
-      'Number formed from tiny rectangles — record sleeves and zine panels. Nameplate NARDWUAR!! in chaotic cut-and-paste type.',
+      'Number formed from tiny rectangles: record sleeves and zine panels. Nameplate NARDWUAR!! in chaotic cut-and-paste type.',
     patchSpoof: 'FIFA "Fair Play" badge → DEEP RESEARCH / HUMAN SERVIETTE REPORTING CLUB.',
     trophyMisuse: 'Trophy silhouette becomes a mic stand / vinyl spindle.',
     fifaSubversion:
-      'Dressed as a host-nation home kit and OFFICIAL BROADCAST accreditation — then flipped. The all-over print is an ultra-faint collage of VHS labels, cassette spines, 7" labels and microtype interview quotes; inside-collar reads DOOT DOOLA DOOT DOO… It turns the global broadcast into an Easter-egg hunt for Vancouver\'s underground instead of civic PR.',
+      'Dressed as a host-nation home kit and OFFICIAL BROADCAST accreditation. Then flipped. The all-over print is an ultra-faint collage of VHS labels, cassette spines, 7" labels and microtype interview quotes; inside-collar reads DOOT DOOLA DOOT DOO… It turns the global broadcast into an Easter-egg hunt for Vancouver\'s underground instead of civic PR.',
     sourceCards: [
       {
         id: 'AL-NW-001',
         claim:
-          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate" — ahead of the Hughes/APEC inquiry into RCMP conduct.',
+          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate," ahead of the Hughes/APEC inquiry into RCMP conduct.',
         source: 'Nardwuar footage; The Canadian Encyclopedia; CBC archives',
         rights: 'Reference / quote with citation; do not reproduce footage stills.',
       },
@@ -165,7 +165,7 @@ export const clubs = [
       },
     ],
     ethics:
-      'Affectionate tribute to a living, beloved Vancouverite — he is the hero, power is the target. Channel the ethos (research → truth to power); do NOT impersonate his likeness or commercialize his name. If this moves past exhibition toward merch, get Nardwuar\'s blessing first.',
+      'Affectionate tribute to a living, beloved Vancouverite. He is the hero, power is the target. Channel the ethos (research → truth to power); do NOT impersonate his likeness or commercialize his name. If this moves past exhibition toward merch, get Nardwuar\'s blessing first.',
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -178,7 +178,7 @@ export const clubs = [
     tagline: 'Hype the asset. Socialize the cost. Privatize the exit.',
     target: 'Speculative finance · the housing market · the mega-event as a pump-and-dump',
     summary:
-      'Vancouver\'s speculative DNA — from Howe Street and a stock exchange once branded the "Scam Capital of the World" to a housing market decoupled from local incomes by foreign money and flips, with thousands of unsold and empty condos while residents drown in cost. The World Cup is the ultimate pump: hype the city as the asset, bill the public, let insiders take the exit liquidity. You are the bagholder. FLAGSHIP CLUB.',
+      'Vancouver\'s speculative DNA: from Howe Street and a stock exchange once branded the "Scam Capital of the World" to a housing market decoupled from local incomes by foreign money and flips, with thousands of unsold and empty condos while residents drown in cost. The World Cup is the ultimate pump: hype the city as the asset, bill the public, let insiders take the exit liquidity. You are the bagholder. FLAGSHIP CLUB.',
     palette: {
       base: '#0b1437', // midnight navy
       ink: '#050608', // blackout
@@ -193,7 +193,7 @@ export const clubs = [
       'FIFA & official partners',
     ],
     whoPays: [
-      'The public — the bagholders',
+      'The public: the bagholders',
       'Taxpayers: ~$320–338M+ in city costs',
       'Renters in one of the world’s least-affordable markets (~12× price-to-income)',
       'The displaced, swept before the open bell',
@@ -207,7 +207,7 @@ export const clubs = [
       'NOT FINANCIAL ADVICE',
     ],
     crest:
-      'Shield split in two — one half a soccer ball, the other a candlestick chart / stacked-coin condo tower. Motto ribbon: INFLATE. EXTRACT. ABANDON.',
+      'Shield split in two: one half a soccer ball, the other a candlestick chart / stacked-coin condo tower. Motto ribbon: INFLATE. EXTRACT. ABANDON.',
     kits: {
       third:
         'HERO. A limited-edition "city pride" blackout third kit: midnight navy/black with toxic-neon teal & magenta gradients straight out of hyped 2026 promo. On the chest, the trophy is replaced by a glass condo tower of stacked coins.',
@@ -215,11 +215,11 @@ export const clubs = [
       away: 'Crash-red, vertical dump candles, shredded-share-certificate texture. The pump, after the open.',
     },
     numberTreatment:
-      'Players replaced with roles — DEVELOPER, FLIPPER, LANDLORD, RENOVICTOR. Numbers built from floor-plans and MLS listing codes. Socks: price-to-income multiples down the calf (22×, 33×). Shorts: a VACANT stamp pattern where a sponsor ad would sit.',
+      'Players replaced with roles: DEVELOPER, FLIPPER, LANDLORD, RENOVICTOR. Numbers built from floor-plans and MLS listing codes. Socks: price-to-income multiples down the calf (22×, 33×). Shorts: a VACANT stamp pattern where a sponsor ad would sit.',
     patchSpoof: 'Bank/crypto sponsor mark → PUMP & DUMP CAPITAL · WE WIN IF YOU LIVE HERE OR NOT.',
     trophyMisuse: 'Trophy silhouette becomes a condo tower / a speculative bubble.',
     fifaSubversion:
-      'The "city pride" third kit every host city drops to cash in — weaponized. Background uses trophy silhouettes and 2026 host typography; the all-over print is line charts soaring then cliff-diving (2021 PEAK, FLIP TAX, FOREIGN BUYER SURCHARGE) and repeating condo towers, most of them dark/vacant.',
+      'The "city pride" third kit every host city drops to cash in. Weaponized. Background uses trophy silhouettes and 2026 host typography; the all-over print is line charts soaring then cliff-diving (2021 PEAK, FLIP TAX, FOREIGN BUYER SURCHARGE) and repeating condo towers, most of them dark/vacant.',
     sourceCards: [
       {
         id: 'AL-PD-001',
@@ -231,7 +231,7 @@ export const clubs = [
       {
         id: 'AL-PD-002',
         claim:
-          'CMHC counted ~2,500 completed-and-unsold (unabsorbed) new condos in the Vancouver area in May 2025, rising to ~4,400 by May 2026; Vancouver is among the world\'s least-affordable markets at a price-to-income median multiple of ~12 (Demographia 2025) — not the 20–30× sometimes cited.',
+          'CMHC counted ~2,500 completed-and-unsold (unabsorbed) new condos in the Vancouver area in May 2025, rising to ~4,400 by May 2026; Vancouver is among the world\'s least-affordable markets at a price-to-income median multiple of ~12 (Demographia 2025), not the 20–30× sometimes cited.',
         source: 'CMHC via Business in Vancouver (2025–26); Demographia Intl Housing Affordability 2025',
         rights: 'Cite with date; "unabsorbed" ≠ "vacant".',
       },
@@ -240,11 +240,11 @@ export const clubs = [
         claim:
           'The City projects ~$320–338M core/essential World Cup costs, plus $67–74M other public-sector, with ~$242M combined safety/security (May 2026 update).',
         source: 'Government of BC / City of Vancouver cost update, May 2026; BIV; Daily Hive',
-        rights: 'Public figures — use the May 2026 numbers.',
+        rights: 'Public figures: use the May 2026 numbers.',
       },
     ],
     ethics:
-      'Punch up at promoters, developers, foreign capital, FIFA and the insiders who take the exit. The bagholders are the public — they are the home team, not the joke.',
+      'Punch up at promoters, developers, foreign capital, FIFA and the insiders who take the exit. The bagholders are the public. They are the home team, not the joke.',
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -305,7 +305,7 @@ export const clubs = [
         claim:
           'The China Creek bowls in East Vancouver were built in 1979 and have been defended by the local skate community against neglect and redevelopment ever since, making the site a landmark of public space held by its users.',
         source: 'Vancouver skate-history record; community accounts',
-        rights: 'Reference only — illustrate, do not reproduce photos. Verify specific redevelopment dates before public.',
+        rights: 'Reference only: illustrate, do not reproduce photos. Verify specific redevelopment dates before public.',
       },
       {
         id: 'AL-CC-002',
@@ -324,10 +324,10 @@ export const clubs = [
     number: '71', // the year the Georgia Viaduct finished the erasure
     heroKit: 'HOME',
     kitName: 'Renaissance Home Kit',
-    tagline: 'The block the city paved over — worn as a future.',
-    target: 'Urban-renewal erasure · anti-Black displacement · civic amnesia — and the reclamation answering it',
+    tagline: 'The block the city paved over. Worn as a future.',
+    target: 'Urban-renewal erasure · anti-Black displacement · civic amnesia, and the reclamation answering it',
     summary:
-      "Hogan's Alley was Vancouver's most prominent Black neighbourhood — Black-owned businesses, churches and a jazz heart in Strathcona from the early 1900s — cleared through urban renewal and the Georgia Viaduct around 1967–71. \"Made on Hogan's Alley\" is already one of the three answers in the MADE ON triad, but no kit has carried it. This one does, and it ends in the future tense: a 2022 land trust is bringing the block home (affordable housing, a Black Cultural Centre), and Ethọ́s Lab is building Afrofuturist Black-youth futures right now. The collection's only memorial-and-generative kit — grief in gold, the block coming home.",
+      "Hogan's Alley was Vancouver's most prominent Black neighbourhood, Black-owned businesses, churches and a jazz heart in Strathcona from the early 1900s, cleared through urban renewal and the Georgia Viaduct around 1967–71. \"Made on Hogan's Alley\" is already one of the three answers in the MADE ON triad, but no kit has carried it. This one does, and it ends in the future tense: a 2022 land trust is bringing the block home (affordable housing, a Black Cultural Centre), and Ethọ́s Lab is building Afrofuturist Black-youth futures right now. The collection's only memorial-and-generative kit: grief in gold, the block coming home.",
     palette: {
       base: '#1e1248', // deep cosmic indigo
       ink: '#050416', // void
@@ -358,42 +358,42 @@ export const clubs = [
     crest:
       "Host-city shield silhouette; inner art = a brass jazz horn and a rising star over the reclaimed block. Ribbon: STILL HERE.",
     kits: {
-      home: 'HERO. Cosmic indigo with metallic-gold engraving — a gorgeous Afrofuturist heritage kit in the lineage of the great African national strips (Zaire ’74, Nigeria ’94/’18). A rising star-map and a ghosted jazz-era street grid; the crest a horn over the block.',
-      away: 'Bone and gold — the blueprint kit. The Hogan\'s Alley street grid and the land-trust site plan as architectural linework; STILL BUILDING across the back.',
+      home: 'HERO. Cosmic indigo with metallic-gold engraving: a gorgeous Afrofuturist heritage kit in the lineage of the great African national strips (Zaire ‘74, Nigeria ‘94/’18). A rising star-map and a ghosted jazz-era street grid; the crest a horn over the block.',
+      away: 'Bone and gold: the blueprint kit. The Hogan’s Alley street grid and the land-trust site plan as architectural linework; STILL BUILDING across the back.',
       third:
-        '"Jazz District" — deep violet with brass-gold marquee type, a memorial strip that swings; any names honoured here chosen with the community, never assigned.',
+        '"Jazz District": deep violet with brass-gold marquee type, a memorial strip that swings; any names honoured here chosen with the community, never assigned.',
     },
     numberTreatment:
-      "Numbers drawn from the Hogan's Alley street grid and the land-trust floor-plans — the block redrawn. The nameplate honours a community name chosen with Hogan's Alley Society, not assigned by us.",
+      "Numbers drawn from the Hogan's Alley street grid and the land-trust floor-plans. The block redrawn. The nameplate honours a community name chosen with Hogan's Alley Society, not assigned by us.",
     patchSpoof: 'Where "FIFA Quality Pro" sits: COMMUNITY LAND TRUST / BUILT TO RETURN.',
     trophyMisuse: 'The trophy silhouette becomes a brass jazz horn / the rising tower of the new Black Cultural Centre.',
     fifaSubversion:
-      'Host-city kits flatten local culture into friendly merch (see Ilanaaq 2010). This refuses the flattening: it puts a neighbourhood the city bulldozed back on the official map, in future tense — heritage-kit polish in service of a reclamation, not a souvenir.',
+      'Host-city kits flatten local culture into friendly merch (see Ilanaaq 2010). This refuses the flattening: it puts a neighbourhood the city bulldozed back on the official map, in future tense. Heritage-kit polish in service of a reclamation, not a souvenir.',
     sourceCards: [
       {
         id: 'AL-HA-001',
         claim:
-          "Hogan's Alley — centred on a lane off the 200-block of Union Street in Strathcona — was Vancouver's most prominent Black neighbourhood from the early 1900s (Black-owned businesses, the African Methodist Episcopal Fountain Chapel, jazz nightlife), cleared through urban renewal and the building of the Georgia Viaduct around 1967–71.",
+          "Hogan's Alley, centred on a lane off the 200-block of Union Street in Strathcona, was Vancouver's most prominent Black neighbourhood from the early 1900s (Black-owned businesses, the African Methodist Episcopal Fountain Chapel, jazz nightlife), cleared through urban renewal and the building of the Georgia Viaduct around 1967–71.",
         source: "City of Vancouver; Hogan's Alley Society (hogansalleysociety.org); Wikipedia",
         rights: 'Reference / cite with date. Verified 2026-06-20.',
       },
       {
         id: 'AL-HA-002',
         claim:
-          "In 2022 the City of Vancouver and the Hogan's Alley Society signed an MOU toward a long-term lease / community land trust for the Hogan's Alley Block — planned to deliver affordable housing, a Black Cultural Centre, child care and small-business space.",
+          "In 2022 the City of Vancouver and the Hogan's Alley Society signed an MOU toward a long-term lease / community land trust for the Hogan's Alley Block, planned to deliver affordable housing, a Black Cultural Centre, child care and small-business space.",
         source: 'City of Vancouver; CBC; Globe and Mail, 2022',
-        rights: 'Public — cite with date (verified 2026-06-20).',
+        rights: 'Public: cite with date (verified 2026-06-20).',
       },
       {
         id: 'AL-HA-003',
         claim:
           "Ethọ́s Lab is a Black-led Vancouver STEAM academy drawing on Afrofuturism / Black speculative arts; its Galaxy Project (Rideau Hall Foundation Catapult Canada) aims to reach 2,500+ Black youth across Greater Vancouver.",
         source: 'BC Business; Georgia Straight; ethoslab.dev',
-        rights: 'Reference — this kit amplifies, it does not represent, these orgs.',
+        rights: 'Reference: this kit amplifies, it does not represent, these orgs.',
       },
     ],
     ethics:
-      "A settler artist amplifying, not authoring. This kit is a tribute to Hogan's Alley and a signal-boost for the people rebuilding it — not a claim on a story that isn't mine to tell. Credit and link Hogan's Alley Society and Ethọ́s Lab; route attention and any proceeds to them; reference the culture, never appropriate sacred or specific motifs. Before this moves past exhibition toward anything public or sold, it should be shown to — and shaped by — the community, with their blessing first.",
+      "A settler artist amplifying, not authoring. This kit is a tribute to Hogan's Alley and a signal-boost for the people rebuilding it. Not a claim on a story that isn't mine to tell. Credit and link Hogan's Alley Society and Ethọ́s Lab; route attention and any proceeds to them; reference the culture, never appropriate sacred or specific motifs. Before this moves past exhibition toward anything public or sold, it should be shown to, and shaped by, the community, with their blessing first.",
   },
 ]
 

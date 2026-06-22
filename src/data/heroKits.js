@@ -10,11 +10,11 @@ export const heroKits = [
     id: 'public-dime',
     no: '03',
     name: 'MADE ON THE PUBLIC DIME',
-    series: 'MADE ON — what the city is built on',
+    series: 'MADE ON: what the city is built on',
     styleNo: 'MO-03',
     silhouette: 'long', // set-in long sleeve — max unbroken banknote-engraving canvas
     fabric: 'Optical-bright ocean-bound recycled PET interlock ~150 gsm (sublimation base)',
-    concept: 'The World Cup as a public-money transfer with grass on top — worn as legal tender.',
+    concept: 'The World Cup as a public-money transfer with grass on top. Worn as legal tender.',
     theLine: '$729M as couture.',
     colorway: {
       body: '#1B4D3E', // banknote green
@@ -36,7 +36,7 @@ export const heroKits = [
       source: 'Government of BC · Globe and Mail, May 2026',
     },
     whyItWins:
-      'The number IS the kit — the most quotable object on the floor. Metallic banknote engraving is a genuine craft flex, and the public-cost receipt is printed into the garment, not captioned beside it.',
+      'The number IS the kit. The most quotable object on the floor. Metallic banknote engraving is a genuine craft flex, and the public-cost receipt is printed into the garment, not captioned beside it.',
     manifestoCard:
       'One side: the souvenir line ("you asked for the Vancouver story…"). Other side: the public-cost receipts + a QR to a DTES / land-back org.',
   },
@@ -44,11 +44,11 @@ export const heroKits = [
     id: 'made-on-silence',
     no: '01',
     name: 'MADE ON SILENCE',
-    series: 'MADE ON — what the city is built on',
+    series: 'MADE ON: what the city is built on',
     styleNo: 'MO-01',
     silhouette: 'raglan', // ¾ raglan — black-bloc / refusal-of-the-official-cut read
     fabric: 'Dope-dyed recycled black poly (waterless) + gloss redaction bars',
-    concept: 'The city\'s record, redacted. What they won\'t release, worn — black bloc.',
+    concept: 'The city\'s record, redacted. What they won\'t release, worn. Black bloc.',
     theLine: 'The redacted document, worn.',
     colorway: {
       body: '#0E0E0E', // ink, matte
@@ -70,7 +70,7 @@ export const heroKits = [
       source: 'FIPPA / FOI · CBC, 2026',
     },
     whyItWins:
-      'Matte-on-matte redaction is a real novelty-of-output move — the censorship is the craft. Reads as black-bloc protest from across the room; up close it\'s the city\'s own withheld paperwork.',
+      'Matte-on-matte redaction is a real novelty-of-output move. The censorship is the craft. Reads as black-bloc protest from across the room; up close it\'s the city\'s own withheld paperwork.',
     manifestoCard:
       'One side: the MADE ON statement. Other side: what was redacted + how to file your own FOI + a QR.',
   },
@@ -78,7 +78,7 @@ export const heroKits = [
     id: 'pump-and-dump',
     no: '09',
     name: 'PUMP AND DUMP',
-    series: 'STREET SERIES — who it got built without',
+    series: 'STREET SERIES: who it got built without',
     styleNo: 'MO-09',
     club: 'pump-and-dump-fc', // deep-dive data in src/data/clubs.js
     silhouette: 'raglan', // ¾ raglan, boxy/blokecore — the hypebeast-on-TikTok read
@@ -92,7 +92,7 @@ export const heroKits = [
       accent: '#dc2626', // crash red
       finish: 'blackout body · toxic-neon gradient print',
     },
-    crest: 'Shield split — half soccer ball, half candlestick chart / stacked-coin condo tower. Ribbon: INFLATE. EXTRACT. ABANDON.',
+    crest: 'Shield split: half soccer ball, half candlestick chart / stacked-coin condo tower. Ribbon: INFLATE. EXTRACT. ABANDON.',
     sponsorBar: 'PUMP & DUMP CAPITAL',
     makerMark: 'NOT FINANCIAL ADVICE',
     nameplate: 'BAGHOLDER',
@@ -105,7 +105,7 @@ export const heroKits = [
       source: 'CMHC via BIV 2026 · Demographia 2025 · Forbes 1989',
     },
     whyItWins:
-      'Connects the event, finance and the housing crisis in one blackout kit that reads hypebeast on TikTok and indictment up close. The wearer\'s nameplate — BAGHOLDER — is the public.',
+      'Connects the event, finance and the housing crisis in one blackout kit that reads hypebeast on TikTok and indictment up close. The wearer\'s nameplate, BAGHOLDER, is the public.',
     manifestoCard:
       'One side: the prospectus disclaimer turned on the city. Other side: housing + finance receipts + a QR to a housing-justice org.',
   },
@@ -113,7 +113,7 @@ export const heroKits = [
     id: 'hogans-alley',
     no: '10',
     name: "MADE ON HOGAN'S ALLEY",
-    series: 'MADE ON — what the city is built on',
+    series: 'MADE ON: what the city is built on',
     styleNo: 'MO-10',
     club: 'hogans-alley-fc', // deep-dive data in src/data/clubs.js
     silhouette: 'short', // classic national-team cut — homage to the great African kits
@@ -142,9 +142,9 @@ export const heroKits = [
       source: "City of Vancouver · Hogan's Alley Society 2022",
     },
     whyItWins:
-      "The collection's only kit that ends in the future tense. It names an erasure the city now admits — \"Made on Hogan's Alley\" is already in the brand triad — then hands the spotlight to the people rebuilding the block. Gold where the others are blackout; memorial and blueprint at once.",
+      "The collection's only kit that ends in the future tense. It names an erasure the city now admits, \"Made on Hogan's Alley\" is already in the brand triad, then hands the spotlight to the people rebuilding the block. Gold where the others are blackout; memorial and blueprint at once.",
     manifestoCard:
-      "One side: the MADE ON statement. Other side: the Hogan's Alley timeline + a QR to Hogan's Alley Society and Ethọ́s Lab — attention and any proceeds routed to them. Made in solidarity, not authorship.",
+      "One side: the MADE ON statement. Other side: the Hogan's Alley timeline + a QR to Hogan's Alley Society and Ethọ́s Lab. Attention and any proceeds routed to them. Made in solidarity, not authorship.",
   },
 ]
 

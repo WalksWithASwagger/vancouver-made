@@ -19,7 +19,7 @@ export const brand = {
   process: ['Mimic the official polish.', 'Invert the payload.', 'Bake in the receipt.'],
   lineage: [
     ['1968', 'Smith & Carlos', 'the podium as protest surface'],
-    ['1989', 'Adbusters, Vancouver', "culture jamming born in this city — détournement"],
+    ['1989', 'Adbusters, Vancouver', "culture jamming born in this city: détournement"],
     ['2012/15', 'Brandalism', 'perfect-mimicry fake ads, official format / inverted message'],
     ['2010', 'The Cowichan sweater', 'whose culture gets sold'],
   ],
