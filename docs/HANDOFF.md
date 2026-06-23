@@ -60,7 +60,8 @@ The tech pack is a main deliverable. Built out and verified:
 - **Code-drawn flats** ([`../src/components/KitFlat.jsx`](../src/components/KitFlat.jsx)) render
   long + ¾-raglan silhouettes (with raglan seam) per `kit.silhouette`; the back-number font
   auto-fits long denominations. Data in [`../src/data/heroKits.js`](../src/data/heroKits.js),
-  surfaced in [`../src/components/HeroKits.jsx`](../src/components/HeroKits.jsx).
+  surfaced in the unified gateway [`../src/components/KitGateway.jsx`](../src/components/KitGateway.jsx)
+  (the flats crossfade into the real renders) and the highlight reel / Journey / TheMove.
 - **Per-kit tech packs** ([`design/kits/`](design/kits/)) MO-01/03/09 each carry silhouette +
   material + Sizing + BOM.
 
@@ -85,5 +86,5 @@ tracker, and the submission deck. See `git log` and [`SUBMISSION.md`](SUBMISSION
 
 ## Run / verify
 
-`npm run dev` → open `/` → scroll to "THE RECEIPTS, WORN" for the hero flats. Source of truth for
+`npm run dev` → open `/` → scroll to "THE RECEIPTS, WORN" for the kit gateway (flats that crossfade into the real kits). Source of truth for
 all specs: [`research/tech-pack-spec.md`](research/tech-pack-spec.md).

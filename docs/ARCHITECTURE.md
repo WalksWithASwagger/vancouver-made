@@ -17,7 +17,7 @@ the repo. Static build deploys to Vercel; `main` auto-promotes to production.
 
 | Route | Component | What it is |
 |-------|-----------|-----------|
-| `/` | `MadeOnSite` | The pitch: hero → territorial statement → TheMove → Collection → HeroKits → ProductStrip → Clubs → awards band → ShareQR closer → `Footer` |
+| `/` | `MadeOnSite` | The pitch: hero → territorial statement → TheMove → Collection → KitGateway → ProductStrip → awards band → ShareQR closer → `Footer` |
 | `/journey` | `Journey` | Reveal-on-scroll narrative (provocation → lineage → method → work → close) |
 | `/gallery` | `Gallery` | Concept-filtered image lightbox |
 | `/kit/:slug` | `DirectionPage` | **Per-direction "design world" landing page** — 5 live: `nardwuar-fc` (flagship), `pump-and-dump-fc`, `number-five-orange`, `china-creek`, `hogans-alley-fc` |
@@ -46,7 +46,8 @@ Content is data-driven — components render from `src/data/`, so visual changes
 
 - `src/data/collection.js` — the 9-kit collection + brand spine
 - `src/data/heroKits.js` — hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump)
-- `src/data/clubs.js` — the 4 ALLEY LEAGUE clubs (concept, palette, who-benefits/pays, citations, ethics)
+- `src/data/clubs.js` — the 5 ALLEY LEAGUE clubs (concept, palette, who-benefits/pays, citations, ethics)
+- `src/data/kitGateway.js` — composes `clubs.js` + `heroKits.js` into the 7-concept homepage gateway (per-card destination, visual tier, render assets)
 - `src/data/products.js` — store SKUs (+ per-club `TINT`)
 - `src/data/rubric.js` · `gallery.js` · `highlightReel.js` · `journey.js` — per-surface content
 - `src/data/directions/<slug>.js` + `index.js` (`getDirection` registry) — **the per-direction page manifests** (sections → curated images + copy); read concept/citations from `clubs.js` (Hogan's Alley carries its own copy). 5 live: `nardwuar`, `pump-and-dump`, `number-five-orange`, `china-creek`, `hogans-alley`.
@@ -60,8 +61,10 @@ from a manifest, registered in `src/data/directions/index.js` and resolved by `g
 Spine: hero → provocation → kit up close → on-body lookbook → the system/derivatives → method timeline →
 cited receipts → ethics. `DirectionPage` is defensive — sparser manifests skip missing sections. Reuses
 the `Gallery` lightbox + `Journey` reveal patterns; manifests reference already-served `public/` assets.
-The Clubs + Hero Kits gateways auto-link any slug `getDirection` knows. The scaffold (#57) shipped; all
-5 epic directions (#56) are live and the epic is closed.
+The homepage **`KitGateway`** (`KitGateway.jsx` + `kitGateway.js`, the single kit gateway that merged
+the old HeroKits + Clubs sections) shows all 7 concepts and auto-links any slug `getDirection` knows —
+each card's code-drawn flat crossfades into the real render (or flips front/back), then opens its world
+or making-of. The scaffold (#57) shipped; all 5 epic directions (#56) are live and the epic is closed.
 
 ## Brand surface
 

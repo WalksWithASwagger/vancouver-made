@@ -14,8 +14,9 @@ The whole redesign and tech-debt backlog is **merged and live in prod**:
 - **Brand & foundations** — locked the red/green tartan (#67); generalized the `DirectionPage`
   scaffold + `getDirection` registry (#57); Clubs gateway grid (#63); visual QA (#53).
 - **The direction worlds (epic #56, closed)** — all 5 immersive `/kit/:slug` pages live: Nardwuar
-  (flagship), Pump & Dump (#58), China Creek + Number Five Orange (#59), Hogan's Alley (#60); Clubs +
-  Hero Kits gateways (#62/#63) surface all five.
+  (flagship), Pump & Dump (#58), China Creek + Number Five Orange (#59), Hogan's Alley (#60). The
+  Clubs + Hero Kits gateways (#62/#63) have since been merged into one unified `KitGateway` — all seven
+  concepts in a single grid, each a code-drawn flat that crossfades into the real kit, then links out.
 - **Surface polish** — Store + QuickLook (#64), Receipts Engine overhaul (#65), "Why It Wins" → the
   `/why` page + a real shared `Footer` (#66).
 - **Tech-debt** — retired the 3D portal + R3F (#39); `SafeImage` fallback (#44) + a11y pass (#46);
