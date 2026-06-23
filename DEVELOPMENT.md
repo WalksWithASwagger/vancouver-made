@@ -20,7 +20,7 @@ Two things run here:
 - [x] Prompt library written for the full collection. See `docs/design/prompts/`.
 - [x] Asset tracker: inline grid starring, folder ingest, caption + tags on cards, Notion sync.
 - [x] Generations ingested + captioned + tagged across all concepts (Midjourney + Rafiki).
-- [x] In-app `/making-of` process pages staged for 6 concepts (see `docs/CURATION-WORKFLOW.md`).
+- [x] In-app `/making-of` process pages staged for all 7 concepts (see `docs/CURATION-WORKFLOW.md`).
 - [ ] Production run + social launch (KK-led). Notion sync is a documented handoff.
 
 ## Run it
