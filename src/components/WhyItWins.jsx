@@ -8,9 +8,12 @@ export default function WhyItWins() {
   return (
     <div className="grain min-h-screen tartan-canvas text-ink">
 
-      {/* Header band */}
-      <div className="tartan-dark border-b-2 border-ink/30">
-        <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+      {/* Header band — dark scrim over the plaid so bone text reads (tartan-dark's
+          stripe alphas build up bright on their own; the kit heroes darken with an
+          image + gradient, this band has none). */}
+      <div className="relative tartan-dark border-b-2 border-ink/30">
+        <div className="absolute inset-0 bg-[#1a0208]/70" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 md:py-20">
           <Link
             to="/"
             className="inline-block mb-8 text-[10px] uppercase tracking-[0.3em] text-bone/50 transition hover:text-bone"

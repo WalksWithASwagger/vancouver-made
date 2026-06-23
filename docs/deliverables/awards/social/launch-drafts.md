@@ -29,7 +29,7 @@ The whole thing is live: vancouver-made.vercel.app
 
 2. The brief was "what if Vancouver had its own World Cup kit." Everyone else made a souvenir. We made the receipt: kits that name what the tournament is built on, with the source stitched on the hem so you can check our math.
 
-3. Made on stolen ground. Made on Hogan's Alley. Made on $729 million of public money. Four clubs, each a different angle on the same question: who really wins when the world's biggest event comes to town.
+3. Made on stolen ground. Made on Hogan's Alley. Made on $729 million of public money. Five clubs, each a different angle on the same question: who really wins when the world's biggest event comes to town.
 
 4. The winning kit is Nardwuar FC, red Vancouver tartan, research as the protest. Formmé is manufacturing five of them. We also took second in the Devin hackathon track for the build behind it.
 
@@ -64,12 +64,13 @@ MADE ON is a protest collection for the 2026 World Cup. Not a kit that celebrate
 
 It's live now, and you can walk through the whole thing: **vancouver-made.vercel.app**.
 
-**Four clubs, four arguments.** Each design is its own immersive page — the concept, the kit up close, the process, and the receipts behind it:
+**Five clubs, five arguments.** Each design is its own immersive page — the concept, the kit up close, the process, and the receipts behind it:
 
 - **Nardwuar FC** — the red Vancouver-tartan "Deep Cut" home kit. Research as the protest, the receipt as the weapon. This is the one that won, and the one Formmé is manufacturing five of.
 - **Pump & Dump FC** — the mega-event as a pump and dump. Hype the city, bill the public, take the exit. You're the bagholder.
 - **Number Five Orange** — work is work. The labour the spectacle is built on.
 - **China Creek** — public land, defended, then sold. A manifesto in concrete grey and caution yellow.
+- **Hogan's Alley FC** — the memorial kit, and the only one that ends in the future tense. The Black neighbourhood the city paved over for the viaduct, and the land trust bringing the block home. Start here: vancouver-made.vercel.app/kit/hogans-alley-fc
 
 There's also a Receipts Engine that takes one civic number and renders it three ways, a generative wall of every frame we made, and a making-of for each kit — prompt, mood, marks, flats, and finally the kit on the body.
 
@@ -81,7 +82,7 @@ Go see it: **vancouver-made.vercel.app**. Whose cup is it anyway?
 
 *Thanks to Devin by Cognition and Formmé for the tracks, BCIT Tech Collider for the room, and Young Guns and the Students for AI crew for putting it on.*
 
-> Attach: `link-1200x630.jpg` lead; the four kit worlds + the Nardwuar certificate inline.
+> Attach: `link-1200x630.jpg` lead; the five kit worlds + the Nardwuar certificate inline.
 > Channels: beehiiv newsletter and/or a blog post. Draft-only — hold for Kris.
 
 ---
@@ -90,4 +91,4 @@ Go see it: **vancouver-made.vercel.app**. Whose cup is it anyway?
 The `captions.md` LinkedIn + IG drafts are win-first (already staged in Buffer). If you want to lean
 them toward the launch, add one line near the top or as the closer:
 
-> The whole collection is live now — four immersive kit worlds, the receipts, the process: vancouver-made.vercel.app
+> The whole collection is live now — five immersive kit worlds, the receipts, the process: vancouver-made.vercel.app

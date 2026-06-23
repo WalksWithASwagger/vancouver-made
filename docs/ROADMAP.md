@@ -13,9 +13,9 @@ The whole redesign and tech-debt backlog is **merged and live in prod**:
 
 - **Brand & foundations** — locked the red/green tartan (#67); generalized the `DirectionPage`
   scaffold + `getDirection` registry (#57); Clubs gateway grid (#63); visual QA (#53).
-- **The direction worlds (epic #56)** — 4 immersive `/kit/:slug` pages live: Nardwuar (flagship),
-  Pump & Dump (#58), China Creek + Number Five Orange (#59); Hero Kits gateway (#62). **Hogan's Alley
-  FC (#60) back-burnered** — the club concept needs more development (the place/thesis stays).
+- **The direction worlds (epic #56, closed)** — all 5 immersive `/kit/:slug` pages live: Nardwuar
+  (flagship), Pump & Dump (#58), China Creek + Number Five Orange (#59), Hogan's Alley (#60); Clubs +
+  Hero Kits gateways (#62/#63) surface all five.
 - **Surface polish** — Store + QuickLook (#64), Receipts Engine overhaul (#65), "Why It Wins" → the
   `/why` page + a real shared `Footer` (#66).
 - **Tech-debt** — retired the 3D portal + R3F (#39); `SafeImage` fallback (#44) + a11y pass (#46);
@@ -46,7 +46,6 @@ content/staging matter, not styling).
   consolidate the tech-pack `[confirm]`s, and secure **Nardwuar's blessing** (the homage ethics gate)
   before manufacturing. See `design/kits/NW-01-nardwuar-vancouver.md`, `research/tech-pack-spec.md`.
 - **Store commerce** — wiring real Shopify checkout (the data is Shopify-ready).
-- **Hogan's Alley FC (#60)** — revisit if the club concept gets developed.
 
 ## How to pick up work
 See [`HANDOFF.md`](HANDOFF.md) for the live pickup state and [`ARCHITECTURE.md`](ARCHITECTURE.md) for
