@@ -187,6 +187,7 @@ src/
 │   └── imageScanner.js      Folder scanner
 ├── db/ratings.db            SQLite (created by init-db.js)
 ├── data/                    collection.js, receipts.js, heroKits.js, clubs.js, kitGateway.js, directions/
+├── hooks/useReveal.js       Shared scroll-reveal (IntersectionObserver → .reveal/.in)
 └── brand/tokens.js          Palette (feeds Tailwind) + slogan bank
 
 docs/
