@@ -21,6 +21,8 @@ MADE ON isn't a souvenir. The brief was "what if Vancouver had its own World Cup
 
 The winning kit is Nardwuar FC, red Vancouver tartan, research as the protest. Formmé is manufacturing five of them.
 
+The whole collection is live. Start with the one that cuts deepest, Hogan's Alley: vancouver-made.vercel.app/kit/hogans-alley-fc
+
 Built in a day, AI as the brush, not the artist. Thanks to Devin by Cognition and Formmé for the tracks, BCIT Tech Collider for the room, and Young Guns and the Students for AI crew for putting it on.
 
 Whose cup is it anyway?
@@ -39,10 +41,13 @@ Winning kit: Nardwuar FC, red Vancouver tartan. Formmé is making five.
 
 Made on stolen ground. Made on Hogan's Alley. Made on $729 million of public money.
 
+Full collection at the link in bio, starting with the Hogan's Alley memorial kit.
+
 Thanks Devin by Cognition, Formmé, BCIT Tech Collider, Young Guns, Students for AI.
 
 > Attach: `square-1080.jpg` lead, then the two certs + the Nardwuar kit as a carousel.
 > Story: `story-1080x1920.jpg`.
+> Link in bio → vancouver-made.vercel.app/kit/hogans-alley-fc (or the site root).
 > Optional tags (sparingly): #VancouverMade #WorldCup2026 #DesignAthon
 
 ---

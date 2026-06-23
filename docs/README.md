@@ -56,5 +56,5 @@ Submission status + punch list (both tracks): **[`SUBMISSION.md`](SUBMISSION.md)
 
 ## Source of truth (code, not docs)
 The site reads from `src/data/`: `collection.js` (9 kits), `receipts.js` (the cited spine),
-`heroKits.js` (01/03/09 specs), `clubs.js` (the 4 clubs), `rubric.js` (the dev-track criteria).
+`heroKits.js` (01/03/09 specs), `clubs.js` (the 5 clubs), `rubric.js` (the dev-track criteria).
 When a doc and the data disagree, the data wins.

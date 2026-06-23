@@ -20,7 +20,7 @@ the repo. Static build deploys to Vercel; `main` auto-promotes to production.
 | `/` | `MadeOnSite` | The pitch: hero → territorial statement → TheMove → Collection → HeroKits → ProductStrip → Clubs → awards band → ShareQR closer → `Footer` |
 | `/journey` | `Journey` | Reveal-on-scroll narrative (provocation → lineage → method → work → close) |
 | `/gallery` | `Gallery` | Concept-filtered image lightbox |
-| `/kit/:slug` | `DirectionPage` | **Per-direction "design world" landing page** — 4 live: `nardwuar-fc` (flagship), `pump-and-dump-fc`, `number-five-orange`, `china-creek` |
+| `/kit/:slug` | `DirectionPage` | **Per-direction "design world" landing page** — 5 live: `nardwuar-fc` (flagship), `pump-and-dump-fc`, `number-five-orange`, `china-creek`, `hogans-alley-fc` |
 | `/store` | `Store` | The product catalog (patches · stickers · prints · jerseys · lookbook) + a QuickLook modal |
 | `/engine` | `ReceiptsEngine` | One civic receipt → three counter-spectacle voices |
 | `/process` | `Process` | The method, 7 stages |
@@ -49,7 +49,7 @@ Content is data-driven — components render from `src/data/`, so visual changes
 - `src/data/clubs.js` — the 4 ALLEY LEAGUE clubs (concept, palette, who-benefits/pays, citations, ethics)
 - `src/data/products.js` — store SKUs (+ per-club `TINT`)
 - `src/data/rubric.js` · `gallery.js` · `highlightReel.js` · `journey.js` — per-surface content
-- `src/data/directions/<slug>.js` + `index.js` (`getDirection` registry) — **the per-direction page manifests** (sections → curated images + copy); read concept/citations from `clubs.js`. 4 live: `nardwuar`, `pump-and-dump`, `number-five-orange`, `china-creek`.
+- `src/data/directions/<slug>.js` + `index.js` (`getDirection` registry) — **the per-direction page manifests** (sections → curated images + copy); read concept/citations from `clubs.js` (Hogan's Alley carries its own copy). 5 live: `nardwuar`, `pump-and-dump`, `number-five-orange`, `china-creek`, `hogans-alley`.
 
 `KitFlat.jsx` code-draws spec-accurate SVG jersey flats from `heroKits.js` (no raster needed).
 
@@ -60,8 +60,8 @@ from a manifest, registered in `src/data/directions/index.js` and resolved by `g
 Spine: hero → provocation → kit up close → on-body lookbook → the system/derivatives → method timeline →
 cited receipts → ethics. `DirectionPage` is defensive — sparser manifests skip missing sections. Reuses
 the `Gallery` lightbox + `Journey` reveal patterns; manifests reference already-served `public/` assets.
-The Clubs + Hero Kits gateways auto-link any slug `getDirection` knows. The scaffold (#57) shipped; 4 of
-the 5 epic directions (#56) are live — Hogan's Alley FC is back-burnered.
+The Clubs + Hero Kits gateways auto-link any slug `getDirection` knows. The scaffold (#57) shipped; all
+5 epic directions (#56) are live and the epic is closed.
 
 ## Brand surface
 

@@ -22,7 +22,7 @@ All nine MADE ON kits laid out as a browsable grid. Each card shows the kit name
 
 ### /kit/:slug : per-direction kit page
 
-One immersive "world" per direction, addressed by slug — 4 live: `nardwuar-fc` (flagship), `pump-and-dump-fc`, `number-five-orange`, `china-creek`. Rendered by the reusable `DirectionPage` template from a manifest (`src/data/directions/<slug>.js`, registered via `getDirection`); concept/citations come from `src/data/clubs.js`. Flagship is `/kit/nardwuar-fc` (the Designathon winner). Hogan's Alley FC is back-burnered.
+One immersive "world" per direction, addressed by slug — 5 live: `nardwuar-fc` (flagship), `pump-and-dump-fc`, `number-five-orange`, `china-creek`, `hogans-alley-fc`. Rendered by the reusable `DirectionPage` template from a manifest (`src/data/directions/<slug>.js`, registered via `getDirection`); concept/citations come from `src/data/clubs.js` (Hogan's Alley uses its own self-contained manifest — a memorial page, never a store product). Flagship is `/kit/nardwuar-fc` (the Designathon winner).
 
 ### /store : the drop
 
