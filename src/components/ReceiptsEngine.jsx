@@ -74,7 +74,7 @@ function ReceiptRail({ receipts, active, setActive }) {
               key={r.id}
               onClick={() => setActive(r)}
               className={
-                'shrink-0 border px-4 py-2.5 text-left transition-all duration-200 ' +
+                'shrink-0 border px-4 py-2.5 text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone ' +
                 (on
                   ? 'border-hazard bg-hazard/10 shadow-sm'
                   : 'border-ink/15 bg-bone hover:border-ink/40 hover:bg-ink/[0.03]')
@@ -105,10 +105,13 @@ function HemCard({ hem, activeId }) {
   return (
     <article
       key={activeId}
-      className="j-reveal tartan-dark"
+      className="relative j-reveal tartan-dark"
       style={{ animation: 'engine-fadein 380ms cubic-bezier(0.2,0.7,0.2,1) both' }}
     >
-      <div className="mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
+      {/* dark scrim — tartan-dark's stripe alphas build up bright on their own;
+          this keeps the bone text readable (same fix as the /why header band). */}
+      <div className="absolute inset-0 bg-[#1a0208]/75" aria-hidden="true" />
+      <div className="relative z-10 mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
         {/* label row */}
         <div className="mb-8 flex items-baseline justify-between">
           <div>
@@ -130,14 +133,14 @@ function HemCard({ hem, activeId }) {
         {/* image — full-width strip, proper height */}
         <div className="mb-8 overflow-hidden border border-bone/10">
           <SafeImage
-            src="/engine/voice-madeon.png"
+            src="/engine/voice-madeon.jpg"
             alt="Redacted public document, MADE ON the hem"
             className="h-64 w-full object-cover opacity-80 md:h-80"
           />
         </div>
 
         {/* source label */}
-        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.35em] text-bone/30">
+        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.35em] text-bone/55">
           {hem.label}
         </p>
 
@@ -151,7 +154,7 @@ function HemCard({ hem, activeId }) {
 
         {/* citation */}
         <div className="mt-8 border-t border-bone/10 pt-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/35">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/55">
             {hem.source}
           </p>
         </div>
@@ -193,7 +196,7 @@ function PosterCard({ poster, activeId }) {
         {/* image */}
         <div className="mb-10 overflow-hidden border border-hazard/15">
           <SafeImage
-            src="/engine/voice-feefa.png"
+            src="/engine/voice-feefa.jpg"
             alt="Dense Vancouver condo development, FEEFA agitprop poster"
             className="h-64 w-full object-cover md:h-80"
           />
@@ -259,7 +262,7 @@ function EditorialCard({ ed, activeId }) {
         {/* image */}
         <div className="mb-10 overflow-hidden border border-ink/10">
           <SafeImage
-            src="/engine/voice-cake.png"
+            src="/engine/voice-cake.jpg"
             alt="Engraved banknote detail, Fashion Cake editorial"
             className="h-64 w-full object-cover md:h-80"
           />

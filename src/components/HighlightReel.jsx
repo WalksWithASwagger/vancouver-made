@@ -323,7 +323,7 @@ function Ctl({ label, onClick, title, wide }) {
         onClick(e)
       }}
       title={title}
-      className={`border border-bone/25 bg-ink/70 py-2 text-xs uppercase tracking-widest text-bone/80 transition hover:border-bone/60 hover:text-bone ${
+      className={`border border-bone/25 bg-ink/70 py-2 text-xs uppercase tracking-widest text-bone/80 transition hover:border-bone/60 hover:text-bone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bone ${
         wide ? 'px-4' : 'px-3'
       }`}
     >

@@ -42,3 +42,10 @@
     transform: scale(1.06);
   }
 }
+
+/* Reduced motion: hold a static collage instead of the continuous develop/fade churn
+   (the looping spawn/fade can trigger vestibular discomfort). */
+@media (prefers-reduced-motion: reduce) {
+  .wall-tile { animation: none; opacity: 1; }
+  .wall-img { animation: none; transform: none; }
+}
