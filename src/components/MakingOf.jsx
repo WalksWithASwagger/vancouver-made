@@ -67,7 +67,7 @@ function Frame({ slug, img, onOpen }) {
     <figure className="overflow-hidden rounded-lg border border-ink/12 bg-white">
       <button type="button" onClick={onOpen} className="block w-full">
         <img src={`/making-of/${slug}/${img.file}`} alt={img.caption} loading="lazy"
-          className="aspect-[4/5] w-full cursor-zoom-in object-cover transition hover:opacity-95" />
+          className="aspect-[4/5] w-full cursor-zoom-in object-cover transition duration-300 hover:scale-[1.03]" />
       </button>
       <figcaption className="p-3">
         <p className="text-sm font-semibold leading-snug text-ink">{img.caption || '—'}</p>

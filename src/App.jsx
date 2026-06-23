@@ -16,6 +16,7 @@ import Footer from './components/Footer.jsx'
 import Nav from './components/Nav.jsx'
 import ShareQR from './components/ShareQR.jsx'
 import PresenterControls from './components/PresenterControls.jsx'
+import useReveal from './hooks/useReveal.js'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 import { getDirection } from './data/directions/index.js'
@@ -70,8 +71,14 @@ const TITLES = {
 function Marquee() {
   const line = slogans.join('   ✦   ') + '   ✦   '
   return (
-    <div className="nav-tartan overflow-hidden border-y-2 border-ink py-3">
-      <div className="marquee text-bone text-sm font-bold tracking-widest [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
+    <div
+      className="nav-tartan group overflow-hidden border-y-2 border-ink py-3"
+      style={{
+        WebkitMaskImage: 'linear-gradient(to right, transparent, #000 6%, #000 94%, transparent)',
+        maskImage: 'linear-gradient(to right, transparent, #000 6%, #000 94%, transparent)',
+      }}
+    >
+      <div className="marquee text-bone text-sm font-bold tracking-widest [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] group-hover:[animation-play-state:paused]">
         <span>{line}</span>
         <span aria-hidden="true">{line}</span>
       </div>
@@ -80,45 +87,46 @@ function Marquee() {
 }
 
 function MadeOnSite() {
+  const revealRoot = useReveal()
   return (
-    <div className="grain min-h-screen tartan-canvas text-ink">
+    <div ref={revealRoot} className="grain min-h-screen tartan-canvas text-ink">
       <PresenterControls />
 
       {/* HERO — the MADE ON statement + a lookbook of the actual kits */}
       <section id="hero" className="relative w-full px-4 py-6 md:px-6 md:py-8">
         <div className="sheet mx-auto grid max-w-6xl items-center gap-10 overflow-hidden px-6 py-14 md:grid-cols-2 md:gap-14 md:py-24">
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-ink/55">
+            <p className="hero-rise mb-3 text-xs uppercase tracking-[0.3em] text-ink/55">
               {brand.parent} · {brand.name}
             </p>
-            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-cyan">
+            <p className="hero-rise mb-4 text-xs uppercase tracking-[0.3em] text-cyan" style={{ animationDelay: '60ms' }}>
               {brand.kind} · not a sponsor
             </p>
-            <h1 className="headline text-5xl text-ink md:text-7xl lg:text-8xl">
+            <h1 className="hero-rise headline text-5xl text-ink md:text-7xl lg:text-8xl" style={{ animationDelay: '120ms' }}>
               MADE
               <br />
               <span className="text-hazard">ON</span> WHAT?
             </h1>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-ink/80 md:text-base">
+            <p className="hero-rise mt-5 max-w-md text-sm leading-relaxed text-ink/80 md:text-base" style={{ animationDelay: '220ms' }}>
               They asked for the Vancouver story. We finished the sentence.{' '}
               <span className="text-gold">Made on stolen ground. Made on Hogan's
               Alley. Made on $729 million of public money.</span>
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="hero-rise mt-7 flex flex-wrap gap-3" style={{ animationDelay: '320ms' }}>
               <Link
                 to="/journey"
-                className="inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
+                className="inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:-translate-y-px hover:bg-hazard hover:text-ink hover:shadow-lg"
               >
                 Begin the journey →
               </Link>
               <Link
                 to="/gallery"
-                className="inline-block border border-ink/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink/70 transition hover:border-ink hover:text-ink"
+                className="inline-block border border-ink/25 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink/70 transition hover:-translate-y-px hover:border-ink hover:text-ink"
               >
                 See the gallery →
               </Link>
             </div>
-            <p className="mt-7 text-xs uppercase tracking-[0.2em] text-ink/45">
+            <p className="hero-rise mt-7 text-xs uppercase tracking-[0.2em] text-ink/45" style={{ animationDelay: '400ms' }}>
               ↻ Everyone else made a souvenir. We made the receipt.
             </p>
           </div>
@@ -134,26 +142,26 @@ function MadeOnSite() {
       {/* TERRITORIAL STATEMENT */}
       <section className="px-4 py-6 md:px-6 md:py-8">
         <div className="sheet mx-auto max-w-4xl px-6 py-16 md:px-12 md:py-20">
-        <h2 className="headline mb-8 text-3xl text-gold md:text-5xl">
+        <h2 className="reveal headline mb-8 text-3xl text-gold md:text-5xl">
           THE TERRITORIAL STATEMENT
         </h2>
         <div className="space-y-5 text-sm leading-relaxed text-ink/85 md:text-base">
-          <p className="headline text-xl text-ink md:text-2xl">
+          <p className="reveal headline text-xl text-ink md:text-2xl" style={{ transitionDelay: '80ms' }}>
             Made on stolen ground. Made on Hogan's Alley. Made on $729 million of
             public money.
           </p>
-          <p>
+          <p className="reveal" style={{ transitionDelay: '160ms' }}>
             The unceded Musqueam, Squamish and Tsleil-Waututh land the stadium sits
             on. The Black neighbourhood paved for the viaduct this World Cup drives
             its fans across. A public bill of up to $729M, $242M of it security,
             while California cities ran the same tournament on private money.
           </p>
-          <p>
+          <p className="reveal border-l-2 border-hazard pl-4" style={{ transitionDelay: '240ms' }}>
             <span className="text-hazard">We borrowed no sacred imagery.</span> We
             used the coloniser's own paperwork instead: the receipt, the redaction,
             the banknote. A settler artist's refusal to make the celebration jersey.
           </p>
-          <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+          <p className="reveal text-xs uppercase tracking-[0.2em] text-ink/50" style={{ transitionDelay: '320ms' }}>
             {brand.author} · {brand.land}
           </p>
         </div>
@@ -174,17 +182,17 @@ function MadeOnSite() {
 
       {/* MAKING-OF — the prompt-to-kit process, image by image */}
       <section className="border-t border-ink/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-14 text-center md:py-16">
+        <div className="reveal mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-14 text-center md:py-16">
           <p className="text-xs uppercase tracking-[0.3em] text-cyan">Show your work</p>
           <h2 className="headline max-w-2xl text-2xl text-ink md:text-4xl">
             HOW THESE WERE <span className="text-hazard">MADE.</span>
           </h2>
           <p className="max-w-xl text-sm leading-relaxed text-ink/75">
-            Mood, marks, flats, then the kit on the body — the captioned process behind each concept.
+            Mood, marks, flats, then the kit on the body. The captioned process behind each concept.
           </p>
           <Link
             to="/making-of"
-            className="mt-2 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:bg-hazard hover:text-ink"
+            className="mt-2 inline-block border border-hazard bg-hazard/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-hazard transition hover:-translate-y-px hover:bg-hazard hover:text-ink hover:shadow-lg"
           >
             See the making-of →
           </Link>
@@ -193,7 +201,7 @@ function MadeOnSite() {
 
       {/* AWARDS — double silver (ink chip floating on the tartan canvas) */}
       <section id="awards" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-2xl bg-ink/85 px-6 py-14 text-center shadow-[0_18px_44px_-26px_rgba(20,12,10,0.7)] md:py-16">
+        <div className="reveal mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-2xl bg-ink/85 px-6 py-14 text-center shadow-[0_18px_44px_-26px_rgba(20,12,10,0.7)] md:py-16">
           <p className="text-xs uppercase tracking-[0.3em] text-bone/70">Vancouver Made · BCIT Tech Collider · 2026</p>
           <h2 className="headline text-3xl text-bone md:text-5xl [text-shadow:0_2px_6px_rgba(0,0,0,0.6)]">
             DOUBLE <span className="text-hazard">SILVER</span>
@@ -204,7 +212,7 @@ function MadeOnSite() {
           </p>
           <Link
             to="/awards"
-            className="mt-2 inline-block border border-hazard bg-hazard px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-bone transition hover:bg-bone hover:text-ink"
+            className="mt-2 inline-block border border-hazard bg-hazard px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-bone transition hover:-translate-y-px hover:bg-bone hover:text-ink hover:shadow-lg"
           >
             See the awards →
           </Link>

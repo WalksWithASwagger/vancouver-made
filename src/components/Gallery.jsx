@@ -122,7 +122,7 @@ export default function Gallery() {
         >
           <button
             onClick={(e) => { e.stopPropagation(); setActive((i) => (i - 1 + flat.length) % flat.length) }}
-            className="absolute left-3 top-1/2 -translate-y-1/2 px-3 py-2 text-2xl text-bone/60 hover:text-bone"
+            className="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-ink/45 text-2xl text-bone/80 backdrop-blur-sm transition hover:bg-ink/70 hover:text-bone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bone"
             aria-label="Previous"
           >‹</button>
           <figure onClick={(e) => e.stopPropagation()} className="flex max-h-full max-w-5xl flex-col items-center">
@@ -133,12 +133,12 @@ export default function Gallery() {
           </figure>
           <button
             onClick={(e) => { e.stopPropagation(); setActive((i) => (i + 1) % flat.length) }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 px-3 py-2 text-2xl text-bone/60 hover:text-bone"
+            className="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-ink/45 text-2xl text-bone/80 backdrop-blur-sm transition hover:bg-ink/70 hover:text-bone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bone"
             aria-label="Next"
           >›</button>
           <button
             onClick={() => setActive(null)}
-            className="absolute right-4 top-4 text-xs uppercase tracking-[0.2em] text-bone/60 hover:text-bone"
+            className="absolute right-4 top-4 rounded px-2 py-1 text-xs uppercase tracking-[0.2em] text-bone/70 transition hover:text-bone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bone"
             aria-label="Close"
           >Close ✕</button>
         </div>

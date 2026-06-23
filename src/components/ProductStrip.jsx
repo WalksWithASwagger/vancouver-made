@@ -119,8 +119,10 @@ export default function ProductStrip({ heading = 'THE STORE', count = 10 }) {
 
         {/* card grid */}
         <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-5">
-          {items.map((p) => (
-            <StripCard key={p.id} p={p} />
+          {items.map((p, i) => (
+            <div key={p.id} className="reveal" style={{ transitionDelay: `${i * 55}ms` }}>
+              <StripCard p={p} />
+            </div>
           ))}
         </div>
       </div>
