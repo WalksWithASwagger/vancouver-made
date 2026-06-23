@@ -23,6 +23,10 @@ The whole redesign and tech-debt backlog is **merged and live in prod**:
   hex→tokens (#43); stale comments/tokens (#45); em-dash sweep (#28); docs reconcile (#40).
 - **The bold Nardwuar Tartan Canvas (#75)** — red tartan ground, content on cream sheets, site-wide.
 - The public **`/wall`** refreshed (#41 content); the **Making Of** per-concept pages added.
+- **Site-wide elevation pass** — reimagined hero (dark stage + Ken Burns + staggered entrance);
+  homepage scroll-reveal/stagger via a shared `useReveal` hook; a11y hardening (focus rings across
+  engine/reel/gallery controls, `/wall` reduced-motion); ~5MB image-weight trim (heavy PNGs → JPG);
+  and a voice pass (reference-library em-dashes → the brand middot, then prose tone fixes to periods).
 
 ## The finish line — launch (✅ polished; awaiting KK's "post")
 

@@ -4,13 +4,15 @@
 > (~100, $300) and 2nd in the Formme Design Challenge (~50; prize: 5 jerseys produced). The
 > competition is over; submission/rehearsal items below are historical. See [`AWARDS.md`](AWARDS.md).
 
-Last updated 2026-06-22. Where the work stands, so it's easy to pick up later. For the forward plan see [`ROADMAP.md`](ROADMAP.md).
+Last updated 2026-06-23. Where the work stands, so it's easy to pick up later. For the forward plan see [`ROADMAP.md`](ROADMAP.md).
 
-> **Current state (2026-06-22): launch-ready.** Since this doc's "store + submission" notes below, the
+> **Current state (2026-06-23): launch-ready.** Since this doc's "store + submission" notes below, the
 > site was fully redesigned — 5 immersive per-direction kit worlds (`/kit/:slug`) incl. the Hogan's
 > Alley memorial page, the bold **Nardwuar Tartan Canvas**, the Store / Receipts Engine / Hall of Fame
-> / Awards / Why-It-Won surfaces, a Making-Of section, and a cleanup + polish pass (3D portal removed,
-> `SafeImage`, a11y, em-dash sweep, image-weight trim). Epic #56 is closed. The launch polish +
+> / Awards / Why-It-Won surfaces, a Making-Of section, and the two kit gateways merged into one
+> interactive **`KitGateway`** (flat ⇄ real-kit crossfade). Then a site-wide elevation pass:
+> reimagined hero, homepage scroll-motion, a11y hardening (focus rings, reduced-motion), ~5MB
+> image-weight trim, and a voice/tone pass. Epic #56 is closed. The launch polish +
 > announcement drafts are done; the only open step is **KK publishing** the social posts. See [`ROADMAP.md`](ROADMAP.md) + [`ARCHITECTURE.md`](ARCHITECTURE.md).
 > The sections below are the earlier store/tech-pack thread, kept as history.
 
