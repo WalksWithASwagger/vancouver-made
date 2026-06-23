@@ -75,8 +75,8 @@ export const acts = {
     title: 'Everyone made a souvenir. We made the receipt.',
     body:
       'FIFA World Cup 2026 is coming to Vancouver, sold back to us as a celebration. We did ' +
-      'not want to make the celebration jersey. This is not a protest about AI. AI is just ' +
-      'the brush. The subject is greed, displacement, and who pays the public bill.',
+      'not want to make the celebration jersey. AI is the brush. The subject is greed, ' +
+      'displacement, and who pays the public bill.',
     receipts: [
       'Made on stolen ground.',
       "Made on Hogan's Alley.",

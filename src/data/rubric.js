@@ -32,7 +32,7 @@ export const rubric = [
     crit: 'Use of AI / tools',
     ask: 'Use the tools well. AI as the brush, not the subject.',
     delivery:
-      "FIFA's official visual system rebuilt and turned against itself with AI design tools, then disciplined by cited Vancouver public-record data and human taste. AI does the production; the receipts hold the line.",
+      "FIFA's official visual system rebuilt and turned against itself with AI design tools, then held to cited Vancouver public-record data. AI does the production; the receipts hold the line.",
     proof: { label: 'See the lineage', to: '/hall-of-fame' },
   },
 ]
