@@ -38,7 +38,7 @@ function FilterButton({ active, color, label, count, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="border px-4 py-2 text-[10px] font-bold uppercase tracking-wider transition focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+      className="inline-flex items-center min-h-[44px] border px-4 py-2 text-[10px] font-bold uppercase tracking-wider transition focus-visible:ring-2 focus-visible:ring-hazard focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
       style={
         active
           ? { background: color, color: tokens.bone, borderColor: color }

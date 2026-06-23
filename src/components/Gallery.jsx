@@ -49,7 +49,7 @@ export default function Gallery() {
           <div className="mt-5 flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em]">
             <button
               onClick={() => setFilter('all')}
-              className={'rounded border px-3.5 py-2 transition ' + (filter ==='all' ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
+              className={'inline-flex items-center min-h-[44px] rounded border px-3.5 py-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hazard ' + (filter ==='all' ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
             >
               All · {total}
             </button>
@@ -57,7 +57,7 @@ export default function Gallery() {
               <button
                 key={g.concept}
                 onClick={() => setFilter(g.concept)}
-                className={'rounded border px-3.5 py-2 transition ' + (filter ===g.concept ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
+                className={'inline-flex items-center min-h-[44px] rounded border px-3.5 py-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hazard ' + (filter ===g.concept ? 'border-hazard bg-hazard/10 text-hazard' : 'border-ink/20 text-ink/60 hover:text-ink')}
               >
                 {g.concept}
               </button>
