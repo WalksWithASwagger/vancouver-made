@@ -30,7 +30,7 @@ export const entries = [
     category: 'design-canon', year: '1998',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Mexico_national_football_team',
-    why: 'Aba Sport printed the entire Aztec sun stone across the shirt · national heritage as the whole graphic, not a crest. Still the bar for pattern-as-identity.',
+    why: 'Aba Sport printed the entire Aztec sun stone across the shirt. National heritage as the whole graphic, not a crest. Still the bar for pattern-as-identity.',
     tags: ['pattern', 'heritage', 'goalkeeper'],
   },
   {
@@ -48,7 +48,7 @@ export const entries = [
     category: 'design-canon', year: '2018',
     src: `${KG}/kit-nigeria-2018.jpg`, rights: 'CC BY-SA 3.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:FWC_2018_-_Group_D_-_NGA_v_ISL_-_Photo_66.jpg',
-    why: 'Nike took over three million pre-orders · its most pre-ordered shirt ever. Proof a kit can be culture before it is sportswear.',
+    why: 'Nike took over three million pre-orders. Its most pre-ordered shirt ever. Proof a kit can be culture before it is sportswear.',
     tags: ['nike', 'hype', 'culture'],
   },
   {
@@ -57,7 +57,7 @@ export const entries = [
     category: 'design-canon', year: '1998',
     src: `${KG}/kit-croatia-1998.jpg`, rights: 'CC BY 4.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Croatia%27s_post-match_huddle_after_the_2018_FIFA_World_Cup_Final.jpg',
-    why: 'The red-and-white šahovnica draped over the shoulders · a flag worn as a shirt. National symbol and kit collapsed into one.',
+    why: 'The red-and-white šahovnica draped over the shoulders. A flag worn as a shirt. National symbol and kit collapsed into one.',
     tags: ['flag', 'identity'],
   },
   {
@@ -66,7 +66,7 @@ export const entries = [
     category: 'design-canon', year: '1988',
     src: `${KG}/kit-netherlands-1988.jpg`, rights: 'CC0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:EK_voetbal_in_West_Duitsland;_Nederland_tegen_Ierland_1_Van_Basten,_Rijkaard,_R._Koeman,_E._Koeman,_Gullit_en_Van_Breukelen.jpg',
-    why: 'Adidas’ jagged tonal geometry under Van Basten · the kit that made "abstract pattern" a default move for a generation.',
+    why: 'Adidas’ jagged tonal geometry under Van Basten. The kit that made "abstract pattern" a default move for a generation.',
     tags: ['adidas', 'pattern'],
   },
   {
@@ -84,7 +84,7 @@ export const entries = [
     category: 'design-canon', year: '1986',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Denmark_national_football_team',
-    why: 'Hummel’s half-and-half red/white pinstripes with chevron sleeves · perennial "best kit ever" pick, and the brand DNA they later faded in protest (see 2022).',
+    why: 'Hummel’s half-and-half red/white pinstripes with chevron sleeves. Perennial "best kit ever" pick, and the brand DNA they later faded in protest (see 2022).',
     tags: ['hummel', 'pinstripe'],
   },
   {
@@ -93,7 +93,7 @@ export const entries = [
     category: 'design-canon', year: '1994',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/United_States_men%27s_national_soccer_team',
-    why: 'A stonewashed-denim-look home shirt for the home World Cup. So American it loops back to brilliant · host-nation kitsch done with full commitment.',
+    why: 'A stonewashed-denim-look home shirt for the home World Cup. So American it loops back to brilliant. Host-nation kitsch done with full commitment.',
     tags: ['americana', 'host'],
   },
   {
@@ -102,7 +102,7 @@ export const entries = [
     category: 'design-canon', year: '1991',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Arsenal_F.C.',
-    why: 'Yellow with black-and-blue zigzags · adidas at its most fearless. The club kit that proved away shirts could be the main event.',
+    why: 'Yellow with black-and-blue zigzags. Adidas at its most fearless. The club kit that proved away shirts could be the main event.',
     tags: ['adidas', 'away', 'cult'],
   },
   {
@@ -111,7 +111,7 @@ export const entries = [
     category: 'design-canon', year: '2020',
     src: `${KG}/kit-venezia.jpg`, rights: 'CC BY-SA 4.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Stadio_Olimpico_Lazio_Rome-Venezia_FC_03.jpg',
-    why: 'A Serie B side designed kits like a Venetian fashion label · restraint, gold, tailoring. Showed a club crest can carry couture instead of sponsors.',
+    why: 'A Serie B side designed kits like a Venetian fashion label. Restraint, gold, tailoring. Showed a club crest can carry couture instead of sponsors.',
     tags: ['fashion', 'minimal'],
   },
   {
@@ -120,7 +120,7 @@ export const entries = [
     category: 'design-canon', year: '1970',
     src: `${KG}/kit-brazil-1970.jpg`, rights: 'CC BY-SA 4.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Museu_do_Futebol,_Camisa_sele%C3%A7%C3%A3o_brasileira_Pel%C3%A9_(1970).jpg',
-    why: 'Yellow, green trim, the Pelé side. The most photographed kit in history · a colourway so total it became a national flag substitute.',
+    why: 'Yellow, green trim, the Pelé side. The most photographed kit in history. A colourway so total it became a national flag substitute.',
     tags: ['colourway', 'icon'],
   },
 
@@ -133,7 +133,7 @@ export const entries = [
     category: 'protest-kits', year: '2022',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://www.sportspro.com/news/sponsorship-marketing/denmark-kit-hummel-qatar-2022-world-cup-human-rights-dbu/',
-    why: 'Hummel faded its own logo and famous chevrons into the shirt colour · "we don’t wish to be visible during a tournament that has cost thousands of lives." A third kit in black, the colour of mourning. The purest protest-kit precedent there is.',
+    why: 'Hummel faded its own logo and famous chevrons into the shirt colour. "we don’t wish to be visible during a tournament that has cost thousands of lives." A third kit in black, the colour of mourning. The purest protest-kit precedent there is.',
     tags: ['qatar', 'sponsor', 'erasure', 'hummel'],
   },
   {
@@ -160,7 +160,7 @@ export const entries = [
     category: 'protest-kits', year: '2018',
     src: `${KG}/kit-clapton.jpg`, rights: 'CC BY-SA 4.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Brentford_vs._Clapton_Community_(2022).jpg',
-    why: 'East-London fan-owned club in the colours of the Spanish Republic, three-pointed International Brigades stars, "No Pasarán" on the chest. Sold out worldwide · an anti-fascist shirt that became a global object.',
+    why: 'East-London fan-owned club in the colours of the Spanish Republic, three-pointed International Brigades stars, "No Pasarán" on the chest. Sold out worldwide. An anti-fascist shirt that became a global object.',
     tags: ['antifascist', 'history', 'fan-owned'],
   },
   {
@@ -169,7 +169,7 @@ export const entries = [
     category: 'protest-kits', year: '1980s',
     src: `${IMG}/st-pauli-skull.png`, rights: 'Logo © FC St. Pauli · shown for commentary',
     sourceUrl: 'https://en.wikipedia.org/wiki/FC_St._Pauli',
-    why: 'A skull-and-crossbones the fans adopted, not the marketing dept. Anti-fascist, anti-racist politics baked into the badge since the 1980s · club identity as permanent resistance.',
+    why: 'A skull-and-crossbones the fans adopted, not the marketing dept. Anti-fascist, anti-racist politics baked into the badge since the 1980s. Club identity as permanent resistance.',
     tags: ['antifascist', 'badge', 'punk'],
   },
   {
@@ -187,7 +187,7 @@ export const entries = [
     category: 'protest-kits', year: '2021',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/FC_St._Pauli',
-    why: 'The club walked away from the apparel giants and made its own kit under the "DIY" mark · self-determination as a design principle, punk ethos on the supply chain.',
+    why: 'The club walked away from the apparel giants and made its own kit under the "DIY" mark. Self-determination as a design principle, punk ethos on the supply chain.',
     tags: ['diy', 'supply-chain', 'punk'],
   },
   {
@@ -214,7 +214,7 @@ export const entries = [
     category: 'protest-kits', year: '2016',
     src: `${IMG}/dulwich-hamlet-supporters.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Dulwich_Hamlet_F.C.',
-    why: 'South-London non-league club with explicit anti-racist, pro-LGBTQ, refugee-welcome values · the grassroots English cousin of St. Pauli. Pink-and-blue as a moral position.',
+    why: 'South-London non-league club with explicit anti-racist, pro-LGBTQ, refugee-welcome values. The grassroots English cousin of St. Pauli. Pink-and-blue as a moral position.',
     tags: ['community', 'inclusive', 'non-league'],
   },
   {
@@ -241,7 +241,7 @@ export const entries = [
     category: 'protest-kits', year: '2019',
     src: `${IMG}/palestine-team-2019.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Palestine_national_football_team',
-    why: 'Playing the world’s game under occupation · the act of fielding a national team is the statement before a ball moves.',
+    why: 'Playing the world’s game under occupation. The act of fielding a national team is the statement before a ball moves.',
     tags: ['palestine', 'match', 'nation'],
   },
 
@@ -254,7 +254,7 @@ export const entries = [
     category: 'athlete-protest', year: '1968',
     src: `${IMG}/smith-carlos-1968-salute.jpg`, rights: 'Public domain',
     sourceUrl: 'https://en.wikipedia.org/wiki/1968_Olympics_Black_Power_salute',
-    why: 'Every accessory was a coded sign · black socks no shoes (poverty), scarf (pride), beads (lynching victims), unzipped jacket (solidarity). The template for protest-as-detail, not slogan.',
+    why: 'Every accessory was a coded sign. Black socks no shoes (poverty), scarf (pride), beads (lynching victims), unzipped jacket (solidarity). The template for protest-as-detail, not slogan.',
     tags: ['1968', 'coded-detail', 'podium'],
   },
   {
@@ -263,7 +263,7 @@ export const entries = [
     category: 'athlete-protest', year: '1968',
     src: `${IMG}/smith-carlos-norman-1968-podium.jpg`, rights: 'Public domain',
     sourceUrl: 'https://en.wikipedia.org/wiki/1968_Olympics_Black_Power_salute',
-    why: 'The wide shot shows silver medallist Peter Norman wearing the same OPHR badge in solidarity. The ally is visible in frame · protest as a shared act.',
+    why: 'The wide shot shows silver medallist Peter Norman wearing the same OPHR badge in solidarity. The ally is visible in frame. Protest as a shared act.',
     tags: ['1968', 'ally', 'solidarity'],
   },
   {
@@ -272,7 +272,7 @@ export const entries = [
     category: 'athlete-protest', year: '1968',
     src: `${IMG}/peter-norman-ophr-badge.jpg`, rights: 'Public domain',
     sourceUrl: 'https://en.wikipedia.org/wiki/Peter_Norman',
-    why: 'A single OPHR badge on a white Australian’s chest · the smallest possible accessory carrying the largest possible risk. He paid for it for the rest of his career.',
+    why: 'A single OPHR badge on a white Australian’s chest. The smallest possible accessory carrying the largest possible risk. He paid for it for the rest of his career.',
     tags: ['1968', 'badge', 'ally', 'cost'],
   },
   {
@@ -281,7 +281,7 @@ export const entries = [
     category: 'athlete-protest', year: '2016',
     src: `${IMG}/kaepernick-kneeling.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Colin_Kaepernick',
-    why: 'Standard 49ers uniform, dissenting posture. The body did what no graphic could · turned the anthem into the protest surface, and ended his career to do it.',
+    why: 'Standard 49ers uniform, dissenting posture. The body did what no graphic could. Turned the anthem into the protest surface, and ended his career to do it.',
     tags: ['nfl', 'posture', 'anthem'],
   },
   {
@@ -290,7 +290,7 @@ export const entries = [
     category: 'athlete-protest', year: '2016',
     src: `${IMG}/megan-rapinoe.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Megan_Rapinoe',
-    why: 'Took a knee in solidarity with Kaepernick · the USWNT as a consistently political team, and women’s sport as a protest amplifier the federations couldn’t ignore.',
+    why: 'Took a knee in solidarity with Kaepernick. The USWNT as a consistently political team, and women’s sport as a protest amplifier the federations couldn’t ignore.',
     tags: ['uswnt', 'solidarity', 'womens'],
   },
   {
@@ -308,7 +308,7 @@ export const entries = [
     category: 'athlete-protest', year: '2022',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_controversies',
-    why: 'After FIFA banned the OneLove armband, the German XI covered their mouths in the official team photo · "you silenced us." A protest staged on FIFA’s own branded set-piece.',
+    why: 'After FIFA banned the OneLove armband, the German XI covered their mouths in the official team photo. "you silenced us." A protest staged on FIFA’s own branded set-piece.',
     tags: ['qatar', 'censorship', 'team-photo'],
   },
   {
@@ -317,7 +317,7 @@ export const entries = [
     category: 'athlete-protest', year: '2022',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/OneLove_armband',
-    why: 'A rainbow captain’s armband FIFA banned under threat of an instant yellow card. The rulebook became the design brief · the ban said more than the band could.',
+    why: 'A rainbow captain’s armband FIFA banned under threat of an instant yellow card. The rulebook became the design brief. The ban said more than the band could.',
     tags: ['qatar', 'lgbtq', 'armband', 'ban'],
   },
   {
@@ -326,7 +326,7 @@ export const entries = [
     category: 'athlete-protest', year: '2020',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Naomi_Osaka',
-    why: 'Seven matches, seven masks, seven names of Black Americans killed. A kit accessory turned into a rotating broadcast surface · a new name on prime time every round.',
+    why: 'Seven matches, seven masks, seven names of Black Americans killed. A kit accessory turned into a rotating broadcast surface. A new name on prime time every round.',
     tags: ['tennis', 'blm', 'mask', 'rotating'],
   },
   {
@@ -344,7 +344,7 @@ export const entries = [
     category: 'athlete-protest', year: '2022',
     src: `${KG}/kit-iran-2022.jpg`, rights: 'CC BY-SA 4.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Iranian_national_team_fans_01.jpg',
-    why: 'The Iranian XI stood silent through their own anthem in solidarity with the Mahsa Amini protests · the loudest thing on the pitch was the thing they didn’t do.',
+    why: 'The Iranian XI stood silent through their own anthem in solidarity with the Mahsa Amini protests. The loudest thing on the pitch was the thing they didn’t do.',
     tags: ['iran', 'mahsa-amini', 'silence'],
   },
   {
@@ -353,7 +353,7 @@ export const entries = [
     category: 'athlete-protest', year: '2021',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_controversies',
-    why: '"Human rights, on and off the pitch" printed on warmups over the kit during qualifiers. The counter-message layered on top of the sanctioned shirt · a move you can copy directly.',
+    why: '"Human rights, on and off the pitch" printed on warmups over the kit during qualifiers. The counter-message layered on top of the sanctioned shirt. A move you can copy directly.',
     tags: ['qatar', 'warmup', 'layered'],
   },
 
@@ -366,7 +366,7 @@ export const entries = [
     category: 'olympics', year: '1968',
     src: `${KG}/kit-caslavska.jpg`, rights: 'CC0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:V%C4%9Bra_%C4%8C%C3%A1slavsk%C3%A1_1967.jpg',
-    why: 'The Czech gymnast quietly turned her head down and away during the Soviet anthem, weeks after the invasion of Prague. Protest as the smallest possible gesture · and years of erasure for it.',
+    why: 'The Czech gymnast quietly turned her head down and away during the Soviet anthem, weeks after the invasion of Prague. Protest as the smallest possible gesture. And years of erasure for it.',
     tags: ['1968', 'gymnastics', 'gesture'],
   },
   {
@@ -375,7 +375,7 @@ export const entries = [
     category: 'olympics', year: '2000',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Cathy_Freeman',
-    why: 'Won the 400m at the Sydney Games and ran her victory lap carrying both the Australian and the Aboriginal flag · claiming a contested identity on the host nation’s biggest night.',
+    why: 'Won the 400m at the Sydney Games and ran her victory lap carrying both the Australian and the Aboriginal flag. Claiming a contested identity on the host nation’s biggest night.',
     tags: ['indigenous', 'flag', 'victory-lap'],
   },
   {
@@ -384,7 +384,7 @@ export const entries = [
     category: 'olympics', year: '2021',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Raven_Saunders',
-    why: 'Raised arms crossed into an X on the medal podium · "the intersection where oppressed people meet." A protest the IOC opened an inquiry into, then dropped.',
+    why: 'Raised arms crossed into an X on the medal podium. "the intersection where oppressed people meet." A protest the IOC opened an inquiry into, then dropped.',
     tags: ['podium', 'gesture', 'ioc'],
   },
   {
@@ -393,7 +393,7 @@ export const entries = [
     category: 'olympics', year: '2010', vancouver: true,
     src: `${IMG}/cowichan-sweater.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Cowichan_knitting',
-    why: 'An authentic Coast Salish Cowichan sweater. At Vancouver 2010 the Hudson’s Bay Company sold a mass-produced "Cowichan-style" knockoff · the exact fight over who owns the culture the kit dresses up.',
+    why: 'An authentic Coast Salish Cowichan sweater. At Vancouver 2010 the Hudson’s Bay Company sold a mass-produced "Cowichan-style" knockoff. The exact fight over who owns the culture the kit dresses up.',
     tags: ['appropriation', 'coast-salish', 'vancouver-2010'],
   },
   {
@@ -402,7 +402,7 @@ export const entries = [
     category: 'olympics', year: '2010', vancouver: true,
     src: `${IMG}/polo-cowichan-knockoff.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Cowichan_knitting',
-    why: 'The appropriated commercial version beside the real thing. Authentic vs. counterfeit, in one garment · the precise tension MADE ON inhabits.',
+    why: 'The appropriated commercial version beside the real thing. Authentic vs. counterfeit, in one garment. The precise tension MADE ON inhabits.',
     tags: ['appropriation', 'counterfeit'],
   },
   {
@@ -420,7 +420,7 @@ export const entries = [
     category: 'olympics', year: '2010', vancouver: true,
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/2010_Winter_Olympics',
-    why: 'The Olympic Tent Village and the "No Olympics on Stolen Native Land" coalition put displacement and unceded territory at the centre of the Vancouver Games · the local protest the 2026 Cup is about to rhyme with.',
+    why: 'The Olympic Tent Village and the "No Olympics on Stolen Native Land" coalition put displacement and unceded territory at the centre of the Vancouver Games. The local protest the 2026 Cup is about to rhyme with.',
     tags: ['vancouver-2010', 'anti-olympics', 'displacement', 'unceded'],
   },
 
@@ -433,7 +433,7 @@ export const entries = [
     category: 'fifa-2026', year: '2023',
     src: `${IMG}/fifa-2026-emblem.png`, rights: 'Logo © FIFA · shown for commentary',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'The official mark for the first 48-team, three-nation World Cup. The raw brand DNA · the surface every subversion starts from.',
+    why: 'The official mark for the first 48-team, three-nation World Cup. The raw brand DNA. The surface every subversion starts from.',
     tags: ['emblem', 'official', 'subvert'],
   },
   {
@@ -442,7 +442,7 @@ export const entries = [
     category: 'fifa-2026', year: '2023',
     src: `${IMG}/fifa-2026-emblem-dark.png`, rights: 'Logo © FIFA · shown for commentary',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'Dark-background lockup. Same mark, inverted ground · useful when mocking up the counter-version on black.',
+    why: 'Dark-background lockup. Same mark, inverted ground. Useful when mocking up the counter-version on black.',
     tags: ['emblem', 'dark', 'lockup'],
   },
   {
@@ -451,7 +451,7 @@ export const entries = [
     category: 'fifa-2026', year: '2023',
     src: `${IMG}/fifa-2026-emblem-no-trophy.png`, rights: 'Logo © FIFA · shown for commentary',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'The clean numeral without the trophy · the most flexible parody base in the kit.',
+    why: 'The clean numeral without the trophy. The most flexible parody base in the kit.',
     tags: ['emblem', 'numeral'],
   },
   {
@@ -460,7 +460,7 @@ export const entries = [
     category: 'fifa-2026', year: '2023',
     src: `${IMG}/fifa-2026-wordmark.png`, rights: 'Logo © FIFA · shown for commentary',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'The wordmark · cleanest surface for the Brandalism move: keep the typographic format pristine, swap the payload.',
+    why: 'The wordmark. Cleanest surface for the Brandalism move: keep the typographic format pristine, swap the payload.',
     tags: ['wordmark', 'typography', 'subvert'],
   },
   {
@@ -469,7 +469,7 @@ export const entries = [
     category: 'fifa-2026', year: '2025',
     src: `${IMG}/fifa-2026-draw-ceremony.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'The brand staged at full corporate polish · exactly the gloss the protest kit mimics before it inverts it.',
+    why: 'The brand staged at full corporate polish. Exactly the gloss the protest kit mimics before it inverts it.',
     tags: ['ceremony', 'staging', 'polish'],
   },
   {
@@ -478,7 +478,7 @@ export const entries = [
     category: 'fifa-2026', year: '2025',
     src: `${IMG}/fifa-2026-merch-truck.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'Official merchandise branding on the street · the souvenir economy MADE ON answers with a receipt.',
+    why: 'Official merchandise branding on the street. The souvenir economy MADE ON answers with a receipt.',
     tags: ['merch', 'souvenir', 'street'],
   },
   {
@@ -487,7 +487,7 @@ export const entries = [
     category: 'fifa-2026', year: '2025',
     src: `${IMG}/fifa-2026-match-seattle.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'The product, live · the spectacle in a host city, the context the whole collection talks back to.',
+    why: 'The product, live. The spectacle in a host city, the context the whole collection talks back to.',
     tags: ['match', 'host-city', 'spectacle'],
   },
   {
@@ -496,7 +496,7 @@ export const entries = [
     category: 'fifa-2026', year: '2025',
     src: null, rights: 'Reference only · © FIFA, fair-use reference',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'The tournament’s official key art. Copyrighted design · kept as a reference link, not re-hosted.',
+    why: 'The tournament’s official key art. Copyrighted design. Kept as a reference link, not re-hosted.',
     tags: ['poster', 'key-art'],
   },
   {
@@ -505,7 +505,7 @@ export const entries = [
     category: 'fifa-2026', year: '2025',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/official-match-ball-trionda',
-    why: '"Three waves" for three hosts · a star (USA), maple leaf (Canada), eagle (Mexico) on a four-panel build. The object the whole brand system orbits.',
+    why: '"Three waves" for three hosts. A star (USA), maple leaf (Canada), eagle (Mexico) on a four-panel build. The object the whole brand system orbits.',
     tags: ['adidas', 'ball', 'three-hosts'],
   },
   {
@@ -514,7 +514,7 @@ export const entries = [
     category: 'fifa-2026', year: '2024',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'A moose, a jaguar and an eagle under the "WE ARE 26" theme. National wildlife rendered as friendly IP · the soft side of the brand, ripe for inversion.',
+    why: 'A moose, a jaguar and an eagle under the "WE ARE 26" theme. National wildlife rendered as friendly IP. The soft side of the brand, ripe for inversion.',
     tags: ['mascots', 'we-are-26', 'IP'],
   },
   {
@@ -523,7 +523,7 @@ export const entries = [
     category: 'fifa-2026', year: '2023',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup',
-    why: 'Sixteen city posters and 999-numbered host-city jerseys · the localisation playbook MADE ON hijacks for Vancouver’s actual story.',
+    why: 'Sixteen city posters and 999-numbered host-city jerseys. The localisation playbook MADE ON hijacks for Vancouver’s actual story.',
     tags: ['host-city', 'localisation', 'jersey'],
   },
 
@@ -545,7 +545,7 @@ export const entries = [
     category: 'subvertising', year: '2012',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Brandalism',
-    why: 'A mass billboard-hijack campaign across the UK during London 2012 · the mega-event as a target-rich brand environment. Direct precedent for protesting a Games.',
+    why: 'A mass billboard-hijack campaign across the UK during London 2012. The mega-event as a target-rich brand environment. Direct precedent for protesting a Games.',
     tags: ['olympics', 'billboard', 'campaign'],
   },
   {
@@ -563,7 +563,7 @@ export const entries = [
     category: 'subvertising', year: '1989', vancouver: true,
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Adbusters',
-    why: 'Détournement born in this city · the anti-ad magazine that taught a generation to read and rewrite commercial language. The local root of the whole method.',
+    why: 'Détournement born in this city. The anti-ad magazine that taught a generation to read and rewrite commercial language. The local root of the whole method.',
     tags: ['vancouver', 'detournement', 'roots'],
   },
   {
@@ -572,7 +572,7 @@ export const entries = [
     category: 'subvertising', year: '2014',
     src: `${IMG}/paulo-ito-mural-2014.jpg`, rights: 'CC BY · Flickr (Paulo Ito)',
     sourceUrl: 'https://en.wikipedia.org/wiki/2014_FIFA_World_Cup',
-    why: 'A starving child given only a football on a plate, painted on a São Paulo schoolhouse door · the first viral image of the 2014 World Cup protests. The wall as broadcast medium.',
+    why: 'A starving child given only a football on a plate, painted on a São Paulo schoolhouse door. The first viral image of the 2014 World Cup protests. The wall as broadcast medium.',
     tags: ['mural', 'brazil', 'viral'],
   },
   {
@@ -599,7 +599,7 @@ export const entries = [
     category: 'subvertising', year: '2004',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/The_Yes_Men',
-    why: 'Impersonated Dow on the BBC to "accept responsibility" for Bhopal · hijacking a corporation’s own voice. The most extreme version of mimic-the-format.',
+    why: 'Impersonated Dow on the BBC to "accept responsibility" for Bhopal. Hijacking a corporation’s own voice. The most extreme version of mimic-the-format.',
     tags: ['hoax', 'impersonation', 'media'],
   },
 
@@ -612,7 +612,7 @@ export const entries = [
     category: 'merch-swag', year: '1980s',
     src: `${IMG}/anti-apartheid-badge.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/Anti-Apartheid_Movement',
-    why: 'A sport-boycott-era pin where the accessory is the entire message. The smallest unit of protest swag · and the most copied.',
+    why: 'A sport-boycott-era pin where the accessory is the entire message. The smallest unit of protest swag. And the most copied.',
     tags: ['badge', 'boycott', 'apartheid'],
   },
   {
@@ -621,7 +621,7 @@ export const entries = [
     category: 'merch-swag', year: '2010s',
     src: `${IMG}/st-pauli-fans-flag.jpg`, rights: 'CC BY-SA · Wikimedia Commons',
     sourceUrl: 'https://en.wikipedia.org/wiki/FC_St._Pauli',
-    why: 'How a logo becomes a movement flag · the Totenkopf flown from a terrace, no longer merchandise but a banner. The whole arc from badge to belonging.',
+    why: 'How a logo becomes a movement flag. The Totenkopf flown from a terrace, no longer merchandise but a banner. The whole arc from badge to belonging.',
     tags: ['flag', 'badge', 'movement'],
   },
   {
@@ -630,7 +630,7 @@ export const entries = [
     category: 'merch-swag', year: 'ongoing',
     src: `${KG}/kit-scarf.jpg`, rights: 'CC BY-SA 4.0 · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lfc_scarf.jpg',
-    why: 'The oldest piece of fan swag · held overhead, it turns thousands of individuals into one graphic. The pre-internet identity object, still unbeaten.',
+    why: 'The oldest piece of fan swag. Held overhead, it turns thousands of individuals into one graphic. The pre-internet identity object, still unbeaten.',
     tags: ['scarf', 'terrace', 'identity'],
   },
   {
@@ -639,7 +639,7 @@ export const entries = [
     category: 'merch-swag', year: '2020s',
     src: `${KG}/kit-blokecore.jpg`, rights: 'No restrictions · Wikimedia Commons',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marist_College,_Hull,_Men%27s_Football_team_1950s_(archive_ref_DDMA-118)_(27728207265).jpg',
-    why: 'Vintage and bootleg football shirts worn as streetwear, detached from the club. Shows how a jersey keeps meaning even when the loyalty is stripped out · pure form as fashion.',
+    why: 'Vintage and bootleg football shirts worn as streetwear, detached from the club. Shows how a jersey keeps meaning even when the loyalty is stripped out. Pure form as fashion.',
     tags: ['streetwear', 'bootleg', 'vintage'],
   },
   {
@@ -648,7 +648,7 @@ export const entries = [
     category: 'merch-swag', year: 'ongoing',
     src: null, rights: 'Reference only · rights-restricted',
     sourceUrl: 'https://en.wikipedia.org/wiki/Ultras',
-    why: 'DIY patches, pins and stickers are how terrace politics travel · cheap, copyable, deniable. The distribution model MADE ON’s "receipts" can ride.',
+    why: 'DIY patches, pins and stickers are how terrace politics travel. Cheap, copyable, deniable. The distribution model MADE ON’s "receipts" can ride.',
     tags: ['patch', 'pin', 'diy', 'ultras'],
   },
 ]
