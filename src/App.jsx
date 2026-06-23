@@ -8,9 +8,8 @@ import {
   useLocation,
   useParams,
 } from 'react-router-dom'
-import Clubs from './components/Clubs.jsx'
 import Collection from './components/Collection.jsx'
-import HeroKits from './components/HeroKits.jsx'
+import KitGateway from './components/KitGateway.jsx'
 import TheMove from './components/TheMove.jsx'
 import WhyItWins from './components/WhyItWins.jsx'
 import Footer from './components/Footer.jsx'
@@ -167,15 +166,11 @@ function MadeOnSite() {
       {/* THE COLLECTION — 9 kits, two racks + the receipts wall */}
       <Collection />
 
-      {/* HERO KITS — 01 / 03 / 09 built to spec, with code-drawn flats */}
-      <HeroKits />
+      {/* THE KITS — unified gateway: all seven concepts, flat ⇄ kit, into each world */}
+      <KitGateway />
 
       {/* THE STORE — the drop, woven into the pitch (not a siloed tab) */}
       <ProductStrip heading="THE DROP" />
-
-
-      {/* DEEP DIVE — the club-card method behind the kits */}
-      <Clubs />
 
       {/* MAKING-OF — the prompt-to-kit process, image by image */}
       <section className="border-t border-ink/10">
