@@ -82,27 +82,13 @@ to its proof.
   (render clean, no console errors, deploy public). `/hall-of-fame` assets verified; `/tracker`
   is a local-only tool (needs the API). 5 routes, no broken links, no browser `process.env`.
 
-## Expansion assessment (PR #22) — recommendation: FREEZE MAIN
-PR #22 (Hogan's Alley MO-10 + Store + Highlight Reel + China Creek) is draft, CONFLICTING,
-+2,799/−131 over 84 files, with a "park for review" commit. Per piece:
-- **Hogan's Alley MO-10: HOLD.** Open `[confirm]` flags on Black-displacement facts (Georgia
-  Viaduct dates, the City–HAS MOU). The whole ethic is "cite the receipt." Do not ship until a
-  primary source clears each flag. Non-negotiable.
-- **Store / Highlight Reel: defer.** Self-contained, lower-risk, but unfinished (Store footer
-  nav incomplete; reel audio file missing, degrades gracefully). Not needed to win.
-- **China Creek: nice-to-have.**
-Recommendation: ship `main` as the submission; treat PR #22 as post-deadline.
+## Post-competition — the expansion all shipped
+The pre-deadline "freeze main" call (PR #22: Hogan's Alley + Store + Highlight Reel + China Creek)
+is resolved. After the win, every piece landed on `main` and is live: the Store, the Highlight Reel,
+China Creek, and **Hogan's Alley FC** (`/kit/hogans-alley-fc`) — the latter built as a quiet memorial
+page once its facts cleared primary sources (Georgia Viaduct razed 1970 / opened 1972; the 2022
+City–Hogan's Alley Society MOU). The em-dash sweep of page copy shipped (#28). All five kit worlds are
+live and epic #56 is closed.
 
-## Polish backlog (not blocking the main submission)
-- **Em-dash sweep of page copy.** Swarm-written `src/data` copy (`hallOfFame.js` ~189,
-  `kitGallery.js` ~119, `clubs.js`, `heroKits.js`) carries em-dashes in visible text, against the
-  voice rule. Worth a dedicated contextual pass (like the docs voice pass) before any wide share.
-- Hogan's Alley `[confirm]` sources (gates MO-10).
-- Reel audio file; Store footer nav (only if those ship).
-- Canva hero renders still carry a Nike swoosh (de-scoped by you).
-
-## Open asks for you (to finish)
-1. **Submission mechanics + deadline** — fill the placeholder at the top of this file
-   (portal/form, video?, slide limit, formats, due time, per track).
-2. **Rehearse** the ~5-min deck (`presentation/deck.html`, Cmd+P → PDF) or the live-site demo.
-3. **Scope call** on the expansion (recommendation: freeze `main`).
+Current state lives in [`deliverables/SUBMISSION-STATUS.md`](deliverables/SUBMISSION-STATUS.md),
+[`AWARDS.md`](AWARDS.md), and [`ROADMAP.md`](ROADMAP.md).

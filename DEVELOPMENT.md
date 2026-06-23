@@ -194,7 +194,7 @@ docs/
 │   ├── submission-brief.md  Pump & Dump FC, the locked concept
 │   ├── brand-system.md      The visual system
 │   ├── prompts/             Midjourney prompt library, one folder per kit
-│   ├── clubs/               The ALLEY LEAGUE deep-dive briefs (Nardwuar, China Creek, N5 Orange, Pump & Dump; Hogan's back-burnered)
+│   ├── clubs/               The ALLEY LEAGUE deep-dive briefs (Nardwuar, China Creek, N5 Orange, Pump & Dump, Hogan's Alley)
 │   └── kits/                Filled tech-pack briefs (MO-01 / 03 / 09)
 ├── presentation/            Deck outline
 ├── deliverables/            Board (PDF), pitch deck (PPTX), tech pack (PDF), mockups/
