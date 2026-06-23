@@ -62,8 +62,8 @@ export default function Collection() {
             The receipts: all public record
           </p>
           <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {receipts.map((r) => (
-              <div key={r.id} className="border-l-2 border-hazard pl-3">
+            {receipts.map((r, i) => (
+              <div key={r.id} className="reveal border-l-2 border-hazard pl-3" style={{ transitionDelay: `${i * 70}ms` }}>
                 <p className="headline text-2xl leading-none text-ink">{r.stat}</p>
                 <p className="mt-1 text-xs text-ink/75">{r.claim}</p>
                 <p className="mt-1 text-[11px] text-ink/50">{r.detail}</p>

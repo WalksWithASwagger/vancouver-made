@@ -37,7 +37,7 @@ export default function TheMove() {
     <section id="the-move" className="scroll-mt-20 px-4 py-6 md:px-6 md:py-8">
       <div className="sheet mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-cyan">The move</p>
-        <h2 className="headline mt-2 max-w-3xl text-3xl text-ink md:text-5xl">
+        <h2 className="reveal headline mt-2 max-w-3xl text-3xl text-ink md:text-5xl">
           THEY ASKED FOR A SOUVENIR.
           <br />
           WE HANDED BACK THE <span className="text-hazard">RECEIPT.</span>
@@ -45,7 +45,7 @@ export default function TheMove() {
 
         <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2">
           {/* what they asked for */}
-          <div className="flex flex-col">
+          <div className="reveal flex flex-col" style={{ transitionDelay: '80ms' }}>
             <p className="mb-3 text-[11px] uppercase tracking-[0.25em] text-ink/50">
               What they asked for
             </p>
@@ -56,7 +56,7 @@ export default function TheMove() {
           </div>
 
           {/* what we made */}
-          <div className="flex flex-col">
+          <div className="reveal flex flex-col" style={{ transitionDelay: '220ms' }}>
             <p className="mb-3 text-[11px] uppercase tracking-[0.25em] text-hazard">
               What we made
             </p>
