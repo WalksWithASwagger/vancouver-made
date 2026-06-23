@@ -1,11 +1,12 @@
 // Direction manifest — HOGAN'S ALLEY FC "Renaissance Home Kit" (memorial + future-tense).
 // Self-contained on purpose: this is the collection's most sensitive concept, so it carries
-// its own copy rather than the commercial clubs.js shape. No product/lookbook imagery —
-// a quiet, text-forward memorial page. Concept source: docs/design/clubs/hogans-alley-fc.md.
-// Ethics (the owner is the final guard): a settler artist amplifying, not authoring. Credit
-// and route attention to the Hogan's Alley Society and Ethọ́s Lab. Reference the culture,
-// never appropriate sacred or specific motifs. Shown to and shaped by the community before
-// anything moves past exhibition toward public sale.
+// its own copy rather than the commercial clubs.js shape. Concept source: docs/design/clubs/hogans-alley-fc.md.
+// The kit + lifestyle imagery below was generated as an EXHIBITION buildout (owner's call):
+// anonymous models, original geometry only, no real likenesses or sacred/specific motifs.
+// Ethics (the owner is the final guard, and it is LOAD-BEARING): a settler artist amplifying,
+// not authoring. Credit and route attention/proceeds to the Hogan's Alley Society and Ethọ́s Lab.
+// Reference the culture, never appropriate sacred or specific motifs. Shown to and shaped by the
+// community, with their blessing, before anything moves past exhibition toward public sale.
 
 const hogansAlley = {
   slug: 'hogans-alley-fc',
@@ -46,8 +47,31 @@ const hogansAlley = {
     ],
   },
 
-  // No kit / lifestyle / collection sections by design: this page does not stage speculative
-  // product or on-body imagery of the community. The work below is the design logic, told plain.
+  // Exhibition imagery (owner's call): anonymous models, original geometry, no real likenesses.
+  // The ethics block below stays load-bearing — blessing-before-sale.
+  kit: {
+    flats: [
+      { src: '/kit/hogans-alley/home-complete.jpg', caption: 'Home kit: deep cosmic-indigo with metallic-gold trim and a faint Afrofuturist star-map weave — jersey, shorts and socks' },
+      { src: '/kit/hogans-alley/away-complete.jpg', caption: 'Away "blueprint" kit: bone with indigo-and-gold street-grid and land-trust site-plan linework' },
+    ],
+    details: [
+      { src: '/kit/hogans-alley/home-front.jpg', caption: 'Home front: VANCOUVER over a BLACK CULTURAL CENTRE honour bar, the horn-and-star crest on the chest' },
+      { src: '/kit/hogans-alley/home-back.jpg', caption: "Home back: HOGAN'S ALLEY nameplate and № 71, its digits drawn from the Strathcona street grid" },
+      { src: '/kit/hogans-alley/crest.jpg', caption: 'Crest: a brass jazz horn and a rising star over the reclaimed block, STILL HERE on the ribbon' },
+      { src: '/kit/hogans-alley/number-71.jpg', caption: 'Number 71 (the year the erasure was finished), filled with a fine gold street-grid pattern' },
+      { src: '/kit/hogans-alley/away-front.jpg', caption: 'Away blueprint front: site-plan linework and a COMMUNITY LAND TRUST honour bar — the block, redrawn' },
+      { src: '/kit/hogans-alley/third-front.jpg', caption: 'Third (jazz district): cosmic-violet with brass marquee trim and THE BLOCK COMES HOME' },
+    ],
+  },
+
+  lifestyle: [
+    { src: '/kit/hogans-alley/life-studio.jpg', caption: 'Studio lookbook: the heritage kit, dignified — gold star-map weave and the horn-and-star crest' },
+    { src: '/kit/hogans-alley/life-block.jpg', caption: 'On the block at golden hour — worn as a future, not a wound' },
+    { src: '/kit/hogans-alley/life-locals.jpg', caption: 'On the reclaimed block, new community housing behind: the block coming home' },
+    { src: '/kit/hogans-alley/life-jazz.jpg', caption: 'In the jazz room — the district that was erased, playing on' },
+    { src: '/kit/hogans-alley/life-back-71.jpg', caption: "Back of the kit: HOGAN'S ALLEY № 71, walking a sunlit street" },
+  ],
+
   process: {
     line: 'Use the exact polish of an official heritage kit, but in service of a reclamation, not a souvenir. Every sponsor slot, inverted, becomes an honour.',
     steps: [

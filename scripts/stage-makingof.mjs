@@ -27,6 +27,7 @@ const CONCEPTS = {
   'number-five-orange': { concept: 'number-five-orange', name: 'Number Five Orange', blurb: 'The whole city becomes a VIP room — nightlife capitalism and the cover-charge economy in safety-cone orange and gold.' },
   'public-dime':       { concept: '03-public-dime',    name: 'Public Dime',       blurb: 'Public money funding private spectacle — a green-and-gold "BANK OF FIFA / LEGAL TENDER" currency kit. You are the bagholder.' },
   'made-on-silence':   { concept: '01-made-on-silence', name: 'Made On Silence',   blurb: 'The silenced public record — black redaction bars and FOI dossiers. What they won’t release, we wear.' },
+  'hogans-alley-fc':   { concept: 'hogans-alley-fc',  name: "Hogan's Alley FC",  blurb: 'A memorial / Afrofuturist heritage kit for the Black neighbourhood Vancouver paved over — and the block coming home. A tribute, not ownership: credit + proceeds route to the Hogan’s Alley Society and Ethọ́s Lab; shown to the community for their blessing before anything public or sold.' },
 }
 
 const STAGES = [
