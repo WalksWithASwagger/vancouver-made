@@ -37,7 +37,7 @@ Submission status + punch list (both tracks): **[`SUBMISSION.md`](SUBMISSION.md)
 - [`submission-brief.md`](design/submission-brief.md) — the locked **Four Questions** for the hero
   jersey (Pump & Dump FC).
 - [`brand-system.md`](design/brand-system.md) — palette, type, logo/crest, voice.
-- [`clubs/`](design/clubs/) — the **four** ALLEY LEAGUE deep-dive briefs (3 flagship + China Creek).
+- [`clubs/`](design/clubs/) — the **five** ALLEY LEAGUE deep-dive briefs (Nardwuar, China Creek, Number Five Orange, Pump & Dump, Hogan's Alley).
 - [`kits/`](design/kits/) — filled tech-pack briefs (MO-01 / MO-03 / MO-09).
 - [`prompts/`](design/prompts/) — the Midjourney prompt library + the `GENERATION-QUEUE.md` /
   `INGEST-REVIEW.md` runbooks (operational scratch for the generation work).

@@ -1,0 +1,84 @@
+/* Unified kit gateway — card reveal, the two-layer flip/crossfade stage, and the
+   "draws itself" stroke-on for the code-drawn flats. CSS-only, reduced-motion safe. */
+
+/* staggered scroll-in */
+.kit-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.kit-reveal.in { opacity: 1; transform: none; }
+
+/* the visual stage: a dark "lightbox" with a colorway glow so dark kits lift off it */
+.kit-stage {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background:
+    radial-gradient(125% 92% at 50% 16%, var(--glow, rgba(255, 255, 255, 0.05)), rgba(13, 10, 7, 0) 72%),
+    linear-gradient(180deg, #15110d 0%, #0d0a07 100%);
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+.kit-stage:focus-visible { outline: 2px solid var(--ring, #d11f2a); outline-offset: 3px; }
+
+.kit-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7% 9%;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.kit-layer img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.kit-layer--render img { object-fit: cover; width: 100%; height: 100%; }
+.kit-layer--b { opacity: 0; }
+
+@media (hover: hover) {
+  .kit-stage:hover .kit-layer--a { opacity: 0; transform: scale(0.97); }
+  .kit-stage:hover .kit-layer--b { opacity: 1; }
+}
+.kit-stage.is-flipped .kit-layer--a { opacity: 0; transform: scale(0.97); }
+.kit-stage.is-flipped .kit-layer--b { opacity: 1; }
+
+/* interaction hint chip */
+.kit-hint {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 3;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: var(--chip-ink, #f4f1ea);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(244, 241, 234, 0.25);
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+@media (hover: hover) { .kit-stage:hover .kit-hint { opacity: 0.35; } }
+
+/* "draws itself" — the flat strokes on, then the fill resolves. Triggers on reveal. */
+.flat-draw .j-draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.flat-draw .j-fill { opacity: 0; }
+.kit-reveal.in .flat-draw .j-draw { animation: flat-draw 1.1s ease forwards; }
+.kit-reveal.in .flat-draw .j-fill { animation: flat-fill 0.6s ease 0.78s forwards; }
+@keyframes flat-draw { to { stroke-dashoffset: 0; } }
+@keyframes flat-fill { to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .kit-reveal { opacity: 1; transform: none; transition: none; }
+  .kit-layer { transition: none; }
+  .flat-draw .j-draw { stroke-dashoffset: 0; }
+  .flat-draw .j-fill { opacity: 1; }
+  .kit-reveal.in .flat-draw .j-draw,
+  .kit-reveal.in .flat-draw .j-fill { animation: none; }
+}

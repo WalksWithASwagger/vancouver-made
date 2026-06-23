@@ -10,7 +10,7 @@ The site runs ~15 routes: the pitch surfaces (`/`, `/journey`, `/gallery`, `/kit
 
 ### / : the pitch site
 
-The main surface. The hero is the MADE ON statement beside a crossfading lookbook of the flagship kits (`HeroShowcase.jsx`), followed by the territorial statement, the nine-kit collection, code-drawn jersey flats, the club gateway grid, the homepage store strip ("THE DROP"), the double-silver awards band, and the shared `Footer`. The 3D World Portal (`<Stage />`) was removed entirely in #39 — there's no `src/scene/` or React-Three-Fiber left in the repo.
+The main surface. The hero is the MADE ON statement beside a crossfading lookbook of the flagship kits (`HeroShowcase.jsx`), followed by the territorial statement, the nine-kit collection, the unified kit gateway ("THE RECEIPTS, WORN" — all seven concepts, each a code-drawn flat that crossfades into the real kit, then links to its world or making-of), the homepage store strip ("THE DROP"), the double-silver awards band, and the shared `Footer`. The 3D World Portal (`<Stage />`) was removed entirely in #39 — there's no `src/scene/` or React-Three-Fiber left in the repo.
 
 ### /journey : the narrative arc
 

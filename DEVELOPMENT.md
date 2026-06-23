@@ -178,7 +178,7 @@ src/
 │   ├── PromptDetails.jsx    Prompt text, copy button
 │   ├── ConceptFilter.jsx    Sidebar filters
 │   ├── SyncStatus.jsx       Notion sync indicator
-│   ├── Collection / HeroKits / KitFlat / Clubs / Crest   The pitch site
+│   ├── Collection / KitGateway / KitFlat / Crest   The pitch site
 │   └── *.css
 ├── server/api.js            Express API on :3001
 ├── utils/
@@ -186,7 +186,7 @@ src/
 │   ├── notion.js            Notion client
 │   └── imageScanner.js      Folder scanner
 ├── db/ratings.db            SQLite (created by init-db.js)
-├── data/                    collection.js, receipts.js, heroKits.js, clubs.js, directions/
+├── data/                    collection.js, receipts.js, heroKits.js, clubs.js, kitGateway.js, directions/
 └── brand/tokens.js          Palette (feeds Tailwind) + slogan bank
 
 docs/

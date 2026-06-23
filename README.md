@@ -39,7 +39,7 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 | `src/data/heroKits.js` | Full hero-kit specs (01 Silence · 03 Public Dime · 09 Pump & Dump). Nardwuar "Deep Cut" (the Designathon winner) lives in `clubs.js` + `data/directions/nardwuar.js`, served at `/kit/nardwuar-fc` |
 | `src/data/clubs.js` | The 5 ALLEY LEAGUE clubs: Nardwuar · Number Five Orange · Pump & Dump · China Creek · Hogan's Alley |
 | `src/data/directions/` | Per-direction "world" manifests + registry (`getDirection`) — the 5 immersive `/kit/:slug` landing pages |
-| `src/components/` | `Collection`, `HeroKits`, `KitFlat` (code-drawn flats), `Clubs`, `Crest`, `DirectionPage` (the kit-world template), `SafeImage`, `Footer` |
+| `src/components/` | `Collection`, `KitGateway` (the unified kit gateway — all 7 concepts), `KitFlat` (code-drawn flats), `Crest`, `DirectionPage` (the kit-world template), `SafeImage`, `Footer` |
 | `src/brand/tokens.js` | Shared site tokens (the palette feeding Tailwind + the MADE ON slogan/marquee bank) |
 | `docs/research/` | Knowledge base: all source docs + analyses + the synthesis |
 | `docs/design/kits/` | Filled tech-pack briefs (MO-01, MO-03, MO-09) |
@@ -108,7 +108,7 @@ versions — terrace-punk and west-coast folk — live in `docs/presentation/ant
 - [x] Knowledge base: 8 source docs imported + analyzed + synthesized
 - [x] Canonical direction consolidated to MADE ON (board / deck / tech pack in repo)
 - [x] Pitch site mirrors the deck: hero → territorial statement → collection +
-      receipts wall → hero kits (code-drawn flats) → deep-dive method
+      receipts wall → the kit gateway (code-drawn flats that crossfade into the real kits) → making-of
 - [x] Three hero kits spec'd; tech-pack briefs filled (MO-01 / 03 / 09)
 - [x] Builds clean (`npm run build`)
 - [x] **Live** at https://vancouver-made.vercel.app — auto-deploys from `main`, PRs get previews
