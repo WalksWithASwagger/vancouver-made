@@ -16,12 +16,12 @@ Two things run here:
 
 ## Status
 
-- [x] Concept locked: Pump & Dump FC is the lead. See `docs/design/submission-brief.md`.
+- [x] Double-silver win; pitch site live on vancouver-made.vercel.app.
 - [x] Prompt library written for the full collection. See `docs/design/prompts/`.
-- [x] Asset tracker: inline grid starring + folder ingest + Notion sync.
-- [x] Generations ingested (Midjourney + Rafiki) across four concepts.
-- [ ] Star the winners in the tracker; lock the hero + the collection.
-- [ ] Final presentation + jersey deliverable.
+- [x] Asset tracker: inline grid starring, folder ingest, caption + tags on cards, Notion sync.
+- [x] Generations ingested + captioned + tagged across all concepts (Midjourney + Rafiki).
+- [x] In-app `/making-of` process pages staged for 6 concepts (see `docs/CURATION-WORKFLOW.md`).
+- [ ] Production run + social launch (KK-led). Notion sync is a documented handoff.
 
 ## Run it
 
@@ -74,7 +74,10 @@ Pitch site is at `/`, tracker is at `/tracker`. Footer links jump between them.
 
 ## The asset tracker
 
-The loop is: generate, scan or ingest, star, sync.
+The loop is: generate, scan or ingest, caption + tag, star, sync — then export to the
+per-project folders and the `/making-of` pages. The caption/tag, reclassify, by-project and
+making-of steps are documented in full in [`docs/CURATION-WORKFLOW.md`](docs/CURATION-WORKFLOW.md);
+this section covers run/scan/ingest/star/sync.
 
 **Generate.** Prompts live in `docs/design/prompts/`, one folder per kit. Each kit has
 `moodboard.md`, `graphic-elements.md`, and `jersey-flats.md`. Pump & Dump (09) and the
@@ -105,10 +108,11 @@ node scripts/ingest-dir.js <folder> <concept> [batch]
 # e.g. node scripts/ingest-dir.js docs/design/prompts/clubs/nardwuar-fc/rafiki/images/run-X nardwuar-fc run-X
 ```
 
-Re-runnable (INSERT OR REPLACE on a stable id). The tracker holds four concepts today:
-`09-pump-and-dump`, `01-made-on-silence`, `nardwuar-fc`, `number-five-orange`. The Rafiki
-kit PNGs live under `docs/design/prompts/clubs/<concept>/rafiki/images/` (gitignored,
-local only; referenced by absolute path).
+Re-runnable (INSERT OR REPLACE on a stable id). The tracker holds seven concepts today:
+`09-pump-and-dump`, `03-public-dime`, `01-made-on-silence`, `nardwuar-fc`,
+`number-five-orange`, `china-creek`, and a small `unsorted` remainder. The Rafiki kit PNGs
+live under `docs/design/prompts/**/rafiki/images/` (gitignored, local only; referenced by
+absolute path).
 
 **Star.** Star right on the grid: click 1-5 stars (or the heart to "keep") on each
 thumbnail. Saves to the DB on click, no modal. Use **starred only** and **sort by score**
@@ -161,11 +165,12 @@ image.
 
 ```
 src/
-├── App.jsx                  Router: / · /journey · /gallery · /kit/:slug · /store · /engine · /process · /hall-of-fame · /awards · /highlight-reel · /wall · /tracker · 404
+├── App.jsx                  Router: / · /journey · /gallery · /kit/:slug · /store · /engine · /process · /making-of · /making-of/:slug · /hall-of-fame · /awards · /why · /highlight-reel · /wall · /tracker · 404
 ├── components/
 │   ├── Nav.jsx              Shared sticky nav across the pitch surfaces
 │   ├── TheMove.jsx / WhyItWins.jsx / ShareQR.jsx / PresenterControls.jsx   Pitch sections + closer
 │   ├── ReceiptsEngine.jsx / HallOfFame.jsx / Process.jsx   The /engine, /hall-of-fame, /process pages
+│   ├── MakingOf.jsx / GenerativeWall.jsx   The /making-of and /wall pages
 │   ├── AssetTracker.jsx     Tracker shell: sidebar + gallery
 │   ├── ImageGallery.jsx     Thumbnail grid
 │   ├── LightboxViewer.jsx   Image detail + rating + prompt
@@ -181,7 +186,7 @@ src/
 │   ├── notion.js            Notion client
 │   └── imageScanner.js      Folder scanner
 ├── db/ratings.db            SQLite (created by init-db.js)
-├── data/                    collection.js, receipts.js, heroKits.js, clubs.js
+├── data/                    collection.js, receipts.js, heroKits.js, clubs.js, directions/
 └── brand/tokens.js          Palette (feeds Tailwind) + slogan bank
 
 docs/
@@ -189,17 +194,26 @@ docs/
 │   ├── submission-brief.md  Pump & Dump FC, the locked concept
 │   ├── brand-system.md      The visual system
 │   ├── prompts/             Midjourney prompt library, one folder per kit
-│   ├── clubs/               The three deep-dive concept briefs
+│   ├── clubs/               The ALLEY LEAGUE deep-dive briefs (Nardwuar, China Creek, N5 Orange, Pump & Dump; Hogan's back-burnered)
 │   └── kits/                Filled tech-pack briefs (MO-01 / 03 / 09)
 ├── presentation/            Deck outline
 ├── deliverables/            Board (PDF), pitch deck (PPTX), tech pack (PDF), mockups/
 └── research/                Knowledge base: 8 source docs + analyses + synthesis
 
-scripts/init-db.js           Builds src/db/ratings.db
-scripts/ingest-assets.js     Imports Midjourney 4-up sets from to-ingest/ (+ manifest)
-scripts/ingest-dir.js        Imports any folder of images under a concept/batch
-scripts/contact-sheet.js     Writes a static contact-sheet.html for a zero-server scan
+scripts/init-db.js                 Builds src/db/ratings.db
+scripts/ingest-assets.js           Imports Midjourney 4-up sets from to-ingest/ (+ manifest)
+scripts/ingest-dir.js              Imports any folder of images under a concept/batch
+scripts/contact-sheet.js           Writes a static contact-sheet.html for a zero-server scan
+scripts/harvest-runjson-captions.mjs  Pulls captions/prompts from Rafiki run.json → annotations
+scripts/annotate-assets.mjs        Merges {caption, tags, excluded, ...} into assets.metadata
+scripts/reclassify-assets.mjs      Moves assets to a different concept (e.g. emptying 'unsorted')
+scripts/build-by-project.mjs       Mirrors assets into archive/<date>/by-project/ (hard-linked)
+scripts/stage-makingof.mjs         Stages curated images → public/making-of/ for the /making-of pages
+scripts/stage-wall-assets.mjs / stage-reel-assets.mjs   Stage public/wall + public/highlight-reel
 ```
+
+The caption/tag → by-project → making-of pipeline (and the Notion sync runbook) is documented
+in [`docs/CURATION-WORKFLOW.md`](docs/CURATION-WORKFLOW.md).
 
 ## API routes
 
