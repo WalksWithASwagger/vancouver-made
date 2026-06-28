@@ -20,7 +20,7 @@ import { PUBLIC_ROUTES } from '../src/data/routes.js'
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = join(ROOT, 'dist')
 const PORT = process.env.PRERENDER_PORT || '4188'
-const BASE = `http://localhost:${PORT}`
+const BASE = `http://127.0.0.1:${PORT}`
 
 if (!existsSync(join(DIST, 'index.html'))) {
   console.error('prerender: dist/index.html missing — run `vite build` first.')
@@ -35,37 +35,38 @@ try {
   process.exit(1)
 }
 
-// Boot `vite preview` against dist/ and resolve once it prints its Local URL.
+// Boot `vite preview` against dist/ on IPv4 loopback (matches BASE). Readiness is
+// detected by polling HTTP rather than parsing stdout — stdout buffers unpredictably
+// when it isn't a TTY (e.g. in CI), which makes log-scraping flaky.
 function startPreview() {
-  return new Promise((resolve, reject) => {
-    const server = spawn(
-      'node',
-      ['node_modules/vite/bin/vite.js', 'preview', '--port', String(PORT), '--strictPort'],
-      { cwd: ROOT },
-    )
-    let ready = false
-    const onData = (chunk) => {
-      if (!ready && /localhost:\d+/.test(chunk.toString())) {
-        ready = true
-        resolve(server)
-      }
+  const server = spawn(
+    'node',
+    ['node_modules/vite/bin/vite.js', 'preview', '--port', String(PORT), '--strictPort', '--host', '127.0.0.1'],
+    { cwd: ROOT },
+  )
+  server.stdout.on('data', () => {})
+  server.stderr.on('data', () => {})
+  server.on('error', (e) => console.error(`prerender: vite preview error — ${e.message}`))
+  return server
+}
+
+async function waitForReady(url, attempts = 60, delayMs = 500) {
+  for (let i = 0; i < attempts; i++) {
+    try {
+      await fetch(url) // any HTTP response means the server is accepting connections
+      return
+    } catch {
+      await new Promise((r) => setTimeout(r, delayMs))
     }
-    server.stdout.on('data', onData)
-    server.stderr.on('data', () => {})
-    server.on('error', reject)
-    server.on('exit', (code) => {
-      if (!ready) reject(new Error(`vite preview exited (${code}) before ready`))
-    })
-    setTimeout(() => {
-      if (!ready) reject(new Error('vite preview did not start within 15s'))
-    }, 15_000)
-  })
+  }
+  throw new Error(`vite preview did not answer at ${url} within ${(attempts * delayMs) / 1000}s`)
 }
 
 const outPath = (route) =>
   route === '/' ? join(DIST, 'index.html') : join(DIST, route, 'index.html')
 
-const preview = await startPreview()
+const preview = startPreview()
+await waitForReady(`${BASE}/`)
 const browser = await chromium.launch({ headless: true })
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } })
 const page = await ctx.newPage()
