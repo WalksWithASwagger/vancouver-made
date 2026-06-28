@@ -2,7 +2,7 @@
 """Generate the award/share cards: og:image + Instagram square + story + link card.
 Tartan-Paper palette, the winning Nardwuar kit, double-silver result. Run from repo root:
     python3 scripts/build-social-cards.py
-Outputs public/og.jpg (1200x630) and docs/deliverables/awards/social/*.jpg.
+Outputs public/og.jpg, public/og/kit-<slug>.jpg (1200x630), and docs/deliverables/awards/social/*.jpg.
 Brand fonts (Archivo Black / Space Mono) aren't bundled; falls back to system heavy/mono.
 """
 import os
@@ -11,7 +11,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageEnhance
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KIT = os.path.join(ROOT, "public/gallery/nw-front.jpg")
 SOCIAL = os.path.join(ROOT, "docs/deliverables/awards/social")
+OG_DIR = os.path.join(ROOT, "public/og")
 os.makedirs(SOCIAL, exist_ok=True)
+os.makedirs(OG_DIR, exist_ok=True)
 
 INK = (26, 20, 16); BONE = (244, 241, 234); PAPER = (236, 228, 212)
 OXBLOOD = (94, 22, 34); CEDAR = (47, 84, 54); HAZARD = (209, 31, 42)
@@ -155,8 +157,104 @@ def make_story(W, H, out):
     tartan_band(c, (0, H - int(H * 0.03), W, int(H * 0.03)))
     c.save(out, quality=92); print("wrote", out, c.size)
 
+# ── Per-kit share cards: og:image for each /kit/<slug> ──────────────────────
+# slug, display name, kit name, tagline, source image (alpha-composited onto cream).
+KIT_CARDS = [
+    ("nardwuar-fc", "NARDWUAR FC", "Deep Cut",
+     "Research as the protest. The receipt as the weapon.",
+     "public/gallery/nw-front.jpg"),
+    ("pump-and-dump-fc", "PUMP & DUMP FC", "Speculation City",
+     "Hype the city. Bill the public. Take the exit. You're the bagholder.",
+     "public/gallery/pd-front.jpg"),
+    ("number-five-orange", "NUMBER FIVE ORANGE", "Work Is Work",
+     "Sell the nightlife to tourists. Bill the workers who run it.",
+     "public/gallery/n5-away.jpg"),
+    ("china-creek", "CHINA CREEK", "Public Land",
+     "Ban the board. Sell the bowl. The home ground was the fight.",
+     "public/highlight-reel/china-creek-01-yellow-front.png"),
+    ("hogans-alley-fc", "HOGAN'S ALLEY FC", "Renaissance Home Kit",
+     "The block the city paved over, worn as a future. Still here.",
+     "public/kit/hogans-alley/home-front.jpg"),
+]
+
+def load_kit_image(path):
+    """Open a kit image; composite transparency onto cream so PNGs don't go black.
+    Falls back to the Nardwuar front if the path is missing."""
+    for p in (path, "public/gallery/nw-front.jpg"):
+        ap = p if os.path.isabs(p) else os.path.join(ROOT, p)
+        if not os.path.exists(ap):
+            continue
+        try:
+            im = Image.open(ap)
+            if im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info):
+                im = im.convert("RGBA")
+                bg = Image.new("RGB", im.size, (250, 248, 243))
+                bg.paste(im, mask=im.split()[-1])
+                return bg
+            return im.convert("RGB")
+        except Exception:
+            continue
+    return None
+
+def kit_panel_for(path, size):
+    w, h = size
+    panel = Image.new("RGB", (w, h), (250, 248, 243))
+    k = load_kit_image(path)
+    if k is None:
+        return panel
+    k = ImageEnhance.Color(k).enhance(1.03)
+    pad = int(min(w, h) * 0.06)
+    kw, kh = k.size
+    scale = min((w - 2 * pad) / kw, (h - 2 * pad) / kh)
+    k = k.resize((max(1, int(kw * scale)), max(1, int(kh * scale))), Image.LANCZOS)
+    panel.paste(k, ((w - k.size[0]) // 2, (h - k.size[1]) // 2))
+    return panel
+
+def wrap_text(d, s, font, max_w):
+    lines, cur = [], ""
+    for word in s.split():
+        test = (cur + " " + word).strip()
+        if not cur or tw(d, test, font)[0] <= max_w:
+            cur = test
+        else:
+            lines.append(cur); cur = word
+    if cur:
+        lines.append(cur)
+    return lines
+
+def make_kit_card(name, kitname, tagline, kit_path, out, W=1200, H=630):
+    c = Image.new("RGB", (W, H), BONE)
+    band = max(10, int(H * 0.022))
+    tartan_band(c, (0, 0, W, band))
+    tartan_band(c, (0, H - band, W, band))
+    pad = int(H * 0.09)
+    kw = int(W * 0.40)
+    c.paste(kit_panel_for(kit_path, (kw, H - 2 * pad)), (W - kw - pad, pad))
+    d = ImageDraw.Draw(c)
+    x = pad; y = pad; col_w = W - kw - 2 * pad - int(W * 0.02)
+    d.text((x, y), "VANCOUVER MADE · MADE ON", font=mono(int(H * 0.030)), fill=CYAN)
+    y += int(H * 0.030) + int(H * 0.055)
+    hf = fit_disp(d, name, col_w, int(H * 0.135))
+    d.text((x, y), name, font=hf, fill=INK)
+    y += tw(d, name, hf)[1] + int(H * 0.03)
+    d.text((x, y), kitname.upper(), font=mono(int(H * 0.034)), fill=HAZARD)
+    y += int(H * 0.034) + int(H * 0.05)
+    tf = disp(int(H * 0.05))
+    for line in wrap_text(d, tagline, tf, col_w):
+        d.text((x, y), line, font=tf, fill=INK)
+        y += int(H * 0.05) + int(H * 0.02)
+    wy = pad + (H - 2 * pad) - int(H * 0.095)
+    wf = disp(int(H * 0.05))
+    d.text((x, wy), "MADE", font=wf, fill=INK)
+    d.text((x + tw(d, "MADE ", wf)[0], wy), "ON", font=wf, fill=HAZARD)
+    d.text((x, wy + int(H * 0.062)), "Every claim cited. We made the receipt.",
+           font=mono(int(H * 0.025)), fill=INK)
+    c.save(out, quality=90); print("wrote", out, c.size)
+
 make_horizontal(1200, 630, os.path.join(ROOT, "public/og.jpg"))
 make_horizontal(1200, 630, os.path.join(SOCIAL, "link-1200x630.jpg"))
 make_square(1080, os.path.join(SOCIAL, "square-1080.jpg"))
 make_story(1080, 1920, os.path.join(SOCIAL, "story-1080x1920.jpg"))
+for slug, nm, kn, tag, img in KIT_CARDS:
+    make_kit_card(nm, kn, tag, img, os.path.join(OG_DIR, f"kit-{slug}.jpg"))
 print("done")

@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: 'Process', to: '/process' },
   { label: 'Hall of Fame', to: '/hall-of-fame' },
   { label: 'Awards', to: '/awards' },
+  { label: 'Press', to: '/press' },
 ]
 
 // Shared site footer — renders at the bottom of MadeOnSite and any page that
