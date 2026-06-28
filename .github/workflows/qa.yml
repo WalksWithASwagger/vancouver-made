@@ -1,0 +1,30 @@
+name: QA
+
+# Builds the prerendered, SEO-complete site and runs the static SEO gate. Chromium
+# can't run in Vercel's own build, so prerendering happens here. This job is a
+# build-and-verify gate only — it does not deploy. To ship the prerendered output to
+# production, run `npm run build:seo && vercel deploy --prebuilt --prod` (the dist/ it
+# produces is the artifact to deploy), or add a deploy step here with a VERCEL_TOKEN
+# secret.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build:seo
+      - run: npm run test:seo

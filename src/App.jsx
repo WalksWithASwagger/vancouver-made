@@ -17,9 +17,11 @@ import Nav from './components/Nav.jsx'
 import ShareQR from './components/ShareQR.jsx'
 import PresenterControls from './components/PresenterControls.jsx'
 import useReveal from './hooks/useReveal.js'
+import useSeo from './hooks/useSeo.js'
 import { brand } from './data/collection.js'
 import { slogans } from './brand/tokens.js'
 import { getDirection } from './data/directions/index.js'
+import { resolveSeo } from './data/seo.js'
 
 // Code-split the secondary routes so the initial pitch view paints fast.
 const DirectionPage = lazy(() => import('./components/DirectionPage.jsx'))
@@ -34,6 +36,7 @@ const GenerativeWall = lazy(() => import('./components/GenerativeWall.jsx'))
 const Journey = lazy(() => import('./components/Journey.jsx'))
 const Gallery = lazy(() => import('./components/Gallery.jsx'))
 const Awards = lazy(() => import('./components/Awards.jsx'))
+const Press = lazy(() => import('./components/Press.jsx'))
 import ProductStrip from './components/ProductStrip.jsx'
 import HeroShowcase from './components/HeroShowcase.jsx'
 
@@ -52,20 +55,6 @@ function RouteFallback() {
       Loading…
     </div>
   )
-}
-
-const TITLES = {
-  '/': 'MADE ON: Whose Cup Is It Anyway?',
-  '/journey': 'The Journey · MADE ON',
-  '/gallery': 'The Gallery · MADE ON',
-  '/awards': 'Awards · Double Silver · MADE ON',
-  '/engine': 'We Made the Receipt · MADE ON',
-  '/hall-of-fame': 'Hall of Fame · MADE ON',
-  '/process': 'Our Process · MADE ON',
-  '/making-of': 'The Making-Of · MADE ON',
-  '/store': 'The Store · MADE ON',
-  '/tracker': 'Asset Tracker · MADE ON',
-  '/kit/nardwuar-fc': 'Nardwuar FC · Deep Cut · MADE ON',
 }
 
 function Marquee() {
@@ -258,16 +247,11 @@ function NotFound() {
 }
 
 // Scrolls to a #hash target after navigation (so cross-page anchor links work),
-// or to the top on a plain route change. Also keeps document.title per route.
+// or to the top on a plain route change. Also drives per-route <head> metadata.
 function PitchLayout() {
   const { pathname, hash } = useLocation()
 
-  useEffect(() => {
-    const kit = pathname.startsWith('/kit/') ? getDirection(pathname.slice(5)) : null
-    document.title = kit
-      ? `${kit.name} · ${kit.kitName} · MADE ON`
-      : (TITLES[pathname] ?? 'MADE ON · VANCOUVER MADE')
-  }, [pathname])
+  useSeo(resolveSeo(pathname))
 
   useEffect(() => {
     if (hash) {
@@ -316,6 +300,7 @@ export default function App() {
           <Route path="/store" element={<Store />} />
           <Route path="/awards" element={<Awards />} />
           <Route path="/why" element={<WhyItWins />} />
+          <Route path="/press" element={<Press />} />
           <Route path="/kit/:slug" element={<KitRoute />} />
         </Route>
         <Route
