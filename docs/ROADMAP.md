@@ -4,8 +4,9 @@
 [`AWARDS.md`](AWARDS.md)). This is the workplan to take the project from "winning submission" to a
 **polished, portfolio-grade showcase** — and to hand off the **5 jerseys Formme will produce**.
 
-The full task backlog lives in GitHub Issues; the redesign is tracked by **epic
-[#56](https://github.com/WalksWithASwagger/vancouver-made/issues/56)**. This doc is the map.
+The full task backlog lives in GitHub Issues; the redesign was tracked by **epic
+[#56](https://github.com/WalksWithASwagger/vancouver-made/issues/56)**, now closed. This doc is the
+map.
 
 ## ✅ Done — the redesign + cleanup shipped
 
@@ -30,14 +31,17 @@ The whole redesign and tech-debt backlog is **merged and live in prod**:
 
 ## The finish line — launch (✅ polished; awaiting KK's "post")
 
-The site is **launch-ready** on `vancouver-made.vercel.app`. The polish + announce pass is done:
+The site is **launch-ready** as a showcase. Custom-domain/SEO plumbing has landed for
+`unofficial.city`, while the operational DNS, analytics, and search-indexing follow-up remains open.
+The polish + announce pass is done:
 
 1. ✅ **Polish pass** — full QA of the canvas across every route; `/making-of` brought onto the canvas;
    filter-pill tap targets; copy proofread. The **#75 knobs** were signed off at their defaults (red
    `#a82828` · ink-veil `0.12` · faint `body::after` kept).
 2. ✅ **Share-ready** — the OG / social card is on-brand and the meta is clean; perf is solid (every
-   heavy route is `React.lazy`). Staying on `vancouver-made.vercel.app` (no custom domain). Optional
-   future win: recompress the ~1.4 MB hero carousel JPGs.
+   heavy route is `React.lazy`). Follow-up is tracked for DNS/custom-domain verification (#86), GA4
+   verification (#87), and Search Console/sitemap submission (#88). Optional future win: recompress
+   the ~1.4 MB hero carousel JPGs.
 3. ✅ **Announcement drafts** — in KK's voice, draft-only: LinkedIn + Instagram + Threads
    (`social/captions.md`, staged in Buffer) and X/Twitter + Bluesky + a long-form newsletter/blog
    (`social/launch-drafts.md`).
@@ -54,5 +58,5 @@ content/staging matter, not styling).
 
 ## How to pick up work
 See [`HANDOFF.md`](HANDOFF.md) for the live pickup state and [`ARCHITECTURE.md`](ARCHITECTURE.md) for
-the site map + data flow. Open issues are down to **#26** (production) and **#56** (the worlds epic,
-effectively done).
+the site map + data flow. Known open follow-up includes **#26** (production), **#86** (DNS/custom
+domain verification), **#87** (GA4 verification), and **#88** (Search Console/sitemap submission).
