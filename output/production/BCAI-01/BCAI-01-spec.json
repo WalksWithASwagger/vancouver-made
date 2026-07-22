@@ -1,0 +1,181 @@
+{
+  "style": "BCAI-01",
+  "revision": "A",
+  "date": "2026-07-21",
+  "name": "BOTH / AND Community Match Kit",
+  "deadline": "2026-07-26",
+  "currency": "CAD",
+  "initial_order_intent": "20 jersey-and-short sets; final size mix follows wearer confirmation",
+  "prize_quantity": "5 jerseys",
+  "fit": "Unisex relaxed athletic fit on factory block. Return factory size chart and one size M pre-production sample before bulk.",
+  "colours": [
+    {
+      "name": "BC Night",
+      "hex": "#0A0D12",
+      "use": "Garment body",
+      "working_reference": "PANTONE Black 6 C / darkest available matte recycled fabric",
+      "approval": "Physical fabric swatch and lab dip"
+    },
+    {
+      "name": "Signal Lime",
+      "hex": "#DFE250",
+      "use": "Exterior print and embroidery",
+      "working_reference": "PANTONE 387 C",
+      "approval": "Ink drawdown and thread card"
+    },
+    {
+      "name": "Coastal Ice",
+      "hex": "#7ADCFF",
+      "use": "Embroidery and technical reference",
+      "working_reference": "PANTONE 2905 C",
+      "approval": "Embroidery thread card"
+    },
+    {
+      "name": "Cloud Bone",
+      "hex": "#F4F2EA",
+      "use": "Primary exterior lettering",
+      "working_reference": "Warm white; vendor match to digital target",
+      "approval": "Ink drawdown"
+    }
+  ],
+  "materials": [
+    {
+      "component": "Jersey body",
+      "specification": "180-200 gsm recycled polyester birdseye or interlock, matte face, moisture management, anti-pilling finish",
+      "colour": "BC Night",
+      "gate": "Factory proposes best documented recycled option within budget and supplies swatch"
+    },
+    {
+      "component": "Collar",
+      "specification": "Self-fabric or matching rib crew neck, recovery tested, no contrast stripe",
+      "colour": "BC Night",
+      "gate": "Confirm on pre-production sample"
+    },
+    {
+      "component": "Shorts body",
+      "specification": "180-200 gsm recycled polyester interlock, matte face, elastic waistband with internal drawcord",
+      "colour": "BC Night",
+      "gate": "Match jersey body and hand feel"
+    },
+    {
+      "component": "Sewing thread",
+      "specification": "100 percent polyester core-spun thread, colourfast and matched to body",
+      "colour": "BC Night",
+      "gate": "No visible contrast stitching"
+    }
+  ],
+  "placements": [
+    {
+      "id": "P1",
+      "garment": "Jersey",
+      "location": "Front centre",
+      "artwork": "BCAI-01-P1-FRONT",
+      "method": "Two-colour screen print",
+      "size_mm": "280 W x 82 H",
+      "position": "Top of artwork 165 mm below high-point shoulder; centred on body centre-front",
+      "tolerance": "+/- 5 mm placement; +/- 2 mm artwork size"
+    },
+    {
+      "id": "P2",
+      "garment": "Jersey",
+      "location": "Back centre",
+      "artwork": "BCAI-01-P2-BACK",
+      "method": "Two-colour screen print",
+      "size_mm": "240 W x 260 H",
+      "position": "Top of artwork 145 mm below back neck seam; centred on body centre-back",
+      "tolerance": "+/- 5 mm placement; +/- 2 mm artwork size"
+    },
+    {
+      "id": "P3",
+      "garment": "Jersey",
+      "location": "Left sleeve",
+      "artwork": "BCAI-01-P3-LOCAL",
+      "method": "One-colour screen print",
+      "size_mm": "70 W x 18 H",
+      "position": "Centred on outside sleeve; bottom of artwork 55 mm above finished sleeve hem",
+      "tolerance": "+/- 5 mm placement; +/- 2 mm artwork size"
+    },
+    {
+      "id": "P4",
+      "garment": "Jersey",
+      "location": "Right sleeve",
+      "artwork": "BCAI-01-P4-FUTURE",
+      "method": "One-colour screen print",
+      "size_mm": "80 W x 18 H",
+      "position": "Centred on outside sleeve; bottom of artwork 55 mm above finished sleeve hem",
+      "tolerance": "+/- 5 mm placement; +/- 2 mm artwork size"
+    },
+    {
+      "id": "P5",
+      "garment": "Jersey",
+      "location": "Inside back neck",
+      "artwork": "BCAI-01-P5-NECK",
+      "method": "Soft heat transfer or screen print after durability test",
+      "size_mm": "110 W x 32 H",
+      "position": "Top of artwork 12 mm below back neck seam; centred on centre-back",
+      "tolerance": "+/- 3 mm placement; +/- 2 mm artwork size"
+    },
+    {
+      "id": "P6",
+      "garment": "Shorts",
+      "location": "Right front leg",
+      "artwork": "BCAI-01-P6-SHORT-EMB",
+      "method": "Two-colour direct embroidery",
+      "size_mm": "85 W x 28 H",
+      "position": "Top of artwork 85 mm below waistband seam; centred on right front leg panel",
+      "tolerance": "+/- 5 mm placement; +/- 2 mm artwork size"
+    },
+    {
+      "id": "P7",
+      "garment": "Shorts",
+      "location": "Left front leg",
+      "artwork": "BCAI-01-P7-SHORT-PRINT",
+      "method": "Two-colour screen print",
+      "size_mm": "90 W x 22 H",
+      "position": "Top of artwork 85 mm below waistband seam; centred on left front leg panel",
+      "tolerance": "+/- 5 mm placement; +/- 2 mm artwork size"
+    }
+  ],
+  "construction": [
+    "Set-in short sleeve with clean athletic armhole",
+    "Crew neck with shoulder-to-shoulder internal binding",
+    "Four-thread overlock internal seams with coverstitch hems",
+    "Side seams permitted; keep print clear of seam allowances",
+    "Shorts with 40 mm enclosed elastic waistband and internal matching drawcord",
+    "Reinforce drawcord exit and crotch stress points",
+    "Remove loose threads; no visible puckering, needle damage, shine, or dye migration"
+  ],
+  "decoration": [
+    "Use polyester-safe low-cure silicone or dye-blocking screen ink proven on the selected fabric",
+    "Minimum printed cell size is 1.4 mm; preserve square corners and original spacing",
+    "No gradients, halftones, distress texture, drop shadows, or unapproved trapping",
+    "Embroidery must preserve the square-grid geometry without satin-stitch bridging between cells",
+    "Return one print strike-off and one embroidery sew-out before pre-production sample"
+  ],
+  "packaging": [
+    "One complete set per recycled or recyclable protective bag",
+    "Apply removable size sticker to outside of bag",
+    "Pack by size and provide carton count before shipment",
+    "Do not make unsupported recycled, ocean-bound, or certification claims on garment labels"
+  ],
+  "factory_returns": [
+    "Itemized quote for five prize jerseys and for approximately 20 jersey-and-short sets, with shorts shown separately",
+    "Factory size chart, grading rules, measurement tolerance, and proposed size M sample measurements",
+    "Fabric composition, weight, mill, recycled-content evidence, available certifications, swatch, and lab dip",
+    "Screen ink system, colour drawdowns, dye-migration test, and wash-test method",
+    "Embroidery thread references and physical sew-out",
+    "Marked placement proof for every size before screens or embroidery files are released",
+    "One complete size M pre-production set for fit, colour, placement, hand-feel, and workmanship approval",
+    "Bulk production schedule, quality-control checkpoints, packing list, and shipping terms"
+  ],
+  "quality": [
+    "Colour: approved physical standard under D65 light; no visible panel-to-panel shade variation",
+    "Print: full cure, solid coverage, no dye migration, cracking, pinholes, or offset",
+    "Embroidery: clean registration, no puckering, loose ends, or backing visible outside artwork",
+    "Measurements: within factory-agreed tolerance against approved size chart",
+    "Wash: appearance and dimensional stability approved after three care-label wash cycles",
+    "Inspection: factory final inspection report and photos before balance payment or shipment"
+  ],
+  "care_proposal": "Machine wash cold with like colours, gentle cycle. Do not bleach. Hang dry. Do not iron decoration. Do not dry clean. Factory must validate against selected materials and decoration before label production.",
+  "commercial": "Target quality band is CAD 30-50 per finished item; quote five prize jerseys and the approximately 20-set community run separately. No bulk authorization follows from this tech pack alone."
+}

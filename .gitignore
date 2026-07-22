@@ -21,6 +21,9 @@ docs/design/prompts/**/rafiki/images/
 # Consolidated raw-image archives (heavy; sources live in to-ingest/ and rafiki dirs)
 archive/
 .vercel
+tmp/pdfs/
+__pycache__/
+*.pyc
 
 # Generated standalone pump-prompts review viewer (regenerate via scripts/build-pump-viewer.mjs)
 public/wall/pump-prompts/
