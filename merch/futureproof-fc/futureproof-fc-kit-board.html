@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Futureproof FC — Kit Concept Board</title>
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    /* light / parchment "matchday programme" world */
+    --ground:#F5F1E8;
+    --surface:#FCFAF4;
+    --field:#ECE4D4;
+    --ink:#17150F;
+    --muted:#6E6656;
+    --line:#E1D8C6;
+    --accent:#C1504A;      /* salmon, deepened for legibility on light */
+    --accent-fill:#d2645d; /* brand salmon for chips/fills */
+    --teal:#0F766E;
+    --teal-fill:#14B8A6;
+    --violet:#6D28D9;
+    --ember:#C8352E;
+    --lime-fill:#daf142;
+    --night:#172231;
+    --shadow:0 1px 0 rgba(23,21,15,.04), 0 18px 40px -28px rgba(23,21,15,.35);
+
+    --font-editorial:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+    --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-kit:"Arial Narrow","Roboto Condensed","Oswald","Helvetica Neue Condensed",sans-serif;
+    --font-mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ground:#0A0A0B;
+      --surface:#141419;
+      --field:#0E0E12;
+      --ink:#F3EEE2;
+      --muted:#A49B8B;
+      --line:#26262C;
+      --accent:#e2857e;
+      --accent-fill:#d2645d;
+      --teal:#5EEAD4;
+      --teal-fill:#14B8A6;
+      --violet:#C4B5FD;
+      --ember:#FCA5A5;
+      --lime-fill:#daf142;
+      --night:#0f1622;
+      --shadow:0 1px 0 rgba(0,0,0,.4), 0 26px 60px -34px rgba(0,0,0,.8);
+    }
+  }
+  /* explicit toggle overrides win in both directions */
+  :root[data-theme="light"]{
+    --ground:#F5F1E8;--surface:#FCFAF4;--field:#ECE4D4;--ink:#17150F;--muted:#6E6656;--line:#E1D8C6;
+    --accent:#C1504A;--accent-fill:#d2645d;--teal:#0F766E;--teal-fill:#14B8A6;--violet:#6D28D9;--ember:#C8352E;
+    --lime-fill:#daf142;--night:#172231;--shadow:0 1px 0 rgba(23,21,15,.04),0 18px 40px -28px rgba(23,21,15,.35);
+  }
+  :root[data-theme="dark"]{
+    --ground:#0A0A0B;--surface:#141419;--field:#0E0E12;--ink:#F3EEE2;--muted:#A49B8B;--line:#26262C;
+    --accent:#e2857e;--accent-fill:#d2645d;--teal:#5EEAD4;--teal-fill:#14B8A6;--violet:#C4B5FD;--ember:#FCA5A5;
+    --lime-fill:#daf142;--night:#0f1622;--shadow:0 1px 0 rgba(0,0,0,.4),0 26px 60px -34px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--font-body);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:64px 0}
+  @media(max-width:640px){section{padding:44px 0}body{font-size:16px}}
+
+  h1,h2,h3{font-family:var(--font-editorial);font-weight:600;line-height:1.05;text-wrap:balance;margin:0}
+  p{margin:0 0 1em;max-width:64ch}
+  a{color:var(--accent)}
+
+  .kicker,.slot,.eyebrow{
+    font-family:var(--font-kit);text-transform:uppercase;letter-spacing:.18em;
+    font-size:13px;font-weight:700;color:var(--muted);
+  }
+  .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+  /* ============ MASTHEAD ============ */
+  .top{
+    position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ground) 86%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;gap:16px}
+  .crestword{display:flex;align-items:center;gap:10px;font-family:var(--font-kit);font-weight:700;
+    text-transform:uppercase;letter-spacing:.14em;font-size:14px}
+  .crestword svg{width:22px;height:22px;flex:0 0 auto}
+  .tag-v{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+  .tbtn{font-family:var(--font-mono);font-size:12px;color:var(--muted);background:none;border:1px solid var(--line);
+    border-radius:999px;padding:5px 11px;cursor:pointer}
+  .tbtn:hover{color:var(--ink);border-color:var(--muted)}
+
+  .hero{padding-top:56px;padding-bottom:40px}
+  .hero .eyebrow{color:var(--accent)}
+  .hero h1{
+    font-size:clamp(52px,11vw,124px);letter-spacing:-.01em;margin:.18em 0 .08em;
+    line-height:.92;
+  }
+  .hero h1 .fc{font-family:var(--font-kit);font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  .lede{font-family:var(--font-editorial);font-size:clamp(22px,3vw,30px);line-height:1.28;color:var(--ink);max-width:22ch}
+  .hero .sub{color:var(--muted);max-width:60ch;margin-top:18px}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  .premise{display:grid;grid-template-columns:1.2fr .9fr;gap:40px;align-items:start}
+  @media(max-width:760px){.premise{grid-template-columns:1fr;gap:24px}}
+  .aside{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+  .aside h3{font-size:22px;margin-bottom:.3em}
+  .aside p{font-size:15px;color:var(--muted);margin-bottom:0}
+  .aside .pin{font-family:var(--font-kit);text-transform:uppercase;letter-spacing:.14em;font-size:12px;
+    color:var(--teal);font-weight:700;display:block;margin-bottom:6px}
+
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sechead .n{font-family:var(--font-mono);color:var(--accent);font-size:14px}
+  h2.big{font-size:clamp(30px,5vw,46px);letter-spacing:-.01em}
+  .sec-sub{color:var(--muted);max-width:60ch;margin:6px 0 34px}
+
+  /* ============ ANATOMY ============ */
+  .anat{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  @media(max-width:820px){.anat{grid-template-columns:1fr;gap:24px}}
+  .anat-figs{display:flex;gap:14px;justify-content:center;align-items:flex-end;
+    background:var(--field);border:1px solid var(--line);border-radius:16px;padding:26px 14px}
+  .anat-figs svg{width:100%;height:auto;max-width:220px}
+  .fig-cap{text-align:center;margin-top:8px}
+  .legend{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .legend li{display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start}
+  .legend .b{width:24px;height:24px;border-radius:50%;background:var(--accent-fill);color:#fff;
+    font-family:var(--font-kit);font-weight:700;font-size:13px;display:grid;place-items:center;margin-top:1px}
+  .legend b{font-weight:600}
+  .legend .d{color:var(--muted);font-size:14.5px;display:block}
+
+  /* ============ RANGE / CONCEPTS ============ */
+  .kit{padding:40px 0;border-top:1px solid var(--line)}
+  .kit-grid{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
+  @media(max-width:820px){.kit-grid{grid-template-columns:1fr;gap:26px}}
+  .kit-fig{position:relative;background:var(--field);border:1px solid var(--line);border-radius:18px;
+    padding:22px;box-shadow:var(--shadow)}
+  .kit-fig svg{display:block;width:100%;height:auto}
+  .kit-fig .slot-badge{position:absolute;top:14px;left:14px;font-family:var(--font-kit);font-weight:700;
+    text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--muted);
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+  .swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .sw{display:flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+  .sw i{width:15px;height:15px;border-radius:4px;border:1px solid rgba(120,120,120,.35);display:inline-block}
+
+  .kit-body .slot{color:var(--accent)}
+  .kit-body h3{font-size:clamp(28px,4vw,40px);letter-spacing:-.01em;margin:.12em 0 .1em}
+  .kit-body h3 .as{font-family:var(--font-body);font-weight:400;font-size:.42em;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-left:12px}
+  .kit-body .story{font-family:var(--font-editorial);font-size:20px;line-height:1.35;color:var(--ink);max-width:52ch;margin-bottom:18px}
+  .spec{border-top:1px solid var(--line);margin-top:6px}
+  .spec dl{margin:0;display:grid;grid-template-columns:130px 1fr}
+  @media(max-width:420px){.spec dl{grid-template-columns:104px 1fr}}
+  .spec dt{font-family:var(--font-kit);text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+    color:var(--muted);font-weight:700;padding:11px 0;border-bottom:1px solid var(--line)}
+  .spec dd{margin:0;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .spec dd b{color:var(--accent);font-weight:600}
+
+  /* ============ BITS & BOBS ============ */
+  .bb{background:var(--field);border:1px solid var(--line);border-radius:18px;padding:30px}
+  .bb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 26px;margin-top:6px}
+  @media(max-width:760px){.bb-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.bb-grid{grid-template-columns:1fr}}
+  .bb-item{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .bb-item .k{font-family:var(--font-mono);color:var(--accent);font-size:13px;padding-top:2px}
+  .bb-item b{font-weight:600;font-size:15px}
+  .bb-item span{display:block;color:var(--muted);font-size:13.5px}
+
+  /* ============ FORK / EXTRAS ============ */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.two{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+  .card .lab{font-family:var(--font-kit);text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700}
+  .card.match .lab{color:var(--teal)}
+  .card.terrace .lab{color:var(--accent)}
+  .card h3{font-size:26px;margin:.25em 0 .3em}
+  .card p{font-size:15px;color:var(--muted)}
+  .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+  .card li{margin-bottom:6px}
+  .reco{background:var(--surface);border:1px dashed var(--accent);border-radius:14px;padding:16px 20px;margin-top:22px}
+  .reco b{color:var(--accent)}
+  .reco p{margin:0;font-size:15px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.grid3{grid-template-columns:1fr}}
+  .mini{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .mini h4{margin:0 0 6px;font-family:var(--font-editorial);font-size:21px;font-weight:600}
+  .mini p{margin:0;font-size:14px;color:var(--muted)}
+  .mini .t{font-family:var(--font-kit);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--teal);font-weight:700;display:block;margin-bottom:6px}
+
+  .beyond{columns:2;column-gap:28px}
+  @media(max-width:640px){.beyond{columns:1}}
+  .beyond .li{break-inside:avoid;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .beyond .li b{font-weight:600}
+  .beyond .li span{color:var(--muted);font-size:13.5px}
+
+  .steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:12px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+  .steps li::before{counter-increment:s;content:counter(s);font-family:var(--font-kit);font-weight:700;
+    font-size:15px;color:#fff;background:var(--ink);width:30px;height:30px;border-radius:50%;display:grid;place-items:center}
+  .steps b{font-weight:600}
+  .steps span{color:var(--muted);font-size:14.5px;display:block}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--muted);font-size:13.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  .note-ip{font-size:13.5px;color:var(--muted);border-left:2px solid var(--accent);padding:2px 0 2px 14px;margin-top:20px;max-width:60ch}
+
+  /* Content stays visible even when browsers skip intersection callbacks. */
+  .rev{opacity:1;transform:none}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- shared SVG paint servers + clip (referenced by all jerseys) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="jclip"><path d="M58 52 L80 52 Q100 70 120 52 L142 52 L150 54 L180 78 Q183 82 178 87 L158 97 Q152 99 152 105 L150 236 Q150 240 146 240 L54 240 Q50 240 50 236 L48 105 Q48 99 42 97 L22 87 Q17 82 20 78 L50 54 Z"/></clipPath>
+
+    <linearGradient id="g-home" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#61938c"/><stop offset=".28" stop-color="#d2645d"/>
+      <stop offset=".78" stop-color="#9c3f3f"/><stop offset="1" stop-color="#12100f"/>
+    </linearGradient>
+    <pattern id="p-salmon" width="20" height="26" patternUnits="userSpaceOnUse">
+      <path d="M4 20 L10 12 L16 20" fill="none" stroke="#F5F1E8" stroke-opacity=".22" stroke-width="1.5"/>
+      <path d="M14 33 L20 25 L26 33" fill="none" stroke="#F5F1E8" stroke-opacity=".22" stroke-width="1.5"/>
+    </pattern>
+
+    <linearGradient id="g-away" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF7EE"/><stop offset="1" stop-color="#EFE7D6"/>
+    </linearGradient>
+    <pattern id="p-aurora" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <rect x="0" width="7" height="40" fill="#14B8A6" fill-opacity=".55"/>
+      <rect x="11" width="4" height="40" fill="#5EEAD4" fill-opacity=".5"/>
+      <rect x="22" width="9" height="40" fill="#0F766E" fill-opacity=".38"/>
+    </pattern>
+
+    <linearGradient id="g-night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#15151b"/><stop offset="1" stop-color="#08080a"/>
+    </linearGradient>
+    <linearGradient id="g-irid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/><stop offset=".5" stop-color="#14B8A6"/><stop offset="1" stop-color="#d2645d"/>
+    </linearGradient>
+    <pattern id="p-raven" width="18" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 12 Q9 2 18 12" fill="none" stroke="#8f8f9c" stroke-opacity=".14" stroke-width="1.1"/>
+    </pattern>
+
+    <linearGradient id="g-lime" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6f65e"/><stop offset="1" stop-color="#c3d924"/>
+    </linearGradient>
+
+    <radialGradient id="g-dome" cx="50%" cy="86%" r="72%">
+      <stop offset="0" stop-color="#61938c" stop-opacity=".9"/>
+      <stop offset=".34" stop-color="#583849" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#141d2b"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <span class="crestword" aria-label="Futureproof FC">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 L33 12 V24 C33 32 27 36 20 38 C13 36 7 32 7 24 V12 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 13 L24 19 L20 25 L16 19 Z" fill="currentColor"/><path d="M13 30 C17 27 23 27 27 30" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      Futureproof&nbsp;FC
+    </span>
+    <span style="display:flex;align-items:center;gap:14px">
+      <span class="tag-v">KIT BOARD · v1</span>
+      <button class="tbtn" id="themebtn" type="button">theme</button>
+    </span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="eyebrow">Vancouver · World Cup summer 2026 → the festival · Oct 28–30</span>
+    <h1>Futureproof <span class="fc">FC</span></h1>
+    <p class="lede">Five kits for a festival about staying human. In our colours, cut like the real thing.</p>
+    <p class="sub">A capsule of luxury, vanity, unmistakably-Futureproof football kits — crest, sponsor, nameset, and every last bit and bob — built to run through the manufacturing tool while the World Cup energy is still hot. One concept per slot, all five below. Not final; a board to react to.</p>
+  </div>
+
+  <hr class="rule">
+
+  <section class="wrap">
+    <div class="premise rev">
+      <div>
+        <div class="sechead"><span class="n">00</span><h2 class="big">The premise: our own federation</h2></div>
+        <p>A kit is only three things — a <b>crest</b>, a <b>sponsor</b>, and a <b>number</b> — and on ours they all mean the same thing: <em>you were in the room.</em> The raven-and-crystal becomes the club badge. <span class="mono">FUTUREPROOF</span> takes the sponsor block. The number is the year, or yours. We treat the festival like a national side for one glorious tournament summer, then wear it to the festival in October.</p>
+        <p>Everything downstream — colourways, patches, tags — hangs off that one idea, so the five kits read as a range, not five random shirts.</p>
+      </div>
+      <aside class="aside">
+        <span class="pin">The five slots</span>
+        <h3>Home · Away · Third · Keeper · Special</h3>
+        <p>The classic kit range maps cleanly onto your five concept credits — a signature home, a wearable away, a blacked-out third flex, the loud goalkeeper, and a numbered Space-Centre collector. Make all five, or pick the two or three you'll actually run first.</p>
+      </aside>
+    </div>
+    <p class="note-ip">One lane to keep clean: this is <b>our</b> federation — original crest, our marks, “Futureproof FC.” We ride the World Cup <em>energy</em>, never FIFA / official tournament emblems or host-city logos. Safe to make, safe to sell.</p>
+  </section>
+
+  <section class="wrap" id="anatomy">
+    <div class="sechead"><span class="n">01</span><h2 class="big">Anatomy of the kit</h2></div>
+    <p class="sec-sub">Every “bit and bob” you asked for, mapped to where it lives. The same skeleton carries all five colourways.</p>
+    <div class="anat rev">
+      <div>
+        <div class="anat-figs">
+          <div><div id="anat-front"></div><div class="fig-cap kicker">Front</div></div>
+          <div><div id="anat-back"></div><div class="fig-cap kicker">Back</div></div>
+        </div>
+      </div>
+      <ol class="legend">
+        <li><span class="b">1</span><div><b>Embroidered crest</b> — raven &amp; crystal, chain-stitch or bullion wire, left chest.<span class="d">The club badge. The one thing that never changes across the range.</span></div></li>
+        <li><span class="b">2</span><div><b>Maker's mark</b> — small Futureproof dot, right chest.<span class="d">Where the swoosh would go. Ours, tonal, quiet.</span></div></li>
+        <li><span class="b">3</span><div><b>Sponsor block</b> — <span class="mono">FUTUREPROOF</span> dot-matrix wordmark, centre chest.<span class="d">The billboard. Sublimated on the match kit, twill or print on cotton.</span></div></li>
+        <li><span class="b">4</span><div><b>Sleeve patches</b> — <span class="mono">OCT 28–30 · 2026</span> + a <span class="mono">VANCOUVER</span> roundel.<span class="d">Woven. Optional third patch = your six track badges.</span></div></li>
+        <li><span class="b">5</span><div><b>Collar + woven tag</b> — crew / V / henley per kit, raised woven tab at the nape.<span class="d">Small luxury tell most people never bother with.</span></div></li>
+        <li><span class="b">6</span><div><b>Nameset</b> — custom condensed number + name, back.<span class="d">Default #26 for the year; or personalised. The number font is half a kit's identity.</span></div></li>
+        <li><span class="b">7</span><div><b>Back-neck taping</b> — a printed manifesto line inside the collar.<span class="d">“Build what lasts.” Read only by the wearer.</span></div></li>
+        <li><span class="b">8</span><div><b>Story / jock tag + hem flag</b> — satin woven tag with the design's meaning &amp; edition <span class="mono">__/226</span>, plus a side-seam hem tab.<span class="d">The bits that make it feel made, not printed.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="sechead"><span class="n">02</span><h2 class="big">The range</h2></div>
+    <p class="sec-sub">Five kits, five moods, one federation. Hexes are pulled straight from the site palette so the merch and the website are the same brand.</p>
+  </section>
+
+  <div id="range"></div>
+
+  <section class="wrap">
+    <div class="sechead"><span class="n">03</span><h2 class="big">All the bits &amp; bobs</h2></div>
+    <p class="sec-sub">The finishing checklist — this is what separates “a nice tee” from “a kit.” Pull any of these into the tech pack per concept.</p>
+    <div class="bb rev" id="bb"></div>
+  </section>
+
+  <section class="wrap">
+    <div class="sechead"><span class="n">04</span><h2 class="big">Two ways to make it</h2></div>
+    <p class="sec-sub">The one real fork — and it's a values question as much as a materials one. It changes the whole tech pack, so worth deciding early.</p>
+    <div class="two rev">
+      <div class="card match">
+        <span class="lab">Option A · The match kit</span>
+        <h3>Recycled performance knit</h3>
+        <p>rPET (recovered-plastic) performance fabric, full edge-to-edge sublimation. Every graphic above can run anywhere on the shirt. The honest eco story: <em>made from plastic already in the world, not new.</em> True on-pitch feel; best for the salmon fade, the iridescent raven, the keeper, and the dome burst.</p>
+        <ul><li>All-over print, any colourway, no print-count limits</li><li>Moisture-wicking, lightweight, “real football shirt”</li><li>What the manufacturing tool is built for</li></ul>
+      </div>
+      <div class="card terrace">
+        <span class="lab">Option B · The terrace shirt</span>
+        <h3>Heavyweight organic cotton</h3>
+        <p>Your “no plastic garbage” instinct, literally. Natural-fibre body, graphics placed where <b>screenprint + real embroidery + woven patches</b> go — chest, back, sleeves — rather than edge-to-edge. Wears like a premium tee or rugby shirt off the pitch. The campfire to the match kit's public square.</p>
+        <ul><li>Screenprint the salmon run / manifesto; embroider the crest</li><li>Woven &amp; chain-stitch patches, no PVC anywhere</li><li>Everyday-wearable, natural hand-feel</li></ul>
+      </div>
+    </div>
+    <div class="reco rev"><p><b>My rec:</b> do both, as a two-tier line — the sublimated <b>match kit</b> as the drop moment, the cotton <b>terrace shirt</b> as the everyday flex. Public square and campfire, in poly and cotton. Start the tech pack with whichever one you'd wear first.</p></div>
+  </section>
+
+  <section class="wrap">
+    <div class="sechead"><span class="n">05</span><h2 class="big">Complete the kit</h2></div>
+    <p class="sec-sub">The tool does shorts too — so spec the full strip. And the scarf is the real move: cheapest to make, most-worn, best gateway merch there is.</p>
+    <div class="grid3 rev">
+      <div class="mini"><span class="t">Shorts</span><h4>Ink base, one signal stripe</h4><p>Salmon-or-aurora hip stripe, small crest on the left leg, number front-right. Pairs to every shirt.</p></div>
+      <div class="mini"><span class="t">Socks</span><h4>Jacquard turnover</h4><p>Knitted salmon-run or dome pattern up the calf, ribbed “FF” turnover. Completes the matchday photo.</p></div>
+      <div class="mini"><span class="t">Supporter scarf</span><h4>The one to make first</h4><p>Jacquard-woven bar scarf — <span class="mono">FUTUREPROOF FC · EST. 2026 · VANCOUVER</span> one end, crest + manifesto the other. Cheap, iconic, sells itself.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="sechead"><span class="n">06</span><h2 class="big">Beyond the pitch</h2></div>
+    <p class="sec-sub">The rest of your merch brainstorm, held to the same rule you set — human, DIY, no plastic garbage. Deeper dive whenever you want; parked here so it isn't lost.</p>
+    <div class="beyond rev">
+      <div class="li"><b>Screen-printed bandannas</b><span>The one you're already doing — salmon-run repeat, or a manifesto grid. Cotton, endlessly wearable.</span></div>
+      <div class="li"><b>Strike-anywhere matches + a refillable brass lighter</b><span>Printed matchbox; engraved raven-and-crystal on solid brass. “Carry fire, build what lasts.” Metal, not plastic.</span></div>
+      <div class="li"><b>Enamel pins</b><span>Raven, salmon, dome. Collectible, tradeable — pin culture is football culture.</span></div>
+      <div class="li"><b>Chain-stitch sew-on patches</b><span>Loose crest + track patches for jackets and bags. Pure DIY patch energy.</span></div>
+      <div class="li"><b>Riso / letterpress field-notes zine + posters</b><span>The manifesto as ink on paper. Fully compostable, very “archive.”</span></div>
+      <div class="li"><b>Enamel camp mug or a cedar object</b><span>PNW-native, no-plastic, useful long after October.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="sechead"><span class="n">07</span><h2 class="big">To spec — how we go from board to tech pack</h2></div>
+    <ol class="steps rev">
+      <li><div><b>Pick your slots.</b><span>All five, or the two or three you'll run first (my hunch: Salmon Run home + the Space Centre special).</span></div></li>
+      <li><div><b>Choose the material fork.</b><span>Match kit, terrace shirt, or both.</span></div></li>
+      <li><div><b>Lock the nameset logic.</b><span>Fixed manifesto words &amp; #26, or personalised names &amp; numbers for buyers.</span></div></li>
+      <li><div><b>I build the manufacturer-ready spec.</b><span>Exact Pantone/TPX + hex per element, placement coordinates &amp; sizes, technique per bit (sublimation / twill / chain-stitch / woven), all tag copy, size run, and a tech-pack checklist.</span></div></li>
+      <li><div><b>Optional: photoreal front/back mockups.</b><span>To drop straight into the tool and to tease on socials.</span></div></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Futureproof FC — kit concept board · v1 · concepts, not final artwork</span>
+    <span class="mono">Palette per lib/tailwind · Salmon #d2645d · Aurora #14B8A6 · Ink #0A0A0B · Lime #daf142</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var JPATH="M58 52 L80 52 Q100 70 120 52 L142 52 L150 54 L180 78 Q183 82 178 87 L158 97 Q152 99 152 105 L150 236 Q150 240 146 240 L54 240 Q50 240 50 236 L48 105 Q48 99 42 97 L22 87 Q17 82 20 78 L50 54 Z";
+
+  // small raven+crystal crest glyph, sized/coloured per call
+  function crest(x,y,s,col){
+    var g='<g transform="translate('+x+' '+y+') scale('+s+')" fill="none" stroke="'+col+'" stroke-width="1.6">';
+    g+='<path d="M0 -9 L9 -3 V6 C9 12 5 15 0 17 C-5 15 -9 12 -9 6 V-3 Z"/>';
+    g+='<path d="M0 -3 L3 1 L0 5 L-3 1 Z" fill="'+col+'" stroke="none"/>';
+    g+='<path d="M-5 10 C-2 8 2 8 5 10" />';
+    g+='</g>';
+    return g;
+  }
+
+  function jersey(o){
+    o=o||{};
+    var w=200,h=262;
+    var s='<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+(o.label||'kit')+'">';
+    s+='<title>'+(o.label||'kit')+'</title>';
+    s+='<g clip-path="url(#jclip)">';
+    s+='<rect x="0" y="0" width="'+w+'" height="'+h+'" fill="'+o.base+'"/>';
+    if(o.pattern){s+='<rect x="0" y="0" width="'+w+'" height="'+h+'" fill="url(#'+o.pattern+')"/>';}
+    if(o.extra){s+=o.extra;}
+    s+='</g>';
+    // shoulder/sleeve accent stroke + outline
+    s+='<path d="'+JPATH+'" fill="none" stroke="'+(o.line||'rgba(0,0,0,.35)')+'" stroke-width="1.6"/>';
+    // collar accent
+    if(o.collar){s+='<path d="M80 52 Q100 70 120 52" fill="none" stroke="'+o.collar+'" stroke-width="3"/>';}
+
+    if(o.back){
+      // nameset
+      if(o.name){s+='<text x="100" y="96" text-anchor="middle" font-family="var(--font-kit)" font-weight="700" font-size="13" letter-spacing="1.5" fill="'+o.ink+'">'+o.name+'</text>';}
+      s+='<text x="100" y="176" text-anchor="middle" font-family="var(--font-kit)" font-weight="700" font-size="72" fill="'+(o.numFill||o.ink)+'" stroke="'+(o.numStroke||'none')+'" stroke-width="'+(o.numStroke?2:0)+'">'+(o.num||'26')+'</text>';
+      // neck taping hint
+      s+='<rect x="86" y="56" width="28" height="3" fill="'+o.ink+'" opacity=".7"/>';
+    }else{
+      s+=crest(72,100,1,o.ink);                 // 1 crest
+      s+='<circle cx="128" cy="100" r="3.4" fill="'+o.ink+'"/>'; // 2 maker dot
+      // 3 sponsor wordmark
+      s+='<text x="100" y="152" text-anchor="middle" font-family="var(--font-kit)" font-weight="700" font-size="12.5" letter-spacing="1.2" fill="'+o.ink+'">FUTUREPROOF</text>';
+      // 4 sleeve patch chips
+      s+='<rect x="160" y="78" width="16" height="9" rx="2" fill="'+o.ink+'" opacity=".55"/>';
+      s+='<rect x="26" y="78" width="16" height="9" rx="2" fill="'+o.ink+'" opacity=".35"/>';
+    }
+    s+='</svg>';
+    return s;
+  }
+
+  // ---- anatomy figures (numbered) ----
+  function anatFront(){
+    var o={base:"url(#g-home)",pattern:"p-salmon",ink:"#F5F1E8",line:"rgba(245,241,232,.4)",collar:"#5EEAD4",label:"kit anatomy, front"};
+    var s=jersey(o);
+    // inject numbered markers before </svg>
+    var marks="";
+    function m(n,x,y){return '<circle cx="'+x+'" cy="'+y+'" r="9" fill="#d2645d"/><text x="'+x+'" y="'+(y+4)+'" text-anchor="middle" font-family="var(--font-kit)" font-weight="700" font-size="12" fill="#fff">'+n+'</text>';}
+    marks+=m(1,72,100);marks+=m(2,128,100);marks+=m(3,100,168);marks+=m(4,170,72);marks+=m(5,100,50);
+    return s.replace("</svg>",marks+"</svg>");
+  }
+  function anatBack(){
+    var o={base:"url(#g-home)",pattern:"p-salmon",ink:"#F5F1E8",line:"rgba(245,241,232,.4)",collar:"#5EEAD4",back:true,name:"FUTUREPROOF",num:"26",label:"kit anatomy, back"};
+    var s=jersey(o);
+    var marks="";
+    function m(n,x,y){return '<circle cx="'+x+'" cy="'+y+'" r="9" fill="#0F766E"/><text x="'+x+'" y="'+(y+4)+'" text-anchor="middle" font-family="var(--font-kit)" font-weight="700" font-size="12" fill="#fff">'+n+'</text>';}
+    marks+=m(6,132,150);marks+=m(7,100,50);marks+=m(8,150,232);
+    return s.replace("</svg>",marks+"</svg>");
+  }
+
+  // ---- the five kits ----
+  var KITS=[
+    {slot:"Slot 01 · Home",name:"Salmon Run",as:"Home",
+     sw:[["Salmon","#d2645d"],["Ink","#0A0A0B"],["Aurora","#5EEAD4"],["Parchment","#F5F1E8"]],
+     story:"The signature. Salmon don't scroll — they run upstream to spawn. Columns of them climb the body like pinstripes that decided to migrate, cooling from ink at the hem to aurora at the collar. This is the one people photograph.",
+     fig:{base:"url(#g-home)",pattern:"p-salmon",ink:"#F5F1E8",line:"rgba(245,241,232,.45)",collar:"#5EEAD4",label:"Salmon Run home kit"},
+     spec:[["Crest","Raven &amp; crystal, chain-stitch, parchment thread on coral"],["Sponsor","<b>FUTUREPROOF</b> dot-matrix, tonal"],["Sleeves","OCT 28–30 · 2026  /  Vancouver roundel"],["Nameset","Condensed numerals, ink on coral · #26"],["Collar","Crew, aurora-teal ribbed trim"],["Taping","BUILD WHAT LASTS"]]},
+
+    {slot:"Slot 02 · Away",name:"Aurora Curtain",as:"Away",
+     sw:[["Parchment","#F5F1E8"],["Aurora","#14B8A6"],["Aurora hi","#5EEAD4"],["Ink","#0A0A0B"]],
+     story:"The clean one. Off-white ground with the aurora pulled across it in diagonal ribbons — the same curtain that hangs over the homepage, now over your shoulders. Wears off the pitch without asking permission.",
+     fig:{base:"url(#g-away)",pattern:"p-aurora",ink:"#17150F",line:"rgba(23,21,15,.4)",collar:"#0F766E",label:"Aurora Curtain away kit"},
+     spec:[["Crest","Ink raven &amp; crystal, chain-stitch"],["Sponsor","Ink wordmark"],["Sleeves","Teal edition + city, woven"],["Nameset","Ink numerals · #26"],["Collar","V-neck, ink trim"],["Taping","FINDING OUR HUMANITY"]]},
+
+    {slot:"Slot 03 · Third",name:"Raven & Crystal",as:"Night field",
+     sw:[["Ink","#0A0A0B"],["Violet","#8B5CF6"],["Aurora","#14B8A6"],["Lime signal","#daf142"]],
+     story:"The flex. Blacked-out, tonal raven feathers you only catch when the light moves — an oil-slick sheen of violet into teal across one shoulder, a single crystal facet at the heart. One lime stitch on the number, so you know it's ours. Quiet until it isn't.",
+     fig:{base:"url(#g-night)",pattern:"p-raven",ink:"#C9C9D4",line:"rgba(200,200,215,.35)",collar:"#8B5CF6",
+          extra:'<path d="M120 40 L200 120 L200 60 L150 42 Z" fill="url(#g-irid)" opacity=".55"/>',label:"Raven and Crystal third kit"},
+     spec:[["Crest","Black-on-black, bullion-wire crystal"],["Sponsor","Tonal / debossed wordmark"],["Sleeves","Blackout woven patches"],["Nameset","Ink numerals, <b>lime keyline</b> · #26"],["Collar","Crew, iridescent trim"],["Taping","APPROPRIATELY FREAKED OUT &amp; EXCITED"]]},
+
+    {slot:"Slot 04 · Goalkeeper",name:"Signal",as:"Keeper",
+     sw:[["BC+AI lime","#daf142"],["Ink","#0A0A0B"],["Aurora","#14B8A6"]],
+     story:"Keepers wear the loud one — it's tradition, and it's the single moment lime gets to run the whole shirt instead of one accent. BC + AI's electric green, full send, ink raven-scales ghosted underneath. You'll find the keeper in any crowd.",
+     fig:{base:"url(#g-lime)",pattern:"p-raven",ink:"#0A0A0B",line:"rgba(10,10,11,.5)",collar:"#0A0A0B",label:"Signal goalkeeper kit"},
+     spec:[["Crest","Ink raven &amp; crystal"],["Sponsor","Ink wordmark"],["Sleeves","Ink woven patches"],["Nameset","Ink numerals · #1"],["Collar","Crew, ink trim"],["Taping","HUMAN AGENCY UNDER PRESSURE"]]},
+
+    {slot:"Slot 05 · Special edition",name:"Space Centre",as:"Collector · /226",
+     sw:[["Starfield night","#172231"],["Salmon","#d2645d"],["Violet","#583849"],["Teal","#61938c"]],
+     story:"For the venue. We play under a planetarium dome, so the back becomes a full-dome burst — a rising arc of night with salmon and raven strung into a constellation around the number. Numbered to 226, boxed, match details embroidered inside the hem. The collector.",
+     fig:{base:"url(#g-night)",ink:"#EDE7DA",line:"rgba(237,231,218,.4)",collar:"#d2645d",back:true,name:"FUTUREPROOF",num:"26",numFill:"#EDE7DA",
+          extra:'<rect x="0" y="0" width="200" height="262" fill="url(#g-dome)" opacity=".92"/>'+
+                '<circle cx="60" cy="90" r="1.3" fill="#fff"/><circle cx="140" cy="70" r="1.1" fill="#fff"/><circle cx="96" cy="60" r="1" fill="#fff"/><circle cx="120" cy="120" r="1.2" fill="#fff"/><circle cx="76" cy="140" r="1" fill="#fff"/><circle cx="150" cy="150" r="1.1" fill="#fff"/>'+
+                '<path d="M60 90 L96 60 L140 70 M96 60 L120 120 M120 120 L150 150 M76 140 L120 120" stroke="#d2645d" stroke-opacity=".7" stroke-width="1" fill="none"/>',
+          label:"Space Centre special edition kit, back"},
+     spec:[["Crest","Constellation raven, teal thread"],["Sponsor","Small wordmark under the dome"],["Sleeves","H.R. MacMillan Space Centre + dome roundel"],["Nameset","Numerals inside the dome radial"],["Collar","Henley placket, salmon trim"],["Extras","Numbered <b>__/226</b>, boxed, hem-embroidered date"]]}
+  ];
+
+  function swatches(list){
+    return '<div class="swatches">'+list.map(function(c){
+      return '<span class="sw"><i style="background:'+c[1]+'"></i>'+c[0]+' <span style="opacity:.7">'+c[1]+'</span></span>';
+    }).join('')+'</div>';
+  }
+  function specHTML(rows){
+    return '<div class="spec"><dl>'+rows.map(function(r){
+      return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';
+    }).join('')+'</dl></div>';
+  }
+
+  var range=document.getElementById('range');
+  KITS.forEach(function(k){
+    var sec=document.createElement('section');
+    sec.className='wrap kit rev';
+    sec.innerHTML=
+      '<div class="kit-grid">'+
+        '<div class="kit-fig"><span class="slot-badge">'+k.slot+'</span>'+jersey(k.fig)+swatches(k.sw)+'</div>'+
+        '<div class="kit-body">'+
+          '<span class="slot">'+k.slot+'</span>'+
+          '<h3>'+k.name+'<span class="as">'+k.as+'</span></h3>'+
+          '<p class="story">'+k.story+'</p>'+
+          specHTML(k.spec)+
+        '</div>'+
+      '</div>';
+    range.appendChild(sec);
+  });
+
+  // anatomy
+  document.getElementById('anat-front').innerHTML=anatFront();
+  document.getElementById('anat-back').innerHTML=anatBack();
+
+  // bits & bobs
+  var BB=[
+    ["01","Embroidered crest","Raven & crystal · chain-stitch or bullion wire"],
+    ["02","Maker's mark","Small Futureproof dot, right chest"],
+    ["03","Centre wordmark","FUTUREPROOF dot-matrix · sublimation or twill"],
+    ["04","Sleeve patches","Edition date + Vancouver roundel (+ track badge)"],
+    ["05","Custom nameset","Condensed numerals + name · twill or heat-print"],
+    ["06","Woven collar tag","Raised tab at the nape"],
+    ["07","Back-neck taping","Printed manifesto line inside the collar"],
+    ["08","Story / jock tag","Satin woven · meaning + edition __/226"],
+    ["09","Hem flag tab","Side-seam woven tab"],
+    ["10","Content & care label","Recycled / organic content, worth reading"],
+    ["11","Match-detail embroidery","OCT 28–30 2026 · Vancouver, inside hem"],
+    ["12","Signature stitch","Tiny KK / Futureproof autograph (optional)"]
+  ];
+  document.getElementById('bb').innerHTML='<div class="bb-grid">'+BB.map(function(b){
+    return '<div class="bb-item"><span class="k">'+b[0]+'</span><div><b>'+b[1]+'</b><span>'+b[2]+'</span></div></div>';
+  }).join('')+'</div>';
+
+  // theme toggle (host also provides one; this keeps standalone viewing sane)
+  var btn=document.getElementById('themebtn');
+  if(btn){btn.addEventListener('click',function(){
+    var r=document.documentElement;
+    var cur=r.getAttribute('data-theme');
+    if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    r.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });}
+
+  // reveal
+  if(matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+</body>
+</html>
