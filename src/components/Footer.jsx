@@ -127,6 +127,20 @@ export default function Footer() {
             <p className="mt-4 text-xs leading-relaxed text-bone/55">
               {brand.move}
             </p>
+            <div className="mt-6 border-l-2 border-hazard/70 pl-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-hazard">
+                Signal relay
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-bone/55">
+                This is one live wire in Kris Krüg&apos;s larger project network.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-bold uppercase tracking-[0.16em]">
+                <a className="text-bone/70 transition hover:text-hazard" href="https://kriskrug.ai/network" target="_blank" rel="noreferrer">Signal Atlas ↗</a>
+                <a className="text-bone/70 transition hover:text-hazard" href="https://darkcrystal.app" target="_blank" rel="noreferrer">Dark Crystal ↗</a>
+                <a className="text-bone/70 transition hover:text-hazard" href="https://punkrockai.com" target="_blank" rel="noreferrer">Punk Rock AI ↗</a>
+                <a className="text-bone/70 transition hover:text-hazard" href="https://bothhandsfull.com" target="_blank" rel="noreferrer">Both Hands Full ↗</a>
+              </div>
+            </div>
           </div>
         </div>
 
