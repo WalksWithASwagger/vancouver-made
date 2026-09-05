@@ -225,21 +225,105 @@ function ProvocationSection({ concept, palette }) {
 }
 
 // ── Section: THE KIT UP CLOSE ────────────────────────────────────────────────
-function KitSection({ kit, palette }) {
+function CitationLinks({ references }) {
+  return (
+    <ul className="mt-3 space-y-3 font-mono text-xs leading-relaxed">
+      {references.map((reference) => (
+        <li key={reference.url}>
+          <a
+            href={reference.url}
+            className="underline decoration-current underline-offset-4 hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+          >
+            {reference.title} ↗
+          </a>
+          <p className="mt-1">
+            {reference.publisher} · {reference.dateLabel}: <time dateTime={reference.date}>{reference.date}</time>
+          </p>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function KitAnnotations({ annotations, citations }) {
+  return (
+    <div className="mt-12 divide-y-2 divide-ink/20 border-y-2 border-ink/20">
+      {annotations.map((annotation) => {
+        const citation = citations.find((item) => item.id === annotation.citationId)
+        return (
+          <article
+            key={annotation.id}
+            id={annotation.id}
+            tabIndex={-1}
+            aria-labelledby={`${annotation.id}-title`}
+            className="scroll-mt-28 py-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink md:grid md:grid-cols-[1fr_2fr] md:gap-10 md:py-12"
+          >
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-oxblood">{annotation.label}</p>
+              <h3 id={`${annotation.id}-title`} className="headline mt-3 text-3xl leading-tight text-ink md:text-4xl">
+                {annotation.title}
+              </h3>
+              <Link
+                to={`#${annotation.id}`}
+                aria-label={`Link to ${annotation.title} detail`}
+                className="mt-4 inline-block py-2 font-mono text-xs text-oxblood underline underline-offset-4 hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+              >
+                Link to this detail ↗
+              </Link>
+            </div>
+            <div className="mt-5 min-w-0 md:mt-0">
+              <p className="font-mono text-xs uppercase tracking-widest text-oxblood">Our interpretation</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink md:text-base">{annotation.interpretation}</p>
+              {citation && (
+                <div className="mt-6 border-l-2 border-cedar pl-4 text-ink">
+                  <p className="font-mono text-xs uppercase tracking-widest text-cedar">The record · {citation.id}</p>
+                  <p className="mt-3 text-sm leading-relaxed">{citation.claim}</p>
+                  <CitationLinks references={citation.references} />
+                </div>
+              )}
+            </div>
+          </article>
+        )
+      })}
+    </div>
+  )
+}
+
+function KitSection({ kit, palette, citations }) {
   const allImages = [...kit.flats, ...kit.details]
   const [active, setActive] = useState(null)
+  const reveal = kit.annotations ? '' : 'j-reveal'
 
   return (
     <section className="px-4 py-6 md:px-6 md:py-8">
       <Lightbox images={allImages} active={active} setActive={setActive} />
       <div className="sheet-paper mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
-        <div className="j-reveal mb-12">
+        <div className={`${reveal} mb-12`}>
           <Eyebrow>The kit, up close</Eyebrow>
-          <h2 className="headline text-3xl text-ink md:text-5xl">THE WORK</h2>
+          <h2 className="headline text-3xl text-ink md:text-5xl">{kit.annotations ? 'READ THE DEEP CUT' : 'THE WORK'}</h2>
+          {kit.annotations && (
+            <>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink md:text-base">
+                Three details. A date, a working method, a question. Follow the thread from the shirt to the record.
+              </p>
+              <p className="mt-4 font-mono text-xs text-oxblood">Exhibition study · AI-generated design visualizations</p>
+              <nav aria-label="Read the Deep Cut details" className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-ink">
+                {kit.annotations.map((annotation) => (
+                  <Link
+                    key={annotation.id}
+                    to={`#${annotation.id}`}
+                    className="py-2 underline underline-offset-4 hover:text-oxblood focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                  >
+                    {annotation.title} ↓
+                  </Link>
+                ))}
+              </nav>
+            </>
+          )}
         </div>
 
         {/* hero flats — front / back / 3D large */}
-        <div className="j-reveal grid gap-4 md:grid-cols-3">
+        <div className={`${reveal} grid gap-4 md:grid-cols-3`}>
           {kit.flats.map((img, i) => (
             <figure
               key={img.src}
@@ -268,8 +352,10 @@ function KitSection({ kit, palette }) {
           ))}
         </div>
 
+        {kit.annotations && <KitAnnotations annotations={kit.annotations} citations={citations} />}
+
         {/* craft details gallery */}
-        <div className="j-reveal mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+        <div className={`${reveal} mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6`}>
           {kit.details.map((img, i) => (
             <figure
               key={img.src}
@@ -502,7 +588,9 @@ function CitationsSection({ citations, palette }) {
                 {c.id}
               </p>
               <p className="text-xs leading-relaxed text-bone/75">{c.claim}</p>
-              {c.source && (
+              {c.references ? (
+                <div className="text-bone/90"><CitationLinks references={c.references} /></div>
+              ) : c.source && (
                 <p className="mt-2 text-[10px] text-bone/40">Source: {c.source}</p>
               )}
             </li>
@@ -566,9 +654,16 @@ export default function DirectionPage({ data }) {
 
       <SectionDivider />
 
+      {data.kit?.annotations && (
+        <>
+          <KitSection kit={data.kit} palette={data.palette} citations={data.citations} />
+          <SectionDivider />
+        </>
+      )}
+
       <ProvocationSection concept={data.concept} palette={data.palette} />
 
-      {data.kit?.flats?.length || data.kit?.details?.length ? (
+      {!data.kit?.annotations && (data.kit?.flats?.length || data.kit?.details?.length) ? (
         <>
           <SectionDivider />
           <KitSection kit={data.kit} palette={data.palette} />
