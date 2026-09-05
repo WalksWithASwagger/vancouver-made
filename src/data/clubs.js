@@ -81,15 +81,33 @@ export const clubs = [
       {
         id: 'AL-NW-001',
         claim:
-          'At APEC 1997 in Vancouver, Nardwuar questioned PM Jean Chrétien about pepper spray used on protesters; Chrétien quipped "For me, pepper, I put it on my plate," ahead of the Hughes/APEC inquiry into RCMP conduct.',
-        source: 'Nardwuar footage; The Canadian Encyclopedia; CBC archives',
+          'At the APEC closing press conference in Vancouver on 25 November 1997, Nardwuar asked PM Jean Chrétien about pepper spray used on protesters. Chrétien replied: “For me, pepper — I put it on my plate.”',
+        source: 'Nardwuar’s APEC interview transcript, 25 November 1997',
+        references: [
+          {
+            title: 'Nardwuar vs. Jean Chrétien — APEC transcript',
+            publisher: 'Nardwuar / Serviette archive',
+            url: 'https://www.serviette.ca/nardwuar-com/vs/jean_chretien/index.html',
+            date: '1997-11-25',
+            dateLabel: 'Interview',
+          },
+        ],
         rights: 'Reference / quote with citation; do not reproduce footage stills.',
       },
       {
         id: 'AL-NW-002',
         claim:
-          'Nardwuar (frontman of The Evaporators, based at CiTR/UBC) models accountability through exhaustive research, then the uncomfortable question.',
-        source: 'Wikipedia; UBC alumni magazine; nardwuar.com',
+          'UBC Reports describes Nardwuar’s research-intensive interviews, his CiTR radio show running since 1987, and his role fronting The Evaporators.',
+        source: 'Basil Waugh, UBC Reports, 7 December 2006',
+        references: [
+          {
+            title: 'Campus Station an Incubator of Ideas, Talent — “Serviette, Please”',
+            publisher: 'UBC Reports · Basil Waugh',
+            url: 'https://archive.news.ubc.ca/ubcreports/2006/06dec07/incubator.html',
+            date: '2006-12-07',
+            dateLabel: 'Published',
+          },
+        ],
         rights: 'HOMAGE, not likeness. See ethics note.',
       },
     ],

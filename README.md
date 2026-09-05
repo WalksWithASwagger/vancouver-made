@@ -64,6 +64,12 @@ npm run preview  # serve the production build
 
 Stack: **Vite · React 18 · React Router · Tailwind CSS**.
 
+The Nardwuar kit at `/kit/nardwuar-fc` includes **Read the Deep Cut**: three inline
+annotations with shareable fragment links, dated primary references, and a clear
+separation between the historical record and the project's interpretation. It
+reuses the curated artwork; images are identified as generated design visualizations.
+See [verification and the comprehension pilot](docs/READ-THE-DEEP-CUT.md).
+
 Building on it, or running the Midjourney asset tracker at `/tracker`? See
 `DEVELOPMENT.md`.
 

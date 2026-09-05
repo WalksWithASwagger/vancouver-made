@@ -9,6 +9,7 @@ import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { PUBLIC_ROUTES, KIT_ROUTES } from '../src/data/routes.js'
 import { DEFAULT_SEO } from '../src/data/seo.js'
+import nardwuar from '../src/data/directions/nardwuar.js'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = join(ROOT, 'dist')
@@ -69,6 +70,26 @@ for (const route of KIT_ROUTES) {
   const label = `receipts on ${route}`
   if (/Source:/i.test(html) || /The receipts/i.test(html) || /Every claim/i.test(html)) pass(label)
   else fail(label, 'no citation/receipt markers found in static HTML')
+}
+
+const nardwuarFile = fileFor('/kit/nardwuar-fc')
+if (existsSync(nardwuarFile)) {
+  const html = readFileSync(nardwuarFile, 'utf8')
+  for (const id of ['detail-97', 'detail-deep-research', 'detail-who-benefits']) {
+    const article = html.match(new RegExp(`<article[^>]*id="${id}"[^>]*>([\\s\\S]*?)</article>`))?.[1]
+    const annotation = nardwuar.kit.annotations.find((item) => item.id === id)
+    const citation = nardwuar.citations.find((item) => item.id === annotation?.citationId)
+    const problems = []
+    if (id !== 'detail-who-benefits' && !citation?.references?.length) problems.push('missing factual reference')
+    if (!article?.includes('Our interpretation')) problems.push('missing readable interpretation')
+    if (!article?.includes(`href="/kit/nardwuar-fc#${id}"`)) problems.push('missing detail permalink')
+    for (const reference of citation?.references ?? []) {
+      if (!article?.includes(`href="${reference.url}"`)) problems.push(`missing source link: ${reference.url}`)
+      if (!article?.includes(`datetime="${reference.date}"`)) problems.push('missing source date')
+    }
+    if (problems.length) fail(`Nardwuar ${id}`, problems.join('; '))
+    else pass(`Nardwuar ${id}`)
+  }
 }
 
 // Sitemap coverage.

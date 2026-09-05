@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 // Persistent top nav across the pitch surfaces, so /, /engine and /hall-of-fame
 // read as one site instead of three siloed pages. In-page anchors (/#id) are
-// resolved by the scroll-to-hash effect in App's PitchLayout.
+// resolved by App's RouteScroll after route content mounts.
 const LINKS = [
   { label: 'The Journey', to: '/journey' },
   { label: 'The Gallery', to: '/gallery' },
