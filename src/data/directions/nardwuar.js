@@ -31,6 +31,28 @@ const nardwuar = {
 
   // The kit up close — flats + craft details (lightbox).
   kit: {
+    annotations: [
+      {
+        id: 'detail-97',
+        label: '01 · The back number',
+        title: '97',
+        interpretation: 'We chose 97 for the year of the APEC encounter. A football number becomes a date worth remembering: the question survives on the back of the shirt.',
+        citationId: 'AL-NW-001',
+      },
+      {
+        id: 'detail-deep-research',
+        label: '02 · The sleeve badge',
+        title: 'DEEP RESEARCH',
+        interpretation: 'Our DEEP RESEARCH badge replaces the language of fair play with a working method: do the homework. The mic, records and tam carry the homage through objects.',
+        citationId: 'AL-NW-002',
+      },
+      {
+        id: 'detail-who-benefits',
+        label: '03 · The chest statement',
+        title: 'WHO BENEFITS? WHO PAYS?',
+        interpretation: 'This is the project’s own statement, not a Nardwuar quotation. We put two questions where a sponsor usually puts its name, asking the wearer to look at who gains from the spectacle and who carries its cost.',
+      },
+    ],
     flats: [
       { src: '/highlight-reel/nardwuar-01-home-front.png', caption: 'Home · front' },
       { src: '/highlight-reel/nardwuar-02-home-back.png', caption: 'Home · back' },

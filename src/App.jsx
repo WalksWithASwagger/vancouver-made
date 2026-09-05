@@ -46,7 +46,7 @@ function KitRoute() {
   const { slug } = useParams()
   const manifest = getDirection(slug)
   if (!manifest) return <NotFound />
-  return <DirectionPage data={manifest} />
+  return <DirectionPage key={slug} data={manifest} />
 }
 
 function RouteFallback() {
@@ -246,25 +246,30 @@ function NotFound() {
   )
 }
 
-// Scrolls to a #hash target after navigation (so cross-page anchor links work),
-// or to the top on a plain route change. Also drives per-route <head> metadata.
-function PitchLayout() {
-  const { pathname, hash } = useLocation()
-
-  useSeo(resolveSeo(pathname))
-
+// Commit inside Suspense so a lazy route's anchor exists before we look for it.
+function RouteScroll() {
+  const { pathname, hash, key } = useLocation()
   useEffect(() => {
-    if (hash) {
-      const id = hash.slice(1)
-      const el = document.getElementById(id)
+    const frame = requestAnimationFrame(() => {
+      const el = hash && document.getElementById(hash.slice(1))
       if (el) {
-        // next frame so the target has rendered after a cross-page nav
-        requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }))
-        return
+        el.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+          block: 'start',
+        })
+        el.focus({ preventScroll: true })
+      } else {
+        window.scrollTo({ top: 0 })
       }
-    }
-    window.scrollTo({ top: 0 })
-  }, [pathname, hash])
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [pathname, hash, key])
+  return null
+}
+
+function PitchLayout() {
+  const { pathname } = useLocation()
+  useSeo(resolveSeo(pathname))
 
   return (
     <>
@@ -278,6 +283,7 @@ function PitchLayout() {
       <main id="main-content">
         <Suspense fallback={<RouteFallback />}>
           <Outlet />
+          <RouteScroll />
         </Suspense>
       </main>
     </>
