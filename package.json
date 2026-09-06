@@ -7,7 +7,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:seo": "vite build && python3 scripts/build-social-cards.py && node scripts/prerender.mjs && node scripts/gen-sitemap.mjs",
+    "build:seo": "vite build && node scripts/prerender.mjs && node scripts/gen-sitemap.mjs",
+    "assets:social": "python3 scripts/build-social-cards.py",
+    "package:vercel": "node scripts/package-vercel.mjs",
+    "test:package": "node scripts/package-check.mjs",
+    "test:deployment": "node scripts/deployment-check.mjs",
     "prerender": "node scripts/prerender.mjs",
     "gen:sitemap": "node scripts/gen-sitemap.mjs",
     "preview": "vite preview --host",

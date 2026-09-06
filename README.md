@@ -22,7 +22,7 @@ Kris Krüg · settler artist · unceded xʷməθkʷəy̓əm, Sḵwx̱wú7mesh, s
 > Not a protest about AI. AI is just the brush. The subject is greed, displacement,
 > and who pays the public bill.
 
-**Live:** https://vancouver-made.vercel.app (auto-deploys from `main`; see `docs/DEPLOY.md`).
+**Live:** https://unofficial.city (verified production delivery requires activation; see [docs/DEPLOY.md](docs/DEPLOY.md)).
 **Canonical deliverables:** `docs/deliverables/` (board, pitch deck, tech pack).
 **Design from:** `docs/research/analysis/SYNTHESIS.md` + `docs/research/analysis/04-made-on-consolidation.md`.
 

@@ -1,44 +1,77 @@
-# Deploy — MADE ON pitch site
+# Verified static delivery
 
-The pitch site (`/`, `/engine`, `/process`, `/hall-of-fame`, plus the 404 and the
-deploy-safe `/tracker`) is a static Vite build. It deploys to **Vercel**.
+The Vite site is prerendered and checked in GitHub Actions, then copied without
+modification into `.vercel/output/static`. Build Output API v3 routes map every
+`PUBLIC_ROUTES` entry to its prerendered HTML before filesystem handling. Other
+client routes retain the SPA shell; missing assets do not receive HTML.
+The Asset Tracker backend remains local-only.
 
-- **Project:** `vancouver-made` (team *walkswithaswagger's projects*)
-- **Production URL:** https://vancouver-made.vercel.app
-- **Framework preset:** Vite · **Build:** `vite build` · **Output:** `dist`
-- SPA routing is handled by `vercel.json` (rewrites everything except `/assets/*` to
-  `/index.html`) so deep links like `/engine` resolve.
+## Activation boundary — issue #92
 
-> The Asset Tracker's Express + SQLite backend is **local-only** and does not deploy.
-> On the hosted site `/tracker` detects no API and shows a "run it locally" notice — by design.
+Actions production delivery is disabled by default. Existing Git delivery remains unchanged. This change alone does not repair
+https://unofficial.city. A maintainer must approve GitHub Actions as the production
+owner and configure the following before activating delivery:
 
-## GitHub auto-deploy (connected — live)
+1. Set `VERCEL_TOKEN`, `VERCEL_ORG_ID`, and `VERCEL_PROJECT_ID` in repository or
+   `Production` environment secrets. Never put their values in source or chat.
+2. Confirm the intended Vercel project owns `unofficial.city`, its production
+   branch is `main`, and any desired environment approval protection is configured.
+3. In a coordinated activation change, set `git.deploymentEnabled.main` to `false`
+   in `vercel.json`. Wait for any existing Git production deployments to finish or
+   cancel them before dispatching Actions. The deploy job rejects configurations
+   that have not disabled main Git deployments.
+4. Set repository variable `PRODUCTION_DEPLOY_OWNER` to `github-actions`.
+5. Dispatch QA on current `main` and verify both the deployment URL and public domain.
 
-The project is connected to GitHub, so shipping is automatic:
+Merging the packaging work does not perform the activation change or disable Git
+production. Keep the ownership variable unset until the coordinated cutover above.
+PR Git previews remain available under existing settings; they may require login
+and are not evidence that the verified artifact was delivered.
 
-- **Every merge to `main` → production** at https://vancouver-made.vercel.app.
-- **Every PR → a preview deploy** (the `vercel[bot]` posts the preview URL + a status check
-  on the PR).
+The deploy job runs only after QA on `main`, never on pull requests. It downloads
+the same artifact QA checked, requires all three credentials, rejects an outdated
+main commit, serializes production jobs, and uses pinned `vercel@56.3.2` with
+`deploy --prebuilt --prod`. It does not rebuild the site. Without the ownership
+variable, the job is skipped.
 
-No manual step is needed to release; just merge to `main`. The build settings (auto-detected
-from the Vite project) are Framework **Vite**, Build `vite build`, Output `dist`, Install
-`npm install`. SPA deep links resolve via `vercel.json`.
-
-The "scan to open" QR is generated at runtime from the page's own origin, so it encodes
-`vancouver-made.vercel.app` automatically — nothing to update.
-
-> Git settings live at Vercel → **vancouver-made → Settings → Git** (production branch `main`).
-
-## Verify a deploy
-- Open the production URL; click through `/`, `/engine`, `/process`, `/hall-of-fame`.
-- Hard-refresh on a deep link (e.g. `/engine`) — it should load, not 404 (confirms the
-  `vercel.json` rewrite).
-- `/tracker` should show the "local workbench" notice (no backend in production).
-
-## Manual deploy (fallback, if not using Git integration)
-From the repo root, with the Vercel CLI authenticated to the team:
+## Local verification
 
 ```bash
-npm run build
-vercel --prod        # links to the existing "vancouver-made" project on first run
+npm ci
+npx playwright install chromium
+npm run build:seo
+npm run test:seo
+npm run package:vercel
+npm run test:package
+git diff --exit-code -- public docs/deliverables
 ```
+
+Packaging fails if required prerendered pages, robots, or sitemap are absent.
+Package checks verify clean and trailing-slash routes, byte-identical files,
+client fallback, and missing assets. A loopback HTTP runner exercises the delivery
+check against those rules; it does not substitute for testing Vercel itself.
+Actions retains the verified artifact for seven days.
+
+Social artwork generation is a separate authoring command, `npm run assets:social`
+(requires Python and Pillow). Builds and QA must not overwrite source artwork.
+
+## Verify actual delivery
+
+```bash
+npm run test:deployment -- https://unofficial.city
+```
+
+The same check runs after deployment against its URL and the public domain. Every
+public route must return 200 with its expected title, canonical and one H1;
+sitemap and robots must include the public routes and canonical sitemap URL.
+A login page or homepage fallback cannot satisfy the route-specific checks.
+After PR #97 is integrated, also open and refresh
+`/kit/nardwuar-fc#detail-97` in a browser and verify the article is visible.
+
+Keep #92 open until actual production checks pass and competing production builds
+are disabled. Related issues #86, #87 and #88 require their own evidence. This
+change does not configure DNS, credentials, analytics or external project settings.
+
+References: [Build Output API](https://vercel.com/docs/build-output-api/configuration),
+[Git deployment controls](https://vercel.com/docs/project-configuration/git-configuration),
+[CLI deployment](https://vercel.com/docs/cli/deploy).
