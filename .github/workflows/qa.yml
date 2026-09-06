@@ -1,15 +1,14 @@
 name: QA
 
-# Builds the prerendered, SEO-complete site and runs the static SEO gate. Chromium
-# can't run in Vercel's own build, so prerendering happens here. This job is a
-# build-and-verify gate only — it does not deploy. To ship the prerendered output to
-# production, run `npm run build:seo && vercel deploy --prebuilt --prod` (the dist/ it
-# produces is the artifact to deploy), or add a deploy step here with a VERCEL_TOKEN
-# secret.
+# Production is opt-in; see docs/DEPLOY.md before setting PRODUCTION_DEPLOY_OWNER.
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   seo:
@@ -20,11 +19,55 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install pillow
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run build:seo
       - run: npm run test:seo
+      - run: npm run package:vercel
+      - run: npm run test:package
+      - run: git diff --exit-code -- public docs/deliverables
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-static
+          path: .vercel/output/
+          include-hidden-files: true
+          retention-days: 7
+
+  deploy:
+    needs: seo
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      github.event_name != 'pull_request' &&
+      vars.PRODUCTION_DEPLOY_OWNER == 'github-actions'
+    runs-on: ubuntu-latest
+    environment: Production
+    concurrency:
+      group: verified-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-static
+          path: .vercel/output/
+      - name: Require credentials and current main
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test -n "$VERCEL_TOKEN" && test -n "$VERCEL_ORG_ID" && test -n "$VERCEL_PROJECT_ID"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq .sha)" = "$GITHUB_SHA"
+      - name: Deploy verified artifact and check delivery
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          deployment_url="$(npx --yes vercel@56.3.2 deploy --prebuilt --prod --token "$VERCEL_TOKEN")"
+          node scripts/deployment-check.mjs "$deployment_url"
+          node scripts/deployment-check.mjs https://unofficial.city
