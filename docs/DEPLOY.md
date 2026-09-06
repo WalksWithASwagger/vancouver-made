@@ -8,7 +8,7 @@ The Asset Tracker backend remains local-only.
 
 ## Activation boundary — issue #92
 
-Production delivery is disabled by default. This change alone does not repair
+Actions production delivery is disabled by default. Existing Git delivery remains unchanged. This change alone does not repair
 https://unofficial.city. A maintainer must approve GitHub Actions as the production
 owner and configure the following before activating delivery:
 
@@ -16,12 +16,16 @@ owner and configure the following before activating delivery:
    `Production` environment secrets. Never put their values in source or chat.
 2. Confirm the intended Vercel project owns `unofficial.city`, its production
    branch is `main`, and any desired environment approval protection is configured.
-3. Set repository variable `PRODUCTION_DEPLOY_OWNER` to `github-actions`.
-4. Dispatch QA on current `main` and verify both the deployment URL and public domain.
+3. In a coordinated activation change, set `git.deploymentEnabled.main` to `false`
+   in `vercel.json`. Wait for any existing Git production deployments to finish or
+   cancel them before dispatching Actions. The deploy job rejects configurations
+   that have not disabled main Git deployments.
+4. Set repository variable `PRODUCTION_DEPLOY_OWNER` to `github-actions`.
+5. Dispatch QA on current `main` and verify both the deployment URL and public domain.
 
-**Merging this configuration disables Vercel Git deployments from `main`, even if
-Actions has not been activated.** Coordinate that cutover before merging. PR Git
-previews remain available under existing Vercel settings; they may require login
+Merging the packaging work does not perform the activation change or disable Git
+production. Keep the ownership variable unset until the coordinated cutover above.
+PR Git previews remain available under existing settings; they may require login
 and are not evidence that the verified artifact was delivered.
 
 The deploy job runs only after QA on `main`, never on pull requests. It downloads
