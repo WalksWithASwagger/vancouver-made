@@ -23,6 +23,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run build:seo
       - run: npm run test:seo
+      - run: npm run test:kit-reading
       - run: npm run package:vercel
       - run: npm run test:package
       - run: git diff --exit-code -- public docs/deliverables
