@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **This repository is archived (read-only) as of 2026-10-03.** The canonical source now lives in [`WalksWithASwagger/kk-kb`](https://github.com/WalksWithASwagger/kk-kb) at [`kk-kb/apps/vancouver-made`](https://github.com/WalksWithASwagger/kk-kb/tree/main/apps/vancouver-made). The live site (https://unofficial.city) deploys from kk-kb. Open issues, PRs and history stay here for reference. Make new changes in kk-kb.
+
 # VANCOUVER MADE · **MADE ON**
 
 > 🥈🥈 **Double silver at BCIT Tech Collider 2026** — 2nd in the Devin Technical Hackathon
